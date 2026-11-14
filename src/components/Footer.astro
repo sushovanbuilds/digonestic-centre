@@ -1,7 +1,72 @@
 ---
 import { centre, ui } from '../config/centre';
+
+const lang = centre.lang;
 ---
 
-<footer>
-  <p>{ui.previewNotice[centre.lang] ?? ui.previewNotice.en}</p>
+<footer class="site-footer">
+  <div class="container footer-container">
+    <div class="footer-top">
+      <span class="footer-brand">{centre.name}</span>
+      <p class="footer-details">
+        {centre.location.areaLabel} &bull; {centre.contact.phone}
+      </p>
+    </div>
+    
+    <div class="footer-bottom">
+      <p class="footer-notice">
+        {ui.previewNotice[lang] ?? ui.previewNotice.en}
+      </p>
+    </div>
+  </div>
 </footer>
+
+<style>
+  .site-footer {
+    background-color: var(--paper);
+    border-top: 1px solid var(--rule);
+    padding: var(--space-48) 0 var(--space-32);
+    color: var(--ink-soft);
+    font-size: var(--font-size-small);
+  }
+
+  .footer-container {
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-24);
+  }
+
+  .footer-top {
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-8);
+  }
+
+  @media (min-width: 640px) {
+    .footer-top {
+      flex-direction: row;
+      justify-content: space-between;
+      align-items: baseline;
+    }
+  }
+
+  .footer-brand {
+    font-weight: 700;
+    color: var(--ink);
+    font-size: 1rem;
+  }
+
+  .footer-details {
+    color: var(--ink-soft);
+  }
+
+  .footer-bottom {
+    padding-top: var(--space-16);
+    border-top: 1px solid var(--rule);
+  }
+
+  .footer-notice {
+    color: var(--ink-soft);
+    font-size: 0.875rem;
+  }
+</style>

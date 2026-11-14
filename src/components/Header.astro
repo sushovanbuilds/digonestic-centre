@@ -1,7 +1,57 @@
 ---
-import { centre } from '../config/centre';
+import { centre, ui } from '../config/centre';
+import { getGeneralWhatsAppUrl } from '../lib/whatsapp';
+
+const whatsappUrl = getGeneralWhatsAppUrl();
 ---
 
-<header>
-  <span>{centre.name}</span>
+<header class="site-header">
+  <div class="container header-inner">
+    <a href="#hero" class="brand-wordmark">
+      {centre.name}
+    </a>
+    <a href={whatsappUrl} class="btn btn-primary btn-sm" aria-label={ui.bookTest[centre.lang] ?? ui.bookTest.en}>
+      {ui.bookTest[centre.lang] ?? ui.bookTest.en}
+    </a>
+  </div>
 </header>
+
+<style>
+  .site-header {
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    height: 56px;
+    background-color: var(--paper);
+    border-bottom: 1px solid var(--rule);
+    display: flex;
+    align-items: center;
+    box-shadow: var(--header-shadow);
+  }
+
+  .header-inner {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    height: 100%;
+  }
+
+  .brand-wordmark {
+    font-size: 1.125rem;
+    font-weight: 700;
+    color: var(--ink);
+    text-decoration: none;
+    letter-spacing: -0.01em;
+  }
+
+  .brand-wordmark:focus-visible {
+    outline: 3px solid var(--primary);
+    outline-offset: 2px;
+  }
+
+  .btn-sm {
+    min-height: 48px;
+    padding: 0 var(--space-16);
+    font-size: var(--font-size-small);
+  }
+</style>

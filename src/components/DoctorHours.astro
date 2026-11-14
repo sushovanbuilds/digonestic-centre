@@ -1,7 +1,119 @@
 ---
 import { centre, ui } from '../config/centre';
+import { getDoctorWhatsAppUrl } from '../lib/whatsapp';
+
+const lang = centre.lang;
 ---
 
-<div id="doctor-hours">
-  <h3>{ui.doctorsHeading[centre.lang] ?? ui.doctorsHeading.en}</h3>
+<div class="doctor-hours-block">
+  <h3 class="doctor-hours-heading">{ui.doctorsHeading[lang] ?? ui.doctorsHeading.en}</h3>
+  
+  <div class="doctor-table-wrap">
+    <div class="doctor-list">
+      {centre.doctors.map((doc) => {
+        const docWaUrl = getDoctorWhatsAppUrl(doc.name);
+
+        return (
+          <div class="doctor-row">
+            <div class="doctor-details">
+              <span class="doctor-name">{doc.name}</span>
+              <span class="doctor-speciality">{doc.speciality}</span>
+              <span class="doctor-days">{doc.days}</span>
+            </div>
+            <div class="doctor-action">
+              <a
+                href={docWaUrl}
+                class="btn btn-outline btn-sm doctor-book-btn"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                Book consultation
+              </a>
+            </div>
+          </div>
+        );
+      })}
+    </div>
+  </div>
 </div>
+
+<style>
+  .doctor-hours-block {
+    margin-top: var(--space-48);
+    padding-top: var(--space-32);
+    border-top: 1px solid var(--rule);
+  }
+
+  .doctor-hours-heading {
+    margin-bottom: var(--space-20);
+    font-size: 1.25rem;
+    color: var(--ink);
+  }
+
+  .doctor-list {
+    display: flex;
+    flex-direction: column;
+    border-top: 1px solid var(--rule);
+  }
+
+  .doctor-row {
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-12);
+    padding: var(--space-16) 0;
+    border-bottom: 1px solid var(--rule);
+  }
+
+  @media (min-width: 640px) {
+    .doctor-row {
+      flex-direction: row;
+      align-items: center;
+      justify-content: space-between;
+    }
+  }
+
+  .doctor-details {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+  }
+
+  @media (min-width: 640px) {
+    .doctor-details {
+      display: grid;
+      grid-template-columns: 200px 180px 1fr;
+      align-items: center;
+      gap: var(--space-16);
+      flex: 1;
+    }
+  }
+
+  .doctor-name {
+    font-weight: 600;
+    color: var(--ink);
+  }
+
+  .doctor-speciality {
+    font-size: var(--font-size-small);
+    color: var(--ink-soft);
+  }
+
+  .doctor-days {
+    font-size: var(--font-size-small);
+    color: var(--ink-soft);
+  }
+
+  .doctor-action {
+    display: flex;
+  }
+
+  .btn-sm {
+    min-height: 48px;
+    padding: 0 var(--space-16);
+    font-size: var(--font-size-small);
+  }
+
+  .doctor-book-btn {
+    white-space: nowrap;
+  }
+</style>

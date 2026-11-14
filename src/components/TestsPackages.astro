@@ -1,9 +1,143 @@
 ---
 import { centre, ui } from '../config/centre';
+import { getTestWhatsAppUrl } from '../lib/whatsapp';
 import SampleTag from './SampleTag.astro';
+import TestList from './islands/TestList';
+import type { TestItem } from './islands/TestList';
+
+const lang = centre.lang;
+
+const testItems: TestItem[] = centre.tests.map((t) => ({
+  id: t.id,
+  name: t.name[lang] ?? t.name.en,
+  blurb: t.blurb[lang] ?? t.blurb.en,
+  includes: t.includes.map((inc) => inc[lang] ?? inc.en),
+  waUrl: getTestWhatsAppUrl(t.name[lang] ?? t.name.en),
+}));
 ---
 
-<section id="tests">
-  <SampleTag />
-  <h2>{ui.testsHeading[centre.lang] ?? ui.testsHeading.en}</h2>
+<section id="tests" class="tests-section">
+  <div class="container">
+    <div class="section-header">
+      <SampleTag />
+      <h2>{ui.testsHeading[lang] ?? ui.testsHeading.en}</h2>
+    </div>
+
+    <div class="tests-packages-grid">
+      <!-- Left Column: Tests List (7 col split on desktop) -->
+      <div class="tests-col">
+        <TestList client:visible tests={testItems} />
+      </div>
+
+      <!-- Right Column: Packages (5 col split on desktop) -->
+      <div class="packages-col">
+        <h3 class="packages-heading">{ui.packagesHeading[lang] ?? ui.packagesHeading.en}</h3>
+        <div class="packages-list">
+          {centre.packages.map((pkg) => {
+            const pkgName = pkg.name[lang] ?? pkg.name.en;
+            const pkgBlurb = pkg.blurb[lang] ?? pkg.blurb.en;
+            const pkgWaUrl = getTestWhatsAppUrl(pkgName);
+
+            return (
+              <div class={`package-card ${pkg.wide ? 'package-card-featured' : ''}`}>
+                <div class="package-content">
+                  <h4 class="package-title">{pkgName}</h4>
+                  <p class="package-blurb">{pkgBlurb}</p>
+                </div>
+                <div class="package-actions">
+                  <a
+                    href={pkgWaUrl}
+                    class="btn btn-outline package-btn"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                  >
+                    {ui.bookTest[lang] ?? ui.bookTest.en}
+                  </a>
+                </div>
+              </div>
+            );
+          })}
+        </div>
+      </div>
+    </div>
+  </div>
 </section>
+
+<style>
+  .tests-section {
+    background-color: var(--paper);
+  }
+
+  .section-header {
+    margin-bottom: var(--space-32);
+  }
+
+  .tests-packages-grid {
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-48);
+  }
+
+  @media (min-width: 900px) {
+    .tests-packages-grid {
+      display: grid;
+      grid-template-columns: 7fr 5fr;
+      gap: var(--space-48);
+      align-items: start;
+    }
+  }
+
+  .packages-heading {
+    margin-bottom: var(--space-16);
+    font-size: 1.25rem;
+    color: var(--ink);
+  }
+
+  .packages-list {
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-16);
+  }
+
+  .package-card {
+    background-color: var(--paper);
+    border: 1px solid var(--rule);
+    border-radius: var(--radius-row);
+    padding: var(--space-20);
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    gap: var(--space-16);
+    transition: border-color 0.15s ease;
+  }
+
+  .package-card-featured {
+    background-color: var(--tint);
+    border-color: #b5d5cf;
+  }
+
+  .package-title {
+    font-size: 1.125rem;
+    font-weight: 600;
+    color: var(--ink);
+    margin-bottom: var(--space-8);
+  }
+
+  .package-blurb {
+    font-size: var(--font-size-small);
+    color: var(--ink-soft);
+  }
+
+  .package-btn {
+    min-height: 48px;
+    padding: 0 var(--space-16);
+    font-size: var(--font-size-small);
+    width: 100%;
+  }
+
+  @media (min-width: 640px) {
+    .package-btn {
+      width: auto;
+    }
+  }
+</style>

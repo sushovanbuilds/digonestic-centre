@@ -11,6 +11,21 @@ interface Props {
 
 const { title = centre.name, description = centre.tagline[centre.lang] ?? centre.tagline.en } = Astro.props;
 const themeStyle = getThemeStyleString();
+
+const jsonLd = centre.flags.emitSchema
+  ? {
+      '@context': 'https://schema.org',
+      '@type': 'MedicalClinic',
+      name: centre.name,
+      description: description,
+      telephone: centre.contact.phone,
+      address: {
+        '@type': 'PostalAddress',
+        streetAddress: centre.location.addressLines.join(', '),
+        addressLocality: centre.location.areaLabel,
+      },
+    }
+  : null;
 ---
 
 <!doctype html>
@@ -22,9 +37,18 @@ const themeStyle = getThemeStyleString();
     <title>{title}</title>
     <meta name="description" content={description} />
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-    {centre.flags.emitSchema && <slot name="schema" />}
+    <link
+      rel="preload"
+      href="/fonts/figtree-var.woff2"
+      as="font"
+      type="font/woff2"
+      crossorigin="anonymous"
+    />
+    {jsonLd && <script type="application/ld+json" set:html={JSON.stringify(jsonLd)} />}
+    <slot name="schema" />
   </head>
   <body>
+    <a href="#main-content" class="skip-link">Skip to main content</a>
     <slot />
   </body>
 </html>

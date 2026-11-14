@@ -1,9 +1,161 @@
 ---
 import { centre, ui } from '../config/centre';
 import DoctorHours from './DoctorHours.astro';
+import Icon from './Icon.astro';
+
+const lang = centre.lang;
+const cleanPhone = centre.contact.phone.replace(/\s+/g, '');
 ---
 
-<section id="location">
-  <h2>{ui.locationHeading[centre.lang] ?? ui.locationHeading.en}</h2>
-  {centre.flags.doctorSchedule && <DoctorHours />}
+<section id="location" class="location-section">
+  <div class="container">
+    <h2 class="location-heading">{ui.locationHeading[lang] ?? ui.locationHeading.en}</h2>
+    
+    <div class="location-grid">
+      <!-- Address & Contact -->
+      <div class="location-details">
+        <h3 class="location-subheading">{centre.location.areaLabel}</h3>
+        <address class="address-box">
+          {centre.location.addressLines.map((line) => (
+            <span class="address-line">{line}</span>
+          ))}
+        </address>
+
+        <div class="phone-row">
+          <Icon name="phone" class="contact-icon" />
+          <a href={`tel:${cleanPhone}`} class="phone-link">
+            {centre.contact.phone}
+          </a>
+        </div>
+
+        <div class="map-action">
+          <a
+            href={centre.location.mapUrl}
+            class="btn btn-outline"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            <Icon name="pin" class="btn-icon" />
+            <span>{ui.openMaps[lang] ?? ui.openMaps.en}</span>
+          </a>
+        </div>
+      </div>
+
+      <!-- Timings / Hours -->
+      <div class="timings-box">
+        <h3 class="location-subheading">Hours</h3>
+        <table class="hours-table">
+          <tbody>
+            {centre.hours.map((h) => (
+              <tr class="hours-row">
+                <td class="hours-label">{h.label[lang] ?? h.label.en}</td>
+                <td class="hours-value">{h.value}</td>
+              </tr>
+            ))}
+          </tbody>
+        </table>
+      </div>
+    </div>
+
+    <!-- Optional Doctor Schedule -->
+    {centre.flags.doctorSchedule && <DoctorHours />}
+  </div>
 </section>
+
+<style>
+  .location-section {
+    background-color: var(--paper);
+    border-top: 1px solid var(--rule);
+  }
+
+  .location-heading {
+    margin-bottom: var(--space-32);
+  }
+
+  .location-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: var(--space-32);
+  }
+
+  @media (min-width: 768px) {
+    .location-grid {
+      grid-template-columns: 1fr 1fr;
+      gap: var(--space-48);
+    }
+  }
+
+  .location-subheading {
+    font-size: 1.125rem;
+    font-weight: 600;
+    color: var(--ink);
+    margin-bottom: var(--space-12);
+  }
+
+  .address-box {
+    font-style: normal;
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+    color: var(--ink-soft);
+    margin-bottom: var(--space-16);
+  }
+
+  .phone-row {
+    display: flex;
+    align-items: center;
+    gap: var(--space-8);
+    margin-bottom: var(--space-20);
+    color: var(--ink);
+  }
+
+  .contact-icon {
+    width: 20px;
+    height: 20px;
+    color: var(--primary);
+  }
+
+  .phone-link {
+    color: var(--ink);
+    text-decoration: underline;
+    font-weight: 500;
+  }
+
+  .phone-link:focus-visible {
+    outline: 3px solid var(--primary);
+    outline-offset: 2px;
+  }
+
+  .map-action {
+    display: flex;
+  }
+
+  .btn-icon {
+    width: 18px;
+    height: 18px;
+    margin-right: var(--space-8);
+  }
+
+  .hours-table {
+    width: 100%;
+    border-collapse: collapse;
+    border-top: 1px solid var(--rule);
+  }
+
+  .hours-row {
+    border-bottom: 1px solid var(--rule);
+  }
+
+  .hours-label {
+    padding: var(--space-12) 0;
+    font-weight: 600;
+    color: var(--ink);
+    width: 40%;
+  }
+
+  .hours-value {
+    padding: var(--space-12) 0;
+    color: var(--ink-soft);
+    text-align: right;
+  }
+</style>

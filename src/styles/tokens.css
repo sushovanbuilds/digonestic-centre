@@ -1,3 +1,50 @@
+@font-face {
+  font-family: 'Figtree';
+  font-style: normal;
+  font-weight: 300 900;
+  font-display: swap;
+  src: url('/fonts/figtree-var.woff2') format('woff2');
+}
+
 :root {
-  --font-family-base: 'Figtree', system-ui, -apple-system, sans-serif;
+  /* Colours (DESIGN.md section 2) */
+  --paper: #F6F9F9;
+  --ink: #0F2430;
+  --ink-soft: #44606E;
+  --primary: #0E6B63;
+  --primary-ink: #FFFFFF;
+  --tint: #E2EFEC;
+  --rule: #C9DAD7;
+  --wa: #0F7B42;
+  --sample-bg: #FFF1CC;
+  --sample-ink: #6B4500;
+
+  /* Typography */
+  --font-family-base: 'Figtree', system-ui, -apple-system, 'Segoe UI', sans-serif;
+  --font-size-h1: clamp(2.25rem, 8vw, 3.5rem);
+  --font-size-h2: clamp(1.5rem, 5vw, 2rem);
+  --font-size-body: 1.0625rem;
+  --font-size-small: 0.9375rem;
+
+  /* Spacing */
+  --space-4: 4px;
+  --space-8: 8px;
+  --space-12: 12px;
+  --space-16: 16px;
+  --space-24: 24px;
+  --space-32: 32px;
+  --space-48: 48px;
+  --space-72: 72px;
+
+  /* Radius */
+  --radius-row: 6px;
+  --radius-btn: 10px;
+  --radius-contact: 14px;
+
+  /* Container */
+  --container-max: 1080px;
+  --gutter: 20px;
+
+  /* Shadows */
+  --header-shadow: 0 2px 8px rgba(15, 36, 48, 0.08);
 }

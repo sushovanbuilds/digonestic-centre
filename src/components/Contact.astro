@@ -1,7 +1,131 @@
 ---
 import { centre, ui } from '../config/centre';
+import { getGeneralWhatsAppUrl } from '../lib/whatsapp';
+import Icon from './Icon.astro';
+
+const lang = centre.lang;
+const whatsappUrl = getGeneralWhatsAppUrl();
 ---
 
-<section id="contact">
-  <h2>{ui.whatsappUs[centre.lang] ?? ui.whatsappUs.en}</h2>
+<section id="contact" class="contact-section">
+  <div class="container">
+    <div class="contact-panel">
+      <div class="contact-icon-wrapper">
+        <Icon name="notification" class="contact-bell-icon" />
+      </div>
+      
+      <div class="contact-text-block">
+        <h2 class="contact-heading">Request a booking</h2>
+        <p class="contact-explainer">
+          Opens WhatsApp with a ready message. Nothing is stored here.
+        </p>
+      </div>
+
+      <div class="contact-action">
+        <a
+          href={whatsappUrl}
+          class="btn btn-wa contact-btn"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          {ui.requestWhatsApp[lang] ?? ui.requestWhatsApp.en}
+        </a>
+      </div>
+    </div>
+  </div>
 </section>
+
+<style>
+  .contact-section {
+    background-color: var(--paper);
+    border-top: 1px solid var(--rule);
+  }
+
+  .contact-panel {
+    background-color: var(--tint);
+    border-radius: var(--radius-contact);
+    padding: var(--space-32);
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-20);
+    align-items: flex-start;
+  }
+
+  @media (min-width: 768px) {
+    .contact-panel {
+      flex-direction: row;
+      align-items: center;
+      justify-content: space-between;
+      padding: var(--space-48);
+    }
+  }
+
+  .contact-icon-wrapper {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 48px;
+    height: 48px;
+    min-width: 48px;
+    border-radius: 50%;
+    background-color: var(--paper);
+    color: var(--primary);
+  }
+
+  /* Effect 4: Notification01 animateOnHover on hover devices only */
+  @media (hover: hover) and (pointer: fine) {
+    .contact-panel:hover .contact-bell-icon {
+      animation: bell-ring 0.6s ease-in-out;
+    }
+  }
+
+  @keyframes bell-ring {
+    0% { transform: rotate(0); }
+    15% { transform: rotate(14deg); }
+    30% { transform: rotate(-14deg); }
+    45% { transform: rotate(8deg); }
+    60% { transform: rotate(-8deg); }
+    75% { transform: rotate(4deg); }
+    100% { transform: rotate(0); }
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    .contact-bell-icon {
+      animation: none !important;
+    }
+  }
+
+  .contact-text-block {
+    flex: 1;
+  }
+
+  .contact-heading {
+    margin-bottom: var(--space-8);
+  }
+
+  .contact-explainer {
+    color: var(--ink-soft);
+    font-size: var(--font-size-body);
+  }
+
+  .contact-action {
+    width: 100%;
+  }
+
+  @media (min-width: 768px) {
+    .contact-action {
+      width: auto;
+    }
+  }
+
+  .contact-btn {
+    width: 100%;
+  }
+
+  @media (min-width: 768px) {
+    .contact-btn {
+      width: auto;
+      min-width: 220px;
+    }
+  }
+</style>

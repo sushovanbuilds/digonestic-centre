@@ -1,7 +1,59 @@
 ---
 import { centre, ui } from '../config/centre';
+
+const lang = centre.lang;
+const slots = Array.from({ length: centre.reviewSlots }, (_, i) => i + 1);
 ---
 
-<section id="reviews">
-  <h2>{ui.reviewsHeading[centre.lang] ?? ui.reviewsHeading.en}</h2>
+<section id="reviews" class="reviews-section">
+  <div class="container">
+    <h2 class="reviews-heading">{ui.reviewsHeading[lang] ?? ui.reviewsHeading.en}</h2>
+    
+    <div class="reviews-grid">
+      {slots.map((slot) => (
+        <div class="review-slot-card">
+          <span class="review-placeholder-label">Review placeholder {slot}</span>
+        </div>
+      ))}
+    </div>
+  </div>
 </section>
+
+<style>
+  .reviews-section {
+    background-color: var(--paper);
+    border-top: 1px solid var(--rule);
+  }
+
+  .reviews-heading {
+    margin-bottom: var(--space-32);
+  }
+
+  .reviews-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: var(--space-16);
+  }
+
+  @media (min-width: 640px) {
+    .reviews-grid {
+      grid-template-columns: repeat(3, 1fr);
+    }
+  }
+
+  .review-slot-card {
+    border: 1px dashed var(--rule);
+    border-radius: var(--radius-row);
+    padding: var(--space-32) var(--space-16);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: var(--paper);
+  }
+
+  .review-placeholder-label {
+    font-size: var(--font-size-small);
+    color: var(--ink-soft);
+    font-style: italic;
+  }
+</style>

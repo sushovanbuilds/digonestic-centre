@@ -2,12 +2,12 @@ import { centre } from '../config/centre';
 
 export function getThemeVariables(): Record<string, string> {
   return {
-    '--color-primary': centre.theme.primary,
-    '--color-ink': centre.theme.ink,
-    '--color-paper': centre.theme.paper,
-    '--color-tint': centre.theme.tint,
-    '--color-rule': centre.theme.rule,
-    '--color-wa': centre.theme.wa,
+    '--paper': centre.theme.paper,
+    '--ink': centre.theme.ink,
+    '--primary': centre.theme.primary,
+    '--tint': centre.theme.tint,
+    '--rule': centre.theme.rule,
+    '--wa': centre.theme.wa,
   };
 }
 

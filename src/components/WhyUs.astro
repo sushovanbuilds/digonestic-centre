@@ -1,7 +1,93 @@
 ---
 import { centre, ui } from '../config/centre';
+import Icon from './Icon.astro';
+
+const lang = centre.lang;
 ---
 
-<section id="why-us">
-  <h2>{ui.whyHeading[centre.lang] ?? ui.whyHeading.en}</h2>
+<section id="why-us" class="why-section">
+  <div class="container">
+    <h2 class="why-heading">{ui.whyHeading[lang] ?? ui.whyHeading.en}</h2>
+    
+    <div class="why-grid">
+      {centre.why.map((item) => {
+        const itemTitle = item.title[lang] ?? item.title.en;
+        const itemText = item.text[lang] ?? item.text.en;
+
+        return (
+          <div class="why-item">
+            <div class="why-icon-wrap">
+              <Icon name={item.icon} class="why-icon" />
+            </div>
+            <div class="why-item-content">
+              <h3 class="why-item-title">{itemTitle}</h3>
+              <p class="why-item-text">{itemText}</p>
+            </div>
+          </div>
+        );
+      })}
+    </div>
+  </div>
 </section>
+
+<style>
+  .why-section {
+    background-color: var(--paper);
+    border-top: 1px solid var(--rule);
+  }
+
+  .why-heading {
+    margin-bottom: var(--space-32);
+  }
+
+  .why-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: var(--space-24);
+  }
+
+  @media (min-width: 640px) {
+    .why-grid {
+      grid-template-columns: 1fr 1fr;
+      gap: var(--space-32);
+    }
+  }
+
+  .why-item {
+    display: flex;
+    align-items: flex-start;
+    gap: var(--space-16);
+    padding: var(--space-16);
+    border-radius: var(--radius-row);
+    background-color: var(--tint);
+  }
+
+  .why-icon-wrap {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 44px;
+    height: 44px;
+    min-width: 44px;
+    border-radius: var(--radius-row);
+    background-color: var(--paper);
+    color: var(--primary);
+  }
+
+  .why-item-content {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+  }
+
+  .why-item-title {
+    font-size: 1.0625rem;
+    font-weight: 600;
+    color: var(--ink);
+  }
+
+  .why-item-text {
+    font-size: var(--font-size-small);
+    color: var(--ink-soft);
+  }
+</style>

@@ -1,7 +1,13 @@
 ---
 import { centre, ui } from '../config/centre';
+
+interface Props {
+  class?: string;
+}
+
+const { class: className = '' } = Astro.props;
 ---
 
-<span class="sample-tag">
+<span class={`sample-tag ${className}`}>
   {ui.sampleNotice[centre.lang] ?? ui.sampleNotice.en}
 </span>

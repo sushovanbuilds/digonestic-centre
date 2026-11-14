@@ -1,8 +1,90 @@
 ---
-import { centre } from '../config/centre';
+import { centre, ui } from '../config/centre';
+import { getGeneralWhatsAppUrl } from '../lib/whatsapp';
+import HeroTitle from './islands/HeroTitle';
+import Press from './islands/Press';
+
+const whatsappUrl = getGeneralWhatsAppUrl();
+const tagline = centre.tagline[centre.lang] ?? centre.tagline.en;
 ---
 
-<section id="hero">
-  <h1>{centre.name}</h1>
-  <p>{centre.tagline[centre.lang] ?? centre.tagline.en}</p>
+<section id="hero" class="hero-section">
+  <div class="container hero-container">
+    <div class="hero-content">
+      <HeroTitle client:load title={centre.name} />
+      <p class="hero-tagline">{tagline}</p>
+      
+      <div class="hero-actions">
+        <Press client:visible>
+          <a href="#tests" class="btn btn-primary hero-btn">
+            {ui.bookTest[centre.lang] ?? ui.bookTest.en}
+          </a>
+        </Press>
+        <Press client:visible>
+          <a href={whatsappUrl} class="btn btn-wa hero-btn">
+            {ui.whatsappUs[centre.lang] ?? ui.whatsappUs.en}
+          </a>
+        </Press>
+      </div>
+
+      <p class="hero-notice">Sample preview. Content is placeholder.</p>
+    </div>
+  </div>
 </section>
+
+<style>
+  .hero-section {
+    padding-top: var(--space-48);
+    padding-bottom: var(--space-48);
+  }
+
+  @media (min-width: 900px) {
+    .hero-section {
+      padding-top: var(--space-72);
+      padding-bottom: var(--space-72);
+    }
+  }
+
+  .hero-content {
+    max-width: 680px;
+    text-align: left;
+  }
+
+  .hero-tagline {
+    font-size: 1.25rem;
+    color: var(--ink-soft);
+    margin-bottom: var(--space-32);
+    line-height: 1.5;
+  }
+
+  .hero-actions {
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-12);
+    margin-bottom: var(--space-16);
+  }
+
+  @media (min-width: 640px) {
+    .hero-actions {
+      flex-direction: row;
+      align-items: center;
+    }
+  }
+
+  .hero-btn {
+    width: 100%;
+  }
+
+  @media (min-width: 640px) {
+    .hero-btn {
+      width: auto;
+      min-width: 180px;
+    }
+  }
+
+  .hero-notice {
+    font-size: var(--font-size-small);
+    color: var(--ink-soft);
+    margin-top: var(--space-12);
+  }
+</style>

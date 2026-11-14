@@ -8,12 +8,12 @@ export const centre: CentreConfig = {
     en: 'Tests and doctor consultations in one place.',
   },
   theme: {
-    primary: '#0f766e',
-    ink: '#0f172a',
-    paper: '#ffffff',
-    tint: '#f0fdfa',
-    rule: '#e2e8f0',
-    wa: '#25D366',
+    primary: '#0E6B63',
+    ink: '#0F2430',
+    paper: '#F6F9F9',
+    tint: '#E2EFEC',
+    rule: '#C9DAD7',
+    wa: '#0F7B42',
   },
   contact: {
     phone: '+91 00000 00000',
