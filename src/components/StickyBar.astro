@@ -14,7 +14,7 @@ const whatsappUrl = getGeneralWhatsAppUrl(lang);
 const cleanPhone = centre.contact.phone.replace(/\s+/g, '');
 ---
 
-<aside id="mobile-sticky-bar" class="mobile-sticky-bar" aria-label="Quick mobile actions">
+<aside id="sticky-bar" class="sticky-action-bar" aria-label="Quick actions">
   <div class="sticky-bar-inner">
     <a
       href={whatsappUrl}
@@ -33,79 +33,46 @@ const cleanPhone = centre.contact.phone.replace(/\s+/g, '');
   </div>
 </aside>
 
-<script>
-  function setupStickyBar() {
-    const bar = document.getElementById('mobile-sticky-bar');
-    const contactSection = document.getElementById('contact');
-    if (!bar || !contactSection || !('IntersectionObserver' in window)) return;
-
-    const observer = new IntersectionObserver(
-      (entries) => {
-        entries.forEach((entry) => {
-          if (entry.isIntersecting) {
-            bar.classList.add('is-hidden');
-          } else {
-            bar.classList.remove('is-hidden');
-          }
-        });
-      },
-      { threshold: 0.1 }
-    );
-
-    observer.observe(contactSection);
-  }
-
-  // Run on page load
-  setupStickyBar();
-  // Support Astro view transitions if any
-  document.addEventListener('astro:page-load', setupStickyBar);
-</script>
-
 <style>
-  .mobile-sticky-bar {
+  .sticky-action-bar {
     position: fixed;
     bottom: 0;
     left: 0;
     right: 0;
-    z-index: 100;
+    z-index: 999;
     background-color: rgba(255, 255, 255, 0.96);
     backdrop-filter: blur(10px);
     -webkit-backdrop-filter: blur(10px);
     border-top: 1px solid var(--rule);
     padding: var(--space-8) var(--space-16) calc(var(--space-8) + env(safe-area-inset-bottom, 0px));
     box-shadow: 0 -4px 16px rgba(15, 36, 48, 0.08);
-    transition: transform 0.25s ease, opacity 0.25s ease;
-  }
-
-  .mobile-sticky-bar.is-hidden {
-    transform: translateY(100%);
-    opacity: 0;
-    pointer-events: none;
   }
 
   .sticky-bar-inner {
     display: grid;
     grid-template-columns: 1fr 1fr;
     gap: var(--space-12);
-    max-width: 500px;
+    max-width: 480px;
     margin: 0 auto;
   }
 
   .sticky-btn {
     min-height: 48px;
-    padding: 0 var(--space-8);
-    font-size: 0.875rem;
+    padding: 0 var(--space-16);
+    font-size: 0.9375rem;
     font-weight: 600;
     display: inline-flex;
     align-items: center;
     justify-content: center;
-    gap: 6px;
+    gap: 8px;
     white-space: nowrap;
   }
 
-  @media (min-width: 701px) {
-    .mobile-sticky-bar {
-      display: none !important;
+  @media (max-width: 400px) {
+    .sticky-btn {
+      padding: 0 var(--space-8);
+      font-size: 0.875rem;
+      gap: 6px;
     }
   }
 </style>
