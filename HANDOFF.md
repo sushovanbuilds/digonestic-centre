@@ -13,7 +13,8 @@ Update this file at the end of every stage. Keep it under 60 lines.
 - Kept English brand words like "WhatsApp" and "Call" in English across Bengali surfaces, eliminating clunky transliterations.
 - Solved Bengali mobile responsiveness (320px–390px): responsive header buttons (`বুকিং` / `Book` on narrow viewports), single-line sticky bottom bar (`WhatsApp করুন` + `Call করুন`), overflow-safe typography (`overflow-wrap: break-word`), and mobile padding.
 - Built unified consistent outline SVG icon system (`Icon.astro`) for calendar, WhatsApp, call/phone, pin/location, clock/hours, user/doctor, home collection, and navigation chevrons/arrows.
-- Sticky bottom bar (<700px) auto-hides when `#contact` booking card intersects into view.
+- Sticky action bar permanently fixed at bottom across viewports with WhatsApp and Call quick actions.
+- Default configuration set to demo mode (`centreDemo`) for direct pitch builds.
 - Added "Call" outline button (`tel:`) to Contact booking card and location card.
 - Replaced Why-us trust points with 4 neutral config-driven pairs in EN and BN (no "main road" or "reports" claims).
 - Created text-only `public/og.png` (1200x630) with OpenGraph and Twitter card metadata in `Base.astro` using `config.siteUrl`.
