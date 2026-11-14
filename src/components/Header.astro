@@ -3,7 +3,6 @@ import { centre } from '../config/index';
 import { ui, t } from '../config/ui';
 import type { Lang } from '../config/types';
 import { getGeneralWhatsAppUrl } from '../lib/whatsapp';
-import Icon from './Icon.astro';
 
 interface Props {
   lang?: Lang;
@@ -53,13 +52,12 @@ const whatsappUrl = getGeneralWhatsAppUrl(lang);
       <!-- Book a test Button -->
       <a
         href={whatsappUrl}
-        class="btn btn-primary header-book-btn"
+        class="header-book-btn"
         target="_blank"
         rel="noopener noreferrer"
       >
-        <Icon name="calendar" class="header-btn-icon" />
-        <span class="header-btn-text-full">{t(ui.bookTest, lang)}</span>
-        <span class="header-btn-text-short">{lang === 'bn' ? 'বুকিং' : 'Book'}</span>
+        <span class="btn-text-full">{t(ui.bookTest, lang)}</span>
+        <span class="btn-text-short">{lang === 'bn' ? 'বুকিং' : 'Book'}</span>
       </a>
     </div>
   </div>
@@ -157,13 +155,15 @@ const whatsappUrl = getGeneralWhatsAppUrl(lang);
     border: 1px solid var(--rule);
     border-radius: 9999px;
     padding: 2px;
-    height: 38px;
+    height: 36px;
+    box-sizing: border-box;
   }
 
   .lang-btn {
-    min-height: 34px;
-    min-width: 44px;
-    padding: 0 10px;
+    height: 30px;
+    min-height: 30px;
+    min-width: 38px;
+    padding: 0 8px;
     display: inline-flex;
     align-items: center;
     justify-content: center;
@@ -192,56 +192,81 @@ const whatsappUrl = getGeneralWhatsAppUrl(lang);
   }
 
   .header-book-btn {
-    min-height: 40px;
-    height: 40px;
+    height: 36px;
+    min-height: 36px;
     padding: 0 var(--space-16);
+    background-color: var(--primary);
+    color: var(--primary-ink);
+    border: 1px solid var(--primary);
+    border-radius: var(--radius-btn);
     font-size: 0.875rem;
+    font-weight: 600;
+    text-decoration: none;
     white-space: nowrap;
     display: inline-flex;
     align-items: center;
-    gap: 6px;
+    justify-content: center;
+    transition: background-color 0.15s ease;
+    box-sizing: border-box;
   }
 
-  .header-btn-icon {
-    width: 16px;
-    height: 16px;
+  .header-book-btn:hover {
+    background-color: #0b5750;
+    border-color: #0b5750;
   }
 
-  .header-btn-text-short {
+  .header-book-btn:focus-visible {
+    outline: 3px solid var(--primary);
+    outline-offset: 2px;
+  }
+
+  .btn-text-short {
     display: none;
   }
 
-  @media (max-width: 500px) {
-    .header-btn-text-full {
+  @media (max-width: 540px) {
+    .header-book-btn {
+      height: 34px;
+      min-height: 34px;
+      padding: 0 var(--space-12);
+      font-size: 0.8125rem;
+    }
+
+    .btn-text-full {
       display: none;
     }
 
-    .header-btn-text-short {
+    .btn-text-short {
       display: inline;
     }
 
-    .header-book-btn {
-      padding: 0 var(--space-10);
-      font-size: 0.8125rem;
+    .lang-switcher {
+      height: 34px;
+    }
+
+    .lang-btn {
+      height: 28px;
+      min-height: 28px;
+      min-width: 34px;
+      padding: 0 6px;
+      font-size: 0.75rem;
     }
   }
 
   @media (max-width: 360px) {
     .brand-wordmark {
       font-size: 0.875rem;
-      max-width: 110px;
+      max-width: 100px;
       overflow: hidden;
       text-overflow: ellipsis;
     }
 
-    .lang-btn {
-      min-width: 32px;
-      padding: 0 6px;
-      font-size: 0.75rem;
+    .header-right {
+      gap: 6px;
     }
 
     .header-book-btn {
-      padding: 0 6px;
+      padding: 0 8px;
     }
   }
 </style>
