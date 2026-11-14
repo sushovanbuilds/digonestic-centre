@@ -3,8 +3,8 @@
 import { readdirSync, readFileSync, statSync, existsSync } from 'node:fs';
 import { join, extname } from 'node:path';
 
-const isDemoMode = process.argv.includes('--demo');
-const targetDir = isDemoMode ? 'dist-demo' : 'dist';
+const isDemoMode = !process.argv.includes('--placeholders');
+const targetDir = existsSync('dist') ? 'dist' : 'dist-demo';
 
 const BANNED = /\b(NABL|ISO ?\d+|accredited|certified|verified|state-of-the-art|24x7|24\/7|same-day|cold-chain|phlebotom\w*|painless|leading|best in)\b/i;
 const FORBIDDEN_DIST = /(cdn\.tailwindcss\.com|fonts\.googleapis\.com|fonts\.gstatic\.com|material-symbols|<form[\s>]|<input[\s>]|<textarea|localStorage|sessionStorage)/i;
