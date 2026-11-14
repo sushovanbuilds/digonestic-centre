@@ -6,7 +6,7 @@ import type { CentreConfig } from './types';
    ========================================================================== */
 const REAL_CENTRE = {
   name: '[CENTRE NAME]',
-  whatsapp: '910000000000', // Digits only with country code, e.g. 919876543210
+  whatsapp: '916289217587', // Digits only with country code, e.g. 919876543210
   phone: '+91 00000 00000',
   areaLabel: {
     en: '[AREA, TOWN]',

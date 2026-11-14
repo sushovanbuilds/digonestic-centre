@@ -19,7 +19,7 @@ export const centre: CentreConfig = {
   },
   contact: {
     phone: '+91 00000 00000',
-    whatsapp: '910000000000',
+    whatsapp: '916289217587',
   },
   location: {
     areaLabel: {

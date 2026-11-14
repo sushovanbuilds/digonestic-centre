@@ -20,7 +20,7 @@ Update this file at the end of every stage. Keep it under 60 lines.
 - Created text-only `public/og.png` (1200x630) with OpenGraph and Twitter card metadata in `Base.astro` using `config.siteUrl`.
 
 ## Open (ask the owner, default in brackets)
-- Edit top 5 fields in `src/config/centre.demo.ts` with real clinic pitching details.
+- Edit remaining fields in `src/config/centre.demo.ts` with real clinic pitching details (WhatsApp routed to +916289217587).
 - Toggle `preview: false` and `emitSchema: true` on official deployment.
 
 ## Quality gates & checks
