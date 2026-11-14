@@ -6,12 +6,14 @@ export interface TestItem {
   blurb: string;
   includes: string[];
   prep?: string;
+  price?: string;
   waUrl: string;
 }
 
 interface TestListProps {
   tests: TestItem[];
   initialOpenId?: string;
+  showPrices?: boolean;
   testHeaderLabel?: string;
   detailsHeaderLabel?: string;
   whatsIncludedLabel?: string;
@@ -22,6 +24,7 @@ interface TestListProps {
 export default function TestList({
   tests,
   initialOpenId,
+  showPrices = false,
   testHeaderLabel = 'Test',
   detailsHeaderLabel = 'Details',
   whatsIncludedLabel = "What's included",
@@ -66,20 +69,25 @@ export default function TestList({
                   <span className="test-name">{test.name}</span>
                   <span className="test-blurb">{test.blurb}</span>
                 </div>
-                <span className={`test-chevron ${isOpen ? 'is-rotated' : ''}`} aria-hidden="true">
-                  <svg
-                    width="20"
-                    height="20"
-                    viewBox="0 0 24 24"
-                    fill="none"
-                    stroke="currentColor"
-                    strokeWidth="2"
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                  >
-                    <polyline points="6 9 12 15 18 9" />
-                  </svg>
-                </span>
+                <div className="test-row-actions">
+                  {showPrices && test.price && (
+                    <span className="test-price-tag">{test.price}</span>
+                  )}
+                  <span className={`test-chevron ${isOpen ? 'is-rotated' : ''}`} aria-hidden="true">
+                    <svg
+                      width="20"
+                      height="20"
+                      viewBox="0 0 24 24"
+                      fill="none"
+                      stroke="currentColor"
+                      strokeWidth="2"
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
+                    >
+                      <polyline points="6 9 12 15 18 9" />
+                    </svg>
+                  </span>
+                </div>
               </button>
 
               {/* Expandable Panel */}
@@ -114,6 +122,14 @@ export default function TestList({
                         <span className="prep-title">{preparationLabel}</span>
                         <p className="prep-text">{test.prep}</p>
                       </div>
+                    </div>
+                  )}
+
+                  {/* Price in Open Area */}
+                  {showPrices && test.price && (
+                    <div className="test-open-price-row">
+                      <span className="test-open-price-label">Price:</span>
+                      <span className="test-open-price-val">{test.price}</span>
                     </div>
                   )}
 
@@ -223,6 +239,39 @@ export default function TestList({
         .test-blurb {
           font-size: var(--font-size-small);
           color: var(--ink-soft);
+        }
+
+        .test-row-actions {
+          display: flex;
+          align-items: center;
+          gap: var(--space-12);
+        }
+
+        .test-price-tag {
+          font-size: 0.9375rem;
+          font-weight: 650;
+          color: var(--primary);
+          white-space: nowrap;
+        }
+
+        .test-open-price-row {
+          display: flex;
+          align-items: baseline;
+          gap: var(--space-8);
+          margin-bottom: var(--space-16);
+          font-size: 0.9375rem;
+          color: var(--ink);
+        }
+
+        .test-open-price-label {
+          color: var(--ink-soft);
+          font-size: 0.8125rem;
+        }
+
+        .test-open-price-val {
+          font-weight: 700;
+          color: var(--primary);
+          font-size: 1.125rem;
         }
 
         .test-chevron {
@@ -335,7 +384,40 @@ export default function TestList({
         }
 
         @media (prefers-reduced-motion: reduce) {
-          .test-chevron {
+          .test-row-actions {
+          display: flex;
+          align-items: center;
+          gap: var(--space-12);
+        }
+
+        .test-price-tag {
+          font-size: 0.9375rem;
+          font-weight: 650;
+          color: var(--primary);
+          white-space: nowrap;
+        }
+
+        .test-open-price-row {
+          display: flex;
+          align-items: baseline;
+          gap: var(--space-8);
+          margin-bottom: var(--space-16);
+          font-size: 0.9375rem;
+          color: var(--ink);
+        }
+
+        .test-open-price-label {
+          color: var(--ink-soft);
+          font-size: 0.8125rem;
+        }
+
+        .test-open-price-val {
+          font-weight: 700;
+          color: var(--primary);
+          font-size: 1.125rem;
+        }
+
+        .test-chevron {
             transition: none !important;
           }
           .test-panel {

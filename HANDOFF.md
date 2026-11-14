@@ -5,26 +5,26 @@ Update this file at the end of every stage. Keep it under 60 lines.
 ## Status
 - Stage 0 to 5: DONE.
 - Stage 2b (Stitch Match & Bilingual V1): DONE.
-- Active branch: `stage-2b-stitch-match`.
+- Stage 2c (Demo Data & Tailored WhatsApp): DONE.
+- Active branch: `stage-2c-demo-data`.
 
 ## Decisions made
-- Visual source of truth matched against `reference/stitch/*/screen.png`.
-- Zero-JS language toggle (`EN | বাংলা`) in header routing to `/` and `/bn/`.
-- All visible strings isolated in `src/config/ui.ts` with complete Bengali translations.
-- Fonts: `@fontsource-variable/figtree` globally, `@fontsource-variable/noto-sans-bengali` for Bengali pages.
-- Tested against Strip list: no invented claims, parameter counts, or real-looking hours.
-- Verified visual evidence captured in `docs/shots/` at 390px and 1280px viewports.
+- Isolated demo data in `src/config/centre.demo.ts` with top REAL_CENTRE block.
+- Dual-build architecture: standard builds (`npm run build`) strictly contain 0 demo data and no `data-demo`; demo builds (`npm run build:demo`) target `dist-demo` with `<html data-demo="1">`.
+- Visible "Demo data" / "ডেমো তথ্য" and "Sample prices" / "নমুনা মূল্য" pills on all demo surfaces.
+- Tailored bilingual WhatsApp templates with clean line breaks (`\n`) for test, package, doctor consultations, and home collection.
+- Price display (right-aligned ₹ badges) enabled when `flags.showPrices` is true.
 
 ## Open (ask the owner, default in brackets)
-- Replace placeholder text in `src/config/centre.ts` with real clinic data when pitching.
+- Pitching clinic owner: fill top 5 fields in `src/config/centre.demo.ts` (name, area, address, phone, whatsapp).
 - Toggle `preview: false` and `emitSchema: true` on client launch.
 
 ## Quality gates & checks
-- `npm run build`: PASS (static routes `/`, `/bn/`, and test-expanded pages clean).
-- `npx astro check`: PASS (31 files checked, 0 errors, 0 warnings, 0 hints).
-- `npm run check:content`: PASS (0 banned terms, 0 forbidden resources, noindex active).
-- Layout: Zero horizontal scroll at 320px/390px/1280px; Bengali line-height 1.75; no text clipping.
-- Screenshots saved: `docs/shots/desktop-en.png`, `desktop-bn.png`, `desktop-open-row.png`, `mobile-en.png`, `mobile-bn.png`, `mobile-open-row.png`.
+- `npm run build && npm run check:content`: PASS (0 demo data leaks, 0 forbidden claims, noindex active).
+- `npm run build:demo && npm run check:demo`: PASS (`data-demo="1"`, visible demo labels, valid prefilled WhatsApp URLs).
+- `npx astro check`: PASS (33 files checked, 0 errors, 0 warnings, 0 hints).
+- Decoded `wa.me` messages (8 total: en + bn): verified with correct line breaks and zero undefined tokens.
+- Screenshots saved: `docs/shots/demo-desktop-en.png`, `demo-desktop-bn.png`, `demo-desktop-open-row.png`, `demo-mobile-en.png`, `demo-mobile-bn.png`, `demo-mobile-open-row.png`.
 
 ## Next action
-Review captured screenshots in `docs/shots/` and approve branch `stage-2b-stitch-match`.
+Review captured demo screenshots in `docs/shots/demo-*.png` and approve branch `stage-2c-demo-data`.

@@ -12,6 +12,7 @@ Visual source of truth: view reference/stitch/<screen>/screen.png (images only, 
 - All centre-specific content lives in `src/config/centre.ts`. No centre text hardcoded in components.
 - Preview mode: `<meta name="robots" content="noindex, nofollow">` and `public/robots.txt` with `Disallow: /` until the owner says remove.
 - Booking = `wa.me` link with prefilled text, built at build time. Nothing is stored or sent by us.
+- Demo mode (PUBLIC_DEMO=1) may use fictional doctor names, test names, sample prices, demo hours and tailored WhatsApp messages. Still never: accreditation, degrees/qualifications/registration numbers, experience years, turnaround times, reviews/ratings/testimonials, 'verified/certified/leading', real logos/photos. Every surface with demo content shows a visible 'Demo data' label. The non-demo build must contain no demo data.
 
 ## Stack
 - Astro static output, TypeScript, plain CSS with tokens from `DESIGN.md`. No Tailwind CDN, no runtime font or CSS fetch, no Material Symbols font.

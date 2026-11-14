@@ -47,6 +47,11 @@ export const ui = {
     bn: 'কনসেপ্ট প্রিভিউ। এটি অফিসিয়াল ওয়েবসাইট নয়।',
   },
   skipToContent: { en: 'Skip to content', bn: 'মূল অংশে যান' },
+  demoData: { en: 'Demo data', bn: 'ডেমো তথ্য' },
+  demoHeroNote: { en: 'Demo data. Not real tests, doctors or prices.', bn: 'ডেমো তথ্য। আসল পরীক্ষা, ডাক্তার বা মূল্য নয়।' },
+  samplePrices: { en: 'Sample prices', bn: 'নমুনা মূল্য' },
+  bookPackage: { en: 'Book this package', bn: 'প্যাকেজ বুকিং করুন' },
+  packageIncludes: { en: 'Includes', bn: 'অন্তর্ভুক্ত পরীক্ষা' },
   quickInfo: {
     title: { en: 'Timings & Desk', bn: 'সময় ও হেল্পডেস্ক' },
     status: { en: 'Open', bn: 'খোলা আছে' },

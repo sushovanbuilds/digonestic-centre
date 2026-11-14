@@ -42,6 +42,8 @@ export interface CentreConfig {
     doctorSchedule: boolean;
     showReviews: boolean;
     emitSchema: boolean;
+    showPrices?: boolean;
+    isDemo?: boolean;
   };
   tests: {
     id: string;
@@ -49,12 +51,15 @@ export interface CentreConfig {
     blurb: Tx;
     includes: Tx[];
     prep?: Tx;
+    price?: string;
   }[];
   packages: {
     id: string;
     name: Tx;
     blurb: Tx;
     wide?: boolean;
+    price?: string;
+    includes?: Tx[];
   }[];
   why: {
     icon: 'building' | 'chat' | 'list' | 'pin';
@@ -70,5 +75,7 @@ export interface CentreConfig {
     general: Tx;
     test: Tx;
     doctor: Tx;
+    package?: Tx;
+    home?: Tx;
   };
 }

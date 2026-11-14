@@ -1,5 +1,6 @@
 ---
 import Page from '../../components/Page.astro';
+import { centre } from '../../config/index';
 ---
 
-<Page lang="en" initialOpenTestId="test-1" />
+<Page lang="en" initialOpenTestId={centre.tests[0]?.id || 'test-1'} />

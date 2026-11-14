@@ -1,5 +1,5 @@
 ---
-import { centre } from '../config/centre';
+import { centre } from '../config/index';
 import { ui, t } from '../config/ui';
 import type { Lang } from '../config/types';
 import DoctorHours from './DoctorHours.astro';
@@ -65,7 +65,6 @@ const cleanPhone = centre.contact.phone.replace(/\s+/g, '');
       <!-- Right Working Hours Card -->
       <div class="loc-card">
         <h3 class="hours-card-title">{t(ui.workingHours, lang)}</h3>
-        <p class="hours-card-subtitle">{t(ui.hours, lang)}</p>
 
         <table class="hours-ruled-table">
           <tbody>
@@ -206,13 +205,7 @@ const cleanPhone = centre.contact.phone.replace(/\s+/g, '');
     font-size: 1.125rem;
     font-weight: 600;
     color: var(--ink);
-    margin-bottom: 4px;
-  }
-
-  .hours-card-subtitle {
-    font-size: var(--font-size-small);
-    color: var(--ink-soft);
-    margin-bottom: var(--space-20);
+    margin-bottom: var(--space-16);
   }
 
   .hours-ruled-table {

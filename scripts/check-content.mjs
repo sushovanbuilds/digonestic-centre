@@ -1,7 +1,10 @@
-// Usage: node scripts/check-content.mjs   (run after `npm run build`)
-// Fails on banned claims in src/, and on forbidden or external resources in dist/.
+// Usage: node scripts/check-content.mjs [--demo]  (run after `npm run build` or `npm run build:demo`)
+// Fails on banned claims in src/, and on forbidden or external resources in dist/ or dist-demo/.
 import { readdirSync, readFileSync, statSync, existsSync } from 'node:fs';
 import { join, extname } from 'node:path';
+
+const isDemoMode = process.argv.includes('--demo');
+const targetDir = isDemoMode ? 'dist-demo' : 'dist';
 
 const BANNED = /\b(NABL|ISO ?\d+|accredited|certified|verified|state-of-the-art|24x7|24\/7|same-day|cold-chain|phlebotom\w*|painless|leading|best in)\b/i;
 const FORBIDDEN_DIST = /(cdn\.tailwindcss\.com|fonts\.googleapis\.com|fonts\.gstatic\.com|material-symbols|<form[\s>]|<input[\s>]|<textarea|localStorage|sessionStorage)/i;
@@ -27,7 +30,7 @@ for (const f of walk('src', ['.astro', '.ts', '.tsx', '.css', '.md'])) {
   });
 }
 
-for (const f of walk('dist', ['.html', '.js', '.css'])) {
+for (const f of walk(targetDir, ['.html', '.js', '.css'])) {
   const txt = readFileSync(f, 'utf8');
   const bad = txt.match(FORBIDDEN_DIST);
   if (bad) report(`${f} forbidden "${bad[0]}"`);
@@ -38,9 +41,25 @@ for (const f of walk('dist', ['.html', '.js', '.css'])) {
       if (!ALLOWED_HOSTS.has(host)) report(`${f} external url ${url}`);
     }
     if (!/name="robots"[^>]*noindex/i.test(txt) && !/noindex[^>]*name="robots"/i.test(txt)) report(`${f} missing noindex meta`);
+
+    if (isDemoMode) {
+      if (!/data-demo="1"/i.test(txt)) report(`${f} demo build missing data-demo="1"`);
+      if (!/(Demo data|ডেমো তথ্য)/.test(txt)) report(`${f} demo build missing Demo data label`);
+      for (const waUrl of txt.match(/https:\/\/wa\.me\/[^"'\s)<>]+/g) ?? []) {
+        try {
+          const u = new URL(waUrl);
+          const t = u.searchParams.get('text');
+          if (!t || t.trim() === '') report(`${f} wa.me has empty text parameter: ${waUrl}`);
+        } catch {
+          report(`${f} invalid wa.me url: ${waUrl}`);
+        }
+      }
+    } else {
+      if (/data-demo/i.test(txt)) report(`${f} normal build contains data-demo`);
+    }
   }
 }
 if (existsSync('public/robots.txt') && !/Disallow:\s*\//.test(readFileSync('public/robots.txt', 'utf8'))) report('public/robots.txt missing Disallow: /');
 
-console.log(fail ? `\n${fail} problem(s)` : 'content check: pass');
+console.log(fail ? `\n${fail} problem(s)` : `${isDemoMode ? 'demo ' : ''}content check: pass`);
 process.exit(fail ? 1 : 0);

@@ -1,5 +1,5 @@
 ---
-import { centre } from '../config/centre';
+import { centre } from '../config/index';
 import { ui, t } from '../config/ui';
 import type { Lang } from '../config/types';
 
@@ -23,7 +23,14 @@ const { lang = 'en' } = Astro.props;
 
       <div class="footer-col-right">
         <p class="footer-concept-note">
-          {t(ui.footerNotice, lang)}
+          {centre.flags.isDemo ? (
+            <>
+              <span class="sample-tag demo-tag">{t(ui.demoData, lang)}</span>{' '}
+              {t(ui.demoHeroNote, lang)}
+            </>
+          ) : (
+            t(ui.footerNotice, lang)
+          )}
         </p>
       </div>
     </div>

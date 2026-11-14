@@ -1,5 +1,5 @@
 ---
-import { centre } from '../config/centre';
+import { centre } from '../config/index';
 import { ui, t } from '../config/ui';
 import type { Lang } from '../config/types';
 import { getDoctorWhatsAppUrl } from '../lib/whatsapp';
@@ -12,7 +12,12 @@ const { lang = 'en' } = Astro.props;
 ---
 
 <div class="doctor-hours-wrapper">
-  <h3 class="doctor-hours-heading">{t(ui.doctorConsultations, lang)}</h3>
+  <div class="doctor-heading-row">
+    <h3 class="doctor-hours-heading">{t(ui.doctorConsultations, lang)}</h3>
+    {centre.flags.isDemo && (
+      <span class="sample-tag demo-tag">{t(ui.demoData, lang)}</span>
+    )}
+  </div>
 
   <div class="doctor-table-card">
     <div class="doctor-list">
@@ -20,7 +25,7 @@ const { lang = 'en' } = Astro.props;
         const docName = t(doc.name, lang);
         const docSpeciality = t(doc.speciality, lang);
         const docDays = t(doc.days, lang);
-        const docWaUrl = getDoctorWhatsAppUrl(docName, lang);
+        const docWaUrl = getDoctorWhatsAppUrl(docName, docSpeciality, docDays, lang);
 
         return (
           <div class="doctor-row">
@@ -51,10 +56,17 @@ const { lang = 'en' } = Astro.props;
     margin-top: var(--space-48);
   }
 
-  .doctor-hours-heading {
+  .doctor-heading-row {
+    display: flex;
+    align-items: center;
+    gap: var(--space-12);
     margin-bottom: var(--space-16);
+  }
+
+  .doctor-hours-heading {
+    margin: 0;
     font-size: 1.25rem;
-    font-weight: 600;
+    font-weight: 650;
     color: var(--ink);
   }
 

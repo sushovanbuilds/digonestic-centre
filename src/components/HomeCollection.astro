@@ -1,8 +1,8 @@
 ---
-import { centre } from '../config/centre';
+import { centre } from '../config/index';
 import { ui, t } from '../config/ui';
 import type { Lang } from '../config/types';
-import { getGeneralWhatsAppUrl } from '../lib/whatsapp';
+import { getHomeWhatsAppUrl } from '../lib/whatsapp';
 
 interface Props {
   lang?: Lang;
@@ -10,7 +10,7 @@ interface Props {
 
 const { lang = 'en' } = Astro.props;
 const homeCol = centre.homeCollection;
-const whatsappUrl = getGeneralWhatsAppUrl(lang);
+const whatsappUrl = getHomeWhatsAppUrl(lang);
 ---
 
 {homeCol && centre.flags.homeCollection && (

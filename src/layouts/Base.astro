@@ -1,7 +1,7 @@
 ---
 import '@fontsource-variable/figtree';
 import BengaliFont from '../components/BengaliFont.astro';
-import { centre } from '../config/centre';
+import { centre } from '../config/index';
 import { ui, t } from '../config/ui';
 import type { Lang } from '../config/types';
 import { getThemeStyleString } from '../lib/theme';
@@ -36,10 +36,11 @@ const jsonLd = centre.flags.emitSchema
       },
     }
   : null;
+const isDemo = Boolean(centre.flags.isDemo);
 ---
 
 <!doctype html>
-<html lang={lang} style={themeStyle}>
+<html lang={lang} style={themeStyle} data-demo={isDemo ? "1" : undefined}>
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />

@@ -1,8 +1,8 @@
 ---
-import { centre } from '../config/centre';
+import { centre } from '../config/index';
 import { ui, t } from '../config/ui';
 import type { Lang } from '../config/types';
-import { getTestWhatsAppUrl } from '../lib/whatsapp';
+import { getTestWhatsAppUrl, getPackageWhatsAppUrl } from '../lib/whatsapp';
 import SampleTag from './SampleTag.astro';
 import TestList from './islands/TestList';
 import type { TestItem } from './islands/TestList';
@@ -21,6 +21,7 @@ const testItems: TestItem[] = centre.tests.map((test) => ({
   blurb: t(test.blurb, lang),
   includes: test.includes.map((inc) => t(inc, lang)),
   prep: t(test.prep, lang),
+  price: test.price,
   waUrl: getTestWhatsAppUrl(t(test.name, lang), lang),
 }));
 ---
@@ -28,7 +29,15 @@ const testItems: TestItem[] = centre.tests.map((test) => ({
 <section id="tests" class="tests-section">
   <div class="container">
     <div class="section-top-bar">
-      <SampleTag lang={lang} />
+      <div class="tags-group">
+        <SampleTag lang={lang} />
+        {centre.flags.showPrices && (
+          <span class="sample-tag">{t(ui.samplePrices, lang)}</span>
+        )}
+        {centre.flags.isDemo && (
+          <span class="sample-tag demo-tag">{t(ui.demoData, lang)}</span>
+        )}
+      </div>
       <TextAnimation
         client:visible
         text={t(ui.testsAndPackages, lang)}
@@ -43,6 +52,7 @@ const testItems: TestItem[] = centre.tests.map((test) => ({
           client:visible
           tests={testItems}
           initialOpenId={initialOpenTestId}
+          showPrices={centre.flags.showPrices}
           testHeaderLabel={t(ui.test, lang)}
           detailsHeaderLabel={t(ui.details, lang)}
           whatsIncludedLabel={t(ui.whatsIncluded, lang)}
@@ -59,14 +69,26 @@ const testItems: TestItem[] = centre.tests.map((test) => ({
           {centre.packages.map((pkg) => {
             const pkgName = t(pkg.name, lang);
             const pkgBlurb = t(pkg.blurb, lang);
-            const pkgWaUrl = getTestWhatsAppUrl(pkgName, lang);
+            const pkgWaUrl = getPackageWhatsAppUrl(pkgName, lang);
             const isHighlighted = pkg.wide;
 
             return (
               <div class={`package-card ${isHighlighted ? 'is-highlighted' : ''}`}>
                 <div class="package-card-content">
-                  <h4 class="package-name">{pkgName}</h4>
+                  <div class="package-name-price-row">
+                    <h4 class="package-name">{pkgName}</h4>
+                    {centre.flags.showPrices && pkg.price && (
+                      <span class="package-price">{pkg.price}</span>
+                    )}
+                  </div>
                   <p class="package-blurb">{pkgBlurb}</p>
+
+                  {pkg.includes && pkg.includes.length > 0 && (
+                    <p class="package-includes-line">
+                      <span class="includes-label">{t(ui.packageIncludes, lang)}:</span>{' '}
+                      {pkg.includes.map((inc) => t(inc, lang)).join(', ')}
+                    </p>
+                  )}
                 </div>
 
                 <div class="package-footer-row">
@@ -76,7 +98,7 @@ const testItems: TestItem[] = centre.tests.map((test) => ({
                     target="_blank"
                     rel="noopener noreferrer"
                   >
-                    <span>{t(ui.details, lang)}</span>
+                    <span>{t(ui.bookPackage, lang)}</span>
                     <span class="link-arrow" aria-hidden="true">&rarr;</span>
                   </a>
                 </div>
@@ -97,6 +119,12 @@ const testItems: TestItem[] = centre.tests.map((test) => ({
 
   .section-top-bar {
     margin-bottom: var(--space-32);
+  }
+
+  .tags-group {
+    display: flex;
+    flex-wrap: wrap;
+    gap: var(--space-8);
   }
 
   :global(.section-title) {
@@ -151,17 +179,43 @@ const testItems: TestItem[] = centre.tests.map((test) => ({
     border: 1.5px solid var(--primary);
   }
 
+  .package-name-price-row {
+    display: flex;
+    align-items: baseline;
+    justify-content: space-between;
+    gap: var(--space-8);
+    margin-bottom: var(--space-8);
+  }
+
   .package-name {
     font-size: 1.125rem;
     font-weight: 600;
     color: var(--ink);
-    margin-bottom: var(--space-8);
+  }
+
+  .package-price {
+    font-size: 1.125rem;
+    font-weight: 700;
+    color: var(--primary);
+    white-space: nowrap;
   }
 
   .package-blurb {
     font-size: var(--font-size-small);
     color: var(--ink-soft);
     line-height: 1.5;
+  }
+
+  .package-includes-line {
+    font-size: 0.8125rem;
+    color: var(--ink-soft);
+    line-height: 1.5;
+    margin-top: var(--space-8);
+  }
+
+  .includes-label {
+    font-weight: 600;
+    color: var(--ink);
   }
 
   .package-footer-row {

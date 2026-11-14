@@ -1,4 +1,4 @@
-import { centre } from '../config/centre';
+import { centre } from '../config/index.ts';
 
 export function getThemeVariables(): Record<string, string> {
   return {
