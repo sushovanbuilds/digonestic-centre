@@ -52,10 +52,12 @@ export const ui = {
   samplePrices: { en: 'Sample prices', bn: 'নমুনা মূল্য' },
   bookPackage: { en: 'Book this package', bn: 'প্যাকেজ বুকিং করুন' },
   packageIncludes: { en: 'Includes', bn: 'অন্তর্ভুক্ত পরীক্ষা' },
+  call: { en: 'Call', bn: 'কল করুন' },
+  mapPlaceholder: { en: 'Map placeholder', bn: 'ম্যাপের স্থান' },
   quickInfo: {
-    title: { en: 'Timings & Desk', bn: 'সময় ও হেল্পডেস্ক' },
-    status: { en: 'Open', bn: 'খোলা আছে' },
-    delivery: { en: 'Desk + WhatsApp', bn: 'সেন্টার + হোয়াটসঅ্যাপ' },
-    note: { en: 'Sample note placeholder', bn: 'নমুনা নির্দেশিকা' },
+    title: { en: 'Centre Information', bn: 'সেন্টারের তথ্য' },
+    hours: { en: 'Hours', bn: 'সময়' },
+    address: { en: 'Address', bn: 'ঠিকানা' },
+    phone: { en: 'Phone', bn: 'ফোন' },
   },
 } as const;

@@ -1,4 +1,5 @@
 ---
+import { centre } from '../config/index';
 import { ui, t } from '../config/ui';
 import type { Lang } from '../config/types';
 import { getGeneralWhatsAppUrl } from '../lib/whatsapp';
@@ -41,6 +42,15 @@ const whatsappUrl = getGeneralWhatsAppUrl(lang);
               <path d="M7.9 20A9 9 0 1 0 4 16.1L2 22z" />
             </svg>
             <span>{t(ui.requestOnWhatsApp, lang)}</span>
+          </a>
+        </Press>
+        <Press client:visible>
+          <a
+            href={`tel:${centre.contact.phone.replace(/\s+/g, '')}`}
+            class="btn btn-outline booking-btn"
+          >
+            <Icon name="phone" class="btn-icon" />
+            <span>{t(ui.call, lang)}</span>
           </a>
         </Press>
       </div>
@@ -129,10 +139,13 @@ const whatsappUrl = getGeneralWhatsAppUrl(lang);
   .booking-action-wrap {
     width: 100%;
     display: flex;
+    flex-wrap: wrap;
+    align-items: center;
     justify-content: center;
+    gap: var(--space-12);
   }
 
   .booking-btn {
-    min-width: 240px;
+    min-width: 200px;
   }
 </style>

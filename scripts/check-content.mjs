@@ -8,7 +8,7 @@ const targetDir = isDemoMode ? 'dist-demo' : 'dist';
 
 const BANNED = /\b(NABL|ISO ?\d+|accredited|certified|verified|state-of-the-art|24x7|24\/7|same-day|cold-chain|phlebotom\w*|painless|leading|best in)\b/i;
 const FORBIDDEN_DIST = /(cdn\.tailwindcss\.com|fonts\.googleapis\.com|fonts\.gstatic\.com|material-symbols|<form[\s>]|<input[\s>]|<textarea|localStorage|sessionStorage)/i;
-const ALLOWED_HOSTS = new Set(['wa.me', 'maps.google.com', 'www.google.com', 'maps.app.goo.gl', 'www.w3.org', 'schema.org']);
+const ALLOWED_HOSTS = new Set(['wa.me', 'maps.google.com', 'www.google.com', 'maps.app.goo.gl', 'www.w3.org', 'schema.org', 'example.com']);
 
 function walk(dir, exts, out = []) {
   if (!existsSync(dir)) return out;

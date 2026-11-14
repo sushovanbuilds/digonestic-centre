@@ -172,13 +172,6 @@ export default function TestList({
           font-size: 0.8125rem;
           font-weight: 600;
           color: var(--ink-soft);
-          text-transform: uppercase;
-          letter-spacing: 0.04em;
-        }
-
-        html[lang="bn"] .test-card-header {
-          text-transform: none !important;
-          letter-spacing: normal !important;
         }
 
         .test-card-rows {

@@ -47,6 +47,14 @@ const isDemo = Boolean(centre.flags.isDemo);
     <meta name="robots" content="noindex, nofollow" />
     <title>{title}</title>
     <meta name="description" content={description} />
+    <meta property="og:title" content={`${centre.name} website concept`} />
+    <meta property="og:description" content="Sample website concept with demo data" />
+    <meta property="og:type" content="website" />
+    <meta property="og:image" content={new URL('/og.png', centre.siteUrl || 'https://example.com').href} />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content={`${centre.name} website concept`} />
+    <meta name="twitter:description" content="Sample website concept with demo data" />
+    <meta name="twitter:image" content={new URL('/og.png', centre.siteUrl || 'https://example.com').href} />
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
     <link rel="alternate" hreflang="en" href="/" />
     <link rel="alternate" hreflang="bn" href="/bn/" />

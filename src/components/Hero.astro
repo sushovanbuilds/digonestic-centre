@@ -3,6 +3,7 @@ import { centre } from '../config/index';
 import { ui, t } from '../config/ui';
 import type { Lang } from '../config/types';
 import { getGeneralWhatsAppUrl } from '../lib/whatsapp';
+import Icon from './Icon.astro';
 import Press from './islands/Press';
 
 interface Props {
@@ -66,25 +67,46 @@ const titleWords = centre.name.split(' ');
       <div class="quick-info-card">
         <div class="quick-info-header">
           <span class="quick-info-label">{t(ui.quickInfo.title, lang)}</span>
-          <span class="quick-info-badge">
-            <span class="badge-dot" aria-hidden="true"></span>
-            {t(ui.quickInfo.status, lang)}
-          </span>
         </div>
 
         <div class="quick-info-body">
-          <div class="quick-info-row">
-            <span class="row-label">{t(ui.hours, lang)}:</span>
-            <span class="row-value">{t(centre.hours[0]?.value, lang)}</span>
+          <div class="quick-info-row hours-row">
+            <span class="row-label">{t(ui.quickInfo.hours, lang)}</span>
+            <div class="row-hours-list">
+              {centre.hours.map((h) => (
+                <div class="hour-item">
+                  <span class="hour-label">{t(h.label, lang)}</span>
+                  <span class="hour-value">{t(h.value, lang)}</span>
+                </div>
+              ))}
+            </div>
           </div>
-          <div class="quick-info-row">
-            <span class="row-label">{t(ui.quickInfo.delivery, lang)}</span>
+
+          <div class="quick-info-row address-row">
+            <span class="row-label">{t(ui.quickInfo.address, lang)}</span>
+            <address class="quick-info-address">
+              <span class="quick-info-area">{t(centre.location.areaLabel, lang)}</span>
+              {centre.location.addressLines.map((line) => (
+                <span class="quick-info-line">{t(line, lang)}</span>
+              ))}
+            </address>
+          </div>
+
+          <div class="quick-info-row phone-row">
+            <span class="row-label">{t(ui.quickInfo.phone, lang)}</span>
+            <a href={`tel:${centre.contact.phone.replace(/\s+/g, '')}`} class="quick-info-phone">
+              <Icon name="phone" class="phone-inline-icon" />
+              <span>{centre.contact.phone}</span>
+            </a>
+          </div>
+
+          <div class="quick-info-action">
+            <a href={centre.location.mapUrl} class="btn btn-outline quick-info-map-btn" target="_blank" rel="noopener noreferrer">
+              <Icon name="pin" class="btn-icon" />
+              <span>{t(ui.openMaps, lang)}</span>
+            </a>
           </div>
         </div>
-
-        <p class="quick-info-footer">
-          {t(ui.quickInfo.note, lang)}
-        </p>
       </div>
     </aside>
   </div>
@@ -218,74 +240,110 @@ const titleWords = centre.name.split(' ');
   }
 
   .quick-info-card {
-    background-color: var(--paper);
+    background-color: #ffffff;
     border: 1px solid var(--rule);
     border-radius: var(--radius-card);
-    padding: var(--space-24);
+    padding: var(--space-20);
     display: flex;
     flex-direction: column;
     gap: var(--space-16);
   }
 
   .quick-info-header {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
     padding-bottom: var(--space-12);
     border-bottom: 1px solid var(--rule);
   }
 
   .quick-info-label {
     font-size: var(--font-size-small);
-    font-weight: 600;
+    font-weight: 650;
     color: var(--ink);
-  }
-
-  .quick-info-badge {
-    display: inline-flex;
-    align-items: center;
-    gap: 6px;
-    font-size: 0.75rem;
-    font-weight: 600;
-    color: var(--primary);
-    background-color: var(--tint);
-    padding: 3px 8px;
-    border-radius: 9999px;
-  }
-
-  .badge-dot {
-    width: 6px;
-    height: 6px;
-    border-radius: 50%;
-    background-color: var(--primary);
+    letter-spacing: 0.02em;
   }
 
   .quick-info-body {
     display: flex;
     flex-direction: column;
-    gap: var(--space-12);
+    gap: var(--space-16);
   }
 
   .quick-info-row {
     display: flex;
-    justify-content: space-between;
+    flex-direction: column;
+    gap: 4px;
     font-size: var(--font-size-small);
   }
 
   .row-label {
     color: var(--ink-soft);
+    font-size: 0.75rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.04em;
   }
 
-  .row-value {
+  html[lang="bn"] .row-label {
+    text-transform: none;
+    letter-spacing: normal;
+  }
+
+  .row-hours-list {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+  }
+
+  .hour-item {
+    display: flex;
+    justify-content: space-between;
+    font-size: var(--font-size-small);
+  }
+
+  .hour-label {
     color: var(--ink);
     font-weight: 500;
   }
 
-  .quick-info-footer {
-    font-size: 0.75rem;
+  .hour-value {
     color: var(--ink-soft);
-    padding-top: var(--space-12);
-    border-top: 1px solid var(--rule);
-    margin: 0;
+  }
+
+  .quick-info-address {
+    font-style: normal;
+    display: flex;
+    flex-direction: column;
+    gap: 2px;
+    color: var(--ink-soft);
+    font-size: var(--font-size-small);
+  }
+
+  .quick-info-area {
+    color: var(--ink);
+    font-weight: 600;
+  }
+
+  .quick-info-phone {
+    display: inline-flex;
+    align-items: center;
+    gap: var(--space-8);
+    color: var(--ink);
+    font-weight: 500;
+    text-decoration: underline;
+  }
+
+  .phone-inline-icon {
+    width: 16px;
+    height: 16px;
+    color: var(--primary);
+  }
+
+  .quick-info-action {
+    padding-top: var(--space-4);
+  }
+
+  .quick-info-map-btn {
+    width: 100%;
+    justify-content: center;
+    font-size: var(--font-size-small);
   }
 </style>

@@ -29,7 +29,7 @@ const cleanPhone = centre.contact.phone.replace(/\s+/g, '');
         <!-- Static Tinted Map Placeholder Frame -->
         <div class="map-placeholder-frame" aria-hidden="true">
           <Icon name="pin" class="map-placeholder-icon" />
-          <span class="map-placeholder-text">Map placeholder</span>
+          <span class="map-placeholder-text">{t(ui.mapPlaceholder, lang)}</span>
         </div>
 
         <div class="loc-card-body">
@@ -105,7 +105,7 @@ const cleanPhone = centre.contact.phone.replace(/\s+/g, '');
     .location-cards-grid {
       grid-template-columns: 1fr 1fr;
       gap: var(--space-32);
-      align-items: stretch;
+      align-items: start;
     }
   }
 
@@ -116,7 +116,7 @@ const cleanPhone = centre.contact.phone.replace(/\s+/g, '');
     padding: var(--space-24);
     display: flex;
     flex-direction: column;
-    justify-content: space-between;
+    gap: var(--space-16);
   }
 
   /* Static Tinted Map Placeholder Frame */

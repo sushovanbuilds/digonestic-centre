@@ -6,25 +6,27 @@ Update this file at the end of every stage. Keep it under 60 lines.
 - Stage 0 to 5: DONE.
 - Stage 2b (Stitch Match & Bilingual V1): DONE.
 - Stage 2c (Demo Data & Tailored WhatsApp): DONE.
-- Active branch: `stage-2c-demo-data`.
+- Stage 3 (Pitch Ready Polish & Mobile Sticky Bar): DONE.
+- Active branch: `stage-3-pitch-ready`.
 
 ## Decisions made
-- Isolated demo data in `src/config/centre.demo.ts` with top REAL_CENTRE block.
-- Dual-build architecture: standard builds (`npm run build`) strictly contain 0 demo data and no `data-demo`; demo builds (`npm run build:demo`) target `dist-demo` with `<html data-demo="1">`.
-- Visible "Demo data" / "ডেমো তথ্য" and "Sample prices" / "নমুনা মূল্য" pills on all demo surfaces.
-- Tailored bilingual WhatsApp templates with clean line breaks (`\n`) for test, package, doctor consultations, and home collection.
-- Price display (right-aligned ₹ badges) enabled when `flags.showPrices` is true.
+- Hero quick-info card polished: removed live "Open" badge and "Desk + WhatsApp" row; displays hours, address, phone, and maps CTA.
+- Hours card height fits content cleanly (`align-items: start;` in grid).
+- Added mobile (<700px) sticky bottom bar with "WhatsApp us" and "Call" buttons, respecting safe-area insets and auto-hiding when booking card is in view.
+- Added "Call" outline button (`tel:`) to Contact booking card.
+- Replaced Why-us trust points with 4 neutral config-driven pairs in EN and BN (no "main road" or "reports" claims).
+- Translated "Map placeholder" for BN (`ম্যাপের স্থান`) and merged top test section pills into "Demo data" + "Sample prices".
+- Created text-only `public/og.png` (1200x630) with OpenGraph and Twitter card metadata in `Base.astro` using `config.siteUrl`.
 
 ## Open (ask the owner, default in brackets)
-- Pitching clinic owner: fill top 5 fields in `src/config/centre.demo.ts` (name, area, address, phone, whatsapp).
-- Toggle `preview: false` and `emitSchema: true` on client launch.
+- Edit top 5 fields in `src/config/centre.demo.ts` with real clinic pitching details.
+- Toggle `preview: false` and `emitSchema: true` on official deployment.
 
 ## Quality gates & checks
-- `npm run build && npm run check:content`: PASS (0 demo data leaks, 0 forbidden claims, noindex active).
+- `npm run build && npm run check:content`: PASS (0 banned terms, 0 forbidden resources, noindex active).
 - `npm run build:demo && npm run check:demo`: PASS (`data-demo="1"`, visible demo labels, valid prefilled WhatsApp URLs).
-- `npx astro check`: PASS (33 files checked, 0 errors, 0 warnings, 0 hints).
-- Decoded `wa.me` messages (8 total: en + bn): verified with correct line breaks and zero undefined tokens.
-- Screenshots saved: `docs/shots/demo-desktop-en.png`, `demo-desktop-bn.png`, `demo-desktop-open-row.png`, `demo-mobile-en.png`, `demo-mobile-bn.png`, `demo-mobile-open-row.png`.
+- `npx astro check`: PASS (34 files checked, 0 errors, 0 warnings, 0 hints).
+- Screenshots saved: `docs/shots/pitch-desktop-en.png`, `pitch-desktop-bn.png`, `pitch-mobile-en.png`, `pitch-mobile-bn.png`, `pitch-sticky-bar.png`.
 
 ## Next action
-Review captured demo screenshots in `docs/shots/demo-*.png` and approve branch `stage-2c-demo-data`.
+Ready for client pitch presentation.

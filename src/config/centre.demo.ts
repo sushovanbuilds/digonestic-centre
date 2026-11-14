@@ -23,6 +23,7 @@ const REAL_CENTRE = {
 export const centreDemo: CentreConfig = {
   lang: 'en',
   preview: true,
+  siteUrl: 'https://example.com',
   name: REAL_CENTRE.name,
   tagline: {
     en: 'Tests and doctor consultations in one place.',
@@ -256,23 +257,47 @@ export const centreDemo: CentreConfig = {
   why: [
     {
       icon: 'building',
-      title: { en: 'Tests and doctor consultations', bn: 'টেস্ট ও ডাক্তারের পরামর্শ' },
-      text: { en: 'Tests and doctor consultations under one roof', bn: 'একই ছাদের নিচে টেস্ট ও বিশেষজ্ঞ চিকিৎসকের পরামর্শ।' },
+      title: {
+        en: 'Tests and doctor consultations under one roof',
+        bn: 'এক ছাদের নিচে পরীক্ষা ও বিশেষজ্ঞ পরামর্শ',
+      },
+      text: {
+        en: 'Book a test or a doctor visit in the same place.',
+        bn: 'একই ঠিকানায় প্রয়োজনীয় পরীক্ষা বা ডাক্তারের পরামর্শ নিন।',
+      },
     },
     {
       icon: 'chat',
-      title: { en: 'WhatsApp booking', bn: 'হোয়াটসঅ্যাপে সহজ বুকিং' },
-      text: { en: 'Booking requests by WhatsApp', bn: 'হোয়াটসঅ্যাপ মেসেজে সহজ টেস্ট ও ডাক্তারের সিরিয়াল বুকিং।' },
+      title: {
+        en: 'Booking requests by WhatsApp',
+        bn: 'হোয়াটসঅ্যাপে বুকিং অনুরোধ',
+      },
+      text: {
+        en: 'Send your request on WhatsApp and the centre replies.',
+        bn: 'হোয়াটসঅ্যাপে আপনার অনুরোধ পাঠান, সেন্টার থেকে যোগাযোগ করা হবে।',
+      },
     },
     {
       icon: 'list',
-      title: { en: 'Simple layout', bn: 'সহজ ও স্পষ্ট রিপোর্ট' },
-      text: { en: 'Simple, readable layout', bn: 'রোগীর সুবিধার্থে সহজ ও পরিষ্কার বিন্যাস।' },
+      title: {
+        en: 'Simple, readable layout',
+        bn: 'সহজ ও স্পষ্ট বিন্যাস',
+      },
+      text: {
+        en: 'Clear pages that are easy to read on a phone.',
+        bn: 'ফোনে সহজেই পড়ার মতো পরিষ্কার পৃষ্ঠা।',
+      },
     },
     {
       icon: 'pin',
-      title: { en: 'Easy to find', bn: 'সহজে পৌঁছানোর মতো অবস্থান' },
-      text: { en: 'Easy to find with address and map link', bn: 'প্রধান সড়কের পাশে সুগম যোগাযোগ ব্যবস্থা।' },
+      title: {
+        en: 'Easy to find',
+        bn: 'সহজে খুঁজে পাওয়ার ঠিকানা',
+      },
+      text: {
+        en: 'Address, phone and map link in one place.',
+        bn: 'একই সাথে ঠিকানা, ফোন নম্বর এবং ম্যাপের লিংক।',
+      },
     },
   ],
   homeCollection: {

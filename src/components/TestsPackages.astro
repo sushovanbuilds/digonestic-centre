@@ -30,12 +30,13 @@ const testItems: TestItem[] = centre.tests.map((test) => ({
   <div class="container">
     <div class="section-top-bar">
       <div class="tags-group">
-        <SampleTag lang={lang} />
+        {centre.flags.isDemo ? (
+          <span class="sample-tag demo-tag">{t(ui.demoData, lang)}</span>
+        ) : (
+          <SampleTag lang={lang} />
+        )}
         {centre.flags.showPrices && (
           <span class="sample-tag">{t(ui.samplePrices, lang)}</span>
-        )}
-        {centre.flags.isDemo && (
-          <span class="sample-tag demo-tag">{t(ui.demoData, lang)}</span>
         )}
       </div>
       <TextAnimation

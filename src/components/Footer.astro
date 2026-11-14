@@ -63,6 +63,12 @@ const { lang = 'en' } = Astro.props;
     font-size: var(--font-size-small);
   }
 
+  @media (max-width: 700px) {
+    .site-footer {
+      padding-bottom: calc(var(--space-48) + 72px + env(safe-area-inset-bottom, 0px));
+    }
+  }
+
   .footer-container {
     display: flex;
     flex-direction: column;

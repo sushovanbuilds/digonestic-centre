@@ -8,6 +8,7 @@ export interface Tx {
 export interface CentreConfig {
   lang: Lang;
   preview: boolean;
+  siteUrl?: string;
   name: string;
   tagline: Tx;
   theme: {

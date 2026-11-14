@@ -1,0 +1,112 @@
+---
+import { centre } from '../config/index';
+import { ui, t } from '../config/ui';
+import type { Lang } from '../config/types';
+import { getGeneralWhatsAppUrl } from '../lib/whatsapp';
+import Icon from './Icon.astro';
+
+interface Props {
+  lang?: Lang;
+}
+
+const { lang = 'en' } = Astro.props;
+const whatsappUrl = getGeneralWhatsAppUrl(lang);
+const cleanPhone = centre.contact.phone.replace(/\s+/g, '');
+---
+
+<aside id="mobile-sticky-bar" class="mobile-sticky-bar" aria-label="Quick mobile actions">
+  <div class="sticky-bar-inner">
+    <a
+      href={whatsappUrl}
+      class="btn btn-wa sticky-btn"
+      target="_blank"
+      rel="noopener noreferrer"
+    >
+      <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+        <path d="M7.9 20A9 9 0 1 0 4 16.1L2 22z" />
+      </svg>
+      <span>{t(ui.whatsappUs, lang)}</span>
+    </a>
+
+    <a href={`tel:${cleanPhone}`} class="btn btn-outline sticky-btn">
+      <Icon name="phone" class="btn-icon" />
+      <span>{t(ui.call, lang)}</span>
+    </a>
+  </div>
+</aside>
+
+<script>
+  function setupStickyBar() {
+    const bar = document.getElementById('mobile-sticky-bar');
+    const contactSection = document.getElementById('contact');
+    if (!bar || !contactSection || !('IntersectionObserver' in window)) return;
+
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            bar.classList.add('is-hidden');
+          } else {
+            bar.classList.remove('is-hidden');
+          }
+        });
+      },
+      { threshold: 0.1 }
+    );
+
+    observer.observe(contactSection);
+  }
+
+  // Run on page load
+  setupStickyBar();
+  // Support Astro view transitions if any
+  document.addEventListener('astro:page-load', setupStickyBar);
+</script>
+
+<style>
+  .mobile-sticky-bar {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    z-index: 100;
+    background-color: rgba(255, 255, 255, 0.96);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    border-top: 1px solid var(--rule);
+    padding: var(--space-8) var(--space-16) calc(var(--space-8) + env(safe-area-inset-bottom, 0px));
+    box-shadow: 0 -4px 16px rgba(15, 36, 48, 0.08);
+    transition: transform 0.25s ease, opacity 0.25s ease;
+  }
+
+  .mobile-sticky-bar.is-hidden {
+    transform: translateY(100%);
+    opacity: 0;
+    pointer-events: none;
+  }
+
+  .sticky-bar-inner {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: var(--space-12);
+    max-width: 500px;
+    margin: 0 auto;
+  }
+
+  .sticky-btn {
+    min-height: 48px;
+    padding: 0 var(--space-12);
+    font-size: var(--font-size-small);
+    font-weight: 600;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: var(--space-8);
+  }
+
+  @media (min-width: 701px) {
+    .mobile-sticky-bar {
+      display: none !important;
+    }
+  }
+</style>
