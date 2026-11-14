@@ -1,0 +1,8 @@
+---
+import { centre } from '../config/centre';
+---
+
+<section id="hero">
+  <h1>{centre.name}</h1>
+  <p>{centre.tagline[centre.lang] ?? centre.tagline.en}</p>
+</section>

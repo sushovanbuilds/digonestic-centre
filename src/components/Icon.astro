@@ -1,0 +1,10 @@
+---
+interface Props {
+  name: 'building' | 'chat' | 'list' | 'pin';
+  class?: string;
+}
+
+const { name, class: className = '' } = Astro.props;
+---
+
+<span class={`icon icon-${name} ${className}`}></span>

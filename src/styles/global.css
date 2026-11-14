@@ -1,0 +1,10 @@
+*, *::before, *::after {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: var(--font-family-base, sans-serif);
+  color: var(--color-ink, #0f172a);
+  background-color: var(--color-paper, #ffffff);
+}

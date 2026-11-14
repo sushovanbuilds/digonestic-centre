@@ -1,0 +1,30 @@
+---
+import { centre } from '../config/centre';
+import { getThemeStyleString } from '../lib/theme';
+import '../styles/tokens.css';
+import '../styles/global.css';
+
+interface Props {
+  title?: string;
+  description?: string;
+}
+
+const { title = centre.name, description = centre.tagline[centre.lang] ?? centre.tagline.en } = Astro.props;
+const themeStyle = getThemeStyleString();
+---
+
+<!doctype html>
+<html lang={centre.lang} style={themeStyle}>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="robots" content="noindex, nofollow" />
+    <title>{title}</title>
+    <meta name="description" content={description} />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    {centre.flags.emitSchema && <slot name="schema" />}
+  </head>
+  <body>
+    <slot />
+  </body>
+</html>

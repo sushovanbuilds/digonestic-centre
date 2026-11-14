@@ -1,0 +1,9 @@
+---
+import { centre } from '../config/centre';
+---
+
+{centre.homeCollection && (
+  <section id="home-collection">
+    <h2>{centre.homeCollection.title[centre.lang] ?? centre.homeCollection.title.en}</h2>
+  </section>
+)}

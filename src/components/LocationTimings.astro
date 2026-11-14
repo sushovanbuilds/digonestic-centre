@@ -1,0 +1,9 @@
+---
+import { centre, ui } from '../config/centre';
+import DoctorHours from './DoctorHours.astro';
+---
+
+<section id="location">
+  <h2>{ui.locationHeading[centre.lang] ?? ui.locationHeading.en}</h2>
+  {centre.flags.doctorSchedule && <DoctorHours />}
+</section>

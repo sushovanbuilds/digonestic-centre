@@ -1,0 +1,9 @@
+---
+import { centre, ui } from '../config/centre';
+import SampleTag from './SampleTag.astro';
+---
+
+<section id="tests">
+  <SampleTag />
+  <h2>{ui.testsHeading[centre.lang] ?? ui.testsHeading.en}</h2>
+</section>
