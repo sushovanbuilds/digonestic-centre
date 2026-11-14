@@ -270,11 +270,11 @@ export const centreDemo: CentreConfig = {
       icon: 'chat',
       title: {
         en: 'Booking requests by WhatsApp',
-        bn: 'হোয়াটসঅ্যাপে বুকিং অনুরোধ',
+        bn: 'WhatsApp বুকিং',
       },
       text: {
         en: 'Send your request on WhatsApp and the centre replies.',
-        bn: 'হোয়াটসঅ্যাপে আপনার অনুরোধ পাঠান, সেন্টার থেকে যোগাযোগ করা হবে।',
+        bn: 'WhatsApp-এ আপনার অনুরোধ পাঠান, সেন্টার থেকে যোগাযোগ করা হবে।',
       },
     },
     {
@@ -304,7 +304,7 @@ export const centreDemo: CentreConfig = {
     title: { en: 'Home sample collection', bn: 'বাড়িতে নমুনা সংগ্রহ' },
     text: {
       en: 'Home sample collection on request. Send your area and preferred time on WhatsApp.',
-      bn: 'অনুরোধে বাড়িতে গিয়ে নমুনা সংগ্রহ করা হয়। আপনার এলাকা ও সুবিধাজনক সময় হোয়াটসঅ্যাপে জানান।',
+      bn: 'অনুরোধে বাড়িতে গিয়ে নমুনা সংগ্রহ করা হয়। আপনার এলাকা ও সুবিধাজনক সময় WhatsApp-এ জানান।',
     },
   },
   reviewSlots: 3,

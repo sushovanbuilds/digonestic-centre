@@ -43,12 +43,14 @@ const titleWords = centre.name.split(' ');
       <div class="hero-actions">
         <Press client:visible>
           <a href="#tests" class="btn btn-primary hero-btn">
-            {t(ui.bookTest, lang)}
+            <Icon name="calendar" class="btn-icon" />
+            <span>{t(ui.bookTest, lang)}</span>
           </a>
         </Press>
         <Press client:visible>
           <a href={whatsappUrl} class="btn btn-wa hero-btn" target="_blank" rel="noopener noreferrer">
-            {t(ui.whatsappUs, lang)}
+            <Icon name="whatsapp" class="btn-icon" />
+            <span>{t(ui.whatsappUs, lang)}</span>
           </a>
         </Press>
       </div>
@@ -71,7 +73,10 @@ const titleWords = centre.name.split(' ');
 
         <div class="quick-info-body">
           <div class="quick-info-row hours-row">
-            <span class="row-label">{t(ui.quickInfo.hours, lang)}</span>
+            <span class="row-label">
+              <Icon name="clock" class="row-label-icon" />
+              <span>{t(ui.quickInfo.hours, lang)}</span>
+            </span>
             <div class="row-hours-list">
               {centre.hours.map((h) => (
                 <div class="hour-item">
@@ -83,7 +88,10 @@ const titleWords = centre.name.split(' ');
           </div>
 
           <div class="quick-info-row address-row">
-            <span class="row-label">{t(ui.quickInfo.address, lang)}</span>
+            <span class="row-label">
+              <Icon name="pin" class="row-label-icon" />
+              <span>{t(ui.quickInfo.address, lang)}</span>
+            </span>
             <address class="quick-info-address">
               <span class="quick-info-area">{t(centre.location.areaLabel, lang)}</span>
               {centre.location.addressLines.map((line) => (
@@ -93,7 +101,10 @@ const titleWords = centre.name.split(' ');
           </div>
 
           <div class="quick-info-row phone-row">
-            <span class="row-label">{t(ui.quickInfo.phone, lang)}</span>
+            <span class="row-label">
+              <Icon name="phone" class="row-label-icon" />
+              <span>{t(ui.quickInfo.phone, lang)}</span>
+            </span>
             <a href={`tel:${centre.contact.phone.replace(/\s+/g, '')}`} class="quick-info-phone">
               <Icon name="phone" class="phone-inline-icon" />
               <span>{centre.contact.phone}</span>
@@ -280,6 +291,15 @@ const titleWords = centre.name.split(' ');
     font-weight: 600;
     text-transform: uppercase;
     letter-spacing: 0.04em;
+    display: inline-flex;
+    align-items: center;
+    gap: 5px;
+  }
+
+  .row-label-icon {
+    width: 14px;
+    height: 14px;
+    color: var(--primary);
   }
 
   html[lang="bn"] .row-label {

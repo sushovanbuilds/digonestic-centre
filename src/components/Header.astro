@@ -3,6 +3,7 @@ import { centre } from '../config/index';
 import { ui, t } from '../config/ui';
 import type { Lang } from '../config/types';
 import { getGeneralWhatsAppUrl } from '../lib/whatsapp';
+import Icon from './Icon.astro';
 
 interface Props {
   lang?: Lang;
@@ -56,7 +57,9 @@ const whatsappUrl = getGeneralWhatsAppUrl(lang);
         target="_blank"
         rel="noopener noreferrer"
       >
-        {t(ui.bookTest, lang)}
+        <Icon name="calendar" class="header-btn-icon" />
+        <span class="header-btn-text-full">{t(ui.bookTest, lang)}</span>
+        <span class="header-btn-text-short">{lang === 'bn' ? 'বুকিং' : 'Book'}</span>
       </a>
     </div>
   </div>
@@ -194,21 +197,51 @@ const whatsappUrl = getGeneralWhatsAppUrl(lang);
     padding: 0 var(--space-16);
     font-size: 0.875rem;
     white-space: nowrap;
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
   }
 
-  @media (max-width: 400px) {
-    .brand-wordmark {
-      font-size: 0.9375rem;
+  .header-btn-icon {
+    width: 16px;
+    height: 16px;
+  }
+
+  .header-btn-text-short {
+    display: none;
+  }
+
+  @media (max-width: 500px) {
+    .header-btn-text-full {
+      display: none;
     }
 
-    .lang-btn {
-      min-width: 38px;
-      padding: 0 8px;
+    .header-btn-text-short {
+      display: inline;
     }
 
     .header-book-btn {
-      padding: 0 var(--space-12);
+      padding: 0 var(--space-10);
       font-size: 0.8125rem;
+    }
+  }
+
+  @media (max-width: 360px) {
+    .brand-wordmark {
+      font-size: 0.875rem;
+      max-width: 110px;
+      overflow: hidden;
+      text-overflow: ellipsis;
+    }
+
+    .lang-btn {
+      min-width: 32px;
+      padding: 0 6px;
+      font-size: 0.75rem;
+    }
+
+    .header-book-btn {
+      padding: 0 6px;
     }
   }
 </style>

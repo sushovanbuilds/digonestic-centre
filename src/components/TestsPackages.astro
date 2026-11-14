@@ -4,6 +4,7 @@ import { ui, t } from '../config/ui';
 import type { Lang } from '../config/types';
 import { getTestWhatsAppUrl, getPackageWhatsAppUrl } from '../lib/whatsapp';
 import SampleTag from './SampleTag.astro';
+import Icon from './Icon.astro';
 import TestList from './islands/TestList';
 import type { TestItem } from './islands/TestList';
 import TextAnimation from './islands/TextAnimation';
@@ -100,7 +101,7 @@ const testItems: TestItem[] = centre.tests.map((test) => ({
                     rel="noopener noreferrer"
                   >
                     <span>{t(ui.bookPackage, lang)}</span>
-                    <span class="link-arrow" aria-hidden="true">&rarr;</span>
+                    <Icon name="arrow-right" class="package-link-icon" />
                   </a>
                 </div>
               </div>
@@ -247,11 +248,13 @@ const testItems: TestItem[] = centre.tests.map((test) => ({
     outline-offset: 2px;
   }
 
-  .link-arrow {
+  .package-link-icon {
+    width: 16px;
+    height: 16px;
     transition: transform 0.15s ease;
   }
 
-  .package-details-link:hover .link-arrow {
+  .package-details-link:hover .package-link-icon {
     transform: translateX(3px);
   }
 </style>

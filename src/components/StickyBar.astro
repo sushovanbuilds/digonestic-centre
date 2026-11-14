@@ -22,9 +22,7 @@ const cleanPhone = centre.contact.phone.replace(/\s+/g, '');
       target="_blank"
       rel="noopener noreferrer"
     >
-      <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
-        <path d="M7.9 20A9 9 0 1 0 4 16.1L2 22z" />
-      </svg>
+      <Icon name="whatsapp" class="btn-icon" />
       <span>{t(ui.whatsappUs, lang)}</span>
     </a>
 
@@ -95,13 +93,14 @@ const cleanPhone = centre.contact.phone.replace(/\s+/g, '');
 
   .sticky-btn {
     min-height: 48px;
-    padding: 0 var(--space-12);
-    font-size: var(--font-size-small);
+    padding: 0 var(--space-8);
+    font-size: 0.875rem;
     font-weight: 600;
     display: inline-flex;
     align-items: center;
     justify-content: center;
-    gap: var(--space-8);
+    gap: 6px;
+    white-space: nowrap;
   }
 
   @media (min-width: 701px) {

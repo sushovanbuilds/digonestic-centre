@@ -376,41 +376,26 @@ export default function TestList({
           min-height: 48px;
         }
 
+        @media (max-width: 480px) {
+          .test-row-toggle {
+            padding: var(--space-12);
+          }
+          .test-summary {
+            padding-right: var(--space-8);
+          }
+          .test-name {
+            font-size: 0.9375rem;
+          }
+          .test-blurb {
+            font-size: 0.8125rem;
+          }
+          .test-panel-inner {
+            padding: var(--space-16);
+          }
+        }
+
         @media (prefers-reduced-motion: reduce) {
-          .test-row-actions {
-          display: flex;
-          align-items: center;
-          gap: var(--space-12);
-        }
-
-        .test-price-tag {
-          font-size: 0.9375rem;
-          font-weight: 650;
-          color: var(--primary);
-          white-space: nowrap;
-        }
-
-        .test-open-price-row {
-          display: flex;
-          align-items: baseline;
-          gap: var(--space-8);
-          margin-bottom: var(--space-16);
-          font-size: 0.9375rem;
-          color: var(--ink);
-        }
-
-        .test-open-price-label {
-          color: var(--ink-soft);
-          font-size: 0.8125rem;
-        }
-
-        .test-open-price-val {
-          font-weight: 700;
-          color: var(--primary);
-          font-size: 1.125rem;
-        }
-
-        .test-chevron {
+          .test-chevron {
             transition: none !important;
           }
           .test-panel {

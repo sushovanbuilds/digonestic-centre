@@ -3,6 +3,7 @@ import { centre } from '../config/index';
 import { ui, t } from '../config/ui';
 import type { Lang } from '../config/types';
 import { getDoctorWhatsAppUrl } from '../lib/whatsapp';
+import Icon from './Icon.astro';
 
 interface Props {
   lang?: Lang;
@@ -13,6 +14,7 @@ const { lang = 'en' } = Astro.props;
 
 <div class="doctor-hours-wrapper">
   <div class="doctor-heading-row">
+    <Icon name="user" class="doctor-title-icon" />
     <h3 class="doctor-hours-heading">{t(ui.doctorConsultations, lang)}</h3>
     {centre.flags.isDemo && (
       <span class="sample-tag demo-tag">{t(ui.demoData, lang)}</span>
@@ -41,7 +43,8 @@ const { lang = 'en' } = Astro.props;
                 target="_blank"
                 rel="noopener noreferrer"
               >
-                {t(ui.bookConsultation, lang)}
+                <Icon name="whatsapp" class="btn-icon" />
+                <span>{t(ui.bookConsultation, lang)}</span>
               </a>
             </div>
           </div>
@@ -61,6 +64,12 @@ const { lang = 'en' } = Astro.props;
     align-items: center;
     gap: var(--space-12);
     margin-bottom: var(--space-16);
+  }
+
+  .doctor-title-icon {
+    width: 22px;
+    height: 22px;
+    color: var(--primary);
   }
 
   .doctor-hours-heading {
@@ -136,6 +145,13 @@ const { lang = 'en' } = Astro.props;
 
   .doctor-action-cell {
     display: flex;
+    width: 100%;
+  }
+
+  @media (min-width: 768px) {
+    .doctor-action-cell {
+      width: auto;
+    }
   }
 
   .doctor-btn {
@@ -143,5 +159,13 @@ const { lang = 'en' } = Astro.props;
     padding: 0 var(--space-16);
     font-size: var(--font-size-small);
     white-space: nowrap;
+    width: 100%;
+    justify-content: center;
+  }
+
+  @media (min-width: 768px) {
+    .doctor-btn {
+      width: auto;
+    }
   }
 </style>

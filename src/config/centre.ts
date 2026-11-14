@@ -181,11 +181,11 @@ export const centre: CentreConfig = {
       icon: 'chat',
       title: {
         en: 'Booking requests by WhatsApp',
-        bn: 'হোয়াটসঅ্যাপে বুকিং অনুরোধ',
+        bn: 'WhatsApp বুকিং',
       },
       text: {
         en: 'Send your request on WhatsApp and the centre replies.',
-        bn: 'হোয়াটসঅ্যাপে আপনার অনুরোধ পাঠান, সেন্টার থেকে যোগাযোগ করা হবে।',
+        bn: 'WhatsApp-এ আপনার অনুরোধ পাঠান, সেন্টার থেকে যোগাযোগ করা হবে।',
       },
     },
     {
