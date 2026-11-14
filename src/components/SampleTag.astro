@@ -1,13 +1,15 @@
 ---
-import { centre, ui } from '../config/centre';
+import { ui, t } from '../config/ui';
+import type { Lang } from '../config/types';
 
 interface Props {
+  lang?: Lang;
   class?: string;
 }
 
-const { class: className = '' } = Astro.props;
+const { lang = 'en', class: className = '' } = Astro.props;
 ---
 
 <span class={`sample-tag ${className}`}>
-  {ui.sampleNotice[centre.lang] ?? ui.sampleNotice.en}
+  {t(ui.sampleContent, lang)}
 </span>

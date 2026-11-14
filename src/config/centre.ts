@@ -1,4 +1,4 @@
-import type { CentreConfig, UIStrings } from './types';
+import type { CentreConfig } from './types';
 
 export const centre: CentreConfig = {
   lang: 'en',
@@ -6,6 +6,7 @@ export const centre: CentreConfig = {
   name: '[CENTRE NAME]',
   tagline: {
     en: 'Tests and doctor consultations in one place.',
+    bn: 'এক ছাদের নিচে ডায়াগনস্টিক পরীক্ষা ও বিশেষজ্ঞ চিকিৎসকের পরামর্শ।',
   },
   theme: {
     primary: '#0E6B63',
@@ -20,31 +21,37 @@ export const centre: CentreConfig = {
     whatsapp: '910000000000',
   },
   location: {
-    areaLabel: '[AREA, TOWN]',
-    addressLines: ['Address line 1', 'Address line 2'],
+    areaLabel: {
+      en: '[AREA, TOWN]',
+      bn: '[এলাকা, শহর]',
+    },
+    addressLines: [
+      { en: 'Address line 1', bn: 'ঠিকানার লাইন ১' },
+      { en: 'Address line 2', bn: 'ঠিকানার লাইন ২' },
+    ],
     mapUrl: 'https://maps.google.com',
   },
   hours: [
     {
-      label: { en: 'Hours' },
-      value: 'Hours placeholder',
+      label: { en: 'Hours', bn: 'সময়' },
+      value: { en: 'Hours placeholder', bn: 'সময় (উদাহরণ)' },
     },
   ],
   doctors: [
     {
-      name: 'Doctor name placeholder 1',
-      speciality: 'Speciality placeholder',
-      days: 'Days placeholder',
+      name: { en: 'Doctor name placeholder 1', bn: 'ডাক্তারের নাম (উদাহরণ) ১' },
+      speciality: { en: 'Speciality placeholder', bn: 'বিশেষত্ব (উদাহরণ)' },
+      days: { en: 'Days placeholder', bn: 'দিন (উদাহরণ)' },
     },
     {
-      name: 'Doctor name placeholder 2',
-      speciality: 'Speciality placeholder',
-      days: 'Days placeholder',
+      name: { en: 'Doctor name placeholder 2', bn: 'ডাক্তারের নাম (উদাহরণ) ২' },
+      speciality: { en: 'Speciality placeholder', bn: 'বিশেষত্ব (উদাহরণ)' },
+      days: { en: 'Days placeholder', bn: 'দিন (উদাহরণ)' },
     },
     {
-      name: 'Doctor name placeholder 3',
-      speciality: 'Speciality placeholder',
-      days: 'Days placeholder',
+      name: { en: 'Doctor name placeholder 3', bn: 'ডাক্তারের নাম (উদাহরণ) ৩' },
+      speciality: { en: 'Speciality placeholder', bn: 'বিশেষত্ব (উদাহরণ)' },
+      days: { en: 'Days placeholder', bn: 'দিন (উদাহরণ)' },
     },
   ],
   flags: {
@@ -56,134 +63,146 @@ export const centre: CentreConfig = {
   tests: [
     {
       id: 'test-1',
-      name: { en: 'Test name 1' },
-      blurb: { en: 'Short description placeholder' },
+      name: { en: 'Test name 1', bn: 'পরীক্ষার নাম ১' },
+      blurb: { en: 'Short description placeholder', bn: 'সংক্ষিপ্ত বিবরণ (উদাহরণ)' },
       includes: [
-        { en: 'Included item placeholder 1' },
-        { en: 'Included item placeholder 2' },
-        { en: 'Included item placeholder 3' },
+        { en: 'Included item placeholder 1', bn: 'অন্তর্ভুক্ত বিষয় ১' },
+        { en: 'Included item placeholder 2', bn: 'অন্তর্ভুক্ত বিষয় ২' },
+        { en: 'Included item placeholder 3', bn: 'অন্তর্ভুক্ত বিষয় ৩' },
       ],
+      prep: {
+        en: 'Preparation note placeholder.',
+        bn: 'প্রস্তুতির নির্দেশিকা (উদাহরণ)।',
+      },
     },
     {
       id: 'test-2',
-      name: { en: 'Test name 2' },
-      blurb: { en: 'Short description placeholder' },
+      name: { en: 'Test name 2', bn: 'পরীক্ষার নাম ২' },
+      blurb: { en: 'Short description placeholder', bn: 'সংক্ষিপ্ত বিবরণ (উদাহরণ)' },
       includes: [
-        { en: 'Included item placeholder 1' },
-        { en: 'Included item placeholder 2' },
-        { en: 'Included item placeholder 3' },
+        { en: 'Included item placeholder 1', bn: 'অন্তর্ভুক্ত বিষয় ১' },
+        { en: 'Included item placeholder 2', bn: 'অন্তর্ভুক্ত বিষয় ২' },
+        { en: 'Included item placeholder 3', bn: 'অন্তর্ভুক্ত বিষয় ৩' },
       ],
+      prep: {
+        en: 'Preparation note placeholder.',
+        bn: 'প্রস্তুতির নির্দেশিকা (উদাহরণ)।',
+      },
     },
     {
       id: 'test-3',
-      name: { en: 'Test name 3' },
-      blurb: { en: 'Short description placeholder' },
+      name: { en: 'Test name 3', bn: 'পরীক্ষার নাম ৩' },
+      blurb: { en: 'Short description placeholder', bn: 'সংক্ষিপ্ত বিবরণ (উদাহরণ)' },
       includes: [
-        { en: 'Included item placeholder 1' },
-        { en: 'Included item placeholder 2' },
-        { en: 'Included item placeholder 3' },
+        { en: 'Included item placeholder 1', bn: 'অন্তর্ভুক্ত বিষয় ১' },
+        { en: 'Included item placeholder 2', bn: 'অন্তর্ভুক্ত বিষয় ২' },
+        { en: 'Included item placeholder 3', bn: 'অন্তর্ভুক্ত বিষয় ৩' },
       ],
+      prep: {
+        en: 'Preparation note placeholder.',
+        bn: 'প্রস্তুতির নির্দেশিকা (উদাহরণ)।',
+      },
     },
     {
       id: 'test-4',
-      name: { en: 'Test name 4' },
-      blurb: { en: 'Short description placeholder' },
+      name: { en: 'Test name 4', bn: 'পরীক্ষার নাম ৪' },
+      blurb: { en: 'Short description placeholder', bn: 'সংক্ষিপ্ত বিবরণ (উদাহরণ)' },
       includes: [
-        { en: 'Included item placeholder 1' },
-        { en: 'Included item placeholder 2' },
-        { en: 'Included item placeholder 3' },
+        { en: 'Included item placeholder 1', bn: 'অন্তর্ভুক্ত বিষয় ১' },
+        { en: 'Included item placeholder 2', bn: 'অন্তর্ভুক্ত বিষয় ২' },
+        { en: 'Included item placeholder 3', bn: 'অন্তর্ভুক্ত বিষয় ৩' },
       ],
+      prep: {
+        en: 'Preparation note placeholder.',
+        bn: 'প্রস্তুতির নির্দেশিকা (উদাহরণ)।',
+      },
     },
     {
       id: 'test-5',
-      name: { en: 'Test name 5' },
-      blurb: { en: 'Short description placeholder' },
+      name: { en: 'Test name 5', bn: 'পরীক্ষার নাম ৫' },
+      blurb: { en: 'Short description placeholder', bn: 'সংক্ষিপ্ত বিবরণ (উদাহরণ)' },
       includes: [
-        { en: 'Included item placeholder 1' },
-        { en: 'Included item placeholder 2' },
-        { en: 'Included item placeholder 3' },
+        { en: 'Included item placeholder 1', bn: 'অন্তর্ভুক্ত বিষয় ১' },
+        { en: 'Included item placeholder 2', bn: 'অন্তর্ভুক্ত বিষয় ২' },
+        { en: 'Included item placeholder 3', bn: 'অন্তর্ভুক্ত বিষয় ৩' },
       ],
+      prep: {
+        en: 'Preparation note placeholder.',
+        bn: 'প্রস্তুতির নির্দেশিকা (উদাহরণ)।',
+      },
     },
     {
       id: 'test-6',
-      name: { en: 'Test name 6' },
-      blurb: { en: 'Short description placeholder' },
+      name: { en: 'Test name 6', bn: 'পরীক্ষার নাম ৬' },
+      blurb: { en: 'Short description placeholder', bn: 'সংক্ষিপ্ত বিবরণ (উদাহরণ)' },
       includes: [
-        { en: 'Included item placeholder 1' },
-        { en: 'Included item placeholder 2' },
-        { en: 'Included item placeholder 3' },
+        { en: 'Included item placeholder 1', bn: 'অন্তর্ভুক্ত বিষয় ১' },
+        { en: 'Included item placeholder 2', bn: 'অন্তর্ভুক্ত বিষয় ২' },
+        { en: 'Included item placeholder 3', bn: 'অন্তর্ভুক্ত বিষয় ৩' },
       ],
+      prep: {
+        en: 'Preparation note placeholder.',
+        bn: 'প্রস্তুতির নির্দেশিকা (উদাহরণ)।',
+      },
     },
   ],
   packages: [
     {
       id: 'package-a',
-      name: { en: 'Health package A' },
-      blurb: { en: 'Package description placeholder' },
+      name: { en: 'Health package A', bn: 'হেলথ প্যাকেজ A' },
+      blurb: { en: 'Package description placeholder', bn: 'প্যাকেজের বিবরণ (উদাহরণ)' },
       wide: true,
     },
     {
       id: 'package-b',
-      name: { en: 'Health package B' },
-      blurb: { en: 'Package description placeholder' },
+      name: { en: 'Health package B', bn: 'হেলথ প্যাকেজ B' },
+      blurb: { en: 'Package description placeholder', bn: 'প্যাকেজের বিবরণ (উদাহরণ)' },
     },
     {
       id: 'package-c',
-      name: { en: 'Health package C' },
-      blurb: { en: 'Package description placeholder' },
+      name: { en: 'Health package C', bn: 'হেলথ প্যাকেজ C' },
+      blurb: { en: 'Package description placeholder', bn: 'প্যাকেজের বিবরণ (উদাহরণ)' },
     },
   ],
   why: [
     {
       icon: 'building',
-      title: { en: 'Tests and doctor consultations' },
-      text: { en: 'Tests and doctor consultations under one roof' },
+      title: { en: 'Tests and doctor consultations', bn: 'টেস্ট ও ডাক্তারের পরামর্শ' },
+      text: { en: 'Tests and doctor consultations under one roof', bn: 'একই ছাদের নিচে টেস্ট ও বিশেষজ্ঞ চিকিৎসকের পরামর্শ।' },
     },
     {
       icon: 'chat',
-      title: { en: 'WhatsApp booking' },
-      text: { en: 'Booking requests by WhatsApp' },
+      title: { en: 'WhatsApp booking', bn: 'হোয়াটসঅ্যাপে সহজ বুকিং' },
+      text: { en: 'Booking requests by WhatsApp', bn: 'হোয়াটসঅ্যাপ মেসেজে সহজ টেস্ট ও ডাক্তারের সিরিয়াল বুকিং।' },
     },
     {
       icon: 'list',
-      title: { en: 'Simple layout' },
-      text: { en: 'Simple, readable layout' },
+      title: { en: 'Simple layout', bn: 'সহজ ও স্পষ্ট রিপোর্ট' },
+      text: { en: 'Simple, readable layout', bn: 'রোগীর সুবিধার্থে সহজ ও পরিষ্কার বিন্যাস।' },
     },
     {
       icon: 'pin',
-      title: { en: 'Easy to find' },
-      text: { en: 'Easy to find with address and map link' },
+      title: { en: 'Easy to find', bn: 'সহজে পৌঁছানোর মতো অবস্থান' },
+      text: { en: 'Easy to find with address and map link', bn: 'প্রধান সড়কের পাশে সুগম যোগাযোগ ব্যবস্থা।' },
     },
   ],
   homeCollection: {
-    title: { en: 'Home collection' },
-    text: { en: 'Sample home collection text placeholder.' },
+    title: { en: 'Home sample collection', bn: 'বাড়িতে নমুনা সংগ্রহ' },
+    text: { en: 'Sample home collection text placeholder.', bn: 'বাড়িতে গিয়ে নমুনা সংগ্রহের জন্য যোগাযোগ করুন।' },
   },
   reviewSlots: 3,
   waTemplates: {
     general: {
       en: "Hello, I'd like to book a test. Name: , Test: , Preferred time: ",
+      bn: "নমস্কার, আমি একটি পরীক্ষার বুকিং করতে চাই। নাম: , পরীক্ষা: , সময়: ",
     },
     test: {
       en: "Hello, I'd like to book: {test}. Name: , Preferred time: ",
+      bn: "নমস্কার, আমি বুকিং করতে চাই: {test}। নাম: , সময়: ",
     },
     doctor: {
       en: "Hello, I'd like a doctor consultation. Doctor: {doctor}. Name: , Preferred time: ",
+      bn: "নমস্কার, আমি ডাক্তারের পরামর্শ চাই। ডাক্তার: {doctor}। নাম: , সময়: ",
     },
   },
-};
-
-export const ui: UIStrings = {
-  bookTest: { en: 'Book a test' },
-  whatsappUs: { en: 'WhatsApp us' },
-  openMaps: { en: 'Open in Maps' },
-  requestWhatsApp: { en: 'Request on WhatsApp' },
-  testsHeading: { en: 'Tests and packages' },
-  packagesHeading: { en: 'Health packages' },
-  whyHeading: { en: 'Why choose us' },
-  doctorsHeading: { en: 'Doctor consultations' },
-  locationHeading: { en: 'Location and timings' },
-  reviewsHeading: { en: 'Patient feedback' },
-  sampleNotice: { en: 'Sample content' },
-  previewNotice: { en: 'Concept preview. Not the official website.' },
 };

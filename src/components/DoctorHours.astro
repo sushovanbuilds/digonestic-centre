@@ -1,33 +1,42 @@
 ---
-import { centre, ui } from '../config/centre';
+import { centre } from '../config/centre';
+import { ui, t } from '../config/ui';
+import type { Lang } from '../config/types';
 import { getDoctorWhatsAppUrl } from '../lib/whatsapp';
 
-const lang = centre.lang;
+interface Props {
+  lang?: Lang;
+}
+
+const { lang = 'en' } = Astro.props;
 ---
 
-<div class="doctor-hours-block">
-  <h3 class="doctor-hours-heading">{ui.doctorsHeading[lang] ?? ui.doctorsHeading.en}</h3>
-  
-  <div class="doctor-table-wrap">
+<div class="doctor-hours-wrapper">
+  <h3 class="doctor-hours-heading">{t(ui.doctorConsultations, lang)}</h3>
+
+  <div class="doctor-table-card">
     <div class="doctor-list">
       {centre.doctors.map((doc) => {
-        const docWaUrl = getDoctorWhatsAppUrl(doc.name);
+        const docName = t(doc.name, lang);
+        const docSpeciality = t(doc.speciality, lang);
+        const docDays = t(doc.days, lang);
+        const docWaUrl = getDoctorWhatsAppUrl(docName, lang);
 
         return (
           <div class="doctor-row">
-            <div class="doctor-details">
-              <span class="doctor-name">{doc.name}</span>
-              <span class="doctor-speciality">{doc.speciality}</span>
-              <span class="doctor-days">{doc.days}</span>
+            <div class="doctor-info-grid">
+              <span class="doctor-name">{docName}</span>
+              <span class="doctor-speciality">{docSpeciality}</span>
+              <span class="doctor-days">{docDays}</span>
             </div>
-            <div class="doctor-action">
+            <div class="doctor-action-cell">
               <a
                 href={docWaUrl}
-                class="btn btn-outline btn-sm doctor-book-btn"
+                class="btn btn-outline doctor-btn"
                 target="_blank"
                 rel="noopener noreferrer"
               >
-                Book consultation
+                {t(ui.bookConsultation, lang)}
               </a>
             </div>
           </div>
@@ -38,33 +47,42 @@ const lang = centre.lang;
 </div>
 
 <style>
-  .doctor-hours-block {
+  .doctor-hours-wrapper {
     margin-top: var(--space-48);
-    padding-top: var(--space-32);
-    border-top: 1px solid var(--rule);
   }
 
   .doctor-hours-heading {
-    margin-bottom: var(--space-20);
+    margin-bottom: var(--space-16);
     font-size: 1.25rem;
+    font-weight: 600;
     color: var(--ink);
+  }
+
+  .doctor-table-card {
+    background-color: #ffffff;
+    border: 1px solid var(--rule);
+    border-radius: var(--radius-card);
+    overflow: hidden;
   }
 
   .doctor-list {
     display: flex;
     flex-direction: column;
-    border-top: 1px solid var(--rule);
   }
 
   .doctor-row {
     display: flex;
     flex-direction: column;
     gap: var(--space-12);
-    padding: var(--space-16) 0;
+    padding: var(--space-16) var(--space-20);
     border-bottom: 1px solid var(--rule);
   }
 
-  @media (min-width: 640px) {
+  .doctor-row:last-child {
+    border-bottom: none;
+  }
+
+  @media (min-width: 768px) {
     .doctor-row {
       flex-direction: row;
       align-items: center;
@@ -72,25 +90,26 @@ const lang = centre.lang;
     }
   }
 
-  .doctor-details {
+  .doctor-info-grid {
     display: flex;
     flex-direction: column;
     gap: 4px;
+    flex: 1;
   }
 
-  @media (min-width: 640px) {
-    .doctor-details {
+  @media (min-width: 768px) {
+    .doctor-info-grid {
       display: grid;
-      grid-template-columns: 200px 180px 1fr;
+      grid-template-columns: 220px 180px 1fr;
       align-items: center;
       gap: var(--space-16);
-      flex: 1;
     }
   }
 
   .doctor-name {
     font-weight: 600;
     color: var(--ink);
+    font-size: 1rem;
   }
 
   .doctor-speciality {
@@ -103,17 +122,14 @@ const lang = centre.lang;
     color: var(--ink-soft);
   }
 
-  .doctor-action {
+  .doctor-action-cell {
     display: flex;
   }
 
-  .btn-sm {
+  .doctor-btn {
     min-height: 48px;
     padding: 0 var(--space-16);
     font-size: var(--font-size-small);
-  }
-
-  .doctor-book-btn {
     white-space: nowrap;
   }
 </style>

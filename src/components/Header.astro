@@ -1,18 +1,64 @@
 ---
-import { centre, ui } from '../config/centre';
+import { centre } from '../config/centre';
+import { ui, t } from '../config/ui';
+import type { Lang } from '../config/types';
 import { getGeneralWhatsAppUrl } from '../lib/whatsapp';
 
-const whatsappUrl = getGeneralWhatsAppUrl();
+interface Props {
+  lang?: Lang;
+}
+
+const { lang = 'en' } = Astro.props;
+const whatsappUrl = getGeneralWhatsAppUrl(lang);
 ---
 
 <header class="site-header">
   <div class="container header-inner">
-    <a href="#hero" class="brand-wordmark">
-      {centre.name}
-    </a>
-    <a href={whatsappUrl} class="btn btn-primary btn-sm" aria-label={ui.bookTest[centre.lang] ?? ui.bookTest.en}>
-      {ui.bookTest[centre.lang] ?? ui.bookTest.en}
-    </a>
+    <div class="header-left">
+      <a href="#hero" class="brand-wordmark">
+        {centre.name}
+      </a>
+    </div>
+
+    <!-- Desktop Navigation (hidden below 900px) -->
+    <nav class="header-nav" aria-label="Main Navigation">
+      <a href="#tests" class="nav-link">{t(ui.nav.tests, lang)}</a>
+      <a href="#packages" class="nav-link">{t(ui.nav.packages, lang)}</a>
+      <a href="#why-us" class="nav-link">{t(ui.nav.whyUs, lang)}</a>
+      <a href="#location" class="nav-link">{t(ui.nav.location, lang)}</a>
+      <a href="#contact" class="nav-link">{t(ui.nav.contact, lang)}</a>
+    </nav>
+
+    <div class="header-right">
+      <!-- Language Toggle Pill: EN | বাংলা (Zero JS, two <a> links, 48px tap area) -->
+      <div class="lang-switcher" role="group" aria-label="Language switcher">
+        <a
+          href="/"
+          class={`lang-btn ${lang === 'en' ? 'active' : ''}`}
+          aria-current={lang === 'en' ? 'page' : undefined}
+        >
+          EN
+        </a>
+        <span class="lang-divider" aria-hidden="true">|</span>
+        <a
+          href="/bn/"
+          class={`lang-btn ${lang === 'bn' ? 'active' : ''}`}
+          aria-current={lang === 'bn' ? 'page' : undefined}
+        >
+          বাংলা
+        </a>
+      </div>
+
+      <!-- Book a test Button -->
+      <a
+        href={whatsappUrl}
+        class="btn btn-primary header-book-btn"
+        target="_blank"
+        rel="noopener noreferrer"
+      >
+        {t(ui.bookTest, lang)}
+      </a>
+    </div>
   </div>
 </header>
 
@@ -36,12 +82,18 @@ const whatsappUrl = getGeneralWhatsAppUrl();
     height: 100%;
   }
 
+  .header-left {
+    display: flex;
+    align-items: center;
+  }
+
   .brand-wordmark {
-    font-size: 1.125rem;
+    font-size: 1.0625rem;
     font-weight: 700;
     color: var(--ink);
     text-decoration: none;
     letter-spacing: -0.01em;
+    white-space: nowrap;
   }
 
   .brand-wordmark:focus-visible {
@@ -49,9 +101,114 @@ const whatsappUrl = getGeneralWhatsAppUrl();
     outline-offset: 2px;
   }
 
-  .btn-sm {
-    min-height: 48px;
+  /* Desktop Nav */
+  .header-nav {
+    display: none;
+  }
+
+  @media (min-width: 900px) {
+    .header-nav {
+      display: flex;
+      align-items: center;
+      gap: var(--space-20);
+    }
+
+    .nav-link {
+      font-size: var(--font-size-small);
+      font-weight: 500;
+      color: var(--ink-soft);
+      text-decoration: none;
+      transition: color 0.15s ease;
+      min-height: 48px;
+      display: inline-flex;
+      align-items: center;
+    }
+
+    .nav-link:hover {
+      color: var(--ink);
+    }
+
+    .nav-link:focus-visible {
+      outline: 3px solid var(--primary);
+      outline-offset: 2px;
+    }
+  }
+
+  .header-right {
+    display: flex;
+    align-items: center;
+    gap: var(--space-8);
+  }
+
+  @media (min-width: 640px) {
+    .header-right {
+      gap: var(--space-12);
+    }
+  }
+
+  /* Language Switcher Pill */
+  .lang-switcher {
+    display: inline-flex;
+    align-items: center;
+    background-color: var(--tint);
+    border: 1px solid var(--rule);
+    border-radius: 9999px;
+    padding: 2px;
+    height: 38px;
+  }
+
+  .lang-btn {
+    min-height: 34px;
+    min-width: 44px;
+    padding: 0 10px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 9999px;
+    font-size: 0.8125rem;
+    font-weight: 600;
+    color: var(--ink);
+    text-decoration: none;
+    transition: background-color 0.15s ease, color 0.15s ease;
+  }
+
+  .lang-btn.active {
+    background-color: var(--primary);
+    color: var(--primary-ink);
+  }
+
+  .lang-btn:focus-visible {
+    outline: 3px solid var(--primary);
+    outline-offset: 2px;
+  }
+
+  .lang-divider {
+    color: var(--rule);
+    user-select: none;
+    font-size: 0.75rem;
+  }
+
+  .header-book-btn {
+    min-height: 40px;
+    height: 40px;
     padding: 0 var(--space-16);
-    font-size: var(--font-size-small);
+    font-size: 0.875rem;
+    white-space: nowrap;
+  }
+
+  @media (max-width: 400px) {
+    .brand-wordmark {
+      font-size: 0.9375rem;
+    }
+
+    .lang-btn {
+      min-width: 38px;
+      padding: 0 8px;
+    }
+
+    .header-book-btn {
+      padding: 0 var(--space-12);
+      font-size: 0.8125rem;
+    }
   }
 </style>

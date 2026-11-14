@@ -1,28 +1,37 @@
 ---
-import { centre, ui } from '../config/centre';
+import { centre } from '../config/centre';
+import { ui, t } from '../config/ui';
+import type { Lang } from '../config/types';
 import { getGeneralWhatsAppUrl } from '../lib/whatsapp';
 
-const lang = centre.lang;
+interface Props {
+  lang?: Lang;
+}
+
+const { lang = 'en' } = Astro.props;
 const homeCol = centre.homeCollection;
-const whatsappUrl = getGeneralWhatsAppUrl();
+const whatsappUrl = getGeneralWhatsAppUrl(lang);
 ---
 
-{homeCol && (
+{homeCol && centre.flags.homeCollection && (
   <section id="home-collection" class="home-collection-section">
     <div class="container">
-      <div class="home-collection-card">
-        <div class="home-collection-content">
-          <h2>{homeCol.title[lang] ?? homeCol.title.en}</h2>
-          <p class="home-collection-text">{homeCol.text[lang] ?? homeCol.text.en}</p>
+      <div class="home-collection-panel">
+        <div class="home-collection-text">
+          <h2 class="home-collection-title">{t(homeCol.title, lang)}</h2>
+          <p class="home-collection-description">{t(homeCol.text, lang)}</p>
         </div>
         <div class="home-collection-action">
           <a
             href={whatsappUrl}
-            class="btn btn-wa"
+            class="btn btn-wa home-col-btn"
             target="_blank"
             rel="noopener noreferrer"
           >
-            {ui.requestWhatsApp[lang] ?? ui.requestWhatsApp.en}
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+              <path d="M7.9 20A9 9 0 1 0 4 16.1L2 22z" />
+            </svg>
+            <span>{t(ui.whatsappUs, lang)}</span>
           </a>
         </div>
       </div>
@@ -36,33 +45,48 @@ const whatsappUrl = getGeneralWhatsAppUrl();
     border-top: 1px solid var(--rule);
   }
 
-  .home-collection-card {
+  .home-collection-panel {
     background-color: var(--tint);
-    border-radius: var(--radius-contact);
+    border: 1px solid #b5d5cf;
+    border-radius: var(--radius-card);
     padding: var(--space-32);
     display: flex;
     flex-direction: column;
-    gap: var(--space-24);
+    gap: var(--space-20);
   }
 
   @media (min-width: 768px) {
-    .home-collection-card {
+    .home-collection-panel {
       flex-direction: row;
       align-items: center;
       justify-content: space-between;
+      gap: var(--space-32);
     }
   }
 
-  .home-collection-content h2 {
-    margin-bottom: var(--space-12);
+  .home-collection-text {
+    max-width: 600px;
   }
 
-  .home-collection-text {
+  .home-collection-title {
+    font-size: 1.35rem;
+    font-weight: 650;
+    color: var(--ink);
+    margin-bottom: var(--space-8);
+  }
+
+  .home-collection-description {
     font-size: var(--font-size-body);
     color: var(--ink-soft);
+    margin: 0;
   }
 
   .home-collection-action {
     display: flex;
+  }
+
+  .home-col-btn {
+    white-space: nowrap;
+    min-width: 200px;
   }
 </style>

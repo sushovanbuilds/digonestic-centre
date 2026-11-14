@@ -1,34 +1,86 @@
 ---
-import { centre, ui } from '../config/centre';
+import { centre } from '../config/centre';
+import { ui, t } from '../config/ui';
+import type { Lang } from '../config/types';
 import { getGeneralWhatsAppUrl } from '../lib/whatsapp';
-import HeroTitle from './islands/HeroTitle';
 import Press from './islands/Press';
 
-const whatsappUrl = getGeneralWhatsAppUrl();
-const tagline = centre.tagline[centre.lang] ?? centre.tagline.en;
+interface Props {
+  lang?: Lang;
+}
+
+const { lang = 'en' } = Astro.props;
+const whatsappUrl = getGeneralWhatsAppUrl(lang);
+const tagline = t(centre.tagline, lang);
+
+// CSS-only per-word reveal for H1 (0.6s, 50ms stagger, visible without JS)
+const titleWords = centre.name.split(' ');
 ---
 
 <section id="hero" class="hero-section">
   <div class="container hero-container">
-    <div class="hero-content">
-      <HeroTitle client:load title={centre.name} />
+    <div class="hero-main">
+      <!-- Small Concept Preview Pill above H1 -->
+      <div class="hero-pill-wrap">
+        <span class="sample-tag hero-concept-pill">
+          {t(ui.conceptPreview, lang)}
+        </span>
+      </div>
+
+      <!-- H1 with CSS-only per-word reveal -->
+      <h1 class="hero-heading">
+        {titleWords.map((word, i) => (
+          <span class="hero-word" style={`animation-delay: ${i * 50}ms`}>
+            {word}&nbsp;
+          </span>
+        ))}
+      </h1>
+
       <p class="hero-tagline">{tagline}</p>
-      
+
+      <!-- Two buttons stacked on mobile, side-by-side on tablet/desktop -->
       <div class="hero-actions">
         <Press client:visible>
           <a href="#tests" class="btn btn-primary hero-btn">
-            {ui.bookTest[centre.lang] ?? ui.bookTest.en}
+            {t(ui.bookTest, lang)}
           </a>
         </Press>
         <Press client:visible>
-          <a href={whatsappUrl} class="btn btn-wa hero-btn">
-            {ui.whatsappUs[centre.lang] ?? ui.whatsappUs.en}
+          <a href={whatsappUrl} class="btn btn-wa hero-btn" target="_blank" rel="noopener noreferrer">
+            {t(ui.whatsappUs, lang)}
           </a>
         </Press>
       </div>
 
-      <p class="hero-notice">Sample preview. Content is placeholder.</p>
+      <p class="hero-notice">{t(ui.heroSampleNote, lang)}</p>
     </div>
+
+    <!-- Desktop Quick-Info Card (Stitch desktop match) -->
+    <aside class="hero-sidebar" aria-label="Quick information">
+      <div class="quick-info-card">
+        <div class="quick-info-header">
+          <span class="quick-info-label">{t(ui.quickInfo.title, lang)}</span>
+          <span class="quick-info-badge">
+            <span class="badge-dot" aria-hidden="true"></span>
+            {t(ui.quickInfo.status, lang)}
+          </span>
+        </div>
+
+        <div class="quick-info-body">
+          <div class="quick-info-row">
+            <span class="row-label">{t(ui.hours, lang)}:</span>
+            <span class="row-value">{t(centre.hours[0]?.value, lang)}</span>
+          </div>
+          <div class="quick-info-row">
+            <span class="row-label">{t(ui.quickInfo.delivery, lang)}</span>
+          </div>
+        </div>
+
+        <p class="quick-info-footer">
+          {t(ui.quickInfo.note, lang)}
+        </p>
+      </div>
+    </aside>
   </div>
 </section>
 
@@ -45,9 +97,70 @@ const tagline = centre.tagline[centre.lang] ?? centre.tagline.en;
     }
   }
 
-  .hero-content {
-    max-width: 680px;
-    text-align: left;
+  .hero-container {
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-48);
+  }
+
+  @media (min-width: 900px) {
+    .hero-container {
+      display: grid;
+      grid-template-columns: 7fr 5fr;
+      align-items: start;
+      gap: var(--space-48);
+    }
+  }
+
+  .hero-main {
+    max-width: 620px;
+  }
+
+  .hero-pill-wrap {
+    margin-bottom: var(--space-12);
+  }
+
+  .hero-concept-pill {
+    margin-bottom: 0;
+  }
+
+  /* CSS-only Per-word Keyframe Reveal */
+  .hero-heading {
+    margin: 0 0 var(--space-16) 0;
+    font-size: var(--font-size-h1);
+    font-weight: 700;
+    line-height: 1.05;
+    letter-spacing: -0.02em;
+    color: var(--ink);
+  }
+
+  .hero-word {
+    display: inline-block;
+  }
+
+  @media (prefers-reduced-motion: no-preference) {
+    .hero-word {
+      animation: hero-word-reveal 0.6s cubic-bezier(0.16, 1, 0.3, 1) both;
+    }
+  }
+
+  @keyframes hero-word-reveal {
+    from {
+      opacity: 0.2;
+      transform: translateY(4px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    .hero-word {
+      animation: none !important;
+      opacity: 1 !important;
+      transform: none !important;
+    }
   }
 
   .hero-tagline {
@@ -85,6 +198,88 @@ const tagline = centre.tagline[centre.lang] ?? centre.tagline.en;
   .hero-notice {
     font-size: var(--font-size-small);
     color: var(--ink-soft);
-    margin-top: var(--space-12);
+  }
+
+  /* Desktop Quick Info Card */
+  .hero-sidebar {
+    display: none;
+  }
+
+  @media (min-width: 900px) {
+    .hero-sidebar {
+      display: block;
+    }
+  }
+
+  .quick-info-card {
+    background-color: var(--paper);
+    border: 1px solid var(--rule);
+    border-radius: var(--radius-card);
+    padding: var(--space-24);
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-16);
+  }
+
+  .quick-info-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding-bottom: var(--space-12);
+    border-bottom: 1px solid var(--rule);
+  }
+
+  .quick-info-label {
+    font-size: var(--font-size-small);
+    font-weight: 600;
+    color: var(--ink);
+  }
+
+  .quick-info-badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    font-size: 0.75rem;
+    font-weight: 600;
+    color: var(--primary);
+    background-color: var(--tint);
+    padding: 3px 8px;
+    border-radius: 9999px;
+  }
+
+  .badge-dot {
+    width: 6px;
+    height: 6px;
+    border-radius: 50%;
+    background-color: var(--primary);
+  }
+
+  .quick-info-body {
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-12);
+  }
+
+  .quick-info-row {
+    display: flex;
+    justify-content: space-between;
+    font-size: var(--font-size-small);
+  }
+
+  .row-label {
+    color: var(--ink-soft);
+  }
+
+  .row-value {
+    color: var(--ink);
+    font-weight: 500;
+  }
+
+  .quick-info-footer {
+    font-size: 0.75rem;
+    color: var(--ink-soft);
+    padding-top: var(--space-12);
+    border-top: 1px solid var(--rule);
+    margin: 0;
   }
 </style>

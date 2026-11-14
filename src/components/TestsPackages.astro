@@ -1,57 +1,83 @@
 ---
-import { centre, ui } from '../config/centre';
+import { centre } from '../config/centre';
+import { ui, t } from '../config/ui';
+import type { Lang } from '../config/types';
 import { getTestWhatsAppUrl } from '../lib/whatsapp';
 import SampleTag from './SampleTag.astro';
 import TestList from './islands/TestList';
 import type { TestItem } from './islands/TestList';
+import TextAnimation from './islands/TextAnimation';
 
-const lang = centre.lang;
+interface Props {
+  lang?: Lang;
+  initialOpenTestId?: string;
+}
 
-const testItems: TestItem[] = centre.tests.map((t) => ({
-  id: t.id,
-  name: t.name[lang] ?? t.name.en,
-  blurb: t.blurb[lang] ?? t.blurb.en,
-  includes: t.includes.map((inc) => inc[lang] ?? inc.en),
-  waUrl: getTestWhatsAppUrl(t.name[lang] ?? t.name.en),
+const { lang = 'en', initialOpenTestId } = Astro.props;
+
+const testItems: TestItem[] = centre.tests.map((test) => ({
+  id: test.id,
+  name: t(test.name, lang),
+  blurb: t(test.blurb, lang),
+  includes: test.includes.map((inc) => t(inc, lang)),
+  prep: t(test.prep, lang),
+  waUrl: getTestWhatsAppUrl(t(test.name, lang), lang),
 }));
 ---
 
 <section id="tests" class="tests-section">
   <div class="container">
-    <div class="section-header">
-      <SampleTag />
-      <h2>{ui.testsHeading[lang] ?? ui.testsHeading.en}</h2>
+    <div class="section-top-bar">
+      <SampleTag lang={lang} />
+      <TextAnimation
+        client:visible
+        text={t(ui.testsAndPackages, lang)}
+        className="section-title"
+      />
     </div>
 
-    <div class="tests-packages-grid">
-      <!-- Left Column: Tests List (7 col split on desktop) -->
-      <div class="tests-col">
-        <TestList client:visible tests={testItems} />
+    <div class="tests-layout-grid">
+      <!-- Left Column: Single Card with Ruled Tests (7 col split) -->
+      <div class="tests-column">
+        <TestList
+          client:visible
+          tests={testItems}
+          initialOpenId={initialOpenTestId}
+          testHeaderLabel={t(ui.test, lang)}
+          detailsHeaderLabel={t(ui.details, lang)}
+          whatsIncludedLabel={t(ui.whatsIncluded, lang)}
+          preparationLabel={t(ui.preparation, lang)}
+          bookTestWhatsAppLabel={t(ui.bookTestWhatsApp, lang)}
+        />
       </div>
 
-      <!-- Right Column: Packages (5 col split on desktop) -->
-      <div class="packages-col">
-        <h3 class="packages-heading">{ui.packagesHeading[lang] ?? ui.packagesHeading.en}</h3>
-        <div class="packages-list">
+      <!-- Right Column: Packages (5 col split) -->
+      <div id="packages" class="packages-column">
+        <h3 class="packages-section-heading">{t(ui.healthPackages, lang)}</h3>
+
+        <div class="packages-stack">
           {centre.packages.map((pkg) => {
-            const pkgName = pkg.name[lang] ?? pkg.name.en;
-            const pkgBlurb = pkg.blurb[lang] ?? pkg.blurb.en;
-            const pkgWaUrl = getTestWhatsAppUrl(pkgName);
+            const pkgName = t(pkg.name, lang);
+            const pkgBlurb = t(pkg.blurb, lang);
+            const pkgWaUrl = getTestWhatsAppUrl(pkgName, lang);
+            const isHighlighted = pkg.wide;
 
             return (
-              <div class={`package-card ${pkg.wide ? 'package-card-featured' : ''}`}>
-                <div class="package-content">
-                  <h4 class="package-title">{pkgName}</h4>
+              <div class={`package-card ${isHighlighted ? 'is-highlighted' : ''}`}>
+                <div class="package-card-content">
+                  <h4 class="package-name">{pkgName}</h4>
                   <p class="package-blurb">{pkgBlurb}</p>
                 </div>
-                <div class="package-actions">
+
+                <div class="package-footer-row">
                   <a
                     href={pkgWaUrl}
-                    class="btn btn-outline package-btn"
+                    class="package-details-link"
                     target="_blank"
                     rel="noopener noreferrer"
                   >
-                    {ui.bookTest[lang] ?? ui.bookTest.en}
+                    <span>{t(ui.details, lang)}</span>
+                    <span class="link-arrow" aria-hidden="true">&rarr;</span>
                   </a>
                 </div>
               </div>
@@ -66,20 +92,25 @@ const testItems: TestItem[] = centre.tests.map((t) => ({
 <style>
   .tests-section {
     background-color: var(--paper);
+    border-top: 1px solid var(--rule);
   }
 
-  .section-header {
+  .section-top-bar {
     margin-bottom: var(--space-32);
   }
 
-  .tests-packages-grid {
+  :global(.section-title) {
+    margin-top: var(--space-8);
+  }
+
+  .tests-layout-grid {
     display: flex;
     flex-direction: column;
     gap: var(--space-48);
   }
 
   @media (min-width: 900px) {
-    .tests-packages-grid {
+    .tests-layout-grid {
       display: grid;
       grid-template-columns: 7fr 5fr;
       gap: var(--space-48);
@@ -87,22 +118,25 @@ const testItems: TestItem[] = centre.tests.map((t) => ({
     }
   }
 
-  .packages-heading {
-    margin-bottom: var(--space-16);
-    font-size: 1.25rem;
+  /* Right column packages */
+  .packages-section-heading {
+    font-size: 1.125rem;
+    font-weight: 600;
     color: var(--ink);
+    margin-bottom: var(--space-16);
   }
 
-  .packages-list {
+  .packages-stack {
     display: flex;
     flex-direction: column;
     gap: var(--space-16);
   }
 
+  /* Package Cards with 20px padding */
   .package-card {
-    background-color: var(--paper);
+    background-color: #ffffff;
     border: 1px solid var(--rule);
-    border-radius: var(--radius-row);
+    border-radius: var(--radius-card);
     padding: var(--space-20);
     display: flex;
     flex-direction: column;
@@ -111,12 +145,13 @@ const testItems: TestItem[] = centre.tests.map((t) => ({
     transition: border-color 0.15s ease;
   }
 
-  .package-card-featured {
+  /* Package A Highlighted: tint bg, border primary, no extra badge */
+  .package-card.is-highlighted {
     background-color: var(--tint);
-    border-color: #b5d5cf;
+    border: 1.5px solid var(--primary);
   }
 
-  .package-title {
+  .package-name {
     font-size: 1.125rem;
     font-weight: 600;
     color: var(--ink);
@@ -126,18 +161,42 @@ const testItems: TestItem[] = centre.tests.map((t) => ({
   .package-blurb {
     font-size: var(--font-size-small);
     color: var(--ink-soft);
+    line-height: 1.5;
   }
 
-  .package-btn {
-    min-height: 48px;
-    padding: 0 var(--space-16);
+  .package-footer-row {
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    padding-top: var(--space-12);
+    border-top: 1px solid var(--rule);
+  }
+
+  .package-details-link {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
     font-size: var(--font-size-small);
-    width: 100%;
+    font-weight: 600;
+    color: var(--primary);
+    text-decoration: none;
+    min-height: 48px;
   }
 
-  @media (min-width: 640px) {
-    .package-btn {
-      width: auto;
-    }
+  .package-details-link:hover {
+    text-decoration: underline;
+  }
+
+  .package-details-link:focus-visible {
+    outline: 3px solid var(--primary);
+    outline-offset: 2px;
+  }
+
+  .link-arrow {
+    transition: transform 0.15s ease;
+  }
+
+  .package-details-link:hover .link-arrow {
+    transform: translateX(3px);
   }
 </style>

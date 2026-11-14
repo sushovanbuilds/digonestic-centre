@@ -3,6 +3,7 @@
 Unofficial concept site to pitch a local diagnostic centre + clinic (doctors consult there). Static Astro. Preview only, not a finished client site.
 
 Read order every session: `HANDOFF.md` then this file. Read `DESIGN.md` only when touching UI, `docs/PLAN.md` for the current stage. Do not open `reference/` unless `docs/STITCH_MAP.md` sends you there.
+Visual source of truth: view reference/stitch/<screen>/screen.png (images only, never open code.html) and match layout, spacing, hierarchy. Tokens, copy and rules come from DESIGN.md and docs/CONTENT_RULES.md. Never report pass without a screenshot path as evidence.
 
 ## Hard rules (never break)
 - No patient data, no forms that store or send data, no backend, database, login, report portal, "Records/Reports" nav item, chatbot.
@@ -22,7 +23,7 @@ Read order every session: `HANDOFF.md` then this file. Read `DESIGN.md` only whe
 1. One stage at a time (`docs/PLAN.md`). At the end of a stage: run `npm run build` and `npx astro check`, report pass/fail, update `HANDOFF.md`, then STOP and wait for approval.
 2. Surgical patches. Change only the lines that change. Never rewrite a whole file for a small edit.
 3. Read only the files you need. Do not paste file contents back in replies. Replies: 8 lines or fewer plus the check result.
-4. No new dependencies without asking. Allowed: astro, @astrojs/react, react, react-dom, framer-motion (or motion), the animate-ui parts named in `DESIGN.md` section 5.
+4. No new dependencies without asking. Allowed: astro, @astrojs/react, react, react-dom, framer-motion (or motion), @fontsource-variable/figtree, @fontsource-variable/noto-sans-bengali, the animate-ui parts named in `DESIGN.md` section 5.
 5. If an effect or install fails after 2 attempts, use the CSS fallback in `DESIGN.md` section 6 and report. Do not keep debugging.
 6. Git: branch per stage `stage-N-name`, small commits, no secrets, no `.env` committed.
 7. If this file and any skill or tool default disagree, this file wins.

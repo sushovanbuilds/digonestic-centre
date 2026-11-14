@@ -24,18 +24,18 @@ export interface CentreConfig {
     email?: string;
   };
   location: {
-    areaLabel: string;
-    addressLines: string[];
+    areaLabel: Tx;
+    addressLines: Tx[];
     mapUrl: string;
   };
   hours: {
     label: Tx;
-    value: string;
+    value: Tx;
   }[];
   doctors: {
-    name: string;
-    speciality: string;
-    days: string;
+    name: Tx;
+    speciality: Tx;
+    days: Tx;
   }[];
   flags: {
     homeCollection: boolean;
@@ -48,6 +48,7 @@ export interface CentreConfig {
     name: Tx;
     blurb: Tx;
     includes: Tx[];
+    prep?: Tx;
   }[];
   packages: {
     id: string;
@@ -70,19 +71,4 @@ export interface CentreConfig {
     test: Tx;
     doctor: Tx;
   };
-}
-
-export interface UIStrings {
-  bookTest: Tx;
-  whatsappUs: Tx;
-  openMaps: Tx;
-  requestWhatsApp: Tx;
-  testsHeading: Tx;
-  packagesHeading: Tx;
-  whyHeading: Tx;
-  doctorsHeading: Tx;
-  locationHeading: Tx;
-  reviewsHeading: Tx;
-  sampleNotice: Tx;
-  previewNotice: Tx;
 }

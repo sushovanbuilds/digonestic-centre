@@ -1,27 +1,38 @@
 ---
-import { centre, ui } from '../config/centre';
+import { centre } from '../config/centre';
+import { ui, t } from '../config/ui';
+import type { Lang } from '../config/types';
 import Icon from './Icon.astro';
+import TextAnimation from './islands/TextAnimation';
 
-const lang = centre.lang;
+interface Props {
+  lang?: Lang;
+}
+
+const { lang = 'en' } = Astro.props;
 ---
 
 <section id="why-us" class="why-section">
   <div class="container">
-    <h2 class="why-heading">{ui.whyHeading[lang] ?? ui.whyHeading.en}</h2>
-    
-    <div class="why-grid">
+    <TextAnimation
+      client:visible
+      text={t(ui.whyChooseUs, lang)}
+      className="why-title"
+    />
+
+    <div class="why-cards-grid">
       {centre.why.map((item) => {
-        const itemTitle = item.title[lang] ?? item.title.en;
-        const itemText = item.text[lang] ?? item.text.en;
+        const itemTitle = t(item.title, lang);
+        const itemText = t(item.text, lang);
 
         return (
-          <div class="why-item">
-            <div class="why-icon-wrap">
+          <div class="why-card">
+            <div class="why-icon-tile">
               <Icon name={item.icon} class="why-icon" />
             </div>
-            <div class="why-item-content">
-              <h3 class="why-item-title">{itemTitle}</h3>
-              <p class="why-item-text">{itemText}</p>
+            <div class="why-card-text">
+              <h3 class="why-card-title">{itemTitle}</h3>
+              <p class="why-card-description">{itemText}</p>
             </div>
           </div>
         );
@@ -36,58 +47,62 @@ const lang = centre.lang;
     border-top: 1px solid var(--rule);
   }
 
-  .why-heading {
+  :global(.why-title) {
     margin-bottom: var(--space-32);
   }
 
-  .why-grid {
+  /* 2x2 grid on desktop, 1 col on mobile */
+  .why-cards-grid {
     display: grid;
     grid-template-columns: 1fr;
-    gap: var(--space-24);
+    gap: var(--space-20);
   }
 
   @media (min-width: 640px) {
-    .why-grid {
+    .why-cards-grid {
       grid-template-columns: 1fr 1fr;
-      gap: var(--space-32);
+      gap: var(--space-24);
     }
   }
 
-  .why-item {
+  .why-card {
+    background-color: #ffffff;
+    border: 1px solid var(--rule);
+    border-radius: var(--radius-card);
+    padding: var(--space-20);
     display: flex;
     align-items: flex-start;
     gap: var(--space-16);
-    padding: var(--space-16);
-    border-radius: var(--radius-row);
-    background-color: var(--tint);
   }
 
-  .why-icon-wrap {
+  /* 40px icon tile */
+  .why-icon-tile {
+    width: 40px;
+    height: 40px;
+    min-width: 40px;
+    border-radius: 8px;
+    background-color: var(--tint);
+    color: var(--primary);
     display: flex;
     align-items: center;
     justify-content: center;
-    width: 44px;
-    height: 44px;
-    min-width: 44px;
-    border-radius: var(--radius-row);
-    background-color: var(--paper);
-    color: var(--primary);
   }
 
-  .why-item-content {
+  .why-card-text {
     display: flex;
     flex-direction: column;
     gap: 4px;
   }
 
-  .why-item-title {
+  .why-card-title {
     font-size: 1.0625rem;
     font-weight: 600;
     color: var(--ink);
   }
 
-  .why-item-text {
+  .why-card-description {
     font-size: var(--font-size-small);
     color: var(--ink-soft);
+    line-height: 1.5;
   }
 </style>

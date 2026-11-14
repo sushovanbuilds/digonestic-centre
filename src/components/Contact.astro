@@ -1,85 +1,95 @@
 ---
-import { centre, ui } from '../config/centre';
+import { ui, t } from '../config/ui';
+import type { Lang } from '../config/types';
 import { getGeneralWhatsAppUrl } from '../lib/whatsapp';
 import Icon from './Icon.astro';
+import Press from './islands/Press';
 
-const lang = centre.lang;
-const whatsappUrl = getGeneralWhatsAppUrl();
+interface Props {
+  lang?: Lang;
+}
+
+const { lang = 'en' } = Astro.props;
+const whatsappUrl = getGeneralWhatsAppUrl(lang);
 ---
 
-<section id="contact" class="contact-section">
+<section id="contact" class="booking-section">
   <div class="container">
-    <div class="contact-panel">
-      <div class="contact-icon-wrapper">
-        <Icon name="notification" class="contact-bell-icon" />
+    <!-- Centered Tinted Booking Card (Stitch match) -->
+    <div class="booking-centered-card">
+      <!-- Notification01 icon strictly ABOVE the heading (no overlap) -->
+      <div class="booking-icon-tile">
+        <Icon name="notification" class="notification-bell-icon" />
       </div>
-      
-      <div class="contact-text-block">
-        <h2 class="contact-heading">Request a booking</h2>
-        <p class="contact-explainer">
-          Opens WhatsApp with a ready message. Nothing is stored here.
+
+      <div class="booking-text-block">
+        <h2 class="booking-heading">{t(ui.requestBooking, lang)}</h2>
+        <p class="booking-explainer">
+          {t(ui.bookingNotice, lang)}
         </p>
       </div>
 
-      <div class="contact-action">
-        <a
-          href={whatsappUrl}
-          class="btn btn-wa contact-btn"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          {ui.requestWhatsApp[lang] ?? ui.requestWhatsApp.en}
-        </a>
+      <div class="booking-action-wrap">
+        <Press client:visible>
+          <a
+            href={whatsappUrl}
+            class="btn btn-wa booking-btn"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+              <path d="M7.9 20A9 9 0 1 0 4 16.1L2 22z" />
+            </svg>
+            <span>{t(ui.requestOnWhatsApp, lang)}</span>
+          </a>
+        </Press>
       </div>
     </div>
   </div>
 </section>
 
 <style>
-  .contact-section {
+  .booking-section {
     background-color: var(--paper);
     border-top: 1px solid var(--rule);
   }
 
-  .contact-panel {
+  /* Centered Tinted Card matching Stitch */
+  .booking-centered-card {
     background-color: var(--tint);
+    border: 1px solid #b5d5cf;
     border-radius: var(--radius-contact);
-    padding: var(--space-32);
+    padding: var(--space-48) var(--space-24);
     display: flex;
     flex-direction: column;
-    gap: var(--space-20);
-    align-items: flex-start;
-  }
-
-  @media (min-width: 768px) {
-    .contact-panel {
-      flex-direction: row;
-      align-items: center;
-      justify-content: space-between;
-      padding: var(--space-48);
-    }
-  }
-
-  .contact-icon-wrapper {
-    display: flex;
     align-items: center;
-    justify-content: center;
+    text-align: center;
+    max-width: 680px;
+    margin: 0 auto;
+    gap: var(--space-20);
+  }
+
+  /* Notification01 icon tile ABOVE heading */
+  .booking-icon-tile {
     width: 48px;
     height: 48px;
-    min-width: 48px;
     border-radius: 50%;
     background-color: var(--paper);
     color: var(--primary);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.05);
   }
 
-  /* Effect 4: Notification01 animateOnHover on hover devices only */
+  /* Notification01 animateOnHover on hover devices only */
   @media (hover: hover) and (pointer: fine) {
-    .contact-panel:hover .contact-bell-icon {
-      animation: bell-ring 0.6s ease-in-out;
+    .booking-centered-card:hover .notification-bell-icon {
+      animation: bell-ring-hover 0.6s ease-in-out;
     }
   }
 
-  @keyframes bell-ring {
+  @keyframes bell-ring-hover {
     0% { transform: rotate(0); }
     15% { transform: rotate(14deg); }
     30% { transform: rotate(-14deg); }
@@ -90,42 +100,39 @@ const whatsappUrl = getGeneralWhatsAppUrl();
   }
 
   @media (prefers-reduced-motion: reduce) {
-    .contact-bell-icon {
+    .notification-bell-icon {
       animation: none !important;
     }
   }
 
-  .contact-text-block {
-    flex: 1;
+  .booking-text-block {
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-8);
+    align-items: center;
   }
 
-  .contact-heading {
-    margin-bottom: var(--space-8);
+  .booking-heading {
+    font-size: 1.5rem;
+    color: var(--ink);
+    margin: 0;
   }
 
-  .contact-explainer {
-    color: var(--ink-soft);
+  .booking-explainer {
     font-size: var(--font-size-body);
+    color: var(--ink-soft);
+    max-width: 50ch;
+    margin: 0;
+    line-height: 1.5;
   }
 
-  .contact-action {
+  .booking-action-wrap {
     width: 100%;
+    display: flex;
+    justify-content: center;
   }
 
-  @media (min-width: 768px) {
-    .contact-action {
-      width: auto;
-    }
-  }
-
-  .contact-btn {
-    width: 100%;
-  }
-
-  @media (min-width: 768px) {
-    .contact-btn {
-      width: auto;
-      min-width: 220px;
-    }
+  .booking-btn {
+    min-width: 240px;
   }
 </style>

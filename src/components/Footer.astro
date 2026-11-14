@@ -1,22 +1,48 @@
 ---
-import { centre, ui } from '../config/centre';
+import { centre } from '../config/centre';
+import { ui, t } from '../config/ui';
+import type { Lang } from '../config/types';
 
-const lang = centre.lang;
+interface Props {
+  lang?: Lang;
+}
+
+const { lang = 'en' } = Astro.props;
 ---
 
 <footer class="site-footer">
   <div class="container footer-container">
-    <div class="footer-top">
-      <span class="footer-brand">{centre.name}</span>
-      <p class="footer-details">
-        {centre.location.areaLabel} &bull; {centre.contact.phone}
-      </p>
+    <!-- Row 1: Wordmark + Contact Line, Concept Note -->
+    <div class="footer-row footer-row-top">
+      <div class="footer-col-left">
+        <span class="footer-wordmark">{centre.name}</span>
+        <p class="footer-contact-line">
+          {t(centre.location.areaLabel, lang)} &bull; {centre.contact.phone}
+        </p>
+      </div>
+
+      <div class="footer-col-right">
+        <p class="footer-concept-note">
+          {t(ui.footerNotice, lang)}
+        </p>
+      </div>
     </div>
-    
-    <div class="footer-bottom">
-      <p class="footer-notice">
-        {ui.previewNotice[lang] ?? ui.previewNotice.en}
-      </p>
+
+    <!-- Row 2: Secondary info and Nav anchor links -->
+    <div class="footer-row footer-row-bottom">
+      <div class="footer-bottom-left">
+        <span class="footer-fineprint">
+          {centre.name} &bull; {t(ui.conceptPreview, lang)}
+        </span>
+      </div>
+
+      <nav class="footer-bottom-nav" aria-label="Footer Navigation">
+        <a href="#tests" class="footer-nav-link">{t(ui.nav.tests, lang)}</a>
+        <a href="#packages" class="footer-nav-link">{t(ui.nav.packages, lang)}</a>
+        <a href="#why-us" class="footer-nav-link">{t(ui.nav.whyUs, lang)}</a>
+        <a href="#location" class="footer-nav-link">{t(ui.nav.location, lang)}</a>
+        <a href="#contact" class="footer-nav-link">{t(ui.nav.contact, lang)}</a>
+      </nav>
     </div>
   </div>
 </footer>
@@ -36,37 +62,68 @@ const lang = centre.lang;
     gap: var(--space-24);
   }
 
-  .footer-top {
+  .footer-row {
     display: flex;
     flex-direction: column;
-    gap: var(--space-8);
+    gap: var(--space-12);
   }
 
-  @media (min-width: 640px) {
-    .footer-top {
+  @media (min-width: 768px) {
+    .footer-row {
       flex-direction: row;
       justify-content: space-between;
       align-items: baseline;
     }
   }
 
-  .footer-brand {
+  .footer-wordmark {
+    font-size: 1rem;
     font-weight: 700;
     color: var(--ink);
-    font-size: 1rem;
   }
 
-  .footer-details {
+  .footer-contact-line {
+    font-size: var(--font-size-small);
     color: var(--ink-soft);
+    margin: 4px 0 0 0;
   }
 
-  .footer-bottom {
-    padding-top: var(--space-16);
+  .footer-concept-note {
+    font-size: 0.8125rem;
+    color: var(--ink-soft);
+    margin: 0;
+  }
+
+  .footer-row-bottom {
+    padding-top: var(--space-20);
     border-top: 1px solid var(--rule);
   }
 
-  .footer-notice {
+  .footer-fineprint {
+    font-size: 0.8125rem;
     color: var(--ink-soft);
-    font-size: 0.875rem;
+  }
+
+  .footer-bottom-nav {
+    display: flex;
+    flex-wrap: wrap;
+    gap: var(--space-16);
+  }
+
+  .footer-nav-link {
+    font-size: 0.8125rem;
+    color: var(--ink-soft);
+    text-decoration: none;
+    transition: color 0.15s ease;
+  }
+
+  .footer-nav-link:hover {
+    color: var(--ink);
+    text-decoration: underline;
+  }
+
+  .footer-nav-link:focus-visible {
+    outline: 3px solid var(--primary);
+    outline-offset: 2px;
   }
 </style>

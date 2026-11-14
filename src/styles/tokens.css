@@ -1,11 +1,3 @@
-@font-face {
-  font-family: 'Figtree';
-  font-style: normal;
-  font-weight: 300 900;
-  font-display: swap;
-  src: url('/fonts/figtree-var.woff2') format('woff2');
-}
-
 :root {
   /* Colours (DESIGN.md section 2) */
   --paper: #F6F9F9;
@@ -20,7 +12,7 @@
   --sample-ink: #6B4500;
 
   /* Typography */
-  --font-family-base: 'Figtree', system-ui, -apple-system, 'Segoe UI', sans-serif;
+  --font-family-base: 'Figtree Variable', 'Figtree', system-ui, -apple-system, 'Segoe UI', sans-serif;
   --font-size-h1: clamp(2.25rem, 8vw, 3.5rem);
   --font-size-h2: clamp(1.5rem, 5vw, 2rem);
   --font-size-body: 1.0625rem;
@@ -31,6 +23,7 @@
   --space-8: 8px;
   --space-12: 12px;
   --space-16: 16px;
+  --space-20: 20px;
   --space-24: 24px;
   --space-32: 32px;
   --space-48: 48px;
@@ -39,6 +32,7 @@
   /* Radius */
   --radius-row: 6px;
   --radius-btn: 10px;
+  --radius-card: 10px;
   --radius-contact: 14px;
 
   /* Container */

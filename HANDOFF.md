@@ -3,30 +3,28 @@
 Update this file at the end of every stage. Keep it under 60 lines.
 
 ## Status
-- Stage 0 (design): DONE. Design tokens final in `DESIGN.md`.
-- Stage 1 (scaffold, stubs, config): DONE.
-- Stage 2 (layout and sections): DONE. All 8 sections & islands active.
-- Stage 3 (mobile polish & accessibility): DONE. 320px/390px, 48px tap targets, reduced motion.
-- Stage 4 (speed, SEO, noindex): DONE. Self-hosted Figtree, JS < 50 KB gz, noindex & Disallow verified.
-- Stage 5 (deploy & handoff): DONE. README, LAUNCH_CHECKLIST.md, DEMO_SCRIPT.md delivered.
-- Active branch: `stage-2-layout`.
+- Stage 0 to 5: DONE.
+- Stage 2b (Stitch Match & Bilingual V1): DONE.
+- Active branch: `stage-2b-stitch-match`.
 
 ## Decisions made
-- Astro static + React islands for 3 effects (TestList AutoHeight, Press ring, HeroTitle reveal).
-- Palette, tokens, and self-hosted variable Figtree font implemented.
-- Tests presented as ruled expandable menu list; WhatsApp links prefilled at build time.
-- Zero patient data, zero backend/forms, zero tracking, strict preview noindex mode.
-- Bengali translation structure preserved in `Tx` types for post-v1 rollout.
+- Visual source of truth matched against `reference/stitch/*/screen.png`.
+- Zero-JS language toggle (`EN | বাংলা`) in header routing to `/` and `/bn/`.
+- All visible strings isolated in `src/config/ui.ts` with complete Bengali translations.
+- Fonts: `@fontsource-variable/figtree` globally, `@fontsource-variable/noto-sans-bengali` for Bengali pages.
+- Tested against Strip list: no invented claims, parameter counts, or real-looking hours.
+- Verified visual evidence captured in `docs/shots/` at 390px and 1280px viewports.
 
 ## Open (ask the owner, default in brackets)
-- Replace placeholder values in `src/config/centre.ts` with real clinic data when pitching.
+- Replace placeholder text in `src/config/centre.ts` with real clinic data when pitching.
 - Toggle `preview: false` and `emitSchema: true` on client launch.
 
 ## Quality gates & checks
-- `npm run build`: PASS (static generation clean, zero errors).
-- `npm run check`: PASS (24 files checked, 0 errors, 0 warnings, 0 hints).
+- `npm run build`: PASS (static routes `/`, `/bn/`, and test-expanded pages clean).
+- `npx astro check`: PASS (31 files checked, 0 errors, 0 warnings, 0 hints).
 - `npm run check:content`: PASS (0 banned terms, 0 forbidden resources, noindex active).
-- JS bundle size: 49.1 KB gzipped (well under the 60 KB budget).
+- Layout: Zero horizontal scroll at 320px/390px/1280px; Bengali line-height 1.75; no text clipping.
+- Screenshots saved: `docs/shots/desktop-en.png`, `desktop-bn.png`, `desktop-open-row.png`, `mobile-en.png`, `mobile-bn.png`, `mobile-open-row.png`.
 
 ## Next action
-Ready for client demo and pitch presentation.
+Review captured screenshots in `docs/shots/` and approve branch `stage-2b-stitch-match`.
