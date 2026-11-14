@@ -1,0 +1,671 @@
+<!DOCTYPE html>
+
+<html lang="en"><head><meta charset="utf-8"/><meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover" name="viewport"/><meta content="mobile_tab" name="shell-type"/><link href="https://fonts.googleapis.com/css2?family=Figtree:wght@400;500;600;700&amp;family=Noto+Sans+Bengali:wght@400;500;600;700&amp;family=Plus+Jakarta+Sans:wght@400;500;600;700&amp;display=swap" rel="stylesheet"/><link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/><style>@layer base{html,body{width:100vw;margin:0;padding:0;}body{overscroll-behavior:none;}.pb-safe{padding-bottom:env(safe-area-inset-bottom,0px);}.pt-safe{padding-top:env(safe-area-inset-top,0px);}main>:first-child{margin-top:0!important;}main>:last-child{margin-bottom:0!important;}}::-webkit-scrollbar{display:none;}
+body.lang-bn { font-family: 'Noto Sans Bengali', sans-serif !important; }
+body.lang-en { font-family: 'Figtree', 'Plus Jakarta Sans', sans-serif !important; }
+</style><script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script><script id="tailwind-config">tailwind.config = {
+  darkMode: "class",
+  theme: {
+    extend: {
+      "colors": {
+        "on-secondary-container": "#5b6765",
+        "surface-container-high": "#d6ebfc",
+        "primary-container": "#0e6b63",
+        "outline": "#6f7977",
+        "on-error-container": "#93000a",
+        "surface-container-low": "#eaf5ff",
+        "secondary-fixed": "#d8e5e2",
+        "on-surface": "#081e29",
+        "surface-variant": "#d0e5f6",
+        "secondary-container": "#d8e5e2",
+        "primary-ink": "#FFFFFF",
+        "rule": "#C9DAD7",
+        "surface-container-lowest": "#ffffff",
+        "on-secondary-fixed": "#121e1c",
+        "primary-fixed-dim": "#86d4ca",
+        "inverse-surface": "#1f333f",
+        "on-error": "#ffffff",
+        "tertiary-container": "#476371",
+        "inverse-on-surface": "#e4f3ff",
+        "on-secondary-fixed-variant": "#3d4947",
+        "ink-soft": "#44606E",
+        "inverse-primary": "#86d4ca",
+        "on-tertiary": "#ffffff",
+        "tertiary": "#2f4b59",
+        "surface": "#f5faff",
+        "primary-fixed": "#a2f1e6",
+        "paper": "#F6F9F9",
+        "on-background": "#081e29",
+        "wa": "#0F7B42",
+        "ink": "#0F2430",
+        "on-tertiary-fixed-variant": "#2e4a58",
+        "secondary-fixed-dim": "#bcc9c6",
+        "on-primary-fixed": "#00201d",
+        "tertiary-fixed": "#c9e7f8",
+        "on-primary-container": "#9ae8de",
+        "error": "#ba1a1a",
+        "primary": "#00514b",
+        "on-tertiary-fixed": "#001f2a",
+        "on-tertiary-container": "#c1deef",
+        "surface-container-highest": "#d0e5f6",
+        "surface-container": "#def0ff",
+        "sample-bg": "#FFF1CC",
+        "secondary": "#55615f",
+        "on-primary": "#ffffff",
+        "on-secondary": "#ffffff",
+        "background": "#f5faff",
+        "surface-dim": "#c8dded",
+        "sample-ink": "#6B4500",
+        "surface-bright": "#f5faff",
+        "error-container": "#ffdad6",
+        "on-surface-variant": "#3f4947",
+        "surface-tint": "#0b6a62",
+        "outline-variant": "#bec9c6",
+        "on-primary-fixed-variant": "#00504a",
+        "tertiary-fixed-dim": "#adcbdb"
+      },
+      "borderRadius": {
+        "DEFAULT": "0.125rem",
+        "lg": "0.25rem",
+        "xl": "0.5rem",
+        "full": "0.75rem"
+      },
+      "spacing": {
+        "space-xs": "0.25rem",
+        "gutter": "1.25rem",
+        "space-3xl": "3rem",
+        "space-2xl": "2rem",
+        "margin-desktop": "2.5rem",
+        "space-sm": "0.5rem",
+        "space-lg": "1rem",
+        "space-xl": "1.5rem",
+        "gutter-desktop": "2rem",
+        "space-md": "0.75rem",
+        "margin": "1.25rem",
+        "space-4xl": "4.5rem"
+      },
+      "fontFamily": {
+        "headline-xl": ["Figtree", "Plus Jakarta Sans", "Noto Sans Bengali", "sans-serif"],
+        "headline-lg": ["Figtree", "Plus Jakarta Sans", "Noto Sans Bengali", "sans-serif"],
+        "label-md": ["Figtree", "Plus Jakarta Sans", "Noto Sans Bengali", "sans-serif"],
+        "label-sm": ["Figtree", "Plus Jakarta Sans", "Noto Sans Bengali", "sans-serif"],
+        "headline-xl-mobile": ["Figtree", "Plus Jakarta Sans", "Noto Sans Bengali", "sans-serif"],
+        "headline-md": ["Figtree", "Plus Jakarta Sans", "Noto Sans Bengali", "sans-serif"],
+        "body-lg": ["Figtree", "Plus Jakarta Sans", "Noto Sans Bengali", "sans-serif"],
+        "body-md": ["Figtree", "Plus Jakarta Sans", "Noto Sans Bengali", "sans-serif"],
+        "headline-lg-mobile": ["Figtree", "Plus Jakarta Sans", "Noto Sans Bengali", "sans-serif"]
+      },
+      "fontSize": {
+        "headline-xl": ["56px", {"lineHeight": "60px", "letterSpacing": "-0.02em", "fontWeight": "700"}],
+        "headline-lg": ["32px", {"lineHeight": "38px", "letterSpacing": "-0.01em", "fontWeight": "600"}],
+        "label-md": ["15px", {"lineHeight": "20px", "fontWeight": "600"}],
+        "label-sm": ["13px", {"lineHeight": "16px", "fontWeight": "500"}],
+        "headline-xl-mobile": ["36px", {"lineHeight": "40px", "letterSpacing": "-0.015em", "fontWeight": "700"}],
+        "headline-md": ["20px", {"lineHeight": "26px", "fontWeight": "600"}],
+        "body-lg": ["17px", {"lineHeight": "27px", "fontWeight": "400"}],
+        "body-md": ["15px", {"lineHeight": "22px", "fontWeight": "400"}],
+        "headline-lg-mobile": ["24px", {"lineHeight": "30px", "letterSpacing": "-0.01em", "fontWeight": "600"}]
+      }
+    }
+  }
+}</script></head><body class="bg-paper text-ink min-h-screen flex flex-col font-body-md text-body-md lang-en"><header class="fixed top-0 w-full z-50 pt-safe bg-paper/90 backdrop-blur-xl shadow-[0_1px_8px_rgba(0,0,0,0.04)]"><div class="h-14 px-gutter flex items-center justify-between"><div class="flex items-center gap-space-sm"><span class="font-headline-md text-headline-md text-ink tracking-tight uppercase" data-i18n="centre_name">[CENTRE NAME]</span></div><div class="flex items-center gap-space-xs"><div aria-label="Language switcher" class="inline-flex items-center p-0.5 rounded-full border border-rule bg-paper text-[12px] font-semibold select-none flex-shrink-0" role="group"><button aria-pressed="true" class="px-2 py-1 rounded-full bg-primary text-white font-medium leading-none transition-colors" id="lang-btn-en" onclick="setLanguage('en')" type="button">EN</button><button aria-pressed="false" class="px-2 py-1 rounded-full text-ink-soft hover:text-ink font-medium leading-none transition-colors" id="lang-btn-bn" onclick="setLanguage('bn')" type="button">বাংলা</button></div><a class="h-11 px-space-lg rounded-xl bg-primary text-primary-ink font-label-md text-label-md flex items-center justify-center transition-colors whitespace-nowrap" data-i18n="book_a_test" data-path="book-appointment" href="#">Book a test</a><div class="w-8 h-8 rounded-full bg-primary flex items-center justify-center flex-shrink-0"><span class="material-symbols-outlined text-on-primary text-[18px]">person</span></div></div></div></header><main class="flex-1 flex flex-col relative w-full pt-14 pb-32 bg-paper"><div class="flex flex-col w-full px-gutter">
+<!-- Section Header -->
+<div class="pt-space-xl pb-space-lg flex flex-col gap-space-xs">
+<div class="flex items-center justify-between">
+<h1 class="font-headline-lg-mobile text-headline-lg-mobile text-ink tracking-tight" data-i18n="page_title">
+        Tests &amp; packages
+      </h1>
+<span class="px-space-sm py-space-xs rounded-lg bg-sample-bg text-sample-ink font-label-sm text-label-sm whitespace-nowrap" data-i18n="sample_content">
+        Sample content
+      </span>
+</div>
+<p class="font-body-md text-body-md text-ink-soft" data-i18n="page_subtitle">
+      Routine diagnostics and specialized profiling handled with clinical accuracy.
+    </p>
+<!-- Fast Home Collection & Desk WhatsApp Banner -->
+<div class="mt-space-sm p-space-sm rounded-xl bg-wa/10 border border-wa/20 flex flex-col gap-space-xs">
+<div class="flex items-center justify-between gap-space-xs">
+<div class="flex items-center gap-space-xs text-wa font-label-md text-label-sm">
+<span class="material-symbols-outlined text-[18px]">home_health</span>
+<span data-i18n="home_collection_title">Home Sample Collection Available</span>
+</div>
+<span class="px-1.5 py-0.5 rounded bg-wa text-white text-[11px] font-semibold tracking-wide uppercase">Direct WhatsApp</span>
+</div>
+<p class="text-ink-soft text-[13px] leading-tight" data-i18n="home_collection_desc">Free doorstep pickup across municipal limits. WhatsApp us directly to confirm slot.</p>
+<div class="pt-1">
+<a class="wa-dynamic-link inline-flex items-center gap-1.5 px-3 py-1.5 rounded-lg bg-wa text-white text-[13px] font-semibold tracking-tight shadow-sm active:opacity-90" data-wa-type="home_collection" href="https://wa.me/918023456789" rel="noopener noreferrer" target="_blank">
+<span class="material-symbols-outlined text-[16px]">chat</span>
+<span data-i18n="btn_home_collection_wa">Request Home Visit via WhatsApp</span>
+</a>
+</div>
+</div>
+</div>
+<!-- Interactive Ruled Test List -->
+<div class="flex flex-col w-full">
+<!-- Row 1: EXPANDED STATE -->
+<div class="w-full bg-secondary-fixed/40 transition-colors duration-200" id="test-row-1">
+<button aria-controls="test-panel-1" aria-expanded="true" class="w-full min-h-[64px] py-space-md flex items-center justify-between text-left focus:outline-none focus-visible:ring-2 focus-visible:ring-primary focus-visible:ring-offset-2" onclick="toggleAccordion(this)" type="button">
+<div class="flex flex-col pr-space-md">
+<span class="font-headline-md text-headline-md text-ink" data-i18n="test1_title">
+            Complete blood panel routine check
+          </span>
+<span class="font-body-md text-body-md text-ink-soft" data-i18n="test1_subtitle">
+            Comprehensive primary hematological evaluation
+          </span>
+</div>
+<div class="w-10 h-10 flex items-center justify-center text-ink flex-shrink-0">
+<span class="material-symbols-outlined text-[24px] transition-transform duration-300 rotate-180" id="chevron-1">
+            keyboard_arrow_down
+          </span>
+</div>
+</button>
+<!-- Expanded Drawer Content -->
+<div class="flex flex-col pb-space-lg px-space-xs" id="test-panel-1">
+<div class="bg-paper p-space-md rounded-xl flex flex-col gap-space-md shadow-sm">
+<div>
+<h2 class="font-label-md text-label-md text-ink mb-space-xs" data-i18n="whats_included">What's included:</h2>
+<ul class="flex flex-col gap-space-xs pl-space-md list-disc text-ink-soft font-body-md text-body-md marker:text-primary">
+<li data-i18n="test1_inc1">Hemoglobin &amp; RBC indices</li>
+<li data-i18n="test1_inc2">Total and differential WBC count</li>
+<li data-i18n="test1_inc3">Platelet count and morphology</li>
+<li data-i18n="test1_inc4">Erythrocyte sedimentation rate (ESR)</li>
+</ul>
+</div>
+<div class="bg-secondary-fixed/30 p-space-sm rounded-lg flex items-start gap-space-sm text-ink-soft">
+<span class="material-symbols-outlined text-primary text-[20px] mt-0.5">info</span>
+<p class="font-body-md text-body-md text-ink">
+<span class="font-label-sm text-label-sm text-ink block" data-i18n="prep_title">Preparation</span>
+<span data-i18n="test1_prep">8–10 hours overnight fasting recommended. Plain water permitted.</span>
+</p>
+</div>
+<div class="pt-space-xs flex flex-col gap-space-sm">
+<!-- Dynamic WhatsApp click-to-chat CTA -->
+<a class="wa-dynamic-link relative overflow-hidden w-full min-h-[52px] px-space-lg rounded-xl bg-wa text-white font-label-md text-label-md flex items-center justify-center gap-space-sm transition-opacity active:opacity-90 shadow-sm" data-test-id="test1" data-wa-type="test" href="https://wa.me/918023456789" onclick="createRipple(event)" rel="noopener noreferrer" target="_blank">
+<span class="material-symbols-outlined text-[20px]">chat</span>
+<span data-i18n="btn_book_wa">Book this test on WhatsApp</span>
+</a>
+<!-- WhatsApp draft preview pill -->
+<div class="px-space-sm py-1.5 rounded-lg bg-surface-container-low border border-rule/60 flex items-start gap-1.5 text-[12px] leading-snug text-ink-soft">
+<span class="material-symbols-outlined text-wa text-[16px] flex-shrink-0 mt-0.5">send_to_mobile</span>
+<div>
+<span class="font-semibold text-ink" data-i18n="prefilled_pill_label">Prefilled draft:</span>
+<span class="italic text-ink" id="wa-preview-test1">"Hello, I'd like to book a test. Name: , Test: Complete blood panel routine check, Preferred time: "</span>
+</div>
+</div>
+<button class="relative overflow-hidden w-full min-h-[52px] px-space-lg rounded-xl bg-primary text-primary-ink font-label-md text-label-md flex items-center justify-center transition-opacity active:opacity-90" onclick="createRipple(event)" type="button">
+<span data-i18n="btn_select">Select test</span>
+</button>
+</div>
+</div>
+</div>
+<!-- Ruled Divider -->
+<div class="w-full h-[1px] bg-rule"></div>
+</div>
+<!-- Row 2: Collapsed -->
+<div class="w-full transition-colors duration-200" id="test-row-2">
+<button aria-controls="test-panel-2" aria-expanded="false" class="w-full min-h-[64px] py-space-md flex items-center justify-between text-left focus:outline-none focus-visible:ring-2 focus-visible:ring-primary" onclick="toggleAccordion(this)" type="button">
+<div class="flex flex-col pr-space-md">
+<span class="font-headline-md text-headline-md text-ink" data-i18n="test2_title">
+            Lipid profile &amp; cardiovascular assessment
+          </span>
+<span class="font-body-md text-body-md text-ink-soft" data-i18n="test2_subtitle">
+            Total cholesterol, HDL, LDL, VLDL, and Triglycerides
+          </span>
+</div>
+<div class="w-10 h-10 flex items-center justify-center text-ink flex-shrink-0">
+<span class="material-symbols-outlined text-[24px] transition-transform duration-300" id="chevron-2">
+            keyboard_arrow_down
+          </span>
+</div>
+</button>
+<div class="hidden flex flex-col pb-space-lg px-space-xs" id="test-panel-2">
+<div class="bg-paper p-space-md rounded-xl flex flex-col gap-space-md shadow-sm">
+<div>
+<h2 class="font-label-md text-label-md text-ink mb-space-xs" data-i18n="whats_included">What's included:</h2>
+<ul class="flex flex-col gap-space-xs pl-space-md list-disc text-ink-soft font-body-md text-body-md marker:text-primary">
+<li data-i18n="test2_inc1">Serum Cholesterol</li>
+<li data-i18n="test2_inc2">Triglycerides &amp; HDL Direct</li>
+<li data-i18n="test2_inc3">Cardiac risk ratio calculation</li>
+</ul>
+</div>
+<div class="bg-secondary-fixed/30 p-space-sm rounded-lg flex items-start gap-space-sm text-ink-soft">
+<span class="material-symbols-outlined text-primary text-[20px] mt-0.5">info</span>
+<p class="font-body-md text-body-md text-ink">
+<span class="font-label-sm text-label-sm text-ink block" data-i18n="prep_title">Preparation</span>
+<span data-i18n="test2_prep">10–12 hours overnight fasting mandatory.</span>
+</p>
+</div>
+<div class="pt-space-xs flex flex-col gap-space-sm">
+<a class="wa-dynamic-link relative overflow-hidden w-full min-h-[52px] px-space-lg rounded-xl bg-wa text-white font-label-md text-label-md flex items-center justify-center gap-space-sm transition-opacity active:opacity-90 shadow-sm" data-test-id="test2" data-wa-type="test" href="https://wa.me/918023456789" onclick="createRipple(event)" rel="noopener noreferrer" target="_blank">
+<span class="material-symbols-outlined text-[20px]">chat</span>
+<span data-i18n="btn_book_wa">Book this test on WhatsApp</span>
+</a>
+<!-- WhatsApp draft preview pill -->
+<div class="px-space-sm py-1.5 rounded-lg bg-surface-container-low border border-rule/60 flex items-start gap-1.5 text-[12px] leading-snug text-ink-soft">
+<span class="material-symbols-outlined text-wa text-[16px] flex-shrink-0 mt-0.5">send_to_mobile</span>
+<div>
+<span class="font-semibold text-ink" data-i18n="prefilled_pill_label">Prefilled draft:</span>
+<span class="italic text-ink" id="wa-preview-test2">"Hello, I'd like to book a test. Name: , Test: Lipid profile &amp; cardiovascular assessment, Preferred time: "</span>
+</div>
+</div>
+<button class="relative overflow-hidden w-full min-h-[52px] px-space-lg rounded-xl bg-primary text-primary-ink font-label-md text-label-md flex items-center justify-center transition-opacity active:opacity-90" onclick="createRipple(event)" type="button">
+<span data-i18n="btn_select">Select test</span>
+</button>
+</div>
+</div>
+</div>
+<div class="w-full h-[1px] bg-rule"></div>
+</div>
+<!-- Row 3: Collapsed -->
+<div class="w-full transition-colors duration-200" id="test-row-3">
+<button aria-controls="test-panel-3" aria-expanded="false" class="w-full min-h-[64px] py-space-md flex items-center justify-between text-left focus:outline-none focus-visible:ring-2 focus-visible:ring-primary" onclick="toggleAccordion(this)" type="button">
+<div class="flex flex-col pr-space-md">
+<span class="font-headline-md text-headline-md text-ink" data-i18n="test3_title">
+            HbA1c &amp; Glycated blood sugar marker
+          </span>
+<span class="font-body-md text-body-md text-ink-soft" data-i18n="test3_subtitle">
+            Three-month glycemic control profile
+          </span>
+</div>
+<div class="w-10 h-10 flex items-center justify-center text-ink flex-shrink-0">
+<span class="material-symbols-outlined text-[24px] transition-transform duration-300" id="chevron-3">
+            keyboard_arrow_down
+          </span>
+</div>
+</button>
+<div class="hidden flex flex-col pb-space-lg px-space-xs" id="test-panel-3">
+<div class="bg-paper p-space-md rounded-xl flex flex-col gap-space-md shadow-sm">
+<div>
+<h2 class="font-label-md text-label-md text-ink mb-space-xs" data-i18n="whats_included">What's included:</h2>
+<ul class="flex flex-col gap-space-xs pl-space-md list-disc text-ink-soft font-body-md text-body-md marker:text-primary">
+<li data-i18n="test3_inc1">Glycosylated Hemoglobin</li>
+<li data-i18n="test3_inc2">Estimated Average Glucose (eAG)</li>
+</ul>
+</div>
+<div class="bg-secondary-fixed/30 p-space-sm rounded-lg flex items-start gap-space-sm text-ink-soft">
+<span class="material-symbols-outlined text-primary text-[20px] mt-0.5">info</span>
+<p class="font-body-md text-body-md text-ink">
+<span class="font-label-sm text-label-sm text-ink block" data-i18n="prep_title">Preparation</span>
+<span data-i18n="test3_prep">No fasting required. Can be performed at any time of day.</span>
+</p>
+</div>
+<div class="pt-space-xs flex flex-col gap-space-sm">
+<a class="wa-dynamic-link relative overflow-hidden w-full min-h-[52px] px-space-lg rounded-xl bg-wa text-white font-label-md text-label-md flex items-center justify-center gap-space-sm transition-opacity active:opacity-90 shadow-sm" data-test-id="test3" data-wa-type="test" href="https://wa.me/918023456789" onclick="createRipple(event)" rel="noopener noreferrer" target="_blank">
+<span class="material-symbols-outlined text-[20px]">chat</span>
+<span data-i18n="btn_book_wa">Book this test on WhatsApp</span>
+</a>
+<!-- WhatsApp draft preview pill -->
+<div class="px-space-sm py-1.5 rounded-lg bg-surface-container-low border border-rule/60 flex items-start gap-1.5 text-[12px] leading-snug text-ink-soft">
+<span class="material-symbols-outlined text-wa text-[16px] flex-shrink-0 mt-0.5">send_to_mobile</span>
+<div>
+<span class="font-semibold text-ink" data-i18n="prefilled_pill_label">Prefilled draft:</span>
+<span class="italic text-ink" id="wa-preview-test3">"Hello, I'd like to book a test. Name: , Test: HbA1c &amp; Glycated blood sugar marker, Preferred time: "</span>
+</div>
+</div>
+<button class="relative overflow-hidden w-full min-h-[52px] px-space-lg rounded-xl bg-primary text-primary-ink font-label-md text-label-md flex items-center justify-center transition-opacity active:opacity-90" onclick="createRipple(event)" type="button">
+<span data-i18n="btn_select">Select test</span>
+</button>
+</div>
+</div>
+</div>
+<div class="w-full h-[1px] bg-rule"></div>
+</div>
+<!-- Row 4: Collapsed -->
+<div class="w-full transition-colors duration-200" id="test-row-4">
+<button aria-controls="test-panel-4" aria-expanded="false" class="w-full min-h-[64px] py-space-md flex items-center justify-between text-left focus:outline-none focus-visible:ring-2 focus-visible:ring-primary" onclick="toggleAccordion(this)" type="button">
+<div class="flex flex-col pr-space-md">
+<span class="font-headline-md text-headline-md text-ink" data-i18n="test4_title">
+            Renal metabolic &amp; kidney function series
+          </span>
+<span class="font-body-md text-body-md text-ink-soft" data-i18n="test4_subtitle">
+            Urea, creatinine, eGFR, and electrolytes
+          </span>
+</div>
+<div class="w-10 h-10 flex items-center justify-center text-ink flex-shrink-0">
+<span class="material-symbols-outlined text-[24px] transition-transform duration-300" id="chevron-4">
+            keyboard_arrow_down
+          </span>
+</div>
+</button>
+<div class="hidden flex flex-col pb-space-lg px-space-xs" id="test-panel-4">
+<div class="bg-paper p-space-md rounded-xl flex flex-col gap-space-md shadow-sm">
+<div>
+<h2 class="font-label-md text-label-md text-ink mb-space-xs" data-i18n="whats_included">What's included:</h2>
+<ul class="flex flex-col gap-space-xs pl-space-md list-disc text-ink-soft font-body-md text-body-md marker:text-primary">
+<li data-i18n="test4_inc1">Serum Creatinine with eGFR</li>
+<li data-i18n="test4_inc2">Blood Urea Nitrogen (BUN)</li>
+<li data-i18n="test4_inc3">Serum Electrolytes (Na+, K+, Cl-)</li>
+</ul>
+</div>
+<div class="bg-secondary-fixed/30 p-space-sm rounded-lg flex items-start gap-space-sm text-ink-soft">
+<span class="material-symbols-outlined text-primary text-[20px] mt-0.5">info</span>
+<p class="font-body-md text-body-md text-ink">
+<span class="font-label-sm text-label-sm text-ink block" data-i18n="prep_title">Preparation</span>
+<span data-i18n="test4_prep">Overnight fasting recommended. Maintain normal hydration.</span>
+</p>
+</div>
+<div class="pt-space-xs flex flex-col gap-space-sm">
+<a class="wa-dynamic-link relative overflow-hidden w-full min-h-[52px] px-space-lg rounded-xl bg-wa text-white font-label-md text-label-md flex items-center justify-center gap-space-sm transition-opacity active:opacity-90 shadow-sm" data-test-id="test4" data-wa-type="test" href="https://wa.me/918023456789" onclick="createRipple(event)" rel="noopener noreferrer" target="_blank">
+<span class="material-symbols-outlined text-[20px]">chat</span>
+<span data-i18n="btn_book_wa">Book this test on WhatsApp</span>
+</a>
+<!-- WhatsApp draft preview pill -->
+<div class="px-space-sm py-1.5 rounded-lg bg-surface-container-low border border-rule/60 flex items-start gap-1.5 text-[12px] leading-snug text-ink-soft">
+<span class="material-symbols-outlined text-wa text-[16px] flex-shrink-0 mt-0.5">send_to_mobile</span>
+<div>
+<span class="font-semibold text-ink" data-i18n="prefilled_pill_label">Prefilled draft:</span>
+<span class="italic text-ink" id="wa-preview-test4">"Hello, I'd like to book a test. Name: , Test: Renal metabolic &amp; kidney function series, Preferred time: "</span>
+</div>
+</div>
+<button class="relative overflow-hidden w-full min-h-[52px] px-space-lg rounded-xl bg-primary text-primary-ink font-label-md text-label-md flex items-center justify-center transition-opacity active:opacity-90" onclick="createRipple(event)" type="button">
+<span data-i18n="btn_select">Select test</span>
+</button>
+</div>
+</div>
+</div>
+<div class="w-full h-[1px] bg-rule"></div>
+</div>
+</div>
+<!-- Interaction & Motion Spec Callout Card -->
+<aside class="mt-space-2xl p-space-md rounded-xl bg-surface-container-low text-on-surface shadow-sm">
+<div class="flex items-center gap-space-sm pb-space-xs">
+<span class="material-symbols-outlined text-primary text-[20px]">motion_photos_on</span>
+<h3 class="font-headline-md text-headline-md text-ink" data-i18n="ux_spec_title">UX Motion Specification</h3>
+</div>
+<p class="font-body-md text-body-md text-ink-soft pb-space-sm" data-i18n="ux_spec_sub">
+      Defined dynamic behaviors and tactile feedback models for this requisition list:
+    </p>
+<div class="flex flex-col gap-space-xs">
+<div class="bg-paper p-space-sm rounded-lg flex items-start gap-space-sm">
+<span class="material-symbols-outlined text-primary text-[18px] mt-0.5">expand</span>
+<div class="flex flex-col">
+<span class="font-label-sm text-label-sm text-ink" data-i18n="motion_spec_1_title">AutoHeight + blur-fade content swap</span>
+<span class="font-body-md text-body-md text-ink-soft" data-i18n="motion_spec_1_sub">Duration: 0.4s easeInOut with synchronized chevron rotation (180°).</span>
+</div>
+</div>
+<div class="bg-paper p-space-sm rounded-lg flex items-start gap-space-sm">
+<span class="material-symbols-outlined text-primary text-[18px] mt-0.5">send_to_mobile</span>
+<div class="flex flex-col">
+<span class="font-label-sm text-label-sm text-ink" data-i18n="motion_spec_wa_title">Dynamic WhatsApp prefilling</span>
+<span class="font-body-md text-body-md text-ink-soft" data-i18n="motion_spec_wa_sub">Auto-constructs wa.me URL with structured test parameters, dual-language text &amp; instant draft feedback.</span>
+</div>
+</div>
+<div class="bg-paper p-space-sm rounded-lg flex items-start gap-space-sm">
+<span class="material-symbols-outlined text-primary text-[18px] mt-0.5">touch_app</span>
+<div class="flex flex-col">
+<span class="font-label-sm text-label-sm text-ink" data-i18n="motion_spec_2_title">Button ring ripple on tap</span>
+<span class="font-body-md text-body-md text-ink-soft" data-i18n="motion_spec_2_sub">Expansion size 80px, duration 400ms using currentColor overlay.</span>
+</div>
+</div>
+<div class="bg-paper p-space-sm rounded-lg flex items-start gap-space-sm">
+<span class="material-symbols-outlined text-primary text-[18px] mt-0.5">text_fields</span>
+<div class="flex flex-col">
+<span class="font-label-sm text-label-sm text-ink" data-i18n="motion_spec_3_title">Heading one-time word reveal on scroll</span>
+<span class="font-body-md text-body-md text-ink-soft" data-i18n="motion_spec_3_sub">Staggered text-clip entrance when entering primary viewport.</span>
+</div>
+</div>
+<div class="bg-paper p-space-sm rounded-lg flex items-start gap-space-sm">
+<span class="material-symbols-outlined text-primary text-[18px] mt-0.5">accessibility_new</span>
+<div class="flex flex-col">
+<span class="font-label-sm text-label-sm text-ink" data-i18n="motion_spec_5_title">Full prefers-reduced-motion support</span>
+<span class="font-body-md text-body-md text-ink-soft" data-i18n="motion_spec_5_sub">Direct state jumps without transition delays for accessibility.</span>
+</div>
+</div>
+</div>
+</aside>
+</div>
+<footer class="w-full mt-space-3xl px-gutter py-space-xl bg-paper flex flex-col gap-space-md"><div class="flex flex-col gap-space-xs text-ink-soft font-body-md text-body-md"><p class="font-label-md text-label-md text-ink" data-i18n="footer_title">Diagnostic Centre Requisition &amp; Information</p><div class="flex items-center gap-space-xs flex-wrap"><p data-i18n="footer_helpline">Helpline: +91 (0) 80 2345 6789</p><a class="wa-dynamic-link inline-flex items-center gap-1 text-wa font-semibold text-[13px] hover:underline" data-wa-type="general" href="https://wa.me/918023456789" rel="noopener noreferrer" target="_blank"><span class="material-symbols-outlined text-[16px]">chat</span> WhatsApp Support</a></div><p data-i18n="footer_timing">Timing: Mon–Sat: 07:00 – 19:30 | Sun: 07:00 – 13:00</p></div><div class="inline-flex"><span class="px-space-sm py-space-xs rounded-lg bg-sample-bg text-sample-ink font-label-sm text-label-sm" data-i18n="footer_concept">Concept preview. Not the official website.</span></div></footer></main><nav class="fixed bottom-0 w-full z-50 pb-safe bg-paper/95 backdrop-blur-xl shadow-[0_-1px_8px_rgba(0,0,0,0.04)]" data-active-classes="text-primary font-label-md"><div class="flex justify-around items-center h-16 px-gutter"><a aria-current="page" class="flex flex-col items-center justify-center gap-space-xs min-w-[56px] min-h-[44px] transition-colors text-primary font-label-md" data-path="test-catalog" href="#"><span class="material-symbols-outlined text-[22px]">chips</span><span class="font-label-sm text-label-sm" data-i18n="nav_tests">Tests</span></a><a class="flex flex-col items-center justify-center gap-space-xs min-w-[56px] min-h-[44px] text-ink-soft transition-colors" data-path="packages" href="#"><span class="material-symbols-outlined text-[22px]">inventory_2</span><span class="font-label-sm text-label-sm" data-i18n="nav_packages">Packages</span></a><a class="flex flex-col items-center justify-center gap-space-xs min-w-[56px] min-h-[44px] text-ink-soft transition-colors" data-path="timings-and-contact" href="#"><span class="material-symbols-outlined text-[22px]">schedule</span><span class="font-label-sm text-label-sm" data-i18n="nav_timings">Timings</span></a><a class="flex flex-col items-center justify-center gap-space-xs min-w-[56px] min-h-[44px] text-ink-soft transition-colors" data-path="patient-records" href="#"><span class="material-symbols-outlined text-[22px]">description</span><span class="font-label-sm text-label-sm" data-i18n="nav_records">Records</span></a></div></nav>
+<script>
+  const WA_PHONE_NUMBER = "918023456789";
+
+  const translations = {
+    en: {
+      centre_name: "[CENTRE NAME]",
+      book_a_test: "Book a test",
+      page_title: "Tests & packages",
+      sample_content: "Sample content",
+      page_subtitle: "Routine diagnostics and specialized profiling handled with clinical accuracy.",
+      whats_included: "What's included:",
+      prep_title: "Preparation",
+      btn_book_wa: "Book this test on WhatsApp",
+      btn_select: "Select test",
+      home_collection_title: "Home Sample Collection Available",
+      home_collection_desc: "Free doorstep pickup across municipal limits. WhatsApp us directly to confirm slot.",
+      btn_home_collection_wa: "Request Home Visit via WhatsApp",
+      prefilled_pill_label: "Prefilled draft:",
+      test1_title: "Complete blood panel routine check",
+      test1_subtitle: "Comprehensive primary hematological evaluation",
+      test1_inc1: "Hemoglobin & RBC indices",
+      test1_inc2: "Total and differential WBC count",
+      test1_inc3: "Platelet count and morphology",
+      test1_inc4: "Erythrocyte sedimentation rate (ESR)",
+      test1_prep: "8–10 hours overnight fasting recommended. Plain water permitted.",
+      test2_title: "Lipid profile & cardiovascular assessment",
+      test2_subtitle: "Total cholesterol, HDL, LDL, VLDL, and Triglycerides",
+      test2_inc1: "Serum Cholesterol",
+      test2_inc2: "Triglycerides & HDL Direct",
+      test2_inc3: "Cardiac risk ratio calculation",
+      test2_prep: "10–12 hours overnight fasting mandatory.",
+      test3_title: "HbA1c & Glycated blood sugar marker",
+      test3_subtitle: "Three-month glycemic control profile",
+      test3_inc1: "Glycosylated Hemoglobin",
+      test3_inc2: "Estimated Average Glucose (eAG)",
+      test3_prep: "No fasting required. Can be performed at any time of day.",
+      test4_title: "Renal metabolic & kidney function series",
+      test4_subtitle: "Urea, creatinine, eGFR, and electrolytes",
+      test4_inc1: "Serum Creatinine with eGFR",
+      test4_inc2: "Blood Urea Nitrogen (BUN)",
+      test4_inc3: "Serum Electrolytes (Na+, K+, Cl-)",
+      test4_prep: "Overnight fasting recommended. Maintain normal hydration.",
+      ux_spec_title: "UX Motion Specification",
+      ux_spec_sub: "Defined dynamic behaviors and tactile feedback models for this requisition list:",
+      motion_spec_1_title: "AutoHeight + blur-fade content swap",
+      motion_spec_1_sub: "Duration: 0.4s easeInOut with synchronized chevron rotation (180°).",
+      motion_spec_wa_title: "Dynamic WhatsApp prefilling",
+      motion_spec_wa_sub: "Auto-constructs wa.me URL with structured test parameters, dual-language text & instant draft feedback.",
+      motion_spec_2_title: "Button ring ripple on tap",
+      motion_spec_2_sub: "Expansion size 80px, duration 400ms using currentColor overlay.",
+      motion_spec_3_title: "Heading one-time word reveal on scroll",
+      motion_spec_3_sub: "Staggered text-clip entrance when entering primary viewport.",
+      motion_spec_4_title: "Notification bell subtle wiggle on hover",
+      motion_spec_4_sub: "Applies gentle ±6° oscillation for pointer devices.",
+      motion_spec_5_title: "Full prefers-reduced-motion support",
+      motion_spec_5_sub: "Direct state jumps without transition delays for accessibility.",
+      footer_title: "Diagnostic Centre Requisition & Information",
+      footer_helpline: "Helpline: +91 (0) 80 2345 6789",
+      footer_timing: "Timing: Mon–Sat: 07:00 – 19:30 | Sun: 07:00 – 13:00",
+      footer_concept: "Concept preview. Not the official website.",
+      nav_tests: "Tests",
+      nav_packages: "Packages",
+      nav_timings: "Timings",
+      nav_records: "Records"
+    },
+    bn: {
+      centre_name: "[সেন্টারের নাম]",
+      book_a_test: "টেস্ট বুক করুন",
+      page_title: "টেস্ট ও প্যাকেজ",
+      sample_content: "নমুনা বিষয়বস্তু",
+      page_subtitle: "ক্লিনিক্যাল নির্ভুলতার সাথে নিয়মিত রোগ নির্ণয় এবং বিশেষ প্রোফাইলিং।",
+      whats_included: "যা অন্তর্ভুক্ত রয়েছে:",
+      prep_title: "প্রস্তুতি",
+      btn_book_wa: "হোয়াটসঅ্যাপে এই টেস্ট বুক করুন",
+      btn_select: "টেস্ট নির্বাচন করুন",
+      home_collection_title: "বাড়ি থেকে নমুনা সংগ্রহের সুবিধা উপলব্ধ",
+      home_collection_desc: "পৌরসভা এলাকার মধ্যে বিনামূল্যে হোম কালেকশন। সময় নির্ধারণের জন্য হোয়াটসঅ্যাপ করুন।",
+      btn_home_collection_wa: "হোয়াটসঅ্যাপে হোম ভিজিট অনুরোধ করুন",
+      prefilled_pill_label: "প্রি-ফিল্ড ড্রাফট:",
+      test1_title: "কমপ্লিট ব্লাড প্যানেল রুটিন চেক",
+      test1_subtitle: "সম্পূর্ণ প্রাথমিক হেমাটোলজিক্যাল মূল্যায়ন",
+      test1_inc1: "হিমোগ্লোবিন এবং আরবিসি সূচক",
+      test1_inc2: "মোট এবং ডিফারেনশিয়াল ডাব্লিউবিসি কাউন্ট",
+      test1_inc3: "প্লেটলেট কাউন্ট এবং রূপতত্ত্ব",
+      test1_inc4: "এরিথ্রোসাইট সেডিমেন্টেশন রেট (ইএসআর)",
+      test1_prep: "৮–১০ ঘণ্টা রাতভর উপবাস সুপারিশকৃত। সাধারণ জল পান করা যাবে।",
+      test2_title: "লিপিড প্রোফাইল ও কার্ডিওভাসকুলার পরীক্ষা",
+      test2_subtitle: "টোটাল কোলেস্টেরল, এইচডিএল, এলডিএল, ভিএলডিএল ও ট্রাইগ্লিসারাইড",
+      test2_inc1: "সিরাম কোলেস্টেরল",
+      test2_inc2: "ট্রাইগ্লিসারাইড ও সরাসরি এইচডিএল",
+      test2_inc3: "কার্ডিয়াক ঝুঁকির অনুপাত গণনা",
+      test2_prep: "১০–১২ ঘণ্টা রাতভর উপবাস বাধ্যতামূলক।",
+      test3_title: "এইচবিএ১সি ও গ্লাইকেটেড ব্লাড সুগার মার্কার",
+      test3_subtitle: "তিন মাসের গ্লাইসেমিক নিয়ন্ত্রণ প্রোফাইল",
+      test3_inc1: "গ্লাইকোসিলেটেড হিমোগ্লোবিন",
+      test3_inc2: "আনুমানিক গড় গ্লুকোজ (eAG)",
+      test3_prep: "কোনো উপবাসের প্রয়োজন নেই। দিনের যেকোনো সময় করা যেতে পারে।",
+      test4_title: "রেনাল মেটাবলিক ও কিডনি ফাংশন টেস্ট",
+      test4_subtitle: "ইউরিয়া, ক্রিয়েটিনিন, ইজিএফআর ও ইলেক্ট্রোলাইট",
+      test4_inc1: "ইজিএফআর সহ সিরাম ক্রিয়েটিনিন",
+      test4_inc2: "ব্লাড ইউরিয়া নাইট্রোজেন (BUN)",
+      test4_inc3: "সিরাম ইলেক্ট্রোলাইট (Na+, K+, Cl-)",
+      test4_prep: "রাতভর উপবাস সুপারিশকৃত। স্বাভাবিক জল গ্রহণ বজায় রাখুন।",
+      ux_spec_title: "ইউএক্স মোশন স্পেসিফিকেশন",
+      ux_spec_sub: "এই রিক্যুইজিশন তালিকার জন্য নির্ধারিত ডায়নামিক আচরণ ও স্পর্শ প্রতিক্রিয়া মডেল:",
+      motion_spec_1_title: "স্বয়ংক্রিয় উচ্চতা + ব্লার-ফেড কনটেন্ট পরিবর্তন",
+      motion_spec_1_sub: "সময়কাল: ০.৪ সেকেন্ড সিনক্রোনাইজড শেভরন আবর্তন (১৮০°) সহ।",
+      motion_spec_wa_title: "ডায়নামিক হোয়াটসঅ্যাপ প্রি-ফিলিং",
+      motion_spec_wa_sub: "কাঠামোগত টেস্ট প্যারামিটার, দ্বিভাষিক টেক্সট এবং তাত্ক্ষণিক ড্রাফট ফিডব্যাক সহ wa.me ইউআরএল তৈরি।",
+      motion_spec_2_title: "বাটনে ট্যাপ করলে রিং রিপল এফেক্ট",
+      motion_spec_2_sub: "প্রসারণ সাইজ ৮০ পিক্সেল, সময়কাল ৪০০ মিলিমিটার বর্তমান কালার ওভারলে দিয়ে।",
+      motion_spec_3_title: "স্ক্রোলে শিরোনাম এককালীন শব্দ উন্মোচন",
+      motion_spec_3_sub: "প্রাথমিক ভিউপোর্টে প্রবেশের সময় টেক্সট-ক্লিপ এন্ট্রান্স।",
+      motion_spec_4_title: "হোভারে নোটিফিকেশন বেল হালকা আন্দোলন",
+      motion_spec_4_sub: "পয়েন্টার ডিভাইসের জন্য মৃদু ±৬° নড়াচড়া প্রযোজ্য।",
+      motion_spec_5_title: "সম্পূর্ণ মোশন কমানোর সুবিধা সমর্থন",
+      motion_spec_5_sub: "সহজলভ্যতার জন্য বিলম্ব ছাড়াই সরাসরি অবস্থা পরিবর্তন।",
+      footer_title: "ডায়াগনস্টিক সেন্টার রিক্যুইজিশন ও তথ্য",
+      footer_helpline: "হেল্পলাইন: +৯১ (০) ৮০ ২৩৪৫ ৬৭৮৯",
+      footer_timing: "সময়সূচী: সোম–শনি: ০৭:০০ – ১৯:৩০ | রবি: ০৭:০০ – ১৩:০০",
+      footer_concept: "ধারণা প্রিভিউ। অফিসিয়াল ওয়েবসাইট নয়।",
+      nav_tests: "টেস্টসমূহ",
+      nav_packages: "প্যাকেজসমূহ",
+      nav_timings: "সময়সূচী",
+      nav_records: "রেকর্ড"
+    }
+  };
+
+  let currentLang = 'en';
+
+  function getWhatsAppMessage(type, testKey, lang) {
+    if (type === 'home_collection') {
+      return lang === 'bn' 
+        ? "নমস্কার, আমি বাড়িতে নমুনা সংগ্রহের জন্য টেস্ট বুক করতে চাই। নাম: , ঠিকানা: , টেস্ট: , সুবিধাজনক সময়: "
+        : "Hello, I'd like to book a home sample collection. Name: , Address: , Test: , Preferred time: ";
+    }
+    if (type === 'test') {
+      const testTitle = translations[lang][`${testKey}_title`] || "Diagnostic test";
+      return lang === 'bn'
+        ? `নমস্কার, আমি একটি টেস্ট বুক করতে চাই। নাম: , টেস্ট: ${testTitle}, সুবিধাজনক সময়: `
+        : `Hello, I'd like to book a test. Name: , Test: ${testTitle}, Preferred time: `;
+    }
+    // Default general booking message
+    return lang === 'bn'
+      ? "নমস্কার, আমি একটি টেস্ট বুক করতে চাই। নাম: , টেস্ট: , সুবিধাজনক সময়: "
+      : "Hello, I'd like to book a test. Name: , Test: , Preferred time: ";
+  }
+
+  function updateWhatsAppLinks() {
+    const waLinks = document.querySelectorAll('.wa-dynamic-link');
+    waLinks.forEach(link => {
+      const type = link.getAttribute('data-wa-type') || 'general';
+      const testKey = link.getAttribute('data-test-id');
+      const message = getWhatsAppMessage(type, testKey, currentLang);
+      const encodedMsg = encodeURIComponent(message);
+      link.href = `https://wa.me/${WA_PHONE_NUMBER}?text=${encodedMsg}`;
+
+      if (testKey) {
+        const previewEl = document.getElementById(`wa-preview-${testKey}`);
+        if (previewEl) {
+          previewEl.textContent = `"${message}"`;
+        }
+      }
+    });
+  }
+
+  function setLanguage(lang) {
+    currentLang = lang;
+    document.documentElement.lang = lang;
+    const body = document.body;
+
+    const btnEn = document.getElementById('lang-btn-en');
+    const btnBn = document.getElementById('lang-btn-bn');
+
+    if (lang === 'bn') {
+      body.classList.remove('lang-en');
+      body.classList.add('lang-bn');
+
+      btnBn.setAttribute('aria-pressed', 'true');
+      btnBn.className = "px-2 py-1 rounded-full bg-primary text-white font-medium leading-none transition-colors";
+
+      btnEn.setAttribute('aria-pressed', 'false');
+      btnEn.className = "px-2 py-1 rounded-full text-ink-soft hover:text-ink font-medium leading-none transition-colors";
+    } else {
+      body.classList.remove('lang-bn');
+      body.classList.add('lang-en');
+
+      btnEn.setAttribute('aria-pressed', 'true');
+      btnEn.className = "px-2 py-1 rounded-full bg-primary text-white font-medium leading-none transition-colors";
+
+      btnBn.setAttribute('aria-pressed', 'false');
+      btnBn.className = "px-2 py-1 rounded-full text-ink-soft hover:text-ink font-medium leading-none transition-colors";
+    }
+
+    const dict = translations[lang];
+    document.querySelectorAll('[data-i18n]').forEach(el => {
+      const key = el.getAttribute('data-i18n');
+      if (dict[key]) {
+        el.textContent = dict[key];
+      }
+    });
+
+    updateWhatsAppLinks();
+  }
+
+  function toggleAccordion(btn) {
+    const isExpanded = btn.getAttribute('aria-expanded') === 'true';
+    const chevron = btn.querySelector('.material-symbols-outlined');
+    const container = btn.closest('.w-full');
+    const panel = btn.nextElementSibling;
+
+    if (isExpanded) {
+      btn.setAttribute('aria-expanded', 'false');
+      chevron.classList.remove('rotate-180');
+      container.classList.remove('bg-secondary-fixed/40');
+      panel.classList.add('hidden');
+    } else {
+      btn.setAttribute('aria-expanded', 'true');
+      chevron.classList.add('rotate-180');
+      container.classList.add('bg-secondary-fixed/40');
+      panel.classList.remove('hidden');
+    }
+  }
+
+  function createRipple(event) {
+    const button = event.currentTarget;
+    const circle = document.createElement('span');
+    const diameter = Math.max(button.clientWidth, button.clientHeight);
+    const radius = diameter / 2;
+    const rect = button.getBoundingClientRect();
+
+    circle.style.width = circle.style.height = `${diameter}px`;
+    circle.style.left = `${event.clientX - rect.left - radius}px`;
+    circle.style.top = `${event.clientY - rect.top - radius}px`;
+    circle.className = 'absolute rounded-full pointer-events-none bg-white/20 transform scale-0 animate-[ping_400ms_ease-out]';
+
+    const existingRipple = button.querySelector('.ripple-effect');
+    if (existingRipple) {
+      existingRipple.remove();
+    }
+    circle.classList.add('ripple-effect');
+    button.appendChild(circle);
+
+    setTimeout(() => {
+      circle.remove();
+    }, 400);
+  }
+
+  // Initialize links on load
+  document.addEventListener('DOMContentLoaded', () => {
+    updateWhatsAppLinks();
+  });
+</script>
+</body></html>

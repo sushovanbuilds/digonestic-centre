@@ -1,0 +1,1441 @@
+<!DOCTYPE html><html lang="en"><head><meta charset="utf-8"><meta content="width=device-width, initial-scale=1.0" name="viewport"><meta content="web_standard" name="shell-type"><link href="https://fonts.googleapis.com" rel="preconnect"><link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"><link href="https://fonts.googleapis.com/css2?family=Noto+Sans+Bengali:wght@400;500;600;700&amp;family=Plus+Jakarta+Sans:wght@400;500;600;700&amp;display=swap" rel="stylesheet"><link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"><style>
+@layer base{html,body{margin:0;padding:0;}body{overscroll-behavior:none;}main>:first-child{margin-top:0!important;}main>:last-child{margin-bottom:0!important;}}
+::-webkit-scrollbar{display:none;}
+html[lang="bn"], html[lang="bn"] body, html[lang="bn"] button, html[lang="bn"] input, html[lang="bn"] select, html[lang="bn"] textarea {
+  font-family: 'Noto Sans Bengali', 'Plus Jakarta Sans', sans-serif !important;
+}
+.accordion-content {
+  transition: max-height 0.35s cubic-bezier(0.4, 0, 0.2, 1), opacity 0.25s ease, margin 0.25s ease;
+  overflow: hidden;
+}
+.accordion-content.collapsed {
+  max-height: 0 !important;
+  opacity: 0;
+  margin-top: 0 !important;
+  padding-top: 0 !important;
+  pointer-events: none;
+}
+</style><script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script><script id="tailwind-config">tailwind.config = {
+    darkMode: "class",
+    theme: {
+      extend: {
+        "colors": {
+          "on-secondary-container": "#5b6765",
+          "surface-container-high": "#d6ebfc",
+          "primary-container": "#0e6b63",
+          "outline": "#6f7977",
+          "on-error-container": "#93000a",
+          "surface-container-low": "#eaf5ff",
+          "secondary-fixed": "#d8e5e2",
+          "on-surface": "#081e29",
+          "surface-variant": "#d0e5f6",
+          "secondary-container": "#d8e5e2",
+          "primary-ink": "#FFFFFF",
+          "rule": "#C9DAD7",
+          "surface-container-lowest": "#ffffff",
+          "on-secondary-fixed": "#121e1c",
+          "primary-fixed-dim": "#86d4ca",
+          "inverse-surface": "#1f333f",
+          "on-error": "#ffffff",
+          "tertiary-container": "#476371",
+          "inverse-on-surface": "#e4f3ff",
+          "on-secondary-fixed-variant": "#3d4947",
+          "ink-soft": "#44606E",
+          "inverse-primary": "#86d4ca",
+          "on-tertiary": "#ffffff",
+          "tertiary": "#2f4b59",
+          "surface": "#f5faff",
+          "primary-fixed": "#a2f1e6",
+          "paper": "#F6F9F9",
+          "on-background": "#081e29",
+          "wa": "#0F7B42",
+          "ink": "#0F2430",
+          "on-tertiary-fixed-variant": "#2e4a58",
+          "secondary-fixed-dim": "#bcc9c6",
+          "on-primary-fixed": "#00201d",
+          "tertiary-fixed": "#c9e7f8",
+          "on-primary-container": "#9ae8de",
+          "error": "#ba1a1a",
+          "primary": "#00514b",
+          "on-tertiary-fixed": "#001f2a",
+          "on-tertiary-container": "#c1deef",
+          "surface-container-highest": "#d0e5f6",
+          "surface-container": "#def0ff",
+          "sample-bg": "#FFF1CC",
+          "secondary": "#55615f",
+          "on-primary": "#ffffff",
+          "on-secondary": "#ffffff",
+          "background": "#f5faff",
+          "surface-dim": "#c8dded",
+          "sample-ink": "#6B4500",
+          "surface-bright": "#f5faff",
+          "error-container": "#ffdad6",
+          "on-surface-variant": "#3f4947",
+          "surface-tint": "#0b6a62",
+          "outline-variant": "#bec9c6",
+          "on-primary-fixed-variant": "#00504a",
+          "tertiary-fixed-dim": "#adcbdb"
+        },
+        "borderRadius": {
+          "DEFAULT": "0.125rem",
+          "lg": "0.25rem",
+          "xl": "0.5rem",
+          "full": "0.75rem"
+        },
+        "spacing": {
+          "space-xs": "0.25rem",
+          "gutter": "1.25rem",
+          "space-3xl": "3rem",
+          "space-2xl": "2rem",
+          "margin-desktop": "2.5rem",
+          "space-sm": "0.5rem",
+          "space-lg": "1rem",
+          "space-xl": "1.5rem",
+          "gutter-desktop": "2rem",
+          "space-md": "0.75rem",
+          "margin": "1.25rem",
+          "space-4xl": "4.5rem"
+        },
+        "fontFamily": {
+          "headline-xl": [
+            "Plus Jakarta Sans", "Noto Sans Bengali", "sans-serif"
+          ],
+          "headline-lg": [
+            "Plus Jakarta Sans", "Noto Sans Bengali", "sans-serif"
+          ],
+          "label-md": [
+            "Plus Jakarta Sans", "Noto Sans Bengali", "sans-serif"
+          ],
+          "label-sm": [
+            "Plus Jakarta Sans", "Noto Sans Bengali", "sans-serif"
+          ],
+          "headline-xl-mobile": [
+            "Plus Jakarta Sans", "Noto Sans Bengali", "sans-serif"
+          ],
+          "headline-md": [
+            "Plus Jakarta Sans", "Noto Sans Bengali", "sans-serif"
+          ],
+          "body-lg": [
+            "Plus Jakarta Sans", "Noto Sans Bengali", "sans-serif"
+          ],
+          "body-md": [
+            "Plus Jakarta Sans", "Noto Sans Bengali", "sans-serif"
+          ],
+          "headline-lg-mobile": [
+            "Plus Jakarta Sans", "Noto Sans Bengali", "sans-serif"
+          ]
+        },
+        "fontSize": {
+          "headline-xl": [
+            "56px",
+            {
+              "lineHeight": "60px",
+              "letterSpacing": "-0.02em",
+              "fontWeight": "700"
+            }
+          ],
+          "headline-lg": [
+            "32px",
+            {
+              "lineHeight": "38px",
+              "letterSpacing": "-0.01em",
+              "fontWeight": "600"
+            }
+          ],
+          "label-md": [
+            "15px",
+            {
+              "lineHeight": "20px",
+              "fontWeight": "600"
+            }
+          ],
+          "label-sm": [
+            "13px",
+            {
+              "lineHeight": "16px",
+              "fontWeight": "500"
+            }
+          ],
+          "headline-xl-mobile": [
+            "36px",
+            {
+              "lineHeight": "40px",
+              "letterSpacing": "-0.015em",
+              "fontWeight": "700"
+            }
+          ],
+          "headline-md": [
+            "20px",
+            {
+              "lineHeight": "26px",
+              "fontWeight": "600"
+            }
+          ],
+          "body-lg": [
+            "17px",
+            {
+              "lineHeight": "27px",
+              "fontWeight": "400"
+            }
+          ],
+          "body-md": [
+            "15px",
+            {
+              "lineHeight": "22px",
+              "fontWeight": "400"
+            }
+          ],
+          "headline-lg-mobile": [
+            "24px",
+            {
+              "lineHeight": "30px",
+              "letterSpacing": "-0.01em",
+              "fontWeight": "600"
+            }
+          ]
+        }
+      },
+    },
+  }</script></head><body class="bg-paper text-ink font-body-md text-body-md"><header class="fixed top-0 left-0 w-full z-50 bg-paper/95 backdrop-blur-md shadow-[0_2px_8px_-2px_rgba(15,36,48,0.08)]"><div class="h-14 max-w-[1080px] mx-auto px-margin md:px-margin-desktop flex items-center justify-between"><a class="font-label-md text-label-md tracking-tight uppercase text-ink select-none" data-i18n="brand_name" data-path="tests" href="#">[CENTRE NAME]</a><nav class="hidden md:flex items-center gap-space-xl" data-active-classes="text-primary font-semibold"><a class="font-label-md text-label-md text-ink-soft hover:text-ink transition-colors" data-i18n="nav_tests" data-path="tests" href="#test-directory">Tests</a><a class="font-label-md text-label-md text-ink-soft hover:text-ink transition-colors" data-i18n="nav_packages" data-path="packages" href="#packages-section">Packages</a><a class="font-label-md text-label-md text-ink-soft hover:text-ink transition-colors" data-i18n="nav_doctors" data-path="doctors" href="#doctors-section">Consultations</a><a class="font-label-md text-label-md text-ink-soft hover:text-ink transition-colors" data-i18n="nav_why_us" data-path="why-us" href="#why-us-section">Why Us</a><a class="font-label-md text-label-md text-ink-soft hover:text-ink transition-colors" data-i18n="nav_location" data-path="location" href="#location-section">Location</a><a class="font-label-md text-label-md text-ink-soft hover:text-ink transition-colors" data-i18n="nav_contact" data-path="contact" href="#contact-section">Contact</a></nav><div class="flex items-center gap-space-md"><div aria-label="Language switch" class="inline-flex items-center p-0.5 rounded-full border border-rule bg-paper text-ink font-label-sm text-label-sm" role="group"><button aria-pressed="true" class="px-2.5 py-1 rounded-full bg-primary text-primary-ink font-semibold text-[13px] leading-tight transition-all duration-200" id="lang-btn-en" onclick="setLanguage('en')" type="button">EN</button><button aria-pressed="false" class="px-2.5 py-1 rounded-full text-ink-soft hover:text-ink font-medium text-[13px] leading-tight transition-all duration-200" id="lang-btn-bn" onclick="setLanguage('bn')" type="button">বাংলা</button></div><a class="wa-dynamic-link inline-flex items-center justify-center px-space-lg py-space-xs min-h-[40px] rounded-lg bg-primary text-primary-ink font-label-md text-label-md hover:bg-primary-container transition-colors" data-i18n="nav_book_btn" data-path="book-a-test" data-wa-type="general" href="https://wa.me/918023456789?text=Hello%2C%20I'd%20like%20to%20book%20a%20test.%20Name%3A%20%2C%20Test%3A%20%2C%20Preferred%20time%3A%20" rel="noopener noreferrer" target="_blank" data-prefilled-msg="Hello, I'd like to book a test. Name: , Test: , Preferred time: " title="Prefilled: &quot;Hello, I'd like to book a test. Name: , Test: , Preferred time: &quot;">Book a test</a></div></div></header><main class="w-full pt-14 bg-paper min-h-[calc(100vh-140px)]"><div class="flex flex-col w-full">
+<!-- Desktop Hero Section (Requisition Ledger Layout) -->
+<section class="w-full max-w-[1080px] mx-auto px-margin md:px-margin-desktop pt-space-2xl md:pt-space-3xl pb-space-3xl">
+<div class="grid grid-cols-1 md:grid-cols-12 gap-gutter-desktop items-start">
+<div class="md:col-span-8 flex flex-col items-start">
+<div class="inline-flex items-center gap-space-xs px-2 py-0.5 rounded-full bg-sample-bg text-sample-ink font-label-sm text-label-sm mb-space-md">
+<span class="w-1.5 h-1.5 rounded-full bg-sample-ink"></span>
+<span data-i18n="hero_pill">Sample preview. Content is placeholder.</span>
+</div>
+<p class="font-label-sm text-label-sm text-ink-soft uppercase tracking-wider mb-space-xs" data-i18n="hero_eyebrow">
+          Direct Pathology &amp; Diagnostic Requisition
+        </p>
+<h1 class="font-headline-xl text-headline-xl text-ink tracking-tight mb-space-md" data-i18n="hero_title">
+          Precision diagnostics.<br>Uncompromising clinical care.
+        </h1>
+<p class="font-body-lg text-body-lg text-ink-soft max-w-xl mb-space-xl" data-i18n="hero_subtitle">
+          Physical sample integrity, transparent turnaround schedules, and direct digital verification via WhatsApp. No synthetic urgency—just verified pathology.
+        </p>
+<div class="flex flex-wrap items-center gap-space-md w-full sm:w-auto">
+<a class="inline-flex items-center justify-center px-space-xl min-h-[52px] rounded-lg bg-primary text-primary-ink font-label-md text-label-md hover:bg-primary-container transition-colors focus:ring-4 focus:ring-primary/20" data-i18n="hero_cta_browse" href="#test-directory">
+            Browse Test Directory
+          </a>
+<a class="wa-dynamic-link inline-flex items-center justify-center gap-space-sm px-space-xl min-h-[52px] rounded-lg bg-wa text-white font-label-md text-label-md hover:opacity-95 transition-opacity" data-wa-type="general" href="https://wa.me/918023456789?text=Hello%2C%20I'd%20like%20to%20book%20a%20test.%20Name%3A%20%2C%20Test%3A%20%2C%20Preferred%20time%3A%20" rel="noopener noreferrer" target="_blank" data-prefilled-msg="Hello, I'd like to book a test. Name: , Test: , Preferred time: " title="Prefilled: &quot;Hello, I'd like to book a test. Name: , Test: , Preferred time: &quot;">
+<span class="material-symbols-outlined text-[20px]">chat</span>
+<span data-i18n="hero_cta_wa">WhatsApp us directly</span>
+</a>
+</div>
+</div>
+<!-- Quick Requisition Index Metadata Card -->
+<div class="md:col-span-4 bg-secondary-fixed/40 p-space-lg rounded-xl flex flex-col gap-space-md text-ink">
+<div class="flex items-center justify-between pb-space-xs border-b border-rule">
+<span class="font-label-sm text-label-sm text-ink-soft uppercase tracking-wider" data-i18n="meta_status_label">LAB DISPATCH STATUS</span>
+<span class="font-label-sm text-label-sm text-wa font-semibold flex items-center gap-1">
+<span class="w-2 h-2 rounded-full bg-wa animate-pulse"></span> <span data-i18n="meta_status_val">Open Routine</span>
+</span>
+</div>
+<div class="space-y-space-xs text-ink-soft font-body-md text-body-md">
+<div class="flex justify-between">
+<span data-i18n="meta_phlebotomy_lbl">Morning Phlebotomy:</span>
+<strong class="text-ink font-semibold" data-i18n="meta_phlebotomy_val">06:30 – 12:30</strong>
+</div>
+<div class="flex justify-between">
+<span data-i18n="meta_reporting_lbl">Average Reporting:</span>
+<strong class="text-ink font-semibold" data-i18n="meta_reporting_val">3 to 6 Hours</strong>
+</div>
+<div class="flex justify-between">
+<span data-i18n="meta_delivery_lbl">Verified Delivery:</span>
+<strong class="text-ink font-semibold" data-i18n="meta_delivery_val">Desk + WhatsApp</strong>
+</div>
+</div>
+<div class="pt-space-xs border-t border-rule text-ink-soft font-label-sm text-label-sm" data-i18n="meta_note">
+          Physical requisitions and doctor referrals accepted counter-side without pre-registration.
+        </div>
+</div>
+</div>
+</section>
+<!-- Hairline Divider -->
+<div class="max-w-[1080px] mx-auto w-full px-margin md:px-margin-desktop">
+<div class="h-[1px] w-full bg-rule"></div>
+</div>
+<!-- Main Focus Section: Tests & Health Packages (7/5 Split with Interactive Accordions) -->
+<section class="w-full max-w-[1080px] mx-auto px-margin md:px-margin-desktop py-space-3xl" id="test-directory">
+<!-- Header of Section -->
+<div class="flex flex-col md:flex-row md:items-end justify-between gap-space-sm mb-space-xl">
+<div>
+<div class="inline-flex items-center gap-space-xs px-2 py-0.5 rounded-full bg-sample-bg text-sample-ink font-label-sm text-label-sm mb-space-xs">
+<span data-i18n="sec_sample_badge">Sample content</span>
+</div>
+<h2 class="font-headline-lg text-headline-lg text-ink" data-i18n="sec_tests_heading">Popular Tests &amp; Health Packages</h2>
+</div>
+<div class="font-label-sm text-label-sm text-ink-soft tracking-wider" data-i18n="sec_directory_index">
+        DIRECTORY INDEX 01 • 64 REQUISITIONS LISTED
+      </div>
+</div>
+<!-- 7 / 5 Column Split -->
+<div class="grid grid-cols-1 lg:grid-cols-12 gap-gutter-desktop items-start">
+<!-- 7-Column Left: Ruled Test Directory with Interactive Accordions -->
+<div class="lg:col-span-7 flex flex-col">
+<div class="text-ink font-label-md text-label-md mb-space-sm flex items-center justify-between pb-space-xs border-b border-rule">
+<span data-i18n="tests_subheader_left">Individual Diagnostic Requisitions</span>
+<span class="text-ink-soft font-label-sm text-label-sm" data-i18n="tests_subheader_right">Tap row to view parameters</span>
+</div>
+<!-- Ruled Test List Container -->
+<div class="flex flex-col gap-2">
+<!-- TEST ROW 1: EXPANDED by default -->
+<div class="test-item group bg-secondary-fixed/50 rounded-lg p-space-md border border-rule transition-all duration-300">
+<button aria-expanded="true" class="w-full flex items-center justify-between text-left focus:outline-none cursor-pointer" onclick="toggleTestPanel(this)" type="button">
+<div class="pr-space-md">
+<span class="inline-block font-label-sm text-label-sm text-primary uppercase font-bold tracking-wider mb-0.5" data-i18n="t1_category">Test 01 • Hematology Panel</span>
+<h3 class="font-headline-md text-headline-md text-ink leading-tight" data-i18n="t1_title">Complete Blood Panel Routine Check (CBC + ESR)</h3>
+<p class="font-body-md text-body-md text-ink-soft mt-0.5" data-i18n="t1_desc">Automated 5-part differential cell counter &amp; sed rate</p>
+</div>
+<div class="chevron-box flex-shrink-0 w-8 h-8 rounded-full bg-secondary-fixed flex items-center justify-center text-primary transition-transform duration-300 transform rotate-180">
+<span class="material-symbols-outlined text-[20px]">expand_more</span>
+</div>
+</button>
+<div class="accordion-content mt-space-md pt-space-md border-t border-rule flex flex-col gap-space-md">
+<p class="font-body-md text-body-md text-ink" data-i18n="t1_detail_lead">
+  Comprehensive primary hematological evaluation including complete cell count, cellular indices, automated ESR, and stained peripheral smear analysis.
+</p>
+<div class="bg-paper p-space-md rounded-lg">
+<h4 class="font-label-sm text-label-sm text-ink-soft uppercase tracking-wider mb-space-sm flex items-center gap-space-xs">
+<span class="material-symbols-outlined text-primary text-[18px]">checklist</span>
+<span data-i18n="t1_incl_heading">What's Included in this Panel (32 Parameters)</span>
+</h4>
+<ul class="space-y-space-xs font-body-md text-body-md text-ink">
+<li class="flex items-start gap-space-sm">
+<span class="material-symbols-outlined text-primary text-[18px] mt-0.5">check_circle</span>
+<span data-i18n="t1_i1"><strong>Hemoglobin &amp; RBC indices:</strong> Total RBC, MCV, MCH, MCHC, and RDW-CV / RDW-SD</span>
+</li>
+<li class="flex items-start gap-space-sm">
+<span class="material-symbols-outlined text-primary text-[18px] mt-0.5">check_circle</span>
+<span data-i18n="t1_i2"><strong>Total &amp; Differential WBC:</strong> Absolute and percentage Neutrophils, Lymphocytes, Monocytes, Eosinophils, Basophils</span>
+</li>
+<li class="flex items-start gap-space-sm">
+<span class="material-symbols-outlined text-primary text-[18px] mt-0.5">check_circle</span>
+<span data-i18n="t1_i3"><strong>Platelet Analysis:</strong> Total count, Mean Platelet Volume (MPV), PCT, and morphological distribution</span>
+</li>
+<li class="flex items-start gap-space-sm">
+<span class="material-symbols-outlined text-primary text-[18px] mt-0.5">check_circle</span>
+<span data-i18n="t1_i4"><strong>Erythrocyte Sedimentation Rate:</strong> Automated photometrical ESR (Westergren calibrated)</span>
+</li>
+<li class="flex items-start gap-space-sm">
+<span class="material-symbols-outlined text-primary text-[18px] mt-0.5">check_circle</span>
+<span data-i18n="t1_i5"><strong>Peripheral Smear Examination:</strong> Pathologist review for abnormal cellular morphology or parasites</span>
+</li>
+</ul>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-3 gap-space-sm bg-surface-container-lowest p-space-md rounded-lg text-ink font-body-md text-body-md">
+<div class="flex flex-col">
+<span class="font-label-sm text-label-sm text-ink-soft uppercase" data-i18n="prep_title">Preparation</span>
+<span class="font-medium mt-0.5 text-[14px]" data-i18n="t1_prep">8–10 hours overnight fasting recommended. Water permitted.</span>
+</div>
+<div class="flex flex-col">
+<span class="font-label-sm text-label-sm text-ink-soft uppercase" data-i18n="sample_title">Sample Required</span>
+<span class="font-medium mt-0.5 text-[14px]" data-i18n="t1_sample">3.0 ml EDTA Whole Blood (Lavender top tube)</span>
+</div>
+<div class="flex flex-col">
+<span class="font-label-sm text-label-sm text-ink-soft uppercase" data-i18n="delivery_title">Delivery Standard</span>
+<span class="font-medium mt-0.5 text-[14px]" data-i18n="t1_delivery">Same day within 4 hours. Verified PDF &amp; physical print.</span>
+</div>
+</div>
+<div class="flex flex-wrap items-center justify-between gap-space-md pt-space-xs">
+<div class="flex items-center gap-space-sm">
+<a class="wa-dynamic-link inline-flex items-center gap-space-xs px-space-lg min-h-[48px] rounded-lg bg-wa text-white font-label-md text-label-md hover:opacity-95 transition-opacity" data-wa-test-bn="কমপ্লিট ব্লাড প্যানেল রুটিন চেক (সিবিসি + ইএসআর)" data-wa-test-en="Complete Blood Panel Routine Check (CBC + ESR)" data-wa-type="test" href="https://wa.me/918023456789?text=Hello%2C%20I'd%20like%20to%20book%20a%20test.%20Name%3A%20%2C%20Test%3A%20Complete%20Blood%20Panel%20Routine%20Check%20(CBC%20%2B%20ESR)%2C%20Preferred%20time%3A%20" rel="noopener noreferrer" target="_blank" data-prefilled-msg="Hello, I'd like to book a test. Name: , Test: Complete Blood Panel Routine Check (CBC + ESR), Preferred time: " title="Prefilled: &quot;Hello, I'd like to book a test. Name: , Test: Complete Blood Panel Routine Check (CBC + ESR), Preferred time: &quot;">
+<span class="material-symbols-outlined text-[18px]">chat</span>
+<span data-i18n="btn_book_wa">Book this test on WhatsApp</span>
+</a>
+<button class="inline-flex items-center justify-center px-space-md min-h-[48px] rounded-lg border border-primary text-primary font-label-md text-label-md hover:bg-primary/5 transition-colors" data-i18n="btn_req_slip" type="button">
+  Add to Requisition Slip
+</button>
+</div>
+<span class="font-label-sm text-label-sm text-ink-soft" data-i18n="t1_code">Test Code: #HEM-0419</span>
+</div>
+</div>
+</div>
+<!-- TEST ROW 2 -->
+<div class="test-item group rounded-lg p-space-md border border-rule transition-all duration-300 hover:bg-secondary-fixed/20">
+<button aria-expanded="false" class="w-full flex items-center justify-between text-left focus:outline-none cursor-pointer" onclick="toggleTestPanel(this)" type="button">
+<div class="pr-space-md">
+<span class="inline-block font-label-sm text-label-sm text-ink-soft uppercase tracking-wider mb-0.5" data-i18n="t2_category">Test 02 • Metabolic Profile</span>
+<h3 class="font-headline-md text-headline-md text-ink leading-tight" data-i18n="t2_title">Fasting Blood Sugar &amp; HbA1c Glycated Hemoglobin</h3>
+<p class="font-body-md text-body-md text-ink-soft mt-0.5" data-i18n="t2_desc">Dual plasma glucose reading with 3-month glycemic average</p>
+</div>
+<div class="chevron-box flex-shrink-0 w-8 h-8 rounded-full bg-secondary-fixed/60 flex items-center justify-center text-ink-soft transition-transform duration-300">
+<span class="material-symbols-outlined text-[20px]">expand_more</span>
+</div>
+</button>
+<div class="accordion-content collapsed border-t border-rule flex flex-col gap-space-md">
+<p class="font-body-md text-body-md text-ink" data-i18n="t2_detail_lead">
+  Gold standard diabetes monitoring including fasting plasma glucose level along with HPLC-certified glycated hemoglobin for 90-day glycemic control index.
+</p>
+<div class="bg-paper p-space-md rounded-lg">
+<h4 class="font-label-sm text-label-sm text-ink-soft uppercase tracking-wider mb-space-sm flex items-center gap-space-xs">
+<span class="material-symbols-outlined text-primary text-[18px]">checklist</span>
+<span data-i18n="t2_incl_heading">What's Included in this Panel</span>
+</h4>
+<ul class="space-y-space-xs font-body-md text-body-md text-ink">
+<li class="flex items-start gap-space-sm"><span class="material-symbols-outlined text-primary text-[18px] mt-0.5">check_circle</span><span data-i18n="t2_i1"><strong>Fasting Blood Glucose:</strong> Hexokinase enzymatic reference measurement</span></li>
+<li class="flex items-start gap-space-sm"><span class="material-symbols-outlined text-primary text-[18px] mt-0.5">check_circle</span><span data-i18n="t2_i2"><strong>HbA1c Glycated Hemoglobin:</strong> NGSP/IFCC standardized HPLC ion-exchange chromatography</span></li>
+<li class="flex items-start gap-space-sm"><span class="material-symbols-outlined text-primary text-[18px] mt-0.5">check_circle</span><span data-i18n="t2_i3"><strong>Estimated Average Glucose (eAG):</strong> Calculated correlation in mg/dL</span></li>
+</ul>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-3 gap-space-sm bg-surface-container-lowest p-space-md rounded-lg text-ink font-body-md text-body-md">
+<div class="flex flex-col"><span class="font-label-sm text-label-sm text-ink-soft uppercase" data-i18n="prep_title">Preparation</span><span class="font-medium mt-0.5 text-[14px]" data-i18n="t2_prep">10–12 hours strict fasting. Plain water allowed.</span></div>
+<div class="flex flex-col"><span class="font-label-sm text-label-sm text-ink-soft uppercase" data-i18n="sample_title">Sample Required</span><span class="font-medium mt-0.5 text-[14px]" data-i18n="t2_sample">Fluoride plasma + EDTA whole blood</span></div>
+<div class="flex flex-col"><span class="font-label-sm text-label-sm text-ink-soft uppercase" data-i18n="delivery_title">Delivery Standard</span><span class="font-medium mt-0.5 text-[14px]" data-i18n="t2_delivery">3 hours reporting via WhatsApp &amp; Lab Desk</span></div>
+</div>
+<div class="flex flex-wrap items-center justify-between gap-space-md pt-space-xs">
+<div class="flex items-center gap-space-sm">
+<a class="wa-dynamic-link inline-flex items-center gap-space-xs px-space-lg min-h-[48px] rounded-lg bg-wa text-white font-label-md text-label-md hover:opacity-95" data-wa-test-bn="ফাস্টিং ব্লাড সুগার এবং HbA1c গ্লাইকেটেড হিমোগ্লোবিন" data-wa-test-en="Fasting Blood Sugar &amp; HbA1c Glycated Hemoglobin" data-wa-type="test" href="https://wa.me/918023456789?text=Hello%2C%20I'd%20like%20to%20book%20a%20test.%20Name%3A%20%2C%20Test%3A%20Fasting%20Blood%20Sugar%20%26%20HbA1c%20Glycated%20Hemoglobin%2C%20Preferred%20time%3A%20" rel="noopener noreferrer" target="_blank" data-prefilled-msg="Hello, I'd like to book a test. Name: , Test: Fasting Blood Sugar &amp; HbA1c Glycated Hemoglobin, Preferred time: " title="Prefilled: &quot;Hello, I'd like to book a test. Name: , Test: Fasting Blood Sugar &amp; HbA1c Glycated Hemoglobin, Preferred time: &quot;"><span class="material-symbols-outlined text-[18px]">chat</span><span data-i18n="btn_book_wa">Book this test on WhatsApp</span></a>
+<button class="inline-flex items-center justify-center px-space-md min-h-[48px] rounded-lg border border-primary text-primary font-label-md text-label-md hover:bg-primary/5" data-i18n="btn_req_slip" type="button">Add to Requisition Slip</button>
+</div>
+<span class="font-label-sm text-label-sm text-ink-soft" data-i18n="t2_code">Test Code: #MET-0104</span>
+</div>
+</div>
+</div>
+<!-- TEST ROW 3 -->
+<div class="test-item group rounded-lg p-space-md border border-rule transition-all duration-300 hover:bg-secondary-fixed/20">
+<button aria-expanded="false" class="w-full flex items-center justify-between text-left focus:outline-none cursor-pointer" onclick="toggleTestPanel(this)" type="button">
+<div class="pr-space-md">
+<span class="inline-block font-label-sm text-label-sm text-ink-soft uppercase tracking-wider mb-0.5" data-i18n="t3_category">Test 03 • Cardiovascular</span>
+<h3 class="font-headline-md text-headline-md text-ink leading-tight" data-i18n="t3_title">Comprehensive Lipid Profile (Cholesterol Fractions)</h3>
+<p class="font-body-md text-body-md text-ink-soft mt-0.5" data-i18n="t3_desc">Total cholesterol, HDL, LDL, VLDL, and Triglycerides ratio</p>
+</div>
+<div class="chevron-box flex-shrink-0 w-8 h-8 rounded-full bg-secondary-fixed/60 flex items-center justify-center text-ink-soft transition-transform duration-300">
+<span class="material-symbols-outlined text-[20px]">expand_more</span>
+</div>
+</button>
+<div class="accordion-content collapsed border-t border-rule flex flex-col gap-space-md">
+<p class="font-body-md text-body-md text-ink" data-i18n="t3_detail_lead">
+  Full dyslipidemia screening calculating direct LDL, cardioprotective HDL, and atherogenic ratios to assess arterial health and heart risk.
+</p>
+<div class="bg-paper p-space-md rounded-lg">
+<h4 class="font-label-sm text-label-sm text-ink-soft uppercase tracking-wider mb-space-sm flex items-center gap-space-xs">
+<span class="material-symbols-outlined text-primary text-[18px]">checklist</span>
+<span data-i18n="t3_incl_heading">What's Included in this Panel</span>
+</h4>
+<ul class="space-y-space-xs font-body-md text-body-md text-ink">
+<li class="flex items-start gap-space-sm"><span class="material-symbols-outlined text-primary text-[18px] mt-0.5">check_circle</span><span data-i18n="t3_i1"><strong>Total Cholesterol:</strong> Serum enzymatic colorimetric determination</span></li>
+<li class="flex items-start gap-space-sm"><span class="material-symbols-outlined text-primary text-[18px] mt-0.5">check_circle</span><span data-i18n="t3_i2"><strong>HDL &amp; Direct LDL:</strong> Accurate selective clearance methodology</span></li>
+<li class="flex items-start gap-space-sm"><span class="material-symbols-outlined text-primary text-[18px] mt-0.5">check_circle</span><span data-i18n="t3_i3"><strong>Triglycerides &amp; VLDL:</strong> Glycerol phosphate oxidase assay + ratios</span></li>
+</ul>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-3 gap-space-sm bg-surface-container-lowest p-space-md rounded-lg text-ink font-body-md text-body-md">
+<div class="flex flex-col"><span class="font-label-sm text-label-sm text-ink-soft uppercase" data-i18n="prep_title">Preparation</span><span class="font-medium mt-0.5 text-[14px]" data-i18n="t3_prep">12 hours overnight fasting. Avoid alcohol 24 hrs prior.</span></div>
+<div class="flex flex-col"><span class="font-label-sm text-label-sm text-ink-soft uppercase" data-i18n="sample_title">Sample Required</span><span class="font-medium mt-0.5 text-[14px]" data-i18n="t3_sample">3.0 ml Clotted Blood / SST Gel Tube</span></div>
+<div class="flex flex-col"><span class="font-label-sm text-label-sm text-ink-soft uppercase" data-i18n="delivery_title">Delivery Standard</span><span class="font-medium mt-0.5 text-[14px]" data-i18n="t3_delivery">4 to 6 hours same-day report</span></div>
+</div>
+<div class="flex flex-wrap items-center justify-between gap-space-md pt-space-xs">
+<div class="flex items-center gap-space-sm">
+<a class="wa-dynamic-link inline-flex items-center gap-space-xs px-space-lg min-h-[48px] rounded-lg bg-wa text-white font-label-md text-label-md hover:opacity-95" data-wa-test-bn="কমপ্রিহেনসিভ লিপিড প্রোফাইল (কোলেস্টেরল ফ্র্যাকশন)" data-wa-test-en="Comprehensive Lipid Profile (Cholesterol Fractions)" data-wa-type="test" href="https://wa.me/918023456789?text=Hello%2C%20I'd%20like%20to%20book%20a%20test.%20Name%3A%20%2C%20Test%3A%20Comprehensive%20Lipid%20Profile%20(Cholesterol%20Fractions)%2C%20Preferred%20time%3A%20" rel="noopener noreferrer" target="_blank" data-prefilled-msg="Hello, I'd like to book a test. Name: , Test: Comprehensive Lipid Profile (Cholesterol Fractions), Preferred time: " title="Prefilled: &quot;Hello, I'd like to book a test. Name: , Test: Comprehensive Lipid Profile (Cholesterol Fractions), Preferred time: &quot;"><span class="material-symbols-outlined text-[18px]">chat</span><span data-i18n="btn_book_wa">Book this test on WhatsApp</span></a>
+<button class="inline-flex items-center justify-center px-space-md min-h-[48px] rounded-lg border border-primary text-primary font-label-md text-label-md hover:bg-primary/5" data-i18n="btn_req_slip" type="button">Add to Requisition Slip</button>
+</div>
+<span class="font-label-sm text-label-sm text-ink-soft" data-i18n="t3_code">Test Code: #CAR-0238</span>
+</div>
+</div>
+</div>
+<!-- TEST ROW 4 -->
+<div class="test-item group rounded-lg p-space-md border border-rule transition-all duration-300 hover:bg-secondary-fixed/20">
+<button aria-expanded="false" class="w-full flex items-center justify-between text-left focus:outline-none cursor-pointer" onclick="toggleTestPanel(this)" type="button">
+<div class="pr-space-md">
+<span class="inline-block font-label-sm text-label-sm text-ink-soft uppercase tracking-wider mb-0.5" data-i18n="t4_category">Test 04 • Hepatic Function</span>
+<h3 class="font-headline-md text-headline-md text-ink leading-tight" data-i18n="t4_title">Liver Function &amp; Enzyme Evaluation (LFT)</h3>
+<p class="font-body-md text-body-md text-ink-soft mt-0.5" data-i18n="t4_desc">SGOT, SGPT, Bilirubin (Total/Direct), Alkaline Phosphatase, Total Proteins</p>
+</div>
+<div class="chevron-box flex-shrink-0 w-8 h-8 rounded-full bg-secondary-fixed/60 flex items-center justify-center text-ink-soft transition-transform duration-300">
+<span class="material-symbols-outlined text-[20px]">expand_more</span>
+</div>
+</button>
+<div class="accordion-content collapsed border-t border-rule flex flex-col gap-space-md">
+<p class="font-body-md text-body-md text-ink" data-i18n="t4_detail_lead">
+  Diagnostic hepatic enzyme panel evaluating hepatocellular damage, biliary obstruction, and synthetic protein production capacity.
+</p>
+<div class="bg-paper p-space-md rounded-lg">
+<h4 class="font-label-sm text-label-sm text-ink-soft uppercase tracking-wider mb-space-sm flex items-center gap-space-xs">
+<span class="material-symbols-outlined text-primary text-[18px]">checklist</span>
+<span data-i18n="t4_incl_heading">What's Included in this Panel (11 Parameters)</span>
+</h4>
+<ul class="space-y-space-xs font-body-md text-body-md text-ink">
+<li class="flex items-start gap-space-sm"><span class="material-symbols-outlined text-primary text-[18px] mt-0.5">check_circle</span><span data-i18n="t4_i1"><strong>Enzymes:</strong> AST/SGOT, ALT/SGPT, Alkaline Phosphatase (ALP), GGTP</span></li>
+<li class="flex items-start gap-space-sm"><span class="material-symbols-outlined text-primary text-[18px] mt-0.5">check_circle</span><span data-i18n="t4_i2"><strong>Bilirubin:</strong> Total, Direct (Conjugated), Indirect (Unconjugated)</span></li>
+<li class="flex items-start gap-space-sm"><span class="material-symbols-outlined text-primary text-[18px] mt-0.5">check_circle</span><span data-i18n="t4_i3"><strong>Proteins:</strong> Total Serum Protein, Albumin, Globulin, A/G Ratio</span></li>
+</ul>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-3 gap-space-sm bg-surface-container-lowest p-space-md rounded-lg text-ink font-body-md text-body-md">
+<div class="flex flex-col"><span class="font-label-sm text-label-sm text-ink-soft uppercase" data-i18n="prep_title">Preparation</span><span class="font-medium mt-0.5 text-[14px]" data-i18n="t4_prep">8 hours fasting preferred. Normal hydration.</span></div>
+<div class="flex flex-col"><span class="font-label-sm text-label-sm text-ink-soft uppercase" data-i18n="sample_title">Sample Required</span><span class="font-medium mt-0.5 text-[14px]" data-i18n="t4_sample">3.0 ml Plain Clot Gel SST Tube</span></div>
+<div class="flex flex-col"><span class="font-label-sm text-label-sm text-ink-soft uppercase" data-i18n="delivery_title">Delivery Standard</span><span class="font-medium mt-0.5 text-[14px]" data-i18n="t4_delivery">4 hours turnaround time</span></div>
+</div>
+<div class="flex flex-wrap items-center justify-between gap-space-md pt-space-xs">
+<div class="flex items-center gap-space-sm">
+<a class="wa-dynamic-link inline-flex items-center gap-space-xs px-space-lg min-h-[48px] rounded-lg bg-wa text-white font-label-md text-label-md hover:opacity-95" data-wa-test-bn="লিভার ফাংশন ও এনজাইম পরীক্ষা (LFT)" data-wa-test-en="Liver Function &amp; Enzyme Evaluation (LFT)" data-wa-type="test" href="https://wa.me/918023456789?text=Hello%2C%20I'd%20like%20to%20book%20a%20test.%20Name%3A%20%2C%20Test%3A%20Liver%20Function%20%26%20Enzyme%20Evaluation%20(LFT)%2C%20Preferred%20time%3A%20" rel="noopener noreferrer" target="_blank" data-prefilled-msg="Hello, I'd like to book a test. Name: , Test: Liver Function &amp; Enzyme Evaluation (LFT), Preferred time: " title="Prefilled: &quot;Hello, I'd like to book a test. Name: , Test: Liver Function &amp; Enzyme Evaluation (LFT), Preferred time: &quot;"><span class="material-symbols-outlined text-[18px]">chat</span><span data-i18n="btn_book_wa">Book this test on WhatsApp</span></a>
+<button class="inline-flex items-center justify-center px-space-md min-h-[48px] rounded-lg border border-primary text-primary font-label-md text-label-md hover:bg-primary/5" data-i18n="btn_req_slip" type="button">Add to Requisition Slip</button>
+</div>
+<span class="font-label-sm text-label-sm text-ink-soft" data-i18n="t4_code">Test Code: #HEP-0312</span>
+</div>
+</div>
+</div>
+<!-- TEST ROW 5 -->
+<div class="test-item group rounded-lg p-space-md border border-rule transition-all duration-300 hover:bg-secondary-fixed/20">
+<button aria-expanded="false" class="w-full flex items-center justify-between text-left focus:outline-none cursor-pointer" onclick="toggleTestPanel(this)" type="button">
+<div class="pr-space-md">
+<span class="inline-block font-label-sm text-label-sm text-ink-soft uppercase tracking-wider mb-0.5" data-i18n="t5_category">Test 05 • Endocrine System</span>
+<h3 class="font-headline-md text-headline-md text-ink leading-tight" data-i18n="t5_title">Thyroid Stimulating Hormone &amp; Free T3/T4 Profile</h3>
+<p class="font-body-md text-body-md text-ink-soft mt-0.5" data-i18n="t5_desc">Ultra-sensitive chemiluminescence assay for primary gland surveillance</p>
+</div>
+<div class="chevron-box flex-shrink-0 w-8 h-8 rounded-full bg-secondary-fixed/60 flex items-center justify-center text-ink-soft transition-transform duration-300">
+<span class="material-symbols-outlined text-[20px]">expand_more</span>
+</div>
+</button>
+<div class="accordion-content collapsed border-t border-rule flex flex-col gap-space-md">
+<p class="font-body-md text-body-md text-ink" data-i18n="t5_detail_lead">
+  Precise chemiluminescence immunoassay (CLIA) detecting active free triiodothyronine (FT3), thyroxine (FT4), and pituitary TSH.
+</p>
+<div class="bg-paper p-space-md rounded-lg">
+<h4 class="font-label-sm text-label-sm text-ink-soft uppercase tracking-wider mb-space-sm flex items-center gap-space-xs">
+<span class="material-symbols-outlined text-primary text-[18px]">checklist</span>
+<span data-i18n="t5_incl_heading">What's Included in this Panel</span>
+</h4>
+<ul class="space-y-space-xs font-body-md text-body-md text-ink">
+<li class="flex items-start gap-space-sm"><span class="material-symbols-outlined text-primary text-[18px] mt-0.5">check_circle</span><span data-i18n="t5_i1"><strong>TSH 3rd Generation:</strong> Ultra-sensitive detection threshold (&lt;0.005 µIU/mL)</span></li>
+<li class="flex items-start gap-space-sm"><span class="material-symbols-outlined text-primary text-[18px] mt-0.5">check_circle</span><span data-i18n="t5_i2"><strong>Free T3 &amp; Free T4:</strong> Bioactive non-protein bound hormone assessment</span></li>
+</ul>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-3 gap-space-sm bg-surface-container-lowest p-space-md rounded-lg text-ink font-body-md text-body-md">
+<div class="flex flex-col"><span class="font-label-sm text-label-sm text-ink-soft uppercase" data-i18n="prep_title">Preparation</span><span class="font-medium mt-0.5 text-[14px]" data-i18n="t5_prep">Morning specimen prior to thyroid hormone medication.</span></div>
+<div class="flex flex-col"><span class="font-label-sm text-label-sm text-ink-soft uppercase" data-i18n="sample_title">Sample Required</span><span class="font-medium mt-0.5 text-[14px]" data-i18n="t5_sample">3.0 ml Venous Serum</span></div>
+<div class="flex flex-col"><span class="font-label-sm text-label-sm text-ink-soft uppercase" data-i18n="delivery_title">Delivery Standard</span><span class="font-medium mt-0.5 text-[14px]" data-i18n="t5_delivery">Same day dispatch (within 5 hours)</span></div>
+</div>
+<div class="flex flex-wrap items-center justify-between gap-space-md pt-space-xs">
+<div class="flex items-center gap-space-sm">
+<a class="wa-dynamic-link inline-flex items-center gap-space-xs px-space-lg min-h-[48px] rounded-lg bg-wa text-white font-label-md text-label-md hover:opacity-95" data-wa-test-bn="থাইরয়েড স্টিমুলেটিং হরমোন ও ফ্রি T3/T4 প্রোফাইল" data-wa-test-en="Thyroid Stimulating Hormone &amp; Free T3/T4 Profile" data-wa-type="test" href="https://wa.me/918023456789?text=Hello%2C%20I'd%20like%20to%20book%20a%20test.%20Name%3A%20%2C%20Test%3A%20Thyroid%20Stimulating%20Hormone%20%26%20Free%20T3%2FT4%20Profile%2C%20Preferred%20time%3A%20" rel="noopener noreferrer" target="_blank" data-prefilled-msg="Hello, I'd like to book a test. Name: , Test: Thyroid Stimulating Hormone &amp; Free T3/T4 Profile, Preferred time: " title="Prefilled: &quot;Hello, I'd like to book a test. Name: , Test: Thyroid Stimulating Hormone &amp; Free T3/T4 Profile, Preferred time: &quot;"><span class="material-symbols-outlined text-[18px]">chat</span><span data-i18n="btn_book_wa">Book this test on WhatsApp</span></a>
+<button class="inline-flex items-center justify-center px-space-md min-h-[48px] rounded-lg border border-primary text-primary font-label-md text-label-md hover:bg-primary/5" data-i18n="btn_req_slip" type="button">Add to Requisition Slip</button>
+</div>
+<span class="font-label-sm text-label-sm text-ink-soft" data-i18n="t5_code">Test Code: #END-0892</span>
+</div>
+</div>
+</div>
+<!-- TEST ROW 6 -->
+<div class="test-item group rounded-lg p-space-md border border-rule transition-all duration-300 hover:bg-secondary-fixed/20">
+<button aria-expanded="false" class="w-full flex items-center justify-between text-left focus:outline-none cursor-pointer" onclick="toggleTestPanel(this)" type="button">
+<div class="pr-space-md">
+<span class="inline-block font-label-sm text-label-sm text-ink-soft uppercase tracking-wider mb-0.5" data-i18n="t6_category">Test 06 • Renal &amp; Excretory</span>
+<h3 class="font-headline-md text-headline-md text-ink leading-tight" data-i18n="t6_title">Urine Routine &amp; Microscopic Analysis (Complete)</h3>
+<p class="font-body-md text-body-md text-ink-soft mt-0.5" data-i18n="t6_desc">Physical appearance, chemical strip dipstick, and centrifugal deposit microscopy</p>
+</div>
+<div class="chevron-box flex-shrink-0 w-8 h-8 rounded-full bg-secondary-fixed/60 flex items-center justify-center text-ink-soft transition-transform duration-300">
+<span class="material-symbols-outlined text-[20px]">expand_more</span>
+</div>
+</button>
+<div class="accordion-content collapsed border-t border-rule flex flex-col gap-space-md">
+<p class="font-body-md text-body-md text-ink" data-i18n="t6_detail_lead">
+  Complete physical, chemical, and microscopic examination of clean-catch midstream urine for kidney health, infection, and crystal precipitation.
+</p>
+<div class="bg-paper p-space-md rounded-lg">
+<h4 class="font-label-sm text-label-sm text-ink-soft uppercase tracking-wider mb-space-sm flex items-center gap-space-xs">
+<span class="material-symbols-outlined text-primary text-[18px]">checklist</span>
+<span data-i18n="t6_incl_heading">What's Included in this Panel</span>
+</h4>
+<ul class="space-y-space-xs font-body-md text-body-md text-ink">
+<li class="flex items-start gap-space-sm"><span class="material-symbols-outlined text-primary text-[18px] mt-0.5">check_circle</span><span data-i18n="t6_i1"><strong>Physical &amp; Chemical:</strong> pH, Specific Gravity, Protein, Glucose, Ketones, Nitrite, Urobilinogen</span></li>
+<li class="flex items-start gap-space-sm"><span class="material-symbols-outlined text-primary text-[18px] mt-0.5">check_circle</span><span data-i18n="t6_i2"><strong>Microscopy:</strong> RBCs, Pus Cells, Epithelial Cells, Casts, Crystals, and Bacteria check</span></li>
+</ul>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-3 gap-space-sm bg-surface-container-lowest p-space-md rounded-lg text-ink font-body-md text-body-md">
+<div class="flex flex-col"><span class="font-label-sm text-label-sm text-ink-soft uppercase" data-i18n="prep_title">Preparation</span><span class="font-medium mt-0.5 text-[14px]" data-i18n="t6_prep">Clean-catch midstream urine in sterile container provided.</span></div>
+<div class="flex flex-col"><span class="font-label-sm text-label-sm text-ink-soft uppercase" data-i18n="sample_title">Sample Required</span><span class="font-medium mt-0.5 text-[14px]" data-i18n="t6_sample">20–30 ml Midstream Specimen</span></div>
+<div class="flex flex-col"><span class="font-label-sm text-label-sm text-ink-soft uppercase" data-i18n="delivery_title">Delivery Standard</span><span class="font-medium mt-0.5 text-[14px]" data-i18n="t6_delivery">2 to 3 hours rapid report</span></div>
+</div>
+<div class="flex flex-wrap items-center justify-between gap-space-md pt-space-xs">
+<div class="flex items-center gap-space-sm">
+<a class="wa-dynamic-link inline-flex items-center gap-space-xs px-space-lg min-h-[48px] rounded-lg bg-wa text-white font-label-md text-label-md hover:opacity-95" data-wa-test-bn="ইউরিন রুটিন ও মাইক্রোস্কোপিক বিশ্লেষণ (সম্পূর্ণ)" data-wa-test-en="Urine Routine &amp; Microscopic Analysis (Complete)" data-wa-type="test" href="https://wa.me/918023456789?text=Hello%2C%20I'd%20like%20to%20book%20a%20test.%20Name%3A%20%2C%20Test%3A%20Urine%20Routine%20%26%20Microscopic%20Analysis%20(Complete)%2C%20Preferred%20time%3A%20" rel="noopener noreferrer" target="_blank" data-prefilled-msg="Hello, I'd like to book a test. Name: , Test: Urine Routine &amp; Microscopic Analysis (Complete), Preferred time: " title="Prefilled: &quot;Hello, I'd like to book a test. Name: , Test: Urine Routine &amp; Microscopic Analysis (Complete), Preferred time: &quot;"><span class="material-symbols-outlined text-[18px]">chat</span><span data-i18n="btn_book_wa">Book this test on WhatsApp</span></a>
+<button class="inline-flex items-center justify-center px-space-md min-h-[48px] rounded-lg border border-primary text-primary font-label-md text-label-md hover:bg-primary/5" data-i18n="btn_req_slip" type="button">Add to Requisition Slip</button>
+</div>
+<span class="font-label-sm text-label-sm text-ink-soft" data-i18n="t6_code">Test Code: #REN-0071</span>
+</div>
+</div>
+</div>
+</div>
+<div class="mt-space-lg flex items-center justify-between text-ink-soft font-body-md text-body-md">
+<span data-i18n="tests_specialty_note">Looking for specialty genetic or hormone panels?</span>
+<a class="wa-dynamic-link text-primary font-semibold hover:underline inline-flex items-center gap-1" data-wa-type="prescription" href="https://wa.me/918023456789?text=Hello%2C%20I%20would%20like%20to%20send%20a%20prescription%20scan%20for%20test%20booking." rel="noopener noreferrer" target="_blank" data-prefilled-msg="Hello, I would like to send a prescription scan for test booking." title="Prefilled: &quot;Hello, I would like to send a prescription scan for test booking.&quot;">
+<span data-i18n="tests_specialty_link">Send prescription scan on WhatsApp</span> <span class="material-symbols-outlined text-[16px]">arrow_forward</span>
+</a>
+</div>
+</div>
+<!-- 5-Column Right: Health Packages & Interactive Motion Spec Panel -->
+<div class="lg:col-span-5 flex flex-col gap-space-xl" id="packages-section">
+<!-- Health Packages Container -->
+<div class="bg-surface-container-lowest p-space-xl rounded-xl border border-rule flex flex-col gap-space-lg">
+<div class="flex items-center justify-between border-b border-rule pb-space-sm">
+<div>
+<span class="font-label-sm text-label-sm text-primary uppercase font-bold tracking-wider" data-i18n="pkg_header_eyebrow">Multi-Parametric</span>
+<h3 class="font-headline-md text-headline-md text-ink" data-i18n="pkg_header_title">Comprehensive Packages</h3>
+</div>
+<span class="font-label-sm text-label-sm text-ink-soft" data-i18n="pkg_header_pill">Bundled Requisitions</span>
+</div>
+<!-- Package A: Highlighted -->
+<div class="p-space-md rounded-lg bg-secondary-fixed/40 border border-primary/20 flex flex-col gap-space-xs">
+<div class="flex items-center justify-between">
+<span class="inline-flex items-center px-2 py-0.5 rounded bg-primary text-white font-label-sm text-label-sm" data-i18n="pkg_a_badge">
+  Recommended Assessment
+</span>
+<span class="font-label-sm text-label-sm text-ink font-semibold" data-i18n="pkg_a_param">64 Parameters</span>
+</div>
+<h4 class="font-headline-md text-headline-md text-ink mt-1" data-i18n="pkg_a_title">Core Health Package A</h4>
+<p class="font-body-md text-body-md text-ink-soft" data-i18n="pkg_a_desc">
+  Complete hematology, lipid profile, fasting glucose, renal parameters (Creatinine, Urea), and complete liver enzyme panel.
+</p>
+<div class="pt-space-xs flex items-center justify-between">
+<span class="font-label-sm text-label-sm text-ink-soft" data-i18n="pkg_a_tat">Turnaround: 6 Hours</span>
+<a class="wa-dynamic-link font-label-md text-label-md text-primary font-semibold hover:underline" data-i18n="pkg_a_btn" data-wa-test-bn="কোর হেলথ প্যাকেজ - এ" data-wa-test-en="Core Health Package A" data-wa-type="test" href="https://wa.me/918023456789?text=Hello%2C%20I'd%20like%20to%20book%20a%20test.%20Name%3A%20%2C%20Test%3A%20Core%20Health%20Package%20A%2C%20Preferred%20time%3A%20" rel="noopener noreferrer" target="_blank" data-prefilled-msg="Hello, I'd like to book a test. Name: , Test: Core Health Package A, Preferred time: " title="Prefilled: &quot;Hello, I'd like to book a test. Name: , Test: Core Health Package A, Preferred time: &quot;">
+  Book Package A →
+</a>
+</div>
+</div>
+<!-- Package B -->
+<div class="p-space-md rounded-lg bg-paper border border-rule flex flex-col gap-space-xs">
+<div class="flex items-center justify-between">
+<span class="font-label-sm text-label-sm text-ink-soft uppercase tracking-wider font-semibold" data-i18n="pkg_b_badge">Metabolic Focus</span>
+<span class="font-label-sm text-label-sm text-ink" data-i18n="pkg_b_param">48 Parameters</span>
+</div>
+<h4 class="font-headline-md text-headline-md text-ink mt-0.5" data-i18n="pkg_b_title">Cardiac &amp; Diabetic Package B</h4>
+<p class="font-body-md text-body-md text-ink-soft" data-i18n="pkg_b_desc">
+  Targeted monitoring including HbA1c, extended lipid fractions, microalbuminuria, and hs-CRP inflammatory marker.
+</p>
+<div class="pt-space-xs flex items-center justify-between">
+<span class="font-label-sm text-label-sm text-ink-soft" data-i18n="pkg_b_tat">Turnaround: Same Day</span>
+<a class="wa-dynamic-link font-label-md text-label-md text-primary font-semibold hover:underline" data-i18n="pkg_b_btn" data-wa-test-bn="কার্ডিয়াক ও ডায়াবেটিক প্যাকেজ - বি" data-wa-test-en="Cardiac &amp; Diabetic Package B" data-wa-type="test" href="https://wa.me/918023456789?text=Hello%2C%20I'd%20like%20to%20book%20a%20test.%20Name%3A%20%2C%20Test%3A%20Cardiac%20%26%20Diabetic%20Package%20B%2C%20Preferred%20time%3A%20" rel="noopener noreferrer" target="_blank" data-prefilled-msg="Hello, I'd like to book a test. Name: , Test: Cardiac &amp; Diabetic Package B, Preferred time: " title="Prefilled: &quot;Hello, I'd like to book a test. Name: , Test: Cardiac &amp; Diabetic Package B, Preferred time: &quot;">
+  Book Package B →
+</a>
+</div>
+</div>
+<!-- Package C -->
+<div class="p-space-md rounded-lg bg-paper border border-rule flex flex-col gap-space-xs">
+<div class="flex items-center justify-between">
+<span class="font-label-sm text-label-sm text-ink-soft uppercase tracking-wider font-semibold" data-i18n="pkg_c_badge">Senior &amp; Executive</span>
+<span class="font-label-sm text-label-sm text-ink" data-i18n="pkg_c_param">82 Parameters</span>
+</div>
+<h4 class="font-headline-md text-headline-md text-ink mt-0.5" data-i18n="pkg_c_title">Advanced Diagnostic Package C</h4>
+<p class="font-body-md text-body-md text-ink-soft" data-i18n="pkg_c_desc">
+  Extensive whole-body screening including full thyroid, Vitamin D &amp; B12, serum electrolytes, and iron deficiency profile.
+</p>
+<div class="pt-space-xs flex items-center justify-between">
+<span class="font-label-sm text-label-sm text-ink-soft" data-i18n="pkg_c_tat">Turnaround: 12 Hours</span>
+<a class="wa-dynamic-link font-label-md text-label-md text-primary font-semibold hover:underline" data-i18n="pkg_c_btn" data-wa-test-bn="অ্যাডভান্সড ডায়াগনস্টিক প্যাকেজ - সি" data-wa-test-en="Advanced Diagnostic Package C" data-wa-type="test" href="https://wa.me/918023456789?text=Hello%2C%20I'd%20like%20to%20book%20a%20test.%20Name%3A%20%2C%20Test%3A%20Advanced%20Diagnostic%20Package%20C%2C%20Preferred%20time%3A%20" rel="noopener noreferrer" target="_blank" data-prefilled-msg="Hello, I'd like to book a test. Name: , Test: Advanced Diagnostic Package C, Preferred time: " title="Prefilled: &quot;Hello, I'd like to book a test. Name: , Test: Advanced Diagnostic Package C, Preferred time: &quot;">
+  Book Package C →
+</a>
+</div>
+</div>
+</div>
+<!-- Motion & Interaction Specification Panel -->
+<div class="bg-secondary-fixed/30 border border-rule rounded-xl p-space-lg flex flex-col gap-space-sm text-ink">
+<div class="flex items-center gap-space-xs text-primary font-label-md text-label-md">
+<span class="material-symbols-outlined text-[20px]">animation</span>
+<span data-i18n="spec_title">UX Interaction Specification (DESIGN.md Reference)</span>
+</div>
+<div class="space-y-space-sm text-body-md font-body-md text-ink-soft text-[14px] leading-relaxed">
+<div class="pb-space-xs border-b border-rule">
+<strong class="text-ink font-semibold block" data-i18n="spec_item1_t">AutoHeight + Blur-Fade Animation:</strong>
+<span data-i18n="spec_item1_d">Panel expands dynamically with max-height transition and smooth cubic-bezier(0.4, 0, 0.2, 1) timing.</span>
+</div>
+<div class="pb-space-xs border-b border-rule">
+<strong class="text-ink font-semibold block" data-i18n="spec_item2_t">Synchronized Chevron Indicator:</strong>
+<span data-i18n="spec_item2_d">180° rotation indicator informs screen readers via aria-expanded="true".</span>
+</div>
+<div class="pb-space-xs border-b border-rule">
+<strong class="text-ink font-semibold block" data-i18n="spec_item3_t">Bilingual Real-Time Toggle:</strong>
+<span data-i18n="spec_item3_d">Client-side instant language swap between English &amp; Bengali with typography parity.</span>
+</div>
+<div><strong class="text-ink font-semibold block" data-i18n="spec_item4_t">Dynamic WhatsApp Click-to-Chat (DESIGN.md §7):</strong>
+<span data-i18n="spec_item4_d">URL auto-constructed with URI encoding (<code class="text-primary font-mono text-[12px]">https://wa.me/+918023456789?text=...</code>). Contextual prefilling for tests, packages, consultations, home collection, and prescriptions.</span></div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Hairline Divider -->
+<div class="max-w-[1080px] mx-auto w-full px-margin md:px-margin-desktop">
+<div class="h-[1px] w-full bg-rule"></div>
+</div>
+<!-- Modular Home Sample Collection Banner -->
+<section class="w-full max-w-[1080px] mx-auto px-margin md:px-margin-desktop py-space-3xl">
+<div class="bg-secondary-fixed/50 rounded-xl p-space-xl md:p-space-2xl border border-rule flex flex-col md:flex-row items-center justify-between gap-space-xl">
+<div class="max-w-xl">
+<span class="font-label-sm text-label-sm text-primary uppercase font-bold tracking-wider" data-i18n="home_eyebrow">Phlebotomy At Your Residence</span>
+<h3 class="font-headline-lg text-headline-lg text-ink mt-1" data-i18n="home_title">Book Home Sample Collection</h3>
+<p class="font-body-md text-body-md text-ink-soft mt-space-xs" data-i18n="home_desc">
+  Certified phlebotomists arrive with cold-chain sample transport containers. Temperature monitored, vacuum-sealed vacutainers, zero contamination risk.
+</p>
+<div class="flex items-center gap-space-lg mt-space-md font-label-sm text-label-sm text-ink flex-wrap">
+<span class="flex items-center gap-1">
+<span class="material-symbols-outlined text-primary text-[18px]">ac_unit</span>
+<span data-i18n="home_badge1">Cold-Chain Verified</span>
+</span>
+<span class="flex items-center gap-1">
+<span class="material-symbols-outlined text-primary text-[18px]">verified_user</span>
+<span data-i18n="home_badge2">Hospital Certified Staff</span>
+</span>
+<span class="flex items-center gap-1">
+<span class="material-symbols-outlined text-primary text-[18px]">schedule</span>
+<span data-i18n="home_badge3">Slots from 06:30 AM</span>
+</span>
+</div>
+</div>
+<div class="flex-shrink-0 w-full md:w-auto">
+<a class="wa-dynamic-link w-full md:w-auto inline-flex items-center justify-center gap-space-sm px-space-xl min-h-[52px] rounded-lg bg-wa text-white font-label-md text-label-md hover:opacity-95 transition-opacity" data-wa-type="home_collection" href="https://wa.me/918023456789?text=Hello%2C%20I'd%20like%20to%20book%20home%20sample%20collection.%20Name%3A%20%2C%20Address%3A%20%2C%20Preferred%20time%3A%20" rel="noopener noreferrer" target="_blank" data-prefilled-msg="Hello, I'd like to book home sample collection. Name: , Address: , Preferred time: " title="Prefilled: &quot;Hello, I'd like to book home sample collection. Name: , Address: , Preferred time: &quot;">
+<span class="material-symbols-outlined text-[20px]">chat</span>
+<span data-i18n="home_cta">Schedule on WhatsApp</span>
+</a>
+</div>
+</div>
+</section>
+<!-- Why Choose Us: 2x2 Grid -->
+<section class="w-full max-w-[1080px] mx-auto px-margin md:px-margin-desktop pb-space-3xl" id="doctors-section">
+  <div class="flex flex-col md:flex-row md:items-end justify-between gap-space-sm mb-space-xl">
+    <div>
+      <span class="font-label-sm text-label-sm text-primary uppercase font-bold tracking-wider" data-i18n="doc_eyebrow">Specialist Chambers &amp; OPD</span>
+      <h2 class="font-headline-lg text-headline-lg text-ink mt-0.5" data-i18n="doc_title">Doctor Consultations &amp; Clinical Chambers</h2>
+    </div>
+    <div class="font-label-sm text-label-sm text-ink-soft tracking-wider" data-i18n="doc_status">
+      DIRECT SERIAL DESK • VISITING CONSULTANTS
+    </div>
+  </div>
+
+  <div class="grid grid-cols-1 lg:grid-cols-12 gap-gutter-desktop items-start">
+    <!-- Specialty Schedule Ledger (7 Cols) -->
+    <div class="lg:col-span-7 bg-surface-container-lowest p-space-xl rounded-xl border border-rule flex flex-col gap-space-md">
+      <div class="flex items-center justify-between border-b border-rule pb-space-sm">
+        <h3 class="font-headline-md text-headline-md text-ink" data-i18n="doc_ledger_title">Specialty OPD Timings</h3>
+        <span class="font-label-sm text-label-sm text-ink-soft" data-i18n="doc_ledger_sub">Counter &amp; WhatsApp Serial</span>
+      </div>
+      <div class="divide-y divide-rule">
+        <div class="py-space-sm flex flex-col sm:flex-row sm:items-center justify-between gap-1">
+          <div>
+            <span class="font-semibold text-ink text-body-md block" data-i18n="doc_d1_title">General Medicine &amp; Diabetology</span>
+            <span class="text-ink-soft font-label-sm text-label-sm" data-i18n="doc_d1_doc">Senior Consultant Physician (MBBS, MD)</span>
+          </div>
+          <div class="text-right sm:text-right">
+            <span class="font-medium text-ink text-body-md block" data-i18n="doc_d1_time">Mon, Wed, Fri • 05:00 PM – 08:00 PM</span>
+            <span class="text-wa font-semibold text-[12px]" data-i18n="doc_d1_status">Chamber Open</span>
+          </div>
+        </div>
+        <div class="py-space-sm flex flex-col sm:flex-row sm:items-center justify-between gap-1">
+          <div>
+            <span class="font-semibold text-ink text-body-md block" data-i18n="doc_d2_title">Cardiology &amp; Vascular Medicine</span>
+            <span class="text-ink-soft font-label-sm text-label-sm" data-i18n="doc_d2_doc">Interventional Cardiologist (MD, DM)</span>
+          </div>
+          <div class="text-right sm:text-right">
+            <span class="font-medium text-ink text-body-md block" data-i18n="doc_d2_time">Tue, Thu, Sat • 06:00 PM – 08:30 PM</span>
+            <span class="text-ink-soft text-[12px]" data-i18n="doc_d2_status">Advance Serial Req.</span>
+          </div>
+        </div>
+        <div class="py-space-sm flex flex-col sm:flex-row sm:items-center justify-between gap-1">
+          <div>
+            <span class="font-semibold text-ink text-body-md block" data-i18n="doc_d3_title">Obstetrics &amp; Gynecology</span>
+            <span class="text-ink-soft font-label-sm text-label-sm" data-i18n="doc_d3_doc">Consultant Gynecologist (MS, DNB)</span>
+          </div>
+          <div class="text-right sm:text-right">
+            <span class="font-medium text-ink text-body-md block" data-i18n="doc_d3_time">Mon, Thu • 10:00 AM – 01:00 PM</span>
+            <span class="text-wa font-semibold text-[12px]" data-i18n="doc_d3_status">Chamber Open</span>
+          </div>
+        </div>
+        <div class="py-space-sm flex flex-col sm:flex-row sm:items-center justify-between gap-1">
+          <div>
+            <span class="font-semibold text-ink text-body-md block" data-i18n="doc_d4_title">Pediatrics &amp; Child Health</span>
+            <span class="text-ink-soft font-label-sm text-label-sm" data-i18n="doc_d4_doc">Senior Pediatrician (MD, DCH)</span>
+          </div>
+          <div class="text-right sm:text-right">
+            <span class="font-medium text-ink text-body-md block" data-i18n="doc_d4_time">Daily • 09:30 AM – 12:30 PM</span>
+            <span class="text-wa font-semibold text-[12px]" data-i18n="doc_d4_status">Chamber Open</span>
+          </div>
+        </div>
+      </div>
+      <div class="pt-space-xs border-t border-rule text-ink-soft font-label-sm text-label-sm flex items-center justify-between">
+        <span data-i18n="doc_note">Emergency consultations routed through triage desk.</span>
+        <span class="text-primary font-semibold" data-i18n="doc_fee_note">No Advance Booking Charges</span>
+      </div>
+    </div>
+
+    <!-- WhatsApp Booking & Prefill Spec Box (5 Cols) -->
+    <div class="lg:col-span-5 bg-secondary-fixed/40 p-space-xl rounded-xl border border-rule flex flex-col gap-space-md">
+      <div>
+        <span class="font-label-sm text-label-sm text-primary uppercase font-bold tracking-wider" data-i18n="doc_wa_card_eyebrow">Direct Serial Booking</span>
+        <h3 class="font-headline-md text-headline-md text-ink mt-0.5" data-i18n="doc_wa_card_title">Consultation Serial via WhatsApp</h3>
+        <p class="font-body-md text-body-md text-ink-soft mt-1" data-i18n="doc_wa_card_desc">
+          Book chamber appointments without queuing. Our desk confirms appointment token and doctor availability directly on WhatsApp.
+        </p>
+      </div>
+
+      <!-- WhatsApp Click-to-Chat Section 7 Prefill Draft Box -->
+      <div class="bg-paper p-space-md rounded-lg border border-rule flex flex-col gap-1.5">
+        <div class="flex items-center justify-between">
+          <span class="text-[11px] font-semibold text-primary uppercase tracking-wider font-mono" data-i18n="doc_prefill_lbl">Section 7 Draft Template</span>
+          <span class="text-[11px] text-ink-soft font-mono">URI Auto-Prefill</span>
+        </div>
+        <div class="p-2.5 rounded bg-surface-container-lowest border border-rule font-mono text-[12px] text-ink leading-relaxed break-words" data-i18n="doc_prefill_draft">
+          "Hello, I'd like to book a doctor consultation. Patient Name: , Department/Specialty: , Preferred Doctor (if any): , Preferred date/time: "
+        </div>
+      </div>
+
+      <a class="wa-dynamic-link w-full inline-flex items-center justify-center gap-space-sm px-space-xl min-h-[52px] rounded-lg bg-wa text-white font-label-md text-label-md hover:opacity-95 transition-opacity" data-wa-type="consultation" href="https://wa.me/918023456789" rel="noopener noreferrer" target="_blank">
+        <span class="material-symbols-outlined text-[20px]">chat</span>
+        <span data-i18n="doc_cta_btn">Book Consultation on WhatsApp</span>
+      </a>
+    </div>
+  </div>
+</section>
+<div class="max-w-[1080px] mx-auto w-full px-margin md:px-margin-desktop mb-space-3xl">
+  <div class="h-[1px] w-full bg-rule"></div>
+</div><section class="w-full max-w-[1080px] mx-auto px-margin md:px-margin-desktop pb-space-3xl" id="why-us-section">
+<div class="mb-space-xl">
+<span class="font-label-sm text-label-sm text-ink-soft uppercase tracking-wider" data-i18n="why_eyebrow">Laboratory Rigor</span>
+<h2 class="font-headline-lg text-headline-lg text-ink mt-0.5" data-i18n="why_title">Clinical Standards &amp; Chain of Custody</h2>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-2 gap-gutter-desktop">
+<div class="p-space-lg rounded-xl bg-paper border border-rule flex flex-col gap-space-xs">
+<div class="w-10 h-10 rounded-lg bg-secondary-fixed flex items-center justify-center text-primary mb-space-xs">
+<span class="material-symbols-outlined">biotech</span>
+</div>
+<h4 class="font-headline-md text-headline-md text-ink" data-i18n="why_c1_title">Automated Analyzer Calibration</h4>
+<p class="font-body-md text-body-md text-ink-soft" data-i18n="why_c1_desc">
+  Three-tier daily quality control (QC) against standard international reference serums before commencing any patient specimen batch.
+</p>
+</div>
+<div class="p-space-lg rounded-xl bg-paper border border-rule flex flex-col gap-space-xs">
+<div class="w-10 h-10 rounded-lg bg-secondary-fixed flex items-center justify-center text-primary mb-space-xs">
+<span class="material-symbols-outlined">qr_code_2</span>
+</div>
+<h4 class="font-headline-md text-headline-md text-ink" data-i18n="why_c2_title">Barcoded Specimen Tracking</h4>
+<p class="font-body-md text-body-md text-ink-soft" data-i18n="why_c2_desc">
+  Zero manual sample relabeling. Unique 2D barcodes are printed and adhered at the moment of draw to eliminate mix-up errors.
+</p>
+</div>
+<div class="p-space-lg rounded-xl bg-paper border border-rule flex flex-col gap-space-xs">
+<div class="w-10 h-10 rounded-lg bg-secondary-fixed flex items-center justify-center text-primary mb-space-xs">
+<span class="material-symbols-outlined">medical_information</span>
+</div>
+<h4 class="font-headline-md text-headline-md text-ink" data-i18n="why_c3_title">Double MD Pathologist Sign-Off</h4>
+<p class="font-body-md text-body-md text-ink-soft" data-i18n="why_c3_desc">
+  Critical alerts and abnormal values are cross-reviewed by a second senior pathologist and telephoned directly to the ordering clinician.
+</p>
+</div>
+<div class="p-space-lg rounded-xl bg-paper border border-rule flex flex-col gap-space-xs">
+<div class="w-10 h-10 rounded-lg bg-secondary-fixed flex items-center justify-center text-primary mb-space-xs">
+<span class="material-symbols-outlined">send_to_mobile</span>
+</div>
+<h4 class="font-headline-md text-headline-md text-ink" data-i18n="why_c4_title">Direct WhatsApp &amp; Print Verification</h4>
+<p class="font-body-md text-body-md text-ink-soft" data-i18n="why_c4_desc">
+  Digital reports carry tamper-evident cryptographic QR codes allowing doctors to verify authenticity on any smartphone instant-reader.
+</p>
+</div>
+</div>
+</section>
+<!-- Location & Timings (2-Column Ruled Ledger Format) -->
+<section class="w-full max-w-[1080px] mx-auto px-margin md:px-margin-desktop pb-space-4xl" id="location-section">
+<div class="grid grid-cols-1 md:grid-cols-12 gap-gutter-desktop items-start">
+<!-- Left: Operating Hours Ruled Table -->
+<div class="md:col-span-6 flex flex-col"><span class="font-label-sm text-label-sm text-ink-soft uppercase tracking-wider mb-space-xs">Schedule Ledger</span><h3 class="font-headline-lg text-headline-lg text-ink mb-space-md">Hours &amp; Phlebotomy Schedule</h3><div class="border-t border-rule"><div class="flex items-center justify-between py-space-sm border-b border-rule font-body-md text-body-md"><span class="text-ink font-semibold">Monday – Friday (Diagnostic Routine)</span><span class="text-ink-soft">06:30 AM – 08:30 PM</span></div><div class="flex items-center justify-between py-space-sm border-b border-rule font-body-md text-body-md"><span class="text-ink font-semibold">Saturday</span><span class="text-ink-soft">06:30 AM – 06:00 PM</span></div><div class="flex items-center justify-between py-space-sm border-b border-rule font-body-md text-body-md"><span class="text-ink font-semibold">Sunday &amp; Public Holidays</span><span class="text-ink-soft">07:00 AM – 01:00 PM (Emergency only)</span></div><div class="flex items-center justify-between py-space-sm border-b border-rule font-body-md text-body-md"><span class="text-ink font-semibold">Home Phlebotomy Collection</span><span class="text-ink-soft">06:30 AM – 11:30 AM (Daily)</span></div></div><div class="mt-space-xl p-space-md rounded-xl bg-paper border border-rule flex flex-col gap-space-sm"><div class="flex items-center justify-between border-b border-rule pb-space-xs"><span class="font-label-sm text-label-sm text-primary uppercase font-bold tracking-wider">Visiting Specialist &amp; Doctor Chamber Hours</span><span class="font-label-sm text-label-sm text-ink-soft font-mono">OPD Schedule</span></div><div class="divide-y divide-rule font-body-md text-body-md"><div class="py-space-xs flex items-center justify-between gap-2"><span class="font-medium text-ink">General Medicine &amp; Diabetology</span><span class="text-ink-soft font-mono text-[13px] text-right">Mon, Wed, Fri • 05:00 PM – 08:00 PM</span></div><div class="py-space-xs flex items-center justify-between gap-2"><span class="font-medium text-ink">Cardiology &amp; Heart Care</span><span class="text-ink-soft font-mono text-[13px] text-right">Tue, Thu, Sat • 06:00 PM – 08:30 PM</span></div><div class="py-space-xs flex items-center justify-between gap-2"><span class="font-medium text-ink">Obstetrics &amp; Gynecology</span><span class="text-ink-soft font-mono text-[13px] text-right">Mon, Thu • 10:00 AM – 01:00 PM</span></div><div class="py-space-xs flex items-center justify-between gap-2"><span class="font-medium text-ink">Pediatrics &amp; Child Health</span><span class="text-ink-soft font-mono text-[13px] text-right">Mon–Sat • 09:30 AM – 12:30 PM</span></div></div><div class="pt-space-xs border-t border-rule text-ink-soft font-label-sm text-label-sm flex flex-col gap-1"><p>Advance serial booking is available through our WhatsApp desk or front reception counter.</p><p class="text-[12px] text-ink-soft">Consultation chamber guidelines: Patient vitals checked 15 mins prior to serial.</p></div></div></div>
+<!-- Right: Location & Frictionless Contact Card -->
+<div class="md:col-span-6 bg-secondary-fixed/40 p-space-xl rounded-xl border border-rule flex flex-col gap-space-md" id="contact-section">
+<div>
+<span class="font-label-sm text-label-sm text-primary uppercase font-bold tracking-wider" data-i18n="loc_eyebrow">Centre Address</span>
+<h4 class="font-headline-md text-headline-md text-ink mt-0.5" data-i18n="loc_building">Central Diagnostics Building</h4>
+<p class="font-body-md text-body-md text-ink-soft mt-1" data-i18n="loc_address">
+  Ground Floor, Requisition Wing, Opposite General Hospital Gate 2.<br>Dedicated patient parking and wheelchair-accessible entrance.
+</p>
+</div>
+<div class="h-[1px] w-full bg-rule"></div>
+<div>
+<span class="font-label-sm text-label-sm text-ink-soft uppercase tracking-wider block mb-space-xs" data-i18n="loc_assist_title">Immediate Assistance</span>
+<p class="font-body-md text-body-md text-ink mb-space-md" data-i18n="loc_assist_desc">
+  No registration queues. Tap below to send your doctor's prescription directly to our on-duty phlebotomy desk.
+</p>
+<a class="wa-dynamic-link w-full inline-flex items-center justify-center gap-space-sm px-space-xl min-h-[52px] rounded-lg bg-wa text-white font-label-md text-label-md hover:opacity-95 transition-opacity" data-wa-type="desk" href="https://wa.me/918023456789?text=Hello%2C%20I%20would%20like%20assistance%20from%20the%20direct%20phlebotomy%20desk%20regarding%20a%20test%20booking." rel="noopener noreferrer" target="_blank" data-prefilled-msg="Hello, I would like assistance from the direct phlebotomy desk regarding a test booking." title="Prefilled: &quot;Hello, I would like assistance from the direct phlebotomy desk regarding a test booking.&quot;">
+<span class="material-symbols-outlined text-[20px]">chat</span>
+<span data-i18n="loc_assist_btn">Request on WhatsApp (Direct Lab Desk)</span>
+</a>
+</div>
+</div>
+</div>
+</section>
+</div>
+</main><footer class="w-full bg-paper"><div class="max-w-[1080px] mx-auto px-margin md:px-margin-desktop py-space-2xl"><div class="h-[1px] w-full bg-rule mb-space-xl"></div><div class="flex flex-col sm:flex-row items-baseline justify-between gap-space-md text-ink-soft font-body-md text-body-md"><p class="font-label-sm text-label-sm text-ink-soft" data-i18n="footer_copy">[CENTRE NAME] Diagnostic Services. Physical requisition accuracy and pathology.</p><div class="flex items-center gap-space-lg font-label-sm text-label-sm"><a class="hover:text-ink transition-colors" data-i18n="footer_l1" data-path="tests" href="#test-directory">Test Directory</a><a class="hover:text-ink transition-colors" data-i18n="footer_l_doc" data-path="doctors" href="#doctors-section">Doctor Chambers</a><a class="hover:text-ink transition-colors" data-i18n="footer_l2" data-path="location" href="#location-section">Hours &amp; Location</a><a class="hover:text-ink transition-colors" data-i18n="footer_l3" data-path="contact" href="#contact-section">Contact</a></div></div></div></footer>
+<!-- Interactive WhatsApp Prefill Preview Toast / Floating Indicator -->
+<div class="fixed bottom-5 right-5 z-50 pointer-events-none transition-all duration-300 transform translate-y-3 opacity-0 max-w-sm w-[calc(100vw-40px)]" id="wa-preview-indicator">
+<div class="bg-ink text-primary-ink p-3 rounded-xl shadow-xl border border-wa/30 flex items-start gap-2.5">
+<div class="w-7 h-7 rounded-full bg-wa flex-shrink-0 flex items-center justify-center text-white mt-0.5">
+<span class="material-symbols-outlined text-[16px]">chat</span>
+</div>
+<div class="flex flex-col flex-1 min-w-0">
+<div class="flex items-center justify-between gap-2">
+<span class="text-[11px] font-semibold text-wa uppercase tracking-wider" id="wa-preview-badge">WhatsApp Click-to-Chat Spec</span>
+<span class="text-[10px] text-outline-variant font-mono">+91 80234 56789</span>
+</div>
+<p class="text-[12px] font-mono text-paper/90 mt-1 line-clamp-2 break-words" id="wa-preview-text">
+        Prefilling message...
+      </p>
+</div>
+</div>
+</div>
+<script>
+  // Lab WhatsApp Configuration per DESIGN.md section 7
+  const LAB_WA_NUMBER = "918023456789";
+
+  // Current language tracking
+  let currentLang = 'en';
+
+  // Bilingual translation dictionary
+  const i18nData = {
+    en: {
+      brand_name: "[CENTRE NAME]",
+      nav_tests: "Tests",
+      nav_packages: "Packages",
+      nav_why_us: "Why Us",
+      nav_location: "Location",
+      nav_contact: "Contact",
+      nav_book_btn: "Book a test",
+      hero_pill: "Sample preview. Content is placeholder.",
+      hero_eyebrow: "Direct Pathology & Diagnostic Requisition",
+      hero_title: "Precision diagnostics.<br>Uncompromising clinical care.",
+      hero_subtitle: "Physical sample integrity, transparent turnaround schedules, and direct digital verification via WhatsApp. No synthetic urgency—just verified pathology.",
+      hero_cta_browse: "Browse Test Directory",
+      hero_cta_wa: "WhatsApp us directly",
+      meta_status_label: "LAB DISPATCH STATUS",
+      meta_status_val: "Open Routine",
+      meta_phlebotomy_lbl: "Morning Phlebotomy:",
+      meta_phlebotomy_val: "06:30 – 12:30",
+      meta_reporting_lbl: "Average Reporting:",
+      meta_reporting_val: "3 to 6 Hours",
+      meta_delivery_lbl: "Verified Delivery:",
+      meta_delivery_val: "Desk + WhatsApp",
+      meta_note: "Physical requisitions and doctor referrals accepted counter-side without pre-registration.",
+      sec_sample_badge: "Sample content",
+      sec_tests_heading: "Popular Tests & Health Packages",
+      sec_directory_index: "DIRECTORY INDEX 01 • 64 REQUISITIONS LISTED",
+      tests_subheader_left: "Individual Diagnostic Requisitions",
+      tests_subheader_right: "Tap row to view parameters",
+      prep_title: "Preparation",
+      sample_title: "Sample Required",
+      delivery_title: "Delivery Standard",
+      btn_book_wa: "Book this test on WhatsApp",
+      btn_req_slip: "Add to Requisition Slip",
+      tests_specialty_note: "Looking for specialty genetic or hormone panels?",
+      tests_specialty_link: "Send prescription scan on WhatsApp",
+      t1_category: "Test 01 • Hematology Panel",
+      t1_title: "Complete Blood Panel Routine Check (CBC + ESR)",
+      t1_desc: "Automated 5-part differential cell counter & sed rate",
+      t1_detail_lead: "Comprehensive primary hematological evaluation including complete cell count, cellular indices, automated ESR, and stained peripheral smear analysis.",
+      t1_incl_heading: "What's Included in this Panel (32 Parameters)",
+      t1_i1: "<strong>Hemoglobin & RBC indices:</strong> Total RBC, MCV, MCH, MCHC, and RDW-CV / RDW-SD",
+      t1_i2: "<strong>Total & Differential WBC:</strong> Absolute and percentage Neutrophils, Lymphocytes, Monocytes, Eosinophils, Basophils",
+      t1_i3: "<strong>Platelet Analysis:</strong> Total count, Mean Platelet Volume (MPV), PCT, and morphological distribution",
+      t1_i4: "<strong>Erythrocyte Sedimentation Rate:</strong> Automated photometrical ESR (Westergren calibrated)",
+      t1_i5: "<strong>Peripheral Smear Examination:</strong> Pathologist review for abnormal cellular morphology or parasites",
+      t1_prep: "8–10 hours overnight fasting recommended. Water permitted.",
+      t1_sample: "3.0 ml EDTA Whole Blood (Lavender top tube)",
+      t1_delivery: "Same day within 4 hours. Verified PDF & physical print.",
+      t1_code: "Test Code: #HEM-0419",
+      t2_category: "Test 02 • Metabolic Profile",
+      t2_title: "Fasting Blood Sugar & HbA1c Glycated Hemoglobin",
+      t2_desc: "Dual plasma glucose reading with 3-month glycemic average",
+      t2_detail_lead: "Gold standard diabetes monitoring including fasting plasma glucose level along with HPLC-certified glycated hemoglobin for 90-day glycemic control index.",
+      t2_incl_heading: "What's Included in this Panel",
+      t2_i1: "<strong>Fasting Blood Glucose:</strong> Hexokinase enzymatic reference measurement",
+      t2_i2: "<strong>HbA1c Glycated Hemoglobin:</strong> NGSP/IFCC standardized HPLC ion-exchange chromatography",
+      t2_i3: "<strong>Estimated Average Glucose (eAG):</strong> Calculated correlation in mg/dL",
+      t2_prep: "10–12 hours strict fasting. Plain water allowed.",
+      t2_sample: "Fluoride plasma + EDTA whole blood",
+      t2_delivery: "3 hours reporting via WhatsApp & Lab Desk",
+      t2_code: "Test Code: #MET-0104",
+      t3_category: "Test 03 • Cardiovascular",
+      t3_title: "Comprehensive Lipid Profile (Cholesterol Fractions)",
+      t3_desc: "Total cholesterol, HDL, LDL, VLDL, and Triglycerides ratio",
+      t3_detail_lead: "Full dyslipidemia screening calculating direct LDL, cardioprotective HDL, and atherogenic ratios to assess arterial health and heart risk.",
+      t3_incl_heading: "What's Included in this Panel",
+      t3_i1: "<strong>Total Cholesterol:</strong> Serum enzymatic colorimetric determination",
+      t3_i2: "<strong>HDL & Direct LDL:</strong> Accurate selective clearance methodology",
+      t3_i3: "<strong>Triglycerides & VLDL:</strong> Glycerol phosphate oxidase assay + ratios",
+      t3_prep: "12 hours overnight fasting. Avoid alcohol 24 hrs prior.",
+      t3_sample: "3.0 ml Clotted Blood / SST Gel Tube",
+      t3_delivery: "4 to 6 hours same-day report",
+      t3_code: "Test Code: #CAR-0238",
+      t4_category: "Test 04 • Hepatic Function",
+      t4_title: "Liver Function & Enzyme Evaluation (LFT)",
+      t4_desc: "SGOT, SGPT, Bilirubin (Total/Direct), Alkaline Phosphatase, Total Proteins",
+      t4_detail_lead: "Diagnostic hepatic enzyme panel evaluating hepatocellular damage, biliary obstruction, and synthetic protein production capacity.",
+      t4_incl_heading: "What's Included in this Panel (11 Parameters)",
+      t4_i1: "<strong>Enzymes:</strong> AST/SGOT, ALT/SGPT, Alkaline Phosphatase (ALP), GGTP",
+      t4_i2: "<strong>Bilirubin:</strong> Total, Direct (Conjugated), Indirect (Unconjugated)",
+      t4_i3: "<strong>Proteins:</strong> Total Serum Protein, Albumin, Globulin, A/G Ratio",
+      t4_prep: "8 hours fasting preferred. Normal hydration.",
+      t4_sample: "3.0 ml Plain Clot Gel SST Tube",
+      t4_delivery: "4 hours turnaround time",
+      t4_code: "Test Code: #HEP-0312",
+      t5_category: "Test 05 • Endocrine System",
+      t5_title: "Thyroid Stimulating Hormone & Free T3/T4 Profile",
+      t5_desc: "Ultra-sensitive chemiluminescence assay for primary gland surveillance",
+      t5_detail_lead: "Precise chemiluminescence immunoassay (CLIA) detecting active free triiodothyronine (FT3), thyroxine (FT4), and pituitary TSH.",
+      t5_incl_heading: "What's Included in this Panel",
+      t5_i1: "<strong>TSH 3rd Generation:</strong> Ultra-sensitive detection threshold (<0.005 µIU/mL)",
+      t5_i2: "<strong>Free T3 & Free T4:</strong> Bioactive non-protein bound hormone assessment",
+      t5_prep: "Morning specimen prior to thyroid hormone medication.",
+      t5_sample: "3.0 ml Venous Serum",
+      t5_delivery: "Same day dispatch (within 5 hours)",
+      t5_code: "Test Code: #END-0892",
+      t6_category: "Test 06 • Renal & Excretory",
+      t6_title: "Urine Routine & Microscopic Analysis (Complete)",
+      t6_desc: "Physical appearance, chemical strip dipstick, and centrifugal deposit microscopy",
+      t6_detail_lead: "Complete physical, chemical, and microscopic examination of clean-catch midstream urine for kidney health, infection, and crystal precipitation.",
+      t6_incl_heading: "What's Included in this Panel",
+      t6_i1: "<strong>Physical & Chemical:</strong> pH, Specific Gravity, Protein, Glucose, Ketones, Nitrite, Urobilinogen",
+      t6_i2: "<strong>Microscopy:</strong> RBCs, Pus Cells, Epithelial Cells, Casts, Crystals, and Bacteria check",
+      t6_prep: "Clean-catch midstream urine in sterile container provided.",
+      t6_sample: "20–30 ml Midstream Specimen",
+      t6_delivery: "2 to 3 hours rapid report",
+      t6_code: "Test Code: #REN-0071",
+      pkg_header_eyebrow: "Multi-Parametric",
+      pkg_header_title: "Comprehensive Packages",
+      pkg_header_pill: "Bundled Requisitions",
+      pkg_a_badge: "Recommended Assessment",
+      pkg_a_param: "64 Parameters",
+      pkg_a_title: "Core Health Package A",
+      pkg_a_desc: "Complete hematology, lipid profile, fasting glucose, renal parameters (Creatinine, Urea), and complete liver enzyme panel.",
+      pkg_a_tat: "Turnaround: 6 Hours",
+      pkg_a_btn: "Book Package A →",
+      pkg_b_badge: "Metabolic Focus",
+      pkg_b_param: "48 Parameters",
+      pkg_b_title: "Cardiac & Diabetic Package B",
+      pkg_b_desc: "Targeted monitoring including HbA1c, extended lipid fractions, microalbuminuria, and hs-CRP inflammatory marker.",
+      pkg_b_tat: "Turnaround: Same Day",
+      pkg_b_btn: "Book Package B →",
+      pkg_c_badge: "Senior & Executive",
+      pkg_c_param: "82 Parameters",
+      pkg_c_title: "Advanced Diagnostic Package C",
+      pkg_c_desc: "Extensive whole-body screening including full thyroid, Vitamin D & B12, serum electrolytes, and iron deficiency profile.",
+      pkg_c_tat: "Turnaround: 12 Hours",
+      pkg_c_btn: "Book Package C →",
+      spec_title: "UX Interaction Specification (DESIGN.md Reference)",
+      spec_item1_t: "AutoHeight + Blur-Fade Animation:",
+      spec_item1_d: "Panel expands dynamically with max-height transition and smooth cubic-bezier(0.4, 0, 0.2, 1) timing.",
+      spec_item2_t: "Synchronized Chevron Indicator:",
+      spec_item2_d: "180° rotation indicator informs screen readers via aria-expanded=\"true\".",
+      spec_item3_t: "Bilingual Real-Time Toggle:",
+      spec_item3_d: "Client-side instant language swap between English & Bengali with typography parity.",
+      spec_item4_t: "Dynamic WhatsApp Click-to-Chat (DESIGN.md §7):",
+      spec_item4_d: "URL auto-constructed with URI encoding (https://wa.me/918023456789?text=...). Contextual prefilling for tests, packages, home collection, and prescriptions.",
+      home_eyebrow: "Phlebotomy At Your Residence",
+      home_title: "Book Home Sample Collection",
+      home_desc: "Certified phlebotomists arrive with cold-chain sample transport containers. Temperature monitored, vacuum-sealed vacutainers, zero contamination risk.",
+      home_badge1: "Cold-Chain Verified",
+      home_badge2: "Hospital Certified Staff",
+      home_badge3: "Slots from 06:30 AM",
+      home_cta: "Schedule on WhatsApp",
+      why_eyebrow: "Laboratory Rigor",
+      why_title: "Clinical Standards & Chain of Custody",
+      why_c1_title: "Automated Analyzer Calibration",
+      why_c1_desc: "Three-tier daily quality control (QC) against standard international reference serums before commencing any patient specimen batch.",
+      why_c2_title: "Barcoded Specimen Tracking",
+      why_c2_desc: "Zero manual sample relabeling. Unique 2D barcodes are printed and adhered at the moment of draw to eliminate mix-up errors.",
+      why_c3_title: "Double MD Pathologist Sign-Off",
+      why_c3_desc: "Critical alerts and abnormal values are cross-reviewed by a second senior pathologist and telephoned directly to the ordering clinician.",
+      why_c4_title: "Direct WhatsApp & Print Verification",
+      why_c4_desc: "Digital reports carry tamper-evident cryptographic QR codes allowing doctors to verify authenticity on any smartphone instant-reader.",
+      hours_eyebrow: "Operating Hours",
+      hours_title: "Hours & Phlebotomy Schedule",
+      time_row1_day: "Monday – Friday",
+      time_row1_hrs: "06:30 AM – 08:30 PM",
+      time_row2_day: "Saturday",
+      time_row2_hrs: "06:30 AM – 06:00 PM",
+      time_row3_day: "Sunday & Public Holidays",
+      time_row3_hrs: "07:00 AM – 01:00 PM (Emergency only)",
+      time_row4_day: "Home Collection Hours",
+      time_row4_hrs: "06:30 AM – 11:30 AM (Daily)",
+      loc_eyebrow: "Centre Address",
+      loc_building: "Central Diagnostics Building",
+      loc_address: "Ground Floor, Requisition Wing, Opposite General Hospital Gate 2.<br>Dedicated patient parking and wheelchair-accessible entrance.",
+      loc_assist_title: "Immediate Assistance",
+      loc_assist_desc: "No registration queues. Tap below to send your doctor's prescription directly to our on-duty phlebotomy desk.",
+      loc_assist_btn: "Request on WhatsApp (Direct Lab Desk)",
+      footer_copy: "[CENTRE NAME] Diagnostic Services. Physical requisition accuracy and pathology.",
+      footer_l1: "Test Directory",
+      footer_l2: "Hours & Location",
+      footer_l3: "Contact"
+    },
+    bn: {
+      brand_name: "[সেন্টারের নাম]",
+      nav_tests: "পরীক্ষাসমূহ",
+      nav_packages: "প্যাকেজ",
+      nav_why_us: "আমাদের বিশেষত্ব",
+      nav_location: "ঠিকানা",
+      nav_contact: "যোগাযোগ",
+      nav_book_btn: "টেস্ট বুক করুন",
+      hero_pill: "নমুনা প্রিভিউ। তথ্য ডেমো মাত্র।",
+      hero_eyebrow: "সরাসরি প্যাথলজি ও নির্ভুল ডায়াগনস্টিক সার্ভিস",
+      hero_title: "নির্ভুল ডায়াগনস্টিকস।<br>আপসহীন ক্লিনিক্যাল যত্ন।",
+      hero_subtitle: "নমুনার সর্বোচ্চ বিশুদ্ধতা, স্বচ্ছ সময়সূচী এবং হোয়াটসঅ্যাপের মাধ্যমে সরাসরি ডিজিটাল ভেরিফিকেশন। কোনো মিথ্যা তাড়া নয়—শুধু সুনিশ্চিত প্যাথলজি।",
+      hero_cta_browse: "টেস্ট তালিকা দেখুন",
+      hero_cta_wa: "হোয়াটসঅ্যাপে যোগাযোগ করুন",
+      meta_status_label: "ল্যাব ডিসপ্যাচ স্ট্যাটাস",
+      meta_status_val: "রুটিন খোলা আছে",
+      meta_phlebotomy_lbl: "সকালের রক্ত সংগ্রহ:",
+      meta_phlebotomy_val: "০৬:৩০ – ১২:৩০",
+      meta_reporting_lbl: "গড় রিপোর্ট প্রদানের সময়:",
+      meta_reporting_val: "৩ থেকে ৬ ঘণ্টা",
+      meta_delivery_lbl: "ভেরিফায়েড ডেলিভারি:",
+      meta_delivery_val: "ডেস্ক + হোয়াটসঅ্যাপ",
+      meta_note: "পূর্ব-রেজিস্ট্রেশন ছাড়াই প্রেসক্রিপশন ও রেফারেল কাউন্টারে সরাসরি জমা নেওয়া হয়।",
+      sec_sample_badge: "নমুনা তথ্য",
+      sec_tests_heading: "জনপ্রিয় পরীক্ষাসমূহ ও হেলথ প্যাকেজ",
+      sec_directory_index: "ডিরেক্টরি ইনডেক্স ০১ • ৬৪টি পরীক্ষা তালিকাভুক্ত",
+      tests_subheader_left: "একক ডায়াগনস্টিক রিকুইজিশন",
+      tests_subheader_right: "প্যারামিটার দেখতে সারিতে চাপুন",
+      prep_title: "প্রস্তুতি",
+      sample_title: "প্রয়োজনীয় নমুনা",
+      delivery_title: "রিপোর্ট ডেলিভারি",
+      btn_book_wa: "হোয়াটসঅ্যাপে এই টেস্টটি বুক করুন",
+      btn_req_slip: "রিকুইজিশন স্লিপে যোগ করুন",
+      tests_specialty_note: "বিশেষ হরমোন বা জেনেটিক টেস্ট খুঁজছেন?",
+      tests_specialty_link: "হোয়াটসঅ্যাপে প্রেসক্রিপশন পাঠান",
+      t1_category: "টেস্ট ০১ • হেমাটোলজি প্যানেল",
+      t1_title: "কমপ্লিট ব্লাড প্যানেল রুটিন চেক (সিবিসি + ইএসআর)",
+      t1_desc: "স্বয়ংক্রিয় ৫-পার্ট ডিফারেনশিয়াল সেল কাউন্টার ও সেড রেট",
+      t1_detail_lead: "সম্পূর্ণ রক্তের সেল কাউন্ট, সেলুলার সূচক, স্বয়ংক্রিয় ইএসআর এবং পেরিফেরাল স্মিয়ার পর্যবেক্ষণ সহ সম্পূর্ণ হেমাটোলজি মূল্যায়ন।",
+      t1_incl_heading: "এই প্যানেলে অন্তর্ভুক্ত বিষয়সমূহ (৩২টি প্যারামিটার)",
+      t1_i1: "<strong>হিমোগ্লোবিন ও আরবিসি সূচক:</strong> টোটাল RBC, MCV, MCH, MCHC এবং RDW-CV / RDW-SD",
+      t1_i2: "<strong>টোটাল ও ডিফারেনশিয়াল WBC:</strong> নিউট্রোফিল, লিম্ফোসাইট, মনোসাইট, ইওসিনোফিল, বেসোফিল",
+      t1_i3: "<strong>প্লেটলেট বিশ্লেষণ:</strong> টোটাল কাউন্ট, গড় প্লেটলেট ভলিউম (MPV), PCT এবং সাইজ ডিস্ট্রিবিউশন",
+      t1_i4: "<strong>ইএসআর (ESR):</strong> স্বয়ংক্রিয় ফটোমেট্রিক মেথড (ওয়েস্টারগ্রেন মানদণ্ড)",
+      t1_i5: "<strong>পেরিফেরাল স্মিয়ার পরীক্ষা:</strong> কোষের অস্বাভাবিকতা ও প্যারাসাইট নির্ণয়ে সিনিয়র প্যাথলজিস্ট পর্যালোচনা",
+      t1_prep: "৮–১০ ঘণ্টা খালি পেটে থাকা বাঞ্ছনীয়। শুধু স্বাভাবিক পানি পান করা যাবে।",
+      t1_sample: "৩.০ মিলি EDTA হোল ব্লাড (ল্যাভেন্ডার ক্যাপ টিউব)",
+      t1_delivery: "একই দিনে ৪ ঘণ্টার মধ্যে। ভেরিফায়েড PDF ও প্রিন্টেড কপি।",
+      t1_code: "টেস্ট কোড: #HEM-0419",
+      t2_category: "টেস্ট ০২ • মেটাবলিক প্রোফাইল",
+      t2_title: "ফাস্টিং ব্লাড সুগার এবং HbA1c গ্লাইকেটেড হিমোগ্লোবিন",
+      t2_desc: "দ্বিমুখী প্লাজমা গ্লুকোজ পরিমাপ সহ বিগত ৩ মাসের গড় সুগার সূচক",
+      t2_detail_lead: "ডায়াবেটিস শনাক্ত ও নিয়ন্ত্রণের গোল্ড স্ট্যান্ডার্ড টেস্ট। ফাস্টিং রক্তে শর্করার পাশাপাশি ৩ মাসের গড় সুগার সূচক নির্ধারণ।",
+      t2_incl_heading: "এই প্যানেলে অন্তর্ভুক্ত বিষয়সমূহ",
+      t2_i1: "<strong>ফাস্টিং ব্লাড গ্লুকোজ:</strong> হেক্সোকাইনেজ এনজাইমেটিক রেফারেন্স পরিমাপ",
+      t2_i2: "<strong>HbA1c গ্লাইকেটেড হিমোগ্লোবিন:</strong> বিশ্বমানের NGSP/IFCC অনুমোদিত HPLC প্রযুক্তি",
+      t2_i3: "<strong>এস্টিমেটেড এভারেজ গ্লুকোজ (eAG):</strong> সমতুল্য গড় গ্লুকোজ mg/dL হিসাব",
+      t2_prep: "১০–১২ ঘণ্টা সম্পূর্ণ খালি পেটে থাকতে হবে। পানি পান করা যাবে।",
+      t2_sample: "ফ্লোরাইড প্লাজমা + EDTA হোল ব্লাড",
+      t2_delivery: "৩ ঘণ্টার মধ্যে রিপোর্ট হোয়াটসঅ্যাপ ও ল্যাব ডেস্কে",
+      t2_code: "টেস্ট কোড: #MET-0104",
+      t3_category: "টেস্ট ০৩ • কার্ডিওভাসকুলার",
+      t3_title: "কম্প্রিহেনসিভ লিপিড প্রোফাইল (কোলেস্টেরল ফ্র্যাকশন)",
+      t3_desc: "টোটাল কোলেস্টেরল, HDL, LDL, VLDL এবং ট্রাইগ্লিসারাইড অনুপাত",
+      t3_detail_lead: "রক্তনালী ও হৃদযন্ত্রের সুরক্ষায় লিপিড ও চর্বির পূর্ণাঙ্গ প্রোফাইল, ক্ষতিকর চর্বি ও উপকারী এইচডিএলের সঠিক অনুপাত নির্ধারণ।",
+      t3_incl_heading: "এই প্যানেলে অন্তর্ভুক্ত বিষয়সমূহ",
+      t3_i1: "<strong>টোটাল কোলেস্টেরল:</strong> সেরাম এনজাইমেটিক কালোরিমেট্রিক টেস্ট",
+      t3_i2: "<strong>উপকারী HDL ও ক্ষতিকর Direct LDL:</strong> আধুনিক সিলেক্টিভ মেথডোলজি",
+      t3_i3: "<strong>ট্রাইগ্লিসারাইডস ও VLDL:</strong> লিপিড ও কার্ডিয়াক রিস্ক অনুপাত",
+      t3_prep: "১২ ঘণ্টা খালি পেটে রক্ত দিতে হবে। আগের রাতে চর্বিযুক্ত খাবার এড়িয়ে চলুন।",
+      t3_sample: "৩.০ মিলি ক্লটেড ব্লাড / SST জেল টিউব",
+      t3_delivery: "৪ থেকে ৬ ঘণ্টার মধ্যে নির্ভুল রিপোর্ট",
+      t3_code: "টেস্ট কোড: #CAR-0238",
+      t4_category: "টেস্ট ০৪ • হেপাটিক ফাংশন",
+      t4_title: "লিভার ফাংশন ও এনজাইম পরীক্ষা (LFT)",
+      t4_desc: "SGOT, SGPT, বিলিরুবিন (টোটাল/ডিরেক্ট), অ্যালকালাইন ফসফাটেজ, প্রোটিন",
+      t4_detail_lead: "লিভারের প্রদাহ, পিত্তনালীর অবস্থা এবং প্রোটিন তৈরির কার্যক্ষমতা যাচাইয়ের পূর্ণাঙ্গ বায়োকেমিক্যাল প্যানেল।",
+      t4_incl_heading: "এই প্যানেলে অন্তর্ভুক্ত বিষয়সমূহ (১১টি প্যারামিটার)",
+      t4_i1: "<strong>লিভার এনজাইম:</strong> AST/SGOT, ALT/SGPT, অ্যালকালাইন ফসফাটেজ (ALP), GGTP",
+      t4_i2: "<strong>বিলিরুবিন:</strong> টোটাল, ডিরেক্ট (কনজুগেটেড), ইনডিরেক্ট (আনকনজুগেটেড)",
+      t4_i3: "<strong>প্রোটিন প্রোফাইল:</strong> টোটাল সেরাম প্রোটিন, অ্যালবুমিন, গ্লোবুলিন এবং A/G রেশিও",
+      t4_prep: "৮ ঘণ্টা ফাস্টিং থাকলে ভালো ফলাফল পাওয়া যায়।",
+      t4_sample: "৩.০ মিলি প্লেইন ক্লট জেল SST টিউব",
+      t4_delivery: "৪ ঘণ্টার মধ্যে রিপোর্ট তৈরি",
+      t4_code: "টেস্ট কোড: #HEP-0312",
+      t5_category: "টেস্ট ০৫ • এন্ডোক্রাইন সিস্টেম",
+      t5_title: "থাইরয়েড স্টিমুলেটিং হরমোন ও ফ্রি T3/T4 প্রোফাইল",
+      t5_desc: "গ্ল্যান্ড পর্যবেক্ষণের জন্য আল্ট্রা-সেনসিটিভ কেমিলুমিনিসেন্স পরীক্ষা",
+      t5_detail_lead: "থাইরয়েড গ্রন্থির কার্যক্ষমতা মূল্যায়নের উন্নত CLIA প্রযুক্তি নির্ভর পরীক্ষা, যা সক্রিয় FT3, FT4 ও পিটুইটারি TSH সূক্ষ্মভাবে নির্ণয় করে।",
+      t5_incl_heading: "এই প্যানেলে অন্তর্ভুক্ত বিষয়সমূহ",
+      t5_i1: "<strong>TSH ৩য় প্রজন্ম:</strong> আল্ট্রা-সেনসিটিভ ডিটেকশন লেভেল (<০.০০৫ µIU/mL)",
+      t5_i2: "<strong>ফ্রি T3 ও ফ্রি T4:</strong> সক্রিয় বায়ো-অ্যাভেইলেবল হরমোন পরিমাপ",
+      t5_prep: "সকালের প্রথম ভাগে থাইরয়েড ওষুধ গ্রহণের পূর্বে রক্ত নেওয়া উত্তম।",
+      t5_sample: "৩.০ মিলি ভেনাস সেরাম",
+      t5_delivery: "একই দিনে ৫ ঘণ্টার মধ্যে রিপোর্ট",
+      t5_code: "টেস্ট কোড: #END-0892",
+      t6_category: "টেস্ট ০৬ • রেনাল ও এক্সক্রিটরি",
+      t6_title: "ইউরিন রুটিন ও মাইক্রোস্কোপিক বিশ্লেষণ (সম্পূর্ণ)",
+      t6_desc: "ভৌত বৈশিষ্ট্য, স্ট্রিপ ডিপস্টিক রাসায়নিক পরীক্ষা এবং সেন্ট্রিফিউগাল সেডিমেন্ট পর্যবেক্ষণ",
+      t6_detail_lead: "কিডনি ও মূত্রনালীর স্বাস্থ্য, সংক্রমণ এবং ক্রিস্টাল জমা শনাক্তকরণে পরিষ্কার প্রস্রাবের নমুনার সম্পূর্ণ বিশ্লেষণ।",
+      t6_incl_heading: "এই প্যানেলে অন্তর্ভুক্ত বিষয়সমূহ",
+      t6_i1: "<strong>ভৌত ও রাসায়নিক:</strong> pH, স্পেসিফিক গ্র্যাভিটি, প্রোটিন, সুগার, কিটোন, নাইট্রাইট",
+      t6_i2: "<strong>মাইক্রোস্কোপিক:</strong> লোহিত কণিকা (RBC), পুঁজ কোষ (Pus cell), এপিথেলিয়াল সেল ও কাস্ট",
+      t6_prep: "সরবরাহকৃত জীবাণুমুক্ত কনটেইনারে মধ্যবর্তী প্রস্রাবের নমুনা সংগ্রহ করুন।",
+      t6_sample: "২০–৩০ মিলি মিডস্ট্রিম প্রস্রাব",
+      t6_delivery: "২ থেকে ৩ ঘণ্টার মধ্যে দ্রুত রিপোর্ট",
+      t6_code: "টেস্ট কোড: #REN-0071",
+      pkg_header_eyebrow: "মাল্টি-প্যারামেট্রিক",
+      pkg_header_title: "সম্পূর্ণ হেলথ প্যাকেজ",
+      pkg_header_pill: "একত্রে সাশ্রয়ী টেস্ট",
+      pkg_a_badge: "সর্বাধিক বাছাইকৃত প্যাকেজ",
+      pkg_a_param: "৬৪টি প্যারামিটার",
+      pkg_a_title: "কোর হেলথ প্যাকেজ - এ",
+      pkg_a_desc: "রক্তের পূর্ণাঙ্গ পরীক্ষা, লিপিড প্রোফাইল, সুগার, কিডনি স্ক্রীনিং (ক্রিয়েটিনিন, ইউরিয়া) ও পূর্ণাঙ্গ লিভার প্যানেল।",
+      pkg_a_tat: "রিপোর্ট: ৬ ঘণ্টা",
+      pkg_a_btn: "প্যাকেজ এ বুক করুন →",
+      pkg_b_badge: "ডায়াবেটিস ও হৃদযন্ত্র",
+      pkg_b_param: "৪৮টি প্যারামিটার",
+      pkg_b_title: "কার্ডিয়াক ও ডায়াবেটিক প্যাকেজ - বি",
+      pkg_b_desc: "এইচবিএ১সি (HbA1c), বিস্তারিত লিপিড পরীক্ষা, মাইক্রোঅ্যালবুমিন এবং ইনফ্ল্যামেশন মার্কার (hs-CRP)।",
+      pkg_b_tat: "রিপোর্ট: একই দিনে",
+      pkg_b_btn: "প্যাকেজ বি বুক করুন →",
+      pkg_c_badge: "বয়োজ্যেষ্ঠ ও এক্সিকিউটিভ",
+      pkg_c_param: "৮২টি প্যারামিটার",
+      pkg_c_title: "অ্যাডভান্সড ডায়াগনস্টিক প্যাকেজ - সি",
+      pkg_c_desc: "পূর্ণাঙ্গ শারীরিক স্ক্রীনিং সহ থাইরয়েড, ভিটামিন ডি ও বি১২, সেরাম ইলেক্ট্রোলাইট এবং আয়রন ডেফিসিয়েন্সি প্রোফাইল।",
+      pkg_c_tat: "রিপোর্ট: ১২ ঘণ্টা",
+      pkg_c_btn: "প্যাকেজ সি বুক করুন →",
+      spec_title: "UX ইন্টারেকশন স্পেসিফিকেশন (ডিজাইন গাইডলাইন)",
+      spec_item1_t: "স্মুথ অটো-হাইট ও ফেড অ্যানিমেশন:",
+      spec_item1_d: "প্যানেলটি মসৃণ কিউবিক-বেজিয়ার টাইমিং সহ অনায়াসে প্রসারিত ও সংকুচিত হয়।",
+      spec_item2_t: "সিঙ্ক্রোনাইজড শেভরন রোটেটর:",
+      spec_item2_d: "১৮০ ডিগ্রি আবর্তন নির্দেশক স্ক্রিন রিডারের জন্য aria-expanded স্ট্যাটাস আপডেট করে।",
+      spec_item3_t: "রিয়েলটাইম দ্বিভাষিক পরিবর্তন:",
+      spec_item3_d: "কোনো পেজ রিলোড ছাড়াই ইংরেজি ও বাংলার মধ্যে টাইপোগ্রাফি সমতা সহ তাৎক্ষণিক অনুবাদ।",
+      spec_item4_t: "ডায়নামিক হোয়াটসঅ্যাপ ক্লিক-টু-চ্যাট (DESIGN.md §7):",
+      spec_item4_d: "URL স্বয়ংক্রিয়ভাবে তৈরি হয় (https://wa.me/918023456789?text=...)। টেস্ট, প্যাকেজ, হোম কালেকশন ও প্রেসক্রিপশনের জন্য নির্দিষ্ট প্রিফিল বার্তা।",
+      home_eyebrow: "আপনার বাসায় রক্ত সংগ্রহ সেবা",
+      home_title: "হোম স্যাম্পল কালেকশন বুক করুন",
+      home_desc: "দক্ষ ও প্রশিক্ষিত ফ্লেবোটোমিস্ট কোল্ড-চেইন বক্স ও ভ্যাকুয়াম টিউব নিয়ে আপনার বাড়ি পৌঁছাবেন। শূন্য দূষণ ঝুঁকি ও সঠিক তাপমাত্রা নিয়ন্ত্রণ।",
+      home_badge1: "কোল্ড-চেইন নিয়ন্ত্রিত",
+      home_badge2: "হাসপাতাল প্রত্যায়িত কর্মী",
+      home_badge3: "সকাল ০৬:৩০ থেকে স্লট শুরু",
+      home_cta: "হোয়াটসঅ্যাপে শিডিউল করুন",
+      why_eyebrow: "ল্যাবরেটরির নির্ভরযোগ্যতা",
+      why_title: "ক্লিনিক্যাল স্ট্যান্ডার্ড ও সঠিক নিয়ন্ত্রণ",
+      why_c1_title: "স্বয়ংক্রিয় অ্যানালাইজার ক্যালিব্রেশন",
+      why_c1_desc: "রোগীর নমুনা পরীক্ষার পূর্বে প্রতিদিন আন্তর্জাতিক স্ট্যান্ডার্ড রেফারেন্স সেরাম দ্বারা তিন স্তরের কোয়ালিটি কন্ট্রোল (QC)।",
+      why_c2_title: "বারকোড যুক্ত নমুনা ট্র্যাকিং",
+      why_c2_desc: "হাতে লেখার কোনো ভুল নয়। রক্ত নেওয়ার মুহূর্তে প্রিন্ট করা 2D বারকোড টিউবে লাগানো হয় যাতে অদলবদল না ঘটে।",
+      why_c3_title: "ডাবল এমডি প্যাথলজিস্ট অনুমোদন",
+      why_c3_desc: "যেকোনো সংকটজনক ও অস্বাভাবিক রিপোর্ট দুজন সিনিয়র কনসালট্যান্ট প্যাথলজিস্ট যৌথভাবে পর্যালোচনা করে প্রেসক্রাইবিং চিকিৎসককে অবহিত করেন।",
+      why_c4_title: "হোয়াটসঅ্যাপ ও ডিজিটাল কিউআর যাচাই",
+      why_c4_desc: "প্রতিটি ডিজিটাল রিপোর্টে থাকে এনক্রিপ্টেড কিউআর কোড, যা যেকোনো স্মার্টফোনে স্ক্যান করে আসল রিপোর্ট তাৎক্ষণিক যাচাই করা যায়।",
+      hours_eyebrow: "কার্যক্রমের সময়সূচী",
+      hours_title: "ল্যাব ও রক্ত সংগ্রহের সময়",
+      time_row1_day: "সোমবার – শুক্রবার",
+      time_row1_hrs: "সকাল ০৬:৩০ – রাত ০৮:৩০",
+      time_row2_day: "শনিবার",
+      time_row2_hrs: "সকাল ০৬:৩০ – সন্ধ্যা ০৬:০০",
+      time_row3_day: "রবিবার ও সরকারি ছুটির দিন",
+      time_row3_hrs: "সকাল ০৭:০০ – দুপুর ০১:০০ (জরুরি সেবা)",
+      time_row4_day: "হোম কালেকশন সময়",
+      time_row4_hrs: "সকাল ০৬:৩০ – সকাল ১১:৩০ (প্রতিদিন)",
+      loc_eyebrow: "সেন্টারের ঠিকানা",
+      loc_building: "সেন্ট্রাল ডায়াগনস্টিকস ভবন",
+      loc_address: "নিচতলা, রিকুইজিশন উইং, জেনারেল হাসপাতাল ২ নং গেটের বিপরীতে।<br>রোগীদের জন্য নিজস্ব পার্কিং এবং হুইলচেয়ার চলাচলের ব্যবস্থা রয়েছে।",
+      loc_assist_title: "তাৎক্ষণিক সহায়তা",
+      loc_assist_desc: "কোনো সিরিয়াল বা অপেক্ষার ঝামেলা নেই। ডাক্তারের প্রেসক্রিপশন সরাসরি আমাদের কর্তব্যরত ল্যাব ডেস্কে পাঠাতে নিচে ট্যাপ করুন।",
+      loc_assist_btn: "হোয়াটসঅ্যাপে বুকিং করুন (সরাসরি ল্যাব ডেস্ক)",
+      footer_copy: "[সেন্টারের নাম] ডায়াগনস্টিক সার্ভিসেস। বিশ্বস্ত রিকুইজিশন ও নির্ভুল প্যাথলজি।",
+      footer_l1: "টেস্ট ডিরেক্টরি",
+      footer_l2: "সময় ও অবস্থান",
+      footer_l3: "যোগাযোগ"
+    }
+  };
+
+  /**
+   * Helper function per DESIGN.md section 7:
+   * Format: https://wa.me/<number>?text=<encoded message>
+   */
+  function buildWhatsAppLink(serviceType, testName, lang = currentLang) {
+    let rawMessage = "";
+
+    if (lang === 'bn') {
+      switch (serviceType) {
+        case 'test':
+          rawMessage = `নমস্কার, আমি একটি পরীক্ষা বুক করতে চাই। নাম: , পরীক্ষা: ${testName || ''}, পছন্দের সময়: `;
+          break;
+        case 'home_collection':
+          rawMessage = "নমস্কার, আমি হোম স্যাম্পল কালেকশন বুক করতে চাই। নাম: , ঠিকানা: , পছন্দের সময়: ";
+          break;
+        case 'prescription':
+          rawMessage = "নমস্কার, আমি টেস্ট বুকিংয়ের জন্য ডাক্তারের প্রেসক্রিপশন স্ক্যান কপি পাঠাতে চাই।";
+          break;
+        case 'desk':
+          rawMessage = "নমস্কার, আমি সরাসরি ল্যাব ডেস্কে টেস্ট বুকিং সম্পর্কিত সহায়তা পেতে চাই।";
+          break;
+        case 'general':
+        default:
+          rawMessage = "নমস্কার, আমি একটি পরীক্ষা বুক করতে চাই। নাম: , পরীক্ষা: , পছন্দের সময়: ";
+          break;
+      }
+    } else {
+      switch (serviceType) {
+        case 'test':
+          rawMessage = `Hello, I'd like to book a test. Name: , Test: ${testName || ''}, Preferred time: `;
+          break;
+        case 'home_collection':
+          rawMessage = "Hello, I'd like to book home sample collection. Name: , Address: , Preferred time: ";
+          break;
+        case 'prescription':
+          rawMessage = "Hello, I would like to send a prescription scan for test booking.";
+          break;
+        case 'desk':
+          rawMessage = "Hello, I would like assistance from the direct phlebotomy desk regarding a test booking.";
+          break;
+        case 'general':
+        default:
+          rawMessage = "Hello, I'd like to book a test. Name: , Test: , Preferred time: ";
+          break;
+      }
+    }
+
+    const encoded = encodeURIComponent(rawMessage);
+    return {
+      url: `https://wa.me/${LAB_WA_NUMBER}?text=${encoded}`,
+      rawMessage: rawMessage
+    };
+  }
+
+  // Update all WhatsApp links dynamically
+  function updateAllWhatsAppLinks(lang = currentLang) {
+    const waElements = document.querySelectorAll('.wa-dynamic-link');
+    waElements.forEach(el => {
+      const type = el.getAttribute('data-wa-type') || 'general';
+      let testName = "";
+      if (type === 'test') {
+        testName = lang === 'bn' ? (el.getAttribute('data-wa-test-bn') || '') : (el.getAttribute('data-wa-test-en') || '');
+      }
+
+      const { url, rawMessage } = buildWhatsAppLink(type, testName, lang);
+      el.setAttribute('href', url);
+      el.setAttribute('data-prefilled-msg', rawMessage);
+      el.setAttribute('title', `Prefilled: "${rawMessage}"`);
+    });
+  }
+
+  // Visual preview indicator toast for WhatsApp prefill
+  let hidePreviewTimeout = null;
+  function showWaPreview(message) {
+    const indicator = document.getElementById('wa-preview-indicator');
+    const textEl = document.getElementById('wa-preview-text');
+    if (!indicator || !textEl) return;
+
+    if (hidePreviewTimeout) clearTimeout(hidePreviewTimeout);
+    textEl.textContent = `"${message}"`;
+    indicator.classList.remove('opacity-0', 'translate-y-3', 'pointer-events-none');
+    indicator.classList.add('opacity-100', 'translate-y-0');
+
+    hidePreviewTimeout = setTimeout(() => {
+      indicator.classList.add('opacity-0', 'translate-y-3', 'pointer-events-none');
+      indicator.classList.remove('opacity-100', 'translate-y-0');
+    }, 4500);
+  }
+
+  // Attach hover/click listeners to WhatsApp links for instant feedback
+  function attachWaPreviewListeners() {
+    const waElements = document.querySelectorAll('.wa-dynamic-link');
+    waElements.forEach(el => {
+      el.addEventListener('mouseenter', () => {
+        const msg = el.getAttribute('data-prefilled-msg');
+        if (msg) showWaPreview(msg);
+      });
+      el.addEventListener('focus', () => {
+        const msg = el.getAttribute('data-prefilled-msg');
+        if (msg) showWaPreview(msg);
+      });
+    });
+  }
+
+  // Switch language function
+  function setLanguage(lang) {
+    if (!i18nData[lang]) return;
+    currentLang = lang;
+    
+    // Set HTML lang attribute
+    document.documentElement.setAttribute('lang', lang);
+    
+    // Toggle active state on buttons
+    const btnEn = document.getElementById('lang-btn-en');
+    const btnBn = document.getElementById('lang-btn-bn');
+    
+    if (lang === 'bn') {
+      btnBn.className = "px-2.5 py-1 rounded-full bg-primary text-primary-ink font-semibold text-[13px] leading-tight transition-all duration-200 shadow-sm";
+      btnBn.setAttribute('aria-pressed', 'true');
+      btnEn.className = "px-2.5 py-1 rounded-full text-ink-soft hover:text-ink font-medium text-[13px] leading-tight transition-all duration-200";
+      btnEn.setAttribute('aria-pressed', 'false');
+    } else {
+      btnEn.className = "px-2.5 py-1 rounded-full bg-primary text-primary-ink font-semibold text-[13px] leading-tight transition-all duration-200 shadow-sm";
+      btnEn.setAttribute('aria-pressed', 'true');
+      btnBn.className = "px-2.5 py-1 rounded-full text-ink-soft hover:text-ink font-medium text-[13px] leading-tight transition-all duration-200";
+      btnBn.setAttribute('aria-pressed', 'false');
+    }
+    
+    // Update all elements with data-i18n
+    const elements = document.querySelectorAll('[data-i18n]');
+    elements.forEach(el => {
+      const key = el.getAttribute('data-i18n');
+      if (i18nData[lang][key] !== undefined) {
+        el.innerHTML = i18nData[lang][key];
+      }
+    });
+
+    // Update dynamically constructed WhatsApp URLs in real-time
+    updateAllWhatsAppLinks(lang);
+
+    // Save language preference in localStorage
+    try {
+      localStorage.setItem('preferred_lang', lang);
+    } catch (e) {}
+  }
+
+  // Accordion Toggle function
+  function toggleTestPanel(button) {
+    const isExpanded = button.getAttribute('aria-expanded') === 'true';
+    const container = button.closest('.test-item');
+    if (!container) return;
+    
+    const content = container.querySelector('.accordion-content');
+    const chevronBox = button.querySelector('.chevron-box');
+    
+    if (isExpanded) {
+      // Collapse
+      button.setAttribute('aria-expanded', 'false');
+      if (content) {
+        content.classList.add('collapsed');
+      }
+      if (chevronBox) {
+        chevronBox.classList.remove('rotate-180', 'bg-secondary-fixed', 'text-primary');
+        chevronBox.classList.add('bg-secondary-fixed/60', 'text-ink-soft');
+      }
+      container.classList.remove('bg-secondary-fixed/50');
+    } else {
+      // Expand
+      button.setAttribute('aria-expanded', 'true');
+      if (content) {
+        content.classList.remove('collapsed');
+      }
+      if (chevronBox) {
+        chevronBox.classList.add('rotate-180', 'bg-secondary-fixed', 'text-primary');
+        chevronBox.classList.remove('bg-secondary-fixed/60', 'text-ink-soft');
+      }
+      container.classList.add('bg-secondary-fixed/50');
+    }
+  }
+
+  // Set initial state
+  document.addEventListener('DOMContentLoaded', () => {
+    // Check saved language
+    try {
+      const savedLang = localStorage.getItem('preferred_lang');
+      if (savedLang === 'bn') {
+        setLanguage('bn');
+      } else {
+        updateAllWhatsAppLinks('en');
+      }
+    } catch(e) {
+      updateAllWhatsAppLinks('en');
+    }
+
+    attachWaPreviewListeners();
+  });
+</script>
+
+</body></html>

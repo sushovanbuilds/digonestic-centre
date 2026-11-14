@@ -1,0 +1,472 @@
+<!DOCTYPE html>
+
+<html lang="bn"><head><meta charset="utf-8"/><meta content="width=device-width, initial-scale=1.0" name="viewport"/><meta content="web_standard" name="shell-type"/><link href="https://fonts.googleapis.com" rel="preconnect"/><link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/><link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700&amp;display=swap" rel="stylesheet"/><link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/><style>@layer base{html,body{margin:0;padding:0;}body{overscroll-behavior:none;}main>:first-child{margin-top:0!important;}main>:last-child{margin-bottom:0!important;}}::-webkit-scrollbar{display:none;}</style><script src="https://cdn.tailwindcss.com"></script><script id="tailwind-config">tailwind.config={darkMode:"class",theme:{extend:{"colors":{"tertiary-fixed":"#c9e7f8","background":"#f5faff","inverse-primary":"#86d4ca","on-primary-fixed-variant":"#00504a","secondary-container":"#d8e5e2","surface-container-lowest":"#ffffff","on-primary":"#ffffff","surface-tint":"#0b6a62","on-surface":"#081e29","outline":"#6f7977","secondary-fixed":"#d8e5e2","error-container":"#ffdad6","sample-ink":"#6B4500","primary-ink":"#FFFFFF","inverse-on-surface":"#e4f3ff","surface-variant":"#d0e5f6","inverse-surface":"#1f333f","tertiary-container":"#476371","on-error":"#ffffff","rule":"#C9DAD7","surface-container-highest":"#d0e5f6","on-tertiary":"#ffffff","ink-soft":"#44606E","sample-bg":"#FFF1CC","on-primary-container":"#9ae8de","secondary-fixed-dim":"#bcc9c6","surface-container-low":"#eaf5ff","on-secondary-fixed-variant":"#3d4947","on-secondary-container":"#5b6765","on-error-container":"#93000a","tertiary":"#2f4b59","paper":"#F6F9F9","wa":"#0F7B42","outline-variant":"#bec9c6","primary-fixed":"#a2f1e6","on-secondary-fixed":"#121e1c","surface":"#f5faff","primary":"#00514b","on-primary-fixed":"#00201d","on-tertiary-fixed":"#001f2a","primary-fixed-dim":"#86d4ca","error":"#ba1a1a","on-tertiary-container":"#c1deef","surface-container":"#def0ff","on-tertiary-fixed-variant":"#2e4a58","surface-container-high":"#d6ebfc","on-background":"#081e29","secondary":"#55615f","surface-bright":"#f5faff","tertiary-fixed-dim":"#adcbdb","surface-dim":"#c8dded","primary-container":"#0e6b63","on-secondary":"#ffffff","ink":"#0F2430","on-surface-variant":"#3f4947"},"borderRadius":{"DEFAULT":"0.125rem","lg":"0.25rem","xl":"0.5rem","full":"0.75rem"},"spacing":{"space-xl":"1.5rem","space-3xl":"3rem","space-lg":"1rem","space-xs":"0.25rem","space-4xl":"4.5rem","gutter":"1.25rem","space-sm":"0.5rem","margin-desktop":"2.5rem","space-2xl":"2rem","space-md":"0.75rem","gutter-desktop":"2rem","margin":"1.25rem"},"fontFamily":{"label-sm":["Plus Jakarta Sans"],"headline-xl-mobile":["Plus Jakarta Sans"],"headline-lg-mobile":["Plus Jakarta Sans"],"headline-xl":["Plus Jakarta Sans"],"headline-md":["Plus Jakarta Sans"],"body-md":["Plus Jakarta Sans"],"label-md":["Plus Jakarta Sans"],"body-lg":["Plus Jakarta Sans"],"headline-lg":["Plus Jakarta Sans"]},"fontSize":{"label-sm":["13px",{"lineHeight":"16px","fontWeight":"500"}],"headline-xl-mobile":["36px",{"lineHeight":"40px","letterSpacing":"-0.015em","fontWeight":"700"}],"headline-lg-mobile":["24px",{"lineHeight":"30px","letterSpacing":"-0.01em","fontWeight":"600"}],"headline-xl":["56px",{"lineHeight":"60px","letterSpacing":"-0.02em","fontWeight":"700"}],"headline-md":["20px",{"lineHeight":"26px","fontWeight":"600"}],"body-md":["15px",{"lineHeight":"22px","fontWeight":"400"}],"label-md":["15px",{"lineHeight":"20px","fontWeight":"600"}],"body-lg":["17px",{"lineHeight":"27px","fontWeight":"400"}],"headline-lg":["32px",{"lineHeight":"38px","letterSpacing":"-0.01em","fontWeight":"600"}]}}}};</script></head><body class="bg-paper font-body-md text-ink min-h-screen"><header class="fixed top-0 left-0 right-0 z-50 bg-paper/95 backdrop-blur-sm border-b border-rule"><div class="h-20 max-w-[1080px] mx-auto px-margin-desktop flex items-center justify-between gap-space-lg"><div class="flex items-center shrink-0"><a class="font-headline-md text-headline-md text-primary tracking-tight" data-path="tests" href="#">[সেন্টারের নাম]</a></div><nav class="hidden md:flex items-center gap-space-xl" data-active-classes="text-primary font-label-md"><a aria-current="page" class="transition-colors py-space-xs text-primary font-label-md" data-path="tests" href="#">টেস্ট</a><a class="font-body-md text-body-md text-on-surface-variant hover:text-primary transition-colors py-space-xs" data-path="packages" href="#">প্যাকেজ</a><a class="font-body-md text-body-md text-on-surface-variant hover:text-primary transition-colors py-space-xs" data-path="why-us" href="#">কেন আমরা</a><a class="font-body-md text-body-md text-on-surface-variant hover:text-primary transition-colors py-space-xs" data-path="location-and-hours" href="#">ঠিকানা ও সময়</a><a class="font-body-md text-body-md text-on-surface-variant hover:text-primary transition-colors py-space-xs" data-path="contact" href="#">যোগাযোগ</a></nav><div class="flex items-center gap-space-md"><a class="inline-flex items-center justify-center min-h-[52px] px-space-xl bg-primary text-primary-ink font-label-md text-label-md rounded-[10px] hover:bg-primary-container transition-colors" data-path="book-test" href="#">টেস্ট বুক করুন</a><div class="w-8 h-8 rounded-full bg-primary flex items-center justify-center shrink-0"><span class="material-symbols-outlined text-on-primary text-[18px]">person</span></div></div></div></header><main class="w-full pt-20 bg-paper"><div class="flex flex-col w-full">
+<div class="max-w-[1080px] w-full mx-auto px-gutter md:px-margin-desktop space-y-space-4xl py-space-3xl">
+<!-- HERO SECTION -->
+<section class="flex flex-col items-start gap-space-xl pt-space-lg">
+<div class="inline-flex items-center gap-space-xs px-space-md py-space-xs bg-sample-bg text-sample-ink rounded-full">
+<span class="w-1.5 h-1.5 rounded-full bg-sample-ink"></span>
+<span class="font-label-sm text-label-sm tracking-wide">কনসেপ্ট প্রিভিউ</span>
+</div>
+<div class="max-w-[65ch] space-y-space-md">
+<h1 class="font-headline-xl text-headline-xl text-ink tracking-tight font-bold leading-[1.25]">
+          [সেন্টারের নাম]
+        </h1>
+<p class="font-body-lg text-body-lg text-ink-soft leading-[1.7] max-w-[58ch]">
+          একই ছাদের নিচে রোগ নির্ণয় পরীক্ষা ও বিশেষজ্ঞ চিকিৎসকের পরামর্শ। নির্ভুল প্যাথলজি ও নির্ভরযোগ্য ফিজিক্যাল রিপোর্ট।
+        </p>
+</div>
+<div class="flex flex-col sm:flex-row items-stretch sm:items-center gap-space-md w-full sm:w-auto pt-space-xs">
+<a class="inline-flex items-center justify-center min-h-[52px] px-space-2xl bg-primary text-primary-ink font-label-md text-label-md rounded-[10px] hover:bg-primary-container transition-colors shadow-sm" href="#booking-cta">
+<span>টেস্ট বুক করুন</span>
+<span class="material-symbols-outlined text-[18px] ml-space-xs">arrow_forward</span>
+</a>
+<a class="inline-flex items-center justify-center min-h-[52px] px-space-2xl bg-wa text-on-primary font-label-md text-label-md rounded-[10px] hover:opacity-95 transition-opacity shadow-sm" href="https://wa.me/" rel="noopener noreferrer" target="_blank">
+<span class="material-symbols-outlined text-[20px] mr-space-xs">chat</span>
+<span>হোয়াটসঅ্যাপে যোগাযোগ</span>
+</a>
+</div>
+<div class="flex items-center gap-space-xs text-ink-soft font-label-sm text-label-sm pt-space-xs">
+<span class="material-symbols-outlined text-[16px] text-outline">info</span>
+<span>নমুনা প্রিভিউ। তথ্যগুলি ডামি বা প্লেসহোল্ডার।</span>
+</div>
+</section>
+<!-- DIRECTORY SECTION (7/5 Split Grid) -->
+<section class="space-y-space-2xl pt-space-xl">
+<div class="flex flex-wrap items-end justify-between gap-space-md pb-space-md">
+<div class="space-y-space-xs">
+<div class="flex items-center gap-space-sm">
+<span class="font-label-sm text-label-sm text-ink-soft tracking-wider uppercase">ডিরেক্টরি সূচক ০১</span>
+<span class="px-space-sm py-[2px] bg-sample-bg text-sample-ink font-label-sm text-label-sm rounded-[4px]">নমুনা বিষয়বস্তু</span>
+</div>
+<h2 class="font-headline-lg text-headline-lg text-ink">জনপ্রিয় টেস্ট ও হেলথ প্যাকেজ</h2>
+</div>
+<div class="text-ink-soft font-label-sm text-label-sm">
+          নিয়মিত আপডেটকৃত তালিকা
+        </div>
+</div>
+<div class="grid grid-cols-1 lg:grid-cols-12 gap-gutter-desktop items-start">
+<!-- Left Column: Ruled Test Directory (7 cols) -->
+<div class="lg:col-span-7 bg-surface-container-lowest p-space-xl rounded-[14px] shadow-sm space-y-space-lg">
+<div class="flex justify-between items-center pb-space-sm">
+<span class="font-label-sm text-label-sm uppercase tracking-wider text-ink-soft">পরীক্ষার বিবরণ</span>
+<span class="font-label-sm text-label-sm uppercase tracking-wider text-ink-soft">প্যারামিটার ও পদ্ধতি</span>
+</div>
+<div class="space-y-space-xs" id="test-accordion-group">
+<!-- Test Row 1 -->
+<div class="test-row bg-paper rounded-[8px] transition-colors">
+<button class="w-full min-h-[64px] py-space-md px-space-lg flex items-center justify-between text-left focus:outline-none focus:ring-2 focus:ring-primary rounded-[8px] transition-all" onclick="toggleTestAccordion(this)" type="button">
+<div class="pr-space-md">
+<div class="font-label-md text-label-md text-ink">টেস্টের নাম ১</div>
+<div class="font-body-md text-body-md text-ink-soft leading-[1.6]">সম্পূর্ণ রক্তের রুটিন পরীক্ষা (রুটিন সিবিসি)</div>
+</div>
+<span class="material-symbols-outlined text-ink-soft transform transition-transform duration-200 shrink-0">expand_more</span>
+</button>
+<div class="hidden px-space-lg pb-space-md pt-space-xs text-ink-soft font-body-md text-body-md leading-[1.6]">
+<ul class="list-disc pl-5 space-y-1">
+<li>হিমোগ্লোবিন, টিসি, ডিসি, ইএসআর এবং প্লেটলেট কাউন্ট অন্তর্ভুক্ত।</li>
+<li>নমুনা প্রকার: ইডিটিএ পূর্ণ রক্ত (EDTA Whole Blood)।</li>
+<li>ফলাফল প্রাপ্তির সময়: একই দিনে (৪–৬ ঘণ্টার মধ্যে)।</li>
+</ul>
+</div>
+</div>
+<!-- Test Row 2 -->
+<div class="test-row bg-paper rounded-[8px] transition-colors">
+<button class="w-full min-h-[64px] py-space-md px-space-lg flex items-center justify-between text-left focus:outline-none focus:ring-2 focus:ring-primary rounded-[8px] transition-all" onclick="toggleTestAccordion(this)" type="button">
+<div class="pr-space-md">
+<div class="font-label-md text-label-md text-ink">টেস্টের নাম ২</div>
+<div class="font-body-md text-body-md text-ink-soft leading-[1.6]">ফাস্টিং ব্লাড সুগার ও এইচবিএওয়ানসি প্রোফাইল</div>
+</div>
+<span class="material-symbols-outlined text-ink-soft transform transition-transform duration-200 shrink-0">expand_more</span>
+</button>
+<div class="hidden px-space-lg pb-space-md pt-space-xs text-ink-soft font-body-md text-body-md leading-[1.6]">
+<ul class="list-disc pl-5 space-y-1">
+<li>গত ৩ মাসের গড় গ্লুকোজ লেভেল মূল্যায়ন।</li>
+<li>প্রস্তুতি: ন্যূনতম ৮ থেকে ১০ ঘণ্টার উপবাস আবশ্যক।</li>
+<li>নমুনা প্রকার: ফ্লোরাইড প্লাজমা এবং ইডিটিএ রক্ত।</li>
+</ul>
+</div>
+</div>
+<!-- Test Row 3 -->
+<div class="test-row bg-paper rounded-[8px] transition-colors">
+<button class="w-full min-h-[64px] py-space-md px-space-lg flex items-center justify-between text-left focus:outline-none focus:ring-2 focus:ring-primary rounded-[8px] transition-all" onclick="toggleTestAccordion(this)" type="button">
+<div class="pr-space-md">
+<div class="font-label-md text-label-md text-ink">টেস্টের নাম ৩</div>
+<div class="font-body-md text-body-md text-ink-soft leading-[1.6]">লিপিড প্রোফাইল পরীক্ষা</div>
+</div>
+<span class="material-symbols-outlined text-ink-soft transform transition-transform duration-200 shrink-0">expand_more</span>
+</button>
+<div class="hidden px-space-lg pb-space-md pt-space-xs text-ink-soft font-body-md text-body-md leading-[1.6]">
+<ul class="list-disc pl-5 space-y-1">
+<li>কোলেস্টেরল, ট্রাইগ্লিসারাইডস, এইচডিএল, এলডিএল ও ভিএলডিএল।</li>
+<li>প্রস্তুতি: ১২ ঘণ্টার উপবাস অত্যন্ত প্রয়োজনীয়।</li>
+<li>নমুনা প্রকার: সিরাম।</li>
+</ul>
+</div>
+</div>
+<!-- Test Row 4 -->
+<div class="test-row bg-paper rounded-[8px] transition-colors">
+<button class="w-full min-h-[64px] py-space-md px-space-lg flex items-center justify-between text-left focus:outline-none focus:ring-2 focus:ring-primary rounded-[8px] transition-all" onclick="toggleTestAccordion(this)" type="button">
+<div class="pr-space-md">
+<div class="font-label-md text-label-md text-ink">টেস্টের নাম ৪</div>
+<div class="font-body-md text-body-md text-ink-soft leading-[1.6]">লিভার ফাংশন ও এনজাইম টেস্ট</div>
+</div>
+<span class="material-symbols-outlined text-ink-soft transform transition-transform duration-200 shrink-0">expand_more</span>
+</button>
+<div class="hidden px-space-lg pb-space-md pt-space-xs text-ink-soft font-body-md text-body-md leading-[1.6]">
+<ul class="list-disc pl-5 space-y-1">
+<li>বিলিরুবিন (টোটাল/ডিরেক্ট), এসজিপিটি, এসজিওটি, অ্যালকালাইন ফসফেটেজ।</li>
+<li>যকৃতের সামগ্রিক কার্যকারিতা নির্ধারণে কার্যকর।</li>
+</ul>
+</div>
+</div>
+<!-- Test Row 5 -->
+<div class="test-row bg-paper rounded-[8px] transition-colors">
+<button class="w-full min-h-[64px] py-space-md px-space-lg flex items-center justify-between text-left focus:outline-none focus:ring-2 focus:ring-primary rounded-[8px] transition-all" onclick="toggleTestAccordion(this)" type="button">
+<div class="pr-space-md">
+<div class="font-label-md text-label-md text-ink">টেস্টের নাম ৫</div>
+<div class="font-body-md text-body-md text-ink-soft leading-[1.6]">থাইরয়েড স্টিমুলেটিং হরমোন ও টি৩/টি৪</div>
+</div>
+<span class="material-symbols-outlined text-ink-soft transform transition-transform duration-200 shrink-0">expand_more</span>
+</button>
+<div class="hidden px-space-lg pb-space-md pt-space-xs text-ink-soft font-body-md text-body-md leading-[1.6]">
+<ul class="list-disc pl-5 space-y-1">
+<li>সম্পূর্ণ থাইরয়েড প্যানেল (টোটাল টি৩, টোটাল টি৪ এবং আল্ট্রা টিএসএইচ)।</li>
+<li>কেমিলুমিনেসেন্স ইমিউনোঅ্যাসে (CLIA) পদ্ধতিতে পরীক্ষিত।</li>
+</ul>
+</div>
+</div>
+<!-- Test Row 6 -->
+<div class="test-row bg-paper rounded-[8px] transition-colors">
+<button class="w-full min-h-[64px] py-space-md px-space-lg flex items-center justify-between text-left focus:outline-none focus:ring-2 focus:ring-primary rounded-[8px] transition-all" onclick="toggleTestAccordion(this)" type="button">
+<div class="pr-space-md">
+<div class="font-label-md text-label-md text-ink">টেস্টের নাম ৬</div>
+<div class="font-body-md text-body-md text-ink-soft leading-[1.6]">মূত্র রুটিন ও মাইক্রোস্কোপিক পরীক্ষা</div>
+</div>
+<span class="material-symbols-outlined text-ink-soft transform transition-transform duration-200 shrink-0">expand_more</span>
+</button>
+<div class="hidden px-space-lg pb-space-md pt-space-xs text-ink-soft font-body-md text-body-md leading-[1.6]">
+<ul class="list-disc pl-5 space-y-1">
+<li>ভৌত, রাসায়নিক ও মাইক্রোস্কোপিক সেডিমেন্ট অ্যানালাইসিস।</li>
+<li>নমুনা প্রকার: সকালের প্রথম পরিষ্কার মিডস্ট্রিম মূত্র নমুনা।</li>
+</ul>
+</div>
+</div>
+</div>
+</div>
+<!-- Right Column: Health Package Cards (5 cols) -->
+<div class="lg:col-span-5 flex flex-col gap-space-lg">
+<!-- Package 1: Major Recommendation -->
+<div class="bg-secondary-container p-space-xl rounded-[14px] shadow-sm relative flex flex-col justify-between">
+<div class="space-y-space-sm">
+<div class="flex items-center justify-between">
+<span class="px-space-md py-space-xs bg-primary text-primary-ink font-label-sm text-label-sm rounded-full">প্রধান সুপারিশ</span>
+<span class="font-label-sm text-label-sm text-on-secondary-container">বার্ষিক প্যাকেজ</span>
+</div>
+<h3 class="font-headline-md text-headline-md text-ink pt-space-xs">হেলথ প্যাকেজ ক</h3>
+<p class="font-body-md text-body-md text-on-secondary-container leading-[1.6]">
+                বাৎসরিক শারীরিক মূল্যায়ন - এতে রয়েছে ৬৪টি ল্যাবরেটরি প্যারামিটার। সম্পূর্ণ রক্ত, কিডনি, যকৃত, থাইরয়েড ও হৃদযন্ত্রের মৌলিক স্ক্রিনিং।
+              </p>
+</div>
+<div class="pt-space-xl flex items-center justify-between">
+<span class="text-ink-soft font-label-sm text-label-sm">টার্নঅ্যারাউন্ড: ১২ ঘণ্টা</span>
+<a class="inline-flex items-center text-primary font-label-md text-label-md hover:underline" href="#booking-cta">
+<span>অনুসন্ধান করুন</span>
+<span class="material-symbols-outlined text-[18px] ml-space-xs">arrow_forward</span>
+</a>
+</div>
+</div>
+<!-- Package 2: Standard Routine -->
+<div class="bg-surface-container-lowest p-space-xl rounded-[14px] shadow-sm flex flex-col justify-between">
+<div class="space-y-space-sm">
+<div class="flex items-center justify-between">
+<span class="font-label-sm text-label-sm text-ink-soft">নিয়মিত স্ক্রিনিং</span>
+<span class="px-space-sm py-[2px] bg-paper text-ink font-label-sm text-label-sm rounded">৩৮ প্যারামিটার</span>
+</div>
+<h3 class="font-headline-md text-headline-md text-ink pt-space-xs">হেলথ প্যাকেজ খ</h3>
+<p class="font-body-md text-body-md text-ink-soft leading-[1.6]">
+                গুরুত্বপূর্ণ অঙ্গের রুটিন স্বাস্থ্য পরীক্ষা - ৩৮টি ল্যাবরেটরি প্যারামিটার সহ নিয়মিত পর্যালোচনার জন্য সাজানো।
+              </p>
+</div>
+<div class="pt-space-lg flex items-center justify-between">
+<span class="font-label-sm text-label-sm text-primary font-semibold">৮ ঘণ্টার মধ্যে রিপোর্ট</span>
+<a class="inline-flex items-center text-ink-soft font-label-md text-label-md hover:text-primary transition-colors" href="#booking-cta">
+<span>বিস্তারিত দেখুন</span>
+<span class="material-symbols-outlined text-[18px] ml-space-xs">chevron_right</span>
+</a>
+</div>
+</div>
+<!-- Package 3: Basic Screening -->
+<div class="bg-surface-container-lowest p-space-xl rounded-[14px] shadow-sm flex flex-col justify-between">
+<div class="space-y-space-sm">
+<div class="flex items-center justify-between">
+<span class="font-label-sm text-label-sm text-ink-soft">বেসিক স্ক্রিনিং</span>
+<span class="px-space-sm py-[2px] bg-paper text-ink font-label-sm text-label-sm rounded">২২ প্যারামিটার</span>
+</div>
+<h3 class="font-headline-md text-headline-md text-ink pt-space-xs">হেলথ প্যাকেজ গ</h3>
+<p class="font-body-md text-body-md text-ink-soft leading-[1.6]">
+                প্রাথমিক স্ক্রিনিং ও পর্যবেক্ষণ - ২২টি ল্যাবরেটরি প্যারামিটার। স্বাভাবিক রক্ত শর্করা ও ইউরিন অ্যানালাইসিস।
+              </p>
+</div>
+<div class="pt-space-lg flex items-center justify-between">
+<span class="font-label-sm text-label-sm text-ink-soft">একই দিনে ডেলিভারি</span>
+<a class="inline-flex items-center text-ink-soft font-label-md text-label-md hover:text-primary transition-colors" href="#booking-cta">
+<span>বিস্তারিত দেখুন</span>
+<span class="material-symbols-outlined text-[18px] ml-space-xs">chevron_right</span>
+</a>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- WHY CHOOSE US (কার্যকরী নীতি - 2x2 Grid) -->
+<section class="space-y-space-2xl pt-space-xl">
+<div class="space-y-space-xs">
+<span class="font-label-sm text-label-sm text-ink-soft tracking-wider uppercase">কার্যকরী নীতি</span>
+<h2 class="font-headline-lg text-headline-lg text-ink">কেন আমাদের বেছে নেবেন</h2>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-2 gap-gutter-desktop">
+<!-- Feature 1 -->
+<div class="bg-surface-container-lowest p-space-2xl rounded-[14px] shadow-sm space-y-space-md">
+<div class="w-12 h-12 rounded-[10px] bg-secondary-container flex items-center justify-center text-primary">
+<svg class="w-6 h-6" fill="none" stroke="currentColor" stroke-width="1.75" viewbox="0 0 24 24">
+<path d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4" stroke-linecap="round" stroke-linejoin="round"></path>
+</svg>
+</div>
+<div class="space-y-space-xs">
+<h3 class="font-headline-md text-headline-md text-ink">এক ছাদের নিচে টেস্ট ও ডাক্তারের পরামর্শ</h3>
+<p class="font-body-md text-body-md text-ink-soft leading-[1.7]">
+              আধুনিক স্বয়ংক্রিয় ল্যাবরেটরি স্যাম্পল সংগ্রহ ও বিশেষজ্ঞ ডাক্তারদের সরাসরি চেম্বার পরামর্শ সেবা একই কেন্দ্রে বিদ্যমান।
+            </p>
+</div>
+</div>
+<!-- Feature 2 -->
+<div class="bg-surface-container-lowest p-space-2xl rounded-[14px] shadow-sm space-y-space-md">
+<div class="w-12 h-12 rounded-[10px] bg-secondary-container flex items-center justify-center text-primary">
+<svg class="w-6 h-6" fill="none" stroke="currentColor" stroke-width="1.75" viewbox="0 0 24 24">
+<path d="M8 12h.01M12 12h.01M16 12h.01M21 12c0 4.418-4.03 8-9 8a9.863 9.863 0 01-4.255-.949L3 20l1.395-3.72C3.512 15.042 3 13.574 3 12c0-4.418 4.03-8 9-8s9 3.582 9 8z" stroke-linecap="round" stroke-linejoin="round"></path>
+</svg>
+</div>
+<div class="space-y-space-xs">
+<h3 class="font-headline-md text-headline-md text-ink">হোয়াটসঅ্যাপের মাধ্যমে সহজ বুকিং</h3>
+<p class="font-body-md text-body-md text-ink-soft leading-[1.7]">
+              কোনো জটিল ও দীর্ঘায়িত ফর্ম পূরণ ছাড়াই প্রেসক্রিপশনের ছবি পাঠিয়ে সরাসরি হোয়াটসঅ্যাপ বার্তায় তাৎক্ষণিক টেস্ট বুকিং সুবিধা।
+            </p>
+</div>
+</div>
+<!-- Feature 3 -->
+<div class="bg-surface-container-lowest p-space-2xl rounded-[14px] shadow-sm space-y-space-md">
+<div class="w-12 h-12 rounded-[10px] bg-secondary-container flex items-center justify-center text-primary">
+<svg class="w-6 h-6" fill="none" stroke="currentColor" stroke-width="1.75" viewbox="0 0 24 24">
+<path d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z" stroke-linecap="round" stroke-linejoin="round"></path>
+</svg>
+</div>
+<div class="space-y-space-xs">
+<h3 class="font-headline-md text-headline-md text-ink">সহজ ও স্পষ্ট রিপোর্ট</h3>
+<p class="font-body-md text-body-md text-ink-soft leading-[1.7]">
+              দ্ব্যর্থহীন রেফারেন্স রেঞ্জ সম্বলিত পরিষ্কার ফিজিক্যাল প্রিন্টআউট ও পিডিএফ ডিজিটাল রিপোর্ট ব্যবস্থা।
+            </p>
+</div>
+</div>
+<!-- Feature 4 -->
+<div class="bg-surface-container-lowest p-space-2xl rounded-[14px] shadow-sm space-y-space-md">
+<div class="w-12 h-12 rounded-[10px] bg-secondary-container flex items-center justify-center text-primary">
+<svg class="w-6 h-6" fill="none" stroke="currentColor" stroke-width="1.75" viewbox="0 0 24 24">
+<path d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z" stroke-linecap="round" stroke-linejoin="round"></path>
+<path d="M15 11a3 3 0 11-6 0 3 3 0 016 0z" stroke-linecap="round" stroke-linejoin="round"></path>
+</svg>
+</div>
+<div class="space-y-space-xs">
+<h3 class="font-headline-md text-headline-md text-ink">সহজে পৌঁছানোর মতো অবস্থান</h3>
+<p class="font-body-md text-body-md text-ink-soft leading-[1.7]">
+              প্রধান সড়কের পাশে প্রশস্ত পার্কিং এবং হুইলচেয়ার বান্ধব প্রবেশদ্বার সহ সুবিধাজনক ও সুগম কেন্দ্র।
+            </p>
+</div>
+</div>
+</div>
+</section>
+<!-- HOME SAMPLE COLLECTION (Tinted Row) -->
+<section class="bg-secondary-container rounded-[14px] p-space-2xl shadow-sm">
+<div class="flex flex-col lg:flex-row lg:items-center lg:justify-between gap-space-xl">
+<div class="flex items-start gap-space-lg max-w-[65ch]">
+<div class="w-12 h-12 rounded-full bg-paper flex items-center justify-center text-primary shrink-0 mt-space-xs">
+<span class="material-symbols-outlined text-[24px]">home_health</span>
+</div>
+<div class="space-y-space-xs">
+<h2 class="font-headline-md text-headline-md text-ink">বাড়ি থেকে নমুনা সংগ্রহ</h2>
+<p class="font-body-md text-body-md text-on-secondary-container leading-[1.7]">
+              আমাদের দক্ষ ও প্রশিক্ষিত স্বাস্থ্যকর্মী নির্দিষ্ট সময়ে সম্পূর্ণ স্বাস্থ্যবিধি মেনে আপনার বাড়ি গিয়ে নমুনা সংগ্রহ করবেন। প্রবীণ এবং জরুরি রোগীদের জন্য অগ্রাধিকার সেবা।
+            </p>
+</div>
+</div>
+<div class="shrink-0">
+<a class="inline-flex items-center justify-center min-h-[52px] px-space-2xl bg-wa text-on-primary font-label-md text-label-md rounded-[10px] hover:opacity-95 transition-opacity shadow-sm" href="https://wa.me/" rel="noopener noreferrer" target="_blank">
+<span class="material-symbols-outlined text-[20px] mr-space-xs">chat</span>
+<span>হোয়াটসঅ্যাপে প্রাপ্যতা যাচাই করুন</span>
+</a>
+</div>
+</div>
+</section>
+<!-- LOCATION & TIMINGS (2-Column Split) -->
+<section class="space-y-space-2xl pt-space-xl">
+<div class="space-y-space-xs">
+<span class="font-label-sm text-label-sm text-ink-soft tracking-wider uppercase">অবস্থান ও সময়</span>
+<h2 class="font-headline-lg text-headline-lg text-ink">ঠিকানা ও সময়সূচী</h2>
+</div>
+<div class="grid grid-cols-1 lg:grid-cols-12 gap-gutter-desktop items-stretch">
+<!-- Left: Map & Address Block (6 cols) -->
+<div class="lg:col-span-6 bg-surface-container-lowest p-space-2xl rounded-[14px] shadow-sm flex flex-col justify-between gap-space-xl">
+<div class="space-y-space-lg">
+<div class="w-full h-52 bg-cover bg-center rounded-[10px] flex items-center justify-center relative bg-surface-container-high text-ink-soft" data-location="Kolkata, West Bengal" style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuCs2JcsJARmCkYR_hP0BcWJaTzJ84kHTQDQXiRyfCjDURgAgSb5APgLzLNElvEM0-nulJGYHpbuTVJvQ-BtZjX-FLEGF-Fl4JSfFIYNf4L8F50h9jWEmZLlyYn19Yli7GRIfIQwCd34J-4mOQ77ELO79HaSifzxHecU8DnPcB-rsEiv1VtxEx1RHiM_ywjX9T90HFvILW1Fn_JhlPfkzshim-hrHlMAgV7CzCaJULo')">
+<div class="absolute inset-0 bg-ink/10 rounded-[10px]"></div>
+<div class="relative z-10 px-space-md py-space-xs bg-paper/90 backdrop-blur-sm rounded-full font-label-sm text-label-sm text-ink flex items-center gap-space-xs shadow-sm">
+<span class="material-symbols-outlined text-[16px] text-primary">pin_drop</span>
+<span>[ইন্টারেক্টিভ মানচিত্র]</span>
+</div>
+</div>
+<div class="space-y-space-sm">
+<div class="flex items-start gap-space-sm text-ink">
+<span class="material-symbols-outlined text-primary text-[20px] mt-0.5">location_on</span>
+<div>
+<div class="font-label-md text-label-md">[রাস্তা / এলাকার নাম, শহর, পিন কোড]</div>
+<div class="font-body-md text-body-md text-ink-soft">প্রধান ল্যান্ডমার্কের নিকটবর্তী, সার্বক্ষণিক পরিবহন সেবা যুক্ত</div>
+</div>
+</div>
+<div class="flex items-center gap-space-sm text-ink pt-space-xs">
+<span class="material-symbols-outlined text-primary text-[20px]">phone_enabled</span>
+<span class="font-body-md text-body-md text-ink">[ফোন নম্বর প্লেসহোল্ডার]</span>
+</div>
+</div>
+</div>
+<div>
+<a class="inline-flex items-center justify-center min-h-[52px] px-space-xl bg-transparent border-2 border-primary text-primary font-label-md text-label-md rounded-[10px] hover:bg-primary hover:text-primary-ink transition-all" href="https://maps.google.com" rel="noopener noreferrer" target="_blank">
+<span>ম্যাপে দেখুন</span>
+<span class="material-symbols-outlined text-[18px] ml-space-xs">open_in_new</span>
+</a>
+</div>
+</div>
+<!-- Right: Ruled Timetable (6 cols) -->
+<div class="lg:col-span-6 bg-surface-container-lowest p-space-2xl rounded-[14px] shadow-sm flex flex-col justify-between">
+<div class="space-y-space-lg">
+<div class="flex items-center justify-between pb-space-sm">
+<h3 class="font-headline-md text-headline-md text-ink">কাজের সময়সূচী</h3>
+<span class="px-space-sm py-[2px] bg-secondary-container text-ink font-label-sm text-label-sm rounded">সাপ্তাহিক রুটিন</span>
+</div>
+<div class="space-y-space-md">
+<div class="flex justify-between items-center py-space-sm bg-paper px-space-md rounded-[8px]">
+<span class="font-label-md text-label-md text-ink">সোমবার – শনিবার</span>
+<span class="font-body-md text-body-md text-ink font-medium">সকাল ০৭:০০ – রাত ০৮:৩০</span>
+</div>
+<div class="flex justify-between items-center py-space-sm bg-paper px-space-md rounded-[8px]">
+<span class="font-label-md text-label-md text-ink">রবিবার</span>
+<span class="font-body-md text-body-md text-ink font-medium">সকাল ০৭:০০ – দুপুর ০১:০০</span>
+</div>
+<div class="flex justify-between items-center py-space-sm bg-paper px-space-md rounded-[8px]">
+<div class="flex flex-col">
+<span class="font-label-md text-label-md text-ink">সরকারি ছুটির দিন</span>
+<span class="font-label-sm text-label-sm text-ink-soft">কেবল নমুনা ড্রপ-অফ</span>
+</div>
+<span class="font-body-md text-body-md text-ink font-medium">সকাল ০৮:০০ – দুপুর ১২:০০</span>
+</div>
+</div>
+</div>
+<div class="pt-space-xl bg-paper/60 p-space-md rounded-[8px] mt-space-lg">
+<div class="flex items-start gap-space-xs text-ink-soft font-body-md text-body-md leading-[1.6]">
+<span class="material-symbols-outlined text-[18px] text-primary mt-0.5">verified_user</span>
+<span>জরুরী পরীক্ষার ক্ষেত্রে সরাসরি ল্যাব কাউন্টারে যোগাযোগ করার অনুরোধ করা হচ্ছে।</span>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- PATIENT FEEDBACK PLACEHOLDERS (3 Columns) -->
+<section class="space-y-space-2xl pt-space-xl">
+<div class="space-y-space-xs">
+<span class="font-label-sm text-label-sm text-ink-soft tracking-wider uppercase">স্বচ্ছতা ও প্রতিক্রিয়া</span>
+<h2 class="font-headline-lg text-headline-lg text-ink">রোগীদের মতামত</h2>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-3 gap-gutter-desktop">
+<!-- Review Placeholder 1 -->
+<div class="bg-surface-container-lowest p-space-xl rounded-[14px] shadow-sm flex flex-col justify-between space-y-space-lg">
+<div class="space-y-space-md">
+<span class="font-label-sm text-label-sm text-ink-soft uppercase tracking-wider block">রিভিউ প্লেসহোল্ডার ০১</span>
+<p class="font-body-md text-body-md text-ink-soft leading-[1.7]">
+              যাচাইকৃত রোগী বা গ্রাহকের মতামত এখানে সরাসরি প্রদর্শিত হবে। কোনো কৃত্রিম রেটিং বা ভুয়া রিভিউ ব্যবহার করা হয় না।
+            </p>
+</div>
+<div class="pt-space-md flex items-center gap-space-xs text-ink-soft font-label-sm text-label-sm">
+<span class="material-symbols-outlined text-[16px]">verified</span>
+<span>নমুনা পর্যালোচনা</span>
+</div>
+</div>
+<!-- Review Placeholder 2 -->
+<div class="bg-surface-container-lowest p-space-xl rounded-[14px] shadow-sm flex flex-col justify-between space-y-space-lg">
+<div class="space-y-space-md">
+<span class="font-label-sm text-label-sm text-ink-soft uppercase tracking-wider block">রিভিউ প্লেসহোল্ডার ০২</span>
+<p class="font-body-md text-body-md text-ink-soft leading-[1.7]">
+              যাচাইকৃত রোগী বা গ্রাহকের মতামত এখানে সরাসরি প্রদর্শিত হবে। কোনো কৃত্রিম রেটিং বা ভুয়া রিভিউ ব্যবহার করা হয় না।
+            </p>
+</div>
+<div class="pt-space-md flex items-center gap-space-xs text-ink-soft font-label-sm text-label-sm">
+<span class="material-symbols-outlined text-[16px]">verified</span>
+<span>নমুনা পর্যালোচনা</span>
+</div>
+</div>
+<!-- Review Placeholder 3 -->
+<div class="bg-surface-container-lowest p-space-xl rounded-[14px] shadow-sm flex flex-col justify-between space-y-space-lg">
+<div class="space-y-space-md">
+<span class="font-label-sm text-label-sm text-ink-soft uppercase tracking-wider block">রিভিউ প্লেসহোল্ডার ০৩</span>
+<p class="font-body-md text-body-md text-ink-soft leading-[1.7]">
+              যাচাইকৃত রোগী বা গ্রাহকের মতামত এখানে সরাসরি প্রদর্শিত হবে। কোনো কৃত্রিম রেটিং বা ভুয়া রিভিউ ব্যবহার করা হয় না।
+            </p>
+</div>
+<div class="pt-space-md flex items-center gap-space-xs text-ink-soft font-label-sm text-label-sm">
+<span class="material-symbols-outlined text-[16px]">verified</span>
+<span>নমুনা পর্যালোচনা</span>
+</div>
+</div>
+</div>
+</section>
+<!-- REQUEST A BOOKING CARD (Centered Tinted Card) -->
+<section class="pt-space-xl pb-space-2xl" id="booking-cta">
+<div class="bg-secondary-container rounded-[14px] p-space-2xl md:p-space-3xl shadow-sm text-center max-w-3xl mx-auto flex flex-col items-center gap-space-lg">
+<div class="w-14 h-14 rounded-full bg-paper flex items-center justify-center text-primary shadow-xs">
+<span class="material-symbols-outlined text-[28px]">notifications_active</span>
+</div>
+<div class="space-y-space-xs max-w-xl">
+<h2 class="font-headline-lg text-headline-lg text-ink font-semibold">বুকিংয়ের অনুরোধ করুন</h2>
+<p class="font-body-lg text-body-lg text-on-secondary-container leading-[1.7]">
+            সরাসরি হোয়াটসঅ্যাপে বার্তা খুলবে। এই ওয়েবসাইটে কোনো ব্যক্তিগত তথ্য জমা রাখা হয় না।
+          </p>
+</div>
+<div class="pt-space-xs w-full sm:w-auto">
+<a class="inline-flex items-center justify-center min-h-[52px] px-space-3xl w-full sm:w-auto bg-wa text-on-primary font-label-md text-label-md rounded-[10px] hover:opacity-95 transition-opacity shadow-sm" href="https://wa.me/" rel="noopener noreferrer" target="_blank">
+<span class="material-symbols-outlined text-[20px] mr-space-xs">chat</span>
+<span>হোয়াটসঅ্যাপে বুকিং করুন</span>
+</a>
+</div>
+<div class="text-ink-soft font-label-sm text-label-sm">
+          সকাল ৭:০০ থেকে রাত ৮:৩০ পর্যন্ত সহায়তা প্রদান করা হয়
+        </div>
+</div>
+</section>
+</div>
+</div>
+<script>
+  function toggleTestAccordion(button) {
+    const parent = button.parentElement;
+    const content = button.nextElementSibling;
+    const icon = button.querySelector('.material-symbols-outlined');
+    
+    if (content.classList.contains('hidden')) {
+      content.classList.remove('hidden');
+      icon.classList.add('rotate-180');
+      parent.classList.add('bg-secondary-container/40');
+    } else {
+      content.classList.add('hidden');
+      icon.classList.remove('rotate-180');
+      parent.classList.remove('bg-secondary-container/40');
+    }
+  }
+</script></main><footer class="w-full bg-paper border-t border-rule"><div class="max-w-[1080px] mx-auto px-margin-desktop py-space-4xl flex flex-col md:flex-row justify-between items-start gap-space-3xl"><div class="flex flex-col gap-space-sm max-w-md"><div class="font-headline-md text-headline-md text-ink tracking-tight">[সেন্টারের নাম] ক্লিনিক্যাল ল্যাবরেটরি</div><div class="flex items-center gap-space-xs text-ink-soft font-body-md text-body-md pt-space-xs"><span class="material-symbols-outlined text-ink-soft text-[20px]">call</span><span>হেল্পলাইন: +৯১ (০) ৮০ ২৩৪৫ ৬৭৮৯</span></div><p class="font-body-md text-body-md text-ink-soft pt-space-sm">কনসেপ্ট প্রিভিউ। এটি কোনো আনুষ্ঠানিক বা প্রাতিষ্ঠানিক ওয়েবসাইট নয়।</p></div><div class="flex flex-col gap-space-md md:items-end"><span class="font-label-md text-label-md text-ink uppercase tracking-wider">দ্রুত লিংক</span><div class="flex flex-col md:items-end gap-space-sm"><a class="font-body-md text-body-md text-ink-soft hover:text-primary transition-colors" data-path="tests" href="#">টেস্ট ডিরেক্টরি</a><a class="font-body-md text-body-md text-ink-soft hover:text-primary transition-colors" data-path="location-and-hours" href="#">সময়সূচি ও অবস্থান</a><a class="font-body-md text-body-md text-ink-soft hover:text-primary transition-colors" data-path="contact" href="#">যোগাযোগ</a></div></div></div></footer></body></html>

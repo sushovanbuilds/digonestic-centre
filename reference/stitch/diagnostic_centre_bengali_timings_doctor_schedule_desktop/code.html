@@ -1,0 +1,454 @@
+<!DOCTYPE html><html lang="bn"><head><meta charset="utf-8"><meta content="width=device-width, initial-scale=1.0" name="viewport"><meta content="web_standard" name="shell-type"><link href="https://fonts.googleapis.com" rel="preconnect"><link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"><link href="https://fonts.googleapis.com/css2?family=Noto+Sans+Bengali:wght@400;500;600;700&family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap" rel="stylesheet"><link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet"><style>
+@layer base{html,body{margin:0;padding:0;}body{overscroll-behavior:none;}main>:first-child{margin-top:0!important;}main>:last-child{margin-bottom:0!important;}}
+::-webkit-scrollbar{display:none;}
+html[lang="bn"], html[lang="bn"] body, html[lang="bn"] button, html[lang="bn"] input, html[lang="bn"] select, html[lang="bn"] textarea {
+  font-family: 'Noto Sans Bengali', system-ui, -apple-system, sans-serif !important;
+  line-height: 1.6;
+}
+.accordion-content {
+  transition: max-height 0.35s cubic-bezier(0.4, 0, 0.2, 1), opacity 0.25s ease, margin 0.25s ease;
+  overflow: hidden;
+}
+.accordion-content.collapsed {
+  max-height: 0 !important;
+  opacity: 0;
+  margin-top: 0 !important;
+  padding-top: 0 !important;
+  pointer-events: none;
+}
+</style><script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script><script id="tailwind-config">tailwind.config = {
+    darkMode: "class",
+    theme: {
+      extend: {
+        "colors": {
+          "primary": "#0e6b63",
+          "primary-ink": "#FFFFFF",
+          "primary-container": "#0b5851",
+          "rule": "#C9DAD7",
+          "secondary-fixed": "#d8e5e2",
+          "surface-container-lowest": "#ffffff",
+          "ink-soft": "#44606E",
+          "surface": "#f5faff",
+          "paper": "#F6F9F9",
+          "wa": "#0F7B42",
+          "ink": "#0F2430",
+          "sample-bg": "#FFF1CC",
+          "sample-ink": "#6B4500"
+        },
+        "borderRadius": {
+          "DEFAULT": "0.125rem",
+          "lg": "0.25rem",
+          "xl": "0.5rem",
+          "full": "0.75rem"
+        },
+        "spacing": {
+          "space-xs": "0.25rem",
+          "space-sm": "0.5rem",
+          "space-md": "0.75rem",
+          "space-lg": "1rem",
+          "space-xl": "1.5rem",
+          "space-2xl": "2rem",
+          "space-3xl": "3rem",
+          "margin": "1.25rem",
+          "margin-desktop": "2.5rem",
+          "gutter-desktop": "2rem"
+        }
+      }
+    }
+  }</script></head><body class="bg-paper text-ink"><header class="fixed top-0 left-0 w-full z-50 bg-paper/95 backdrop-blur-md shadow-[0_2px_8px_-2px_rgba(15,36,48,0.08)]"><div class="h-14 max-w-[1080px] mx-auto px-margin md:px-margin-desktop flex items-center justify-between"><a class="font-semibold text-[15px] tracking-tight uppercase text-ink select-none" href="#">[সেন্টারের নাম]</a><nav class="hidden md:flex items-center gap-space-xl"><a class="text-[15px] text-ink-soft hover:text-ink transition-colors" href="#test-directory">টেস্ট তালিকা</a><a class="text-[15px] text-ink-soft hover:text-ink transition-colors" href="#packages-section">প্যাকেজসমূহ</a><a class="text-[15px] text-ink-soft hover:text-ink transition-colors" href="#doctors-section">ডাক্তার চেম্বার</a><a class="text-[15px] text-ink-soft hover:text-ink transition-colors" href="#schedule-section">সময়সূচী ও অবস্থান</a><a class="text-[15px] text-ink-soft hover:text-ink transition-colors" href="#contact-section">যোগাযোগ</a></nav><div class="flex items-center gap-space-md"><div aria-label="Language switch" class="inline-flex items-center p-0.5 rounded-full border border-rule bg-paper text-ink" role="group"><button aria-pressed="false" class="px-2.5 py-1 rounded-full text-ink-soft hover:text-ink font-medium text-[13px] leading-tight transition-all duration-200" type="button">EN</button><button aria-pressed="true" class="px-2.5 py-1 rounded-full bg-primary text-primary-ink font-semibold text-[13px] leading-tight transition-all duration-200 shadow-sm" type="button">বাংলা</button></div><a class="inline-flex items-center justify-center px-space-lg py-space-xs min-h-[40px] rounded-lg bg-primary text-primary-ink font-semibold text-[15px] hover:bg-primary-container transition-colors" href="https://wa.me/918023456789?text=%E0%A6%A8%E0%A6%AE%E0%A6%B8%E0%A7%8D%E0%A6%95%E0%A6%BE%E0%A6%B0%2C%20%E0%A6%86%E0%A6%AE%E0%A6%BF%20%E0%A6%8F%E0%A6%95%E0%A6%9F%E0%A6%BF%20%E0%A6%AA%E0%A6%B0%E0%A7%80%E0%A6%95%E0%A7%8D%E0%A6%B7%E0%A6%BE%20%E0%A6%AC%E0%A7%81%E0%A6%95%20%E0%A6%95%E0%A6%B0%E0%A6%A4%E0%A7%87%20%E0%A6%9a%E0%A6%BE%E0%A6%87%E0%A7%84" target="_blank">টেস্ট বুক করুন</a></div></div></header><main class="w-full pt-14 bg-paper min-h-[calc(100vh-140px)]"><div class="flex flex-col w-full">
+<!-- Desktop Hero Section -->
+<section class="w-full max-w-[1080px] mx-auto px-margin md:px-margin-desktop pt-space-2xl md:pt-space-3xl pb-space-3xl">
+<div class="grid grid-cols-1 md:grid-cols-12 gap-gutter-desktop items-start">
+<div class="md:col-span-8 flex flex-col items-start">
+<div class="inline-flex items-center gap-space-xs px-2.5 py-0.5 rounded-full bg-sample-bg text-sample-ink font-medium text-[13px] mb-space-md">
+<span class="w-1.5 h-1.5 rounded-full bg-sample-ink"></span>
+<span>নমুনা প্রিভিউ। বিষয়বস্তু প্লেসহোল্ডার।</span>
+</div>
+<p class="text-[13px] font-medium text-ink-soft uppercase tracking-wider mb-space-xs">
+          সরাসরি প্যাথলজি ও ডায়াগনস্টিক তথ্য
+        </p>
+<h1 class="text-[44px] md:text-[50px] font-bold text-ink tracking-tight leading-[1.15] mb-space-md">
+          নিখুঁত নির্ভুল ডায়াগনস্টিকস।<br>আপসহীন চিকিৎসা সেবা।
+        </h1>
+<p class="text-[17px] text-ink-soft max-w-xl mb-space-xl leading-relaxed">
+          নমুনার বিশুদ্ধতা, নির্দিষ্ট সময়ে রিপোর্ট প্রদান এবং হোয়াটসঅ্যাপের মাধ্যমে ডিজিটাল রিপোর্ট যাচাই। কোনো অপ্রয়োজনীয় দাবি নয়—শুধুমাত্র নির্ভরযোগ্য প্যাথলজি।
+        </p>
+<div class="flex flex-wrap items-center gap-space-md w-full sm:w-auto">
+<a class="inline-flex items-center justify-center px-space-xl min-h-[52px] rounded-lg bg-primary text-primary-ink font-semibold text-[15px] hover:bg-primary-container transition-colors" href="#test-directory">
+            টেস্ট তালিকা দেখুন
+          </a>
+<a class="inline-flex items-center justify-center gap-space-sm px-space-xl min-h-[52px] rounded-lg bg-wa text-white font-semibold text-[15px] hover:opacity-95 transition-opacity" href="https://wa.me/918023456789?text=%E0%A6%A8%E0%A6%AE%E0%A6%B8%E0%A7%8D%E0%A6%95%E0%A6%BE%E0%A6%B0%2C%20%E0%A6%86%E0%A6%AE%E0%A6%BF%20%E0%A6%8F%E0%A6%95%E0%A6%9F%E0%A6%BF%20%E0%A6%AA%E0%A6%B0%E0%A7%80%E0%A6%95%E0%A7%8D%E0%A6%B7%E0%A6%BE%20%E0%A6%AC%E0%A7%81%E0%A6%95%20%E0%A6%95%E0%A6%B0%E0%A6%A4%E0%A7%87%20%E0%A6%9a%E0%A6%BE%E0%A6%87%E0%A7%84" target="_blank">
+<span class="material-symbols-outlined text-[20px]">chat</span>
+<span>সরাসরি হোয়াটসঅ্যাপ করুন</span>
+</a>
+</div>
+</div>
+<!-- Quick Requisition Index Metadata Card -->
+<div class="md:col-span-4 bg-secondary-fixed/40 p-space-lg rounded-xl flex flex-col gap-space-md text-ink">
+<div class="flex items-center justify-between pb-space-xs border-b border-rule">
+<span class="text-[13px] font-medium text-ink-soft uppercase tracking-wider">ল্যাব ডিসপ্যাচ স্ট্যাটাস</span>
+<span class="text-[13px] text-wa font-semibold flex items-center gap-1">
+<span class="w-2 h-2 rounded-full bg-wa animate-pulse"></span> <span>রুটিন খোলা আছে</span>
+</span>
+</div>
+<div class="space-y-space-xs text-ink-soft text-[15px]">
+<div class="flex justify-between">
+<span>রক্তের নমুনা গ্রহণ:</span>
+<strong class="text-ink font-semibold">সকাল ০৬:৩০ – দুপুর ১২:৩০</strong>
+</div>
+<div class="flex justify-between">
+<span>রিপোর্ট ডেলিভারি:</span>
+<strong class="text-ink font-semibold">৩ থেকে ৬ ঘণ্টা</strong>
+</div>
+<div class="flex justify-between">
+<span>ডেলিভারি মাধ্যম:</span>
+<strong class="text-ink font-semibold">সেন্টার কাউন্টার + হোয়াটসঅ্যাপ</strong>
+</div>
+</div>
+<div class="pt-space-xs border-t border-rule text-ink-soft text-[13px]">
+          পূর্ব-রেজিস্ট্রেশন ছাড়াই প্রেসক্রিপশন ও রেফারেল কাউন্টারে সরাসরি জমা নেওয়া হয়।
+        </div>
+</div>
+</div>
+</section>
+<div class="max-w-[1080px] mx-auto w-full px-margin md:px-margin-desktop"><div class="h-[1px] w-full bg-rule"></div></div>
+
+<!-- Main Focus Section: Tests & Health Packages -->
+<section class="w-full max-w-[1080px] mx-auto px-margin md:px-margin-desktop py-space-3xl" id="test-directory">
+<div class="flex flex-col md:flex-row md:items-end justify-between gap-space-sm mb-space-xl">
+<div>
+<div class="inline-flex items-center gap-space-xs px-2 py-0.5 rounded-full bg-sample-bg text-sample-ink text-[12px] font-medium mb-space-xs">
+<span>নমুনা তথ্য</span>
+</div>
+<h2 class="text-[30px] font-semibold text-ink">জনপ্রিয় টেস্ট ও স্বাস্থ্য প্যাকেজসমূহ</h2>
+</div>
+<div class="text-[13px] text-ink-soft tracking-wider">
+        ডিরেক্টরি ইনডেক্স ০১ • ৬৪টি পরীক্ষা তালিকাভুক্ত
+      </div>
+</div>
+<div class="grid grid-cols-1 lg:grid-cols-12 gap-gutter-desktop items-start">
+<!-- Left: Ruled Test Directory -->
+<div class="lg:col-span-7 flex flex-col">
+<div class="text-ink font-semibold text-[15px] mb-space-sm flex items-center justify-between pb-space-xs border-b border-rule">
+<span>একক ডায়াগনস্টিক রিকুইজিশন</span>
+<span class="text-ink-soft font-normal text-[13px]">প্যারামিটার দেখতে সারিতে চাপুন</span>
+</div>
+<div class="flex flex-col gap-2">
+<!-- Test Row 1: CBC + ESR (Expanded) -->
+<div class="test-item group bg-secondary-fixed/50 rounded-lg p-space-md border border-rule transition-all duration-300">
+<div class="w-full flex items-center justify-between text-left cursor-pointer">
+<div class="pr-space-md">
+<span class="inline-block text-[12px] text-primary uppercase font-bold tracking-wider mb-0.5">টেস্ট ০১ • হেমাটোলজি প্যানেল</span>
+<h3 class="text-[20px] font-semibold text-ink leading-tight">সম্পূর্ণ রক্ত পরীক্ষা ও ইএসআর (CBC + ESR)</h3>
+<p class="text-[14px] text-ink-soft mt-0.5">স্বয়ংক্রিয় ৫-পার্ট ডিফারেনশিয়াল সেল কাউন্টার ও সেড রেট</p>
+</div>
+<div class="flex-shrink-0 w-8 h-8 rounded-full bg-secondary-fixed flex items-center justify-center text-primary">
+<span class="material-symbols-outlined text-[20px]">expand_less</span>
+</div>
+</div>
+<div class="accordion-content mt-space-md pt-space-md border-t border-rule flex flex-col gap-space-md">
+<p class="text-[15px] text-ink">
+  সম্পূর্ণ রক্তের সেল কাউন্ট, সেলুলার সূচক, স্বয়ংক্রিয় ইএসআর এবং পেরিফেরাল স্মিয়ার পর্যবেক্ষণ সহ পূর্ণাঙ্গ হেমাটোলজি মূল্যায়ন।
+</p>
+<div class="bg-paper p-space-md rounded-lg">
+<h4 class="text-[13px] text-ink-soft uppercase font-semibold tracking-wider mb-space-sm flex items-center gap-space-xs">
+<span class="material-symbols-outlined text-primary text-[18px]">checklist</span>
+<span>অন্তর্ভুক্ত প্যারামিটারসমূহ (৩২টি প্যারামিটার)</span>
+</h4>
+<ul class="space-y-space-xs text-[14px] text-ink">
+<li class="flex items-start gap-space-sm"><span class="material-symbols-outlined text-primary text-[18px] mt-0.5">check_circle</span><span><strong>হিমোগ্লোবিন ও আরবিসি সূচক:</strong> টোটাল RBC, MCV, MCH, MCHC এবং RDW-CV / RDW-SD</span></li>
+<li class="flex items-start gap-space-sm"><span class="material-symbols-outlined text-primary text-[18px] mt-0.5">check_circle</span><span><strong>টোটাল ও ডিফারেনশিয়াল WBC:</strong> নিউট্রোফিল, লিম্ফোসাইট, মনোসাইট, ইওসিনোফিল, বেসোফিল</span></li>
+<li class="flex items-start gap-space-sm"><span class="material-symbols-outlined text-primary text-[18px] mt-0.5">check_circle</span><span><strong>প্লেটলেট বিশ্লেষণ:</strong> টোটাল কাউন্ট, গড় প্লেটলেট ভলিউম (MPV), PCT এবং সাইজ ডিস্ট্রিবিউশন</span></li>
+<li class="flex items-start gap-space-sm"><span class="material-symbols-outlined text-primary text-[18px] mt-0.5">check_circle</span><span><strong>ইএসআর (ESR):</strong> স্বয়ংক্রিয় ফটোমেট্রিক মেথড (ওয়েস্টারগ্রেন মানদণ্ড)</span></li>
+</ul>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-3 gap-space-sm bg-surface-container-lowest p-space-md rounded-lg text-ink text-[13px]">
+<div><span class="text-ink-soft uppercase font-semibold block">প্রস্তুতি</span><span class="font-medium mt-0.5 block">৮–১০ ঘণ্টা খালি পেটে থাকা বাঞ্ছনীয়। জল পান করা যাবে।</span></div>
+<div><span class="text-ink-soft uppercase font-semibold block">প্রয়োজনীয় নমুনা</span><span class="font-medium mt-0.5 block">৩.০ মিলি EDTA হোল ব্লাড (ল্যাভেন্ডার ক্যাপ)</span></div>
+<div><span class="text-ink-soft uppercase font-semibold block">রিপোর্ট ডেলিভারি</span><span class="font-medium mt-0.5 block">একই দিনে ৪ ঘণ্টার মধ্যে। ভেরিফায়েড PDF ও প্রিন্ট।</span></div>
+</div>
+<div class="flex flex-wrap items-center justify-between gap-space-md pt-space-xs">
+<a class="inline-flex items-center gap-space-xs px-space-lg min-h-[44px] rounded-lg bg-wa text-white font-semibold text-[14px] hover:opacity-95" href="https://wa.me/918023456789?text=%E0%A6%A8%E0%A6%AE%E0%A6%B8%E0%A7%8D%E0%A6%95%E0%A6%BE%E0%A6%B0%2C%20%E0%A6%86%E0%A6%AE%E0%A6%BF%20%E0%A6%B8%E0%A6%AE%E0%A7%8D%E0%A6%AA%E0%A7%82%E0%A6%B0%E0%A7%8D%E0%A6%A3%20%E0%A6%B0%E0%A6%95%E0%A7%8D%E0%A6%A4%20%E0%A6%AA%E0%A6%B0%E0%A7%80%E0%A6%95%E0%A7%8D%E0%A6%B7%E0%A6%BE%20%E0%A6%93%20%E0%A6%87%E0%A6%8F%E0%A6%B8%E0%A6%86%E0%A6%B0%20(CBC%20%2B%20ESR)%20%E0%A6%AC%E0%A7%81%E0%A6%95%20%E0%A6%95%E0%A6%B0%E0%A6%A4%E0%A7%87%20%E0%A6%9a%E0%A6%BE%E0%A6%87%E0%A7%84" target="_blank">
+<span class="material-symbols-outlined text-[18px]">chat</span>
+<span>হোয়াটসঅ্যাপে এই টেস্টটি বুক করুন</span>
+</a>
+<span class="text-[12px] text-ink-soft">টেস্ট কোড: #HEM-0419</span>
+</div>
+</div>
+</div>
+<!-- Test Row 2 -->
+<div class="test-item group rounded-lg p-space-md border border-rule transition-all duration-300 hover:bg-secondary-fixed/20 flex items-center justify-between">
+<div>
+<span class="inline-block text-[12px] text-ink-soft uppercase tracking-wider mb-0.5">টেস্ট ০২ • মেটাবলিক প্রোফাইল</span>
+<h3 class="text-[18px] font-semibold text-ink leading-tight">ফাস্টিং ব্লাড সুগার এবং HbA1c গ্লাইকেটেড হিমোগ্লোবিন</h3>
+<p class="text-[14px] text-ink-soft mt-0.5">দ্বিমুখী প্লাজমা গ্লুকোজ পরিমাপ সহ বিগত ৩ মাসের গড় সুগার সূচক</p>
+</div>
+<div class="flex-shrink-0 w-8 h-8 rounded-full bg-secondary-fixed/60 flex items-center justify-center text-ink-soft">
+<span class="material-symbols-outlined text-[20px]">expand_more</span>
+</div>
+</div>
+<!-- Test Row 3 -->
+<div class="test-item group rounded-lg p-space-md border border-rule transition-all duration-300 hover:bg-secondary-fixed/20 flex items-center justify-between">
+<div>
+<span class="inline-block text-[12px] text-ink-soft uppercase tracking-wider mb-0.5">টেস্ট ০৩ • কার্ডিওভাসকুলার</span>
+<h3 class="text-[18px] font-semibold text-ink leading-tight">কম্প্রিহেনসিভ লিপিড প্রোফাইল (কোলেস্টেরল ফ্র্যাকশন)</h3>
+<p class="text-[14px] text-ink-soft mt-0.5">টোটাল কোলেস্টেরল, HDL, LDL, VLDL এবং ট্রাইগ্লিসারাইড অনুপাত</p>
+</div>
+<div class="flex-shrink-0 w-8 h-8 rounded-full bg-secondary-fixed/60 flex items-center justify-center text-ink-soft">
+<span class="material-symbols-outlined text-[20px]">expand_more</span>
+</div>
+</div>
+</div>
+<div class="mt-space-lg flex items-center justify-between text-ink-soft text-[14px]">
+<span>বিশেষ হরমোন বা জেনেটিক টেস্ট খুঁজছেন?</span>
+<a class="text-primary font-semibold hover:underline inline-flex items-center gap-1" href="https://wa.me/918023456789?text=%E0%A6%A8%E0%A6%AE%E0%A6%B8%E0%A7%8D%E0%A6%95%E0%A6%BE%E0%A6%B0%2C%20%E0%A6%86%E0%A6%AE%E0%A6%BF%20%E0%A6%AA%E0%A7%8D%E0%A6%B0%E0%A7%87%E0%A6%B8%E0%A6%95%E0%A7%8D%E0%A6%B0%E0%A6%BF%E0%A6%AA%E0%A6%B6%E0%A6%A8%20%E0%A6%AA%E0%A6%BE%E0%A6%A0%E0%A6%BE%E0%A6%A4%E0%A7%87%20%E0%A6%9a%E0%A6%BE%E0%A6%87%E0%A7%84" target="_blank">
+<span>হোয়াটসঅ্যাপে প্রেসক্রিপশন পাঠান</span> <span class="material-symbols-outlined text-[16px]">arrow_forward</span>
+</a>
+</div>
+</div>
+<!-- Right: Packages -->
+<div class="lg:col-span-5 flex flex-col gap-space-lg" id="packages-section">
+<div class="bg-surface-container-lowest p-space-xl rounded-xl border border-rule flex flex-col gap-space-md">
+<div class="flex items-center justify-between border-b border-rule pb-space-sm">
+<div>
+<span class="text-[12px] text-primary uppercase font-bold tracking-wider">মাল্টি-প্যারামেট্রিক</span>
+<h3 class="text-[20px] font-semibold text-ink">সম্পূর্ণ হেলথ প্যাকেজ</h3>
+</div>
+<span class="text-[13px] text-ink-soft">একত্রে সাশ্রয়ী টেস্ট</span>
+</div>
+<div class="p-space-md rounded-lg bg-secondary-fixed/40 border border-primary/20 flex flex-col gap-space-xs">
+<div class="flex items-center justify-between">
+<span class="px-2 py-0.5 rounded bg-primary text-white text-[12px] font-medium">সর্বাধিক বাছাইকৃত</span>
+<span class="text-[13px] text-ink font-semibold">৬৪টি প্যারামিটার</span>
+</div>
+<h4 class="text-[18px] font-semibold text-ink mt-1">কোর হেলথ প্যাকেজ - এ</h4>
+<p class="text-[14px] text-ink-soft">রক্তের পরীক্ষা, লিপিড প্রোফাইল, সুগার, কিডনি স্ক্রীনিং ও পূর্ণাঙ্গ লিভার প্যানেল।</p>
+<div class="pt-space-xs flex items-center justify-between">
+<span class="text-[13px] text-ink-soft">রিপোর্ট: ৬ ঘণ্টা</span>
+<a class="text-[14px] text-primary font-semibold hover:underline" href="https://wa.me/918023456789?text=%E0%A6%A8%E0%A6%AE%E0%A6%B8%E0%A7%8D%E0%A6%95%E0%A6%BE%E0%A6%B0%2C%20%E0%A6%86%E0%A6%AE%E0%A6%BF%20%E0%A6%95%E0%A7%8B%E0%A6%B0%20%E0%A6%B9%E0%A7%87%E0%A6%B2%E0%A6%A5%20%E0%A6%AA%E0%A7%8D%E0%A6%AF%E0%A6%BE%E0%A6%95%E0%A7%87%E0%A6%9C%20-%20%E0%A6%8F%20%E0%A6%AC%E0%A7%81%E0%A6%95%20%E0%A6%95%E0%A6%B0%E0%A6%A4%E0%A7%87%20%E0%A6%9a%E0%A6%BE%E0%A6%87%E0%A7%84" target="_blank">প্যাকেজ এ বুক করুন →</a>
+</div>
+</div>
+<div class="p-space-md rounded-lg bg-paper border border-rule flex flex-col gap-space-xs">
+<div class="flex items-center justify-between">
+<span class="text-[12px] text-ink-soft uppercase font-semibold">ডায়াবেটিস ও হৃদযন্ত্র</span>
+<span class="text-[13px] text-ink">৪৮টি প্যারামিটার</span>
+</div>
+<h4 class="text-[18px] font-semibold text-ink mt-0.5">কার্ডিয়াক ও ডায়াবেটিক প্যাকেজ - বি</h4>
+<p class="text-[14px] text-ink-soft">HbA1c, বিস্তারিত লিপিড পরীক্ষা, মাইক্রোঅ্যালবুমিন এবং ইনফ্ল্যামেশন মার্কার (hs-CRP)।</p>
+<div class="pt-space-xs flex items-center justify-between">
+<span class="text-[13px] text-ink-soft">রিপোর্ট: একই দিনে</span>
+<a class="text-[14px] text-primary font-semibold hover:underline" href="https://wa.me/918023456789?text=%E0%A6%A8%E0%A6%AE%E0%A6%B8%E0%A7%8D%E0%A6%95%E0%A6%BE%E0%A6%B0%2C%20%E0%A6%86%E0%A6%AE%E0%A6%BF%20%E0%A6%95%E0%A6%BE%E0%A6%B0%E0%A7%8D%E0%A6%A1%E0%A6%BF%E0%A7%9F%E0%A6%BE%E0%A6%95%20%E0%A6%AA%E0%A7%8D%E0%A6%AF%E0%A6%BE%E0%A6%95%E0%A7%87%E0%A6%9C%20%E0%A6%AC%E0%A7%81%E0%A6%95%20%E0%A6%95%E0%A6%B0%E0%A6%A4%E0%A7%87%20%E0%A6%9a%E0%A6%BE%E0%A6%87%E0%A7%84" target="_blank">প্যাকেজ বি বুক করুন →</a>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<div class="max-w-[1080px] mx-auto w-full px-margin md:px-margin-desktop"><div class="h-[1px] w-full bg-rule"></div></div>
+
+<!-- Specialist Chambers & OPD (Doctor Consultations) -->
+<section class="w-full max-w-[1080px] mx-auto px-margin md:px-margin-desktop py-space-3xl" id="doctors-section">
+  <div class="flex flex-col md:flex-row md:items-end justify-between gap-space-sm mb-space-xl">
+    <div>
+      <span class="text-[12px] text-primary uppercase font-bold tracking-wider">বিশেষজ্ঞ চেম্বার ও ওপিডি</span>
+      <h2 class="text-[30px] font-semibold text-ink mt-0.5">বিশেষজ্ঞ ডাক্তারদের চেম্বার ও কনসালটেশন</h2>
+      <p class="text-[15px] text-ink-soft mt-1">ডেস্কে অথবা হোয়াটসঅ্যাপে সরাসরি ভিজিটিং বিশেষজ্ঞ ডাক্তারদের সিরিয়াল বুক করুন</p>
+    </div>
+    <div class="text-[13px] text-ink-soft tracking-wider">
+      সরাসরি সিরিয়াল ডেস্ক • ভিজিটিং কনসালট্যান্ট
+    </div>
+  </div>
+
+  <div class="grid grid-cols-1 lg:grid-cols-12 gap-gutter-desktop items-start">
+    <!-- Schedule Ledger (7 Cols) -->
+    <div class="lg:col-span-7 bg-surface-container-lowest p-space-xl rounded-xl border border-rule flex flex-col gap-space-md">
+      <div class="flex items-center justify-between border-b border-rule pb-space-sm">
+        <h3 class="text-[20px] font-semibold text-ink">বিশেষজ্ঞ ওপিডি সময়সূচী</h3>
+        <span class="text-[13px] text-ink-soft">কাউন্টার ও হোয়াটসঅ্যাপ সিরিয়াল</span>
+      </div>
+      <div class="divide-y divide-rule text-[15px]">
+        <div class="py-space-sm flex flex-col sm:flex-row sm:items-center justify-between gap-1">
+          <div>
+            <span class="font-semibold text-ink block">মেডিসিন ও ডায়াবেটিস</span>
+            <span class="text-ink-soft text-[13px]">সিনিয়র কনসালট্যান্ট ফিজিশিয়ান (এমবিবিএস, এমডি)</span>
+          </div>
+          <div class="text-left sm:text-right">
+            <span class="font-medium text-ink block">সোম, বুধ, শুক্র • বিকাল ০৫:০০ – রাত ০৮:০০</span>
+            <span class="text-wa font-semibold text-[12px]">চেম্বার খোলা</span>
+          </div>
+        </div>
+        <div class="py-space-sm flex flex-col sm:flex-row sm:items-center justify-between gap-1">
+          <div>
+            <span class="font-semibold text-ink block">কার্ডিওলজি ও হৃদরোগ</span>
+            <span class="text-ink-soft text-[13px]">ইন্টারভেনশনাল কার্ডিওলজিস্ট (এমডি, ডিএম)</span>
+          </div>
+          <div class="text-left sm:text-right">
+            <span class="font-medium text-ink block">মঙ্গল, বৃহস্পতি, শনি • সন্ধ্যা ০৬:০০ – রাত ০৮:৩০</span>
+            <span class="text-ink-soft text-[12px]">অগ্রিম সিরিয়াল আবশ্যক</span>
+          </div>
+        </div>
+        <div class="py-space-sm flex flex-col sm:flex-row sm:items-center justify-between gap-1">
+          <div>
+            <span class="font-semibold text-ink block">স্ত্রীরোগ ও প্রসূতি বিশেষজ্ঞ</span>
+            <span class="text-ink-soft text-[13px]">কনসালট্যান্ট গাইনোকোলজিস্ট (এমএস, ডিএনবি)</span>
+          </div>
+          <div class="text-left sm:text-right">
+            <span class="font-medium text-ink block">সোম, বৃহস্পতি • সকাল ১০:০০ – দুপুর ০১:০০</span>
+            <span class="text-wa font-semibold text-[12px]">চেম্বার খোলা</span>
+          </div>
+        </div>
+        <div class="py-space-sm flex flex-col sm:flex-row sm:items-center justify-between gap-1">
+          <div>
+            <span class="font-semibold text-ink block">শিশু স্বাস্থ্য ও পেডিয়াট্রিক্স</span>
+            <span class="text-ink-soft text-[13px]">সিনিয়র শিশু বিশেষজ্ঞ (এমডি, ডিসিএইচ)</span>
+          </div>
+          <div class="text-left sm:text-right">
+            <span class="font-medium text-ink block">সোম – শনি • সকাল ০৯:৩০ – দুপুর ১২:৩০</span>
+            <span class="text-wa font-semibold text-[12px]">চেম্বার খোলা</span>
+          </div>
+        </div>
+      </div>
+      <div class="pt-space-xs border-t border-rule text-ink-soft text-[13px] flex items-center justify-between">
+        <span>জরুরি কনসালটেশন ট্রায়াজ কাউন্টারের মাধ্যমে পরিচালিত হয়।</span>
+        <span class="text-primary font-semibold">কোনো অগ্রিম বুকিং ফি নেই</span>
+      </div>
+    </div>
+
+    <!-- WhatsApp Booking & Prefill Spec Box (5 Cols) -->
+    <div class="lg:col-span-5 bg-secondary-fixed/40 p-space-xl rounded-xl border border-rule flex flex-col gap-space-md">
+      <div>
+        <span class="text-[12px] text-primary uppercase font-bold tracking-wider">সরাসরি সিরিয়াল বুকিং</span>
+        <h3 class="text-[20px] font-semibold text-ink mt-0.5">হোয়াটসঅ্যাপে ডাক্তারের সিরিয়াল বুকিং</h3>
+        <p class="text-[14px] text-ink-soft mt-1">
+          লাইনে দাঁড়ানোর প্রয়োজন নেই। আমাদের সিরিয়াল ডেস্ক সরাসরি হোয়াটসঅ্যাপে অ্যাপয়েন্টমেন্ট টোকেন ও চিকিৎসকের সময় নিশ্চিত করে।
+        </p>
+      </div>
+
+      <div class="bg-paper p-space-md rounded-lg border border-rule flex flex-col gap-1.5">
+        <div class="flex items-center justify-between">
+          <span class="text-[11px] font-semibold text-primary uppercase tracking-wider font-mono">হোয়াটসঅ্যাপ ড্রাফট প্রিফিল টেমপ্লেট</span>
+          <span class="text-[11px] text-ink-soft font-mono">wa.me URL Auto-Prefill</span>
+        </div>
+        <div class="p-2.5 rounded bg-surface-container-lowest border border-rule font-mono text-[12px] text-ink leading-relaxed break-words">
+          "নমস্কার, আমি ডাক্তারের পরামর্শের জন্য সিরিয়াল বুক করতে চাই। রোগীর নাম: , বিভাগ/বিশেষজ্ঞ: , পছন্দের ডাক্তার (যদি থাকে): , পছন্দের তারিখ ও সময়: "
+        </div>
+      </div>
+
+      <a class="w-full inline-flex items-center justify-center gap-space-sm px-space-xl min-h-[52px] rounded-lg bg-wa text-white font-semibold text-[15px] hover:opacity-95 transition-opacity" href="https://wa.me/918023456789?text=%E0%A6%A8%E0%A6%AE%E0%A6%B8%E0%A7%8D%E0%A6%95%E0%A6%BE%E0%A6%B0%2C%20%E0%A6%86%E0%A6%AE%E0%A6%BF%20%E0%A6%A1%E0%A6%BE%E0%A6%95%E0%A7%8D%E0%A6%A4%E0%A6%BE%E0%A6%B0%E0%A7%87%E0%A6%B0%20%E0%A6%AA%E0%A6%B0%E0%A6%BE%E0%A6%AE%E0%A6%B0%E0%A7%8D%E0%A6%B6%E0%A7%87%E0%A6%B0%20%E0%A6%9C%E0%A6%A8%E0%A7%8D%E0%A6%AF%20%E0%A6%B8%E0%A6%BF%E0%A6%B0%E0%A6%BF%E0%A7%9F%E0%A6%BE%E0%A6%B2%20%E0%A6%AC%E0%A7%81%E0%A6%95%20%E0%A6%95%E0%A6%B0%E0%A6%A4%E0%A7%87%20%E0%A6%9a%E0%A6%BE%E0%A6%87%E0%A7%84" target="_blank">
+        <span class="material-symbols-outlined text-[20px]">chat</span>
+        <span>হোয়াটসঅ্যাপে ডাক্তার দেখানোর সিরিয়াল বুক করুন</span>
+      </a>
+    </div>
+  </div>
+</section>
+<div class="max-w-[1080px] mx-auto w-full px-margin md:px-margin-desktop"><div class="h-[1px] w-full bg-rule"></div></div>
+
+<!-- Full Bengali Schedule & Location Section (Updated Timings & Doctor Schedule Ledger) -->
+<section class="w-full max-w-[1080px] mx-auto px-margin md:px-margin-desktop py-space-3xl" id="schedule-section">
+<div class="grid grid-cols-1 md:grid-cols-12 gap-gutter-desktop items-start">
+<div class="md:col-span-7 flex flex-col gap-space-lg">
+<div>
+<span class="text-[13px] font-medium text-ink-soft uppercase tracking-wider">সময়সূচী খতিয়ান</span>
+<h2 class="text-[30px] font-semibold text-ink mt-0.5">সময়সূচী ও রক্ত সংগ্রহের সময়</h2>
+</div>
+<div class="divide-y divide-rule border-y border-rule text-ink text-[15px]">
+<div class="py-space-sm flex items-center justify-between">
+<span>সোমবার – শুক্রবার (নিয়মিত ডায়াগনস্টিক)</span>
+<strong class="font-semibold text-ink">সকাল ০৬:৩০ – রাত ০৮:৩০</strong>
+</div>
+<div class="py-space-sm flex items-center justify-between">
+<span>শনিবার</span>
+<strong class="font-semibold text-ink">সকাল ০৬:৩০ – সন্ধ্যা ০৬:০০</strong>
+</div>
+<div class="py-space-sm flex items-center justify-between">
+<span>রবিবার ও সরকারি ছুটির দিন</span>
+<strong class="font-semibold text-ink">সকাল ০৭:০০ – দুপুর ০১:০০ (জরুরি সেবা)</strong>
+</div>
+<div class="py-space-sm flex items-center justify-between bg-secondary-fixed/20 px-space-sm rounded">
+<span>বাড়ি থেকে নমুনা সংগ্রহ (হোম কালেকশন)</span>
+<strong class="font-semibold text-primary">সকাল ০৬:৩০ – সকাল ১১:৩০ (প্রতিদিন)</strong>
+</div>
+</div>
+
+<!-- Detailed Doctor Consultation Chamber Timings Table in Bengali -->
+<div class="mt-space-md p-space-lg bg-surface-container-lowest border border-rule rounded-xl flex flex-col gap-space-sm">
+  <div class="flex items-center justify-between border-b border-rule pb-space-xs">
+    <h4 class="font-semibold text-[16px] text-ink flex items-center gap-1.5">
+      <span class="material-symbols-outlined text-primary text-[18px]">calendar_clock</span>
+      <span>বিশেষজ্ঞ চিকিৎসকদের চেম্বার ও কনসালটেশন সময়সূচী</span>
+    </h4>
+    <span class="text-[11px] font-bold text-primary px-2 py-0.5 bg-primary/10 rounded">ওপিডি রোস্টার</span>
+  </div>
+  <div class="divide-y divide-rule text-[14px]">
+    <div class="py-2 flex justify-between items-center">
+      <div>
+        <strong class="text-ink block">মেডিসিন ও ডায়াবেটোলজি</strong>
+        <span class="text-ink-soft text-[12px]">সাধারণ ওষুধ ও ডায়াবেটিস সেবা</span>
+      </div>
+      <div class="text-right">
+        <span class="font-semibold text-ink block">সোম, বুধ, শুক্র</span>
+        <span class="text-ink-soft text-[12px]">বিকাল ০৫:০০ – রাত ০৮:০০</span>
+      </div>
+    </div>
+    <div class="py-2 flex justify-between items-center">
+      <div>
+        <strong class="text-ink block">কার্ডিওলজি ও হার্ট কেয়ার</strong>
+        <span class="text-ink-soft text-[12px]">ইসিজি, ইকো ও হৃদরোগ পর্যালোচনা</span>
+      </div>
+      <div class="text-right">
+        <span class="font-semibold text-ink block">মঙ্গল, বৃহস্পতি, শনি</span>
+        <span class="text-ink-soft text-[12px]">সন্ধ্যা ০৬:০০ – রাত ০৮:৩০</span>
+      </div>
+    </div>
+    <div class="py-2 flex justify-between items-center">
+      <div>
+        <strong class="text-ink block">স্ত্রীরোগ ও প্রসূতি বিশেষজ্ঞ</strong>
+        <span class="text-ink-soft text-[12px]">নারী ও প্রসূতি স্বাস্থ্য সেবা</span>
+      </div>
+      <div class="text-right">
+        <span class="font-semibold text-ink block">সোম, বৃহস্পতি</span>
+        <span class="text-ink-soft text-[12px]">সকাল ১০:০০ – দুপুর ০১:০০</span>
+      </div>
+    </div>
+    <div class="py-2 flex justify-between items-center">
+      <div>
+        <strong class="text-ink block">শিশু স্বাস্থ্য ও পেডিয়াট্রিক্স</strong>
+        <span class="text-ink-soft text-[12px]">নবজাতক ও শিশু বিশেষজ্ঞ</span>
+      </div>
+      <div class="text-right">
+        <span class="font-semibold text-ink block">সোম – শনি</span>
+        <span class="text-ink-soft text-[12px]">সকাল ০৯:৩০ – দুপুর ১২:৩০</span>
+      </div>
+    </div>
+  </div>
+  <p class="text-[12px] text-ink-soft pt-1 border-t border-rule">
+    হোয়াটসঅ্যাপ ডেস্ক অথবা সেন্টারের কাউন্টারে এসে অগ্রিম সিরিয়াল নিশ্চিত করা যাবে। চিকিৎসকের পূর্বে রোগীর রক্তচাপ ও প্রাথমিক শারীরিক প্যারামিটার পরীক্ষা করা হয়।
+  </p>
+</div>
+
+</div>
+<!-- Location card in Bengali -->
+<div class="md:col-span-5 bg-secondary-fixed/40 p-space-xl rounded-xl flex flex-col gap-space-md text-ink">
+<div>
+<span class="text-[13px] font-medium text-ink-soft uppercase tracking-wider">সেন্টারের ঠিকানা ও অবস্থান</span>
+<h3 class="text-[20px] font-semibold text-ink mt-0.5">সেন্ট্রাল ডায়াগনস্টিকস বিল্ডিং</h3>
+<p class="text-ink-soft text-[15px] mt-space-xs">
+          গ্রাউন্ড ফ্লোর, রিকুইজিশন উইং, অপোজিট জেনারেল হাসপাতাল গেট ২।<br>
+          রোগীদের জন্য সুগম পার্কিং ও হুইলচেয়ার সুবিধা সম্পন্ন প্রবেশদ্বার।
+        </p>
+</div>
+<div class="pt-space-sm border-t border-rule flex flex-col gap-space-sm">
+<span class="text-[13px] font-medium text-ink-soft uppercase tracking-wider">সরাসরি সহায়তা ও বুকিং</span>
+<p class="text-ink-soft text-[14px]">
+          রেজিস্ট্রেশন লাইনে দীর্ঘ অপেক্ষা এড়াতে সরাসরি প্রেসক্রিপশনের ছবি তুলে আমাদের অন-ডিউটি ফ্লেবোটমি ডেস্কে পাঠিয়ে দিন।
+        </p>
+<a class="inline-flex items-center justify-center gap-space-xs w-full min-h-[48px] rounded-lg bg-wa text-white font-semibold text-[15px] hover:opacity-95 transition-opacity" href="https://wa.me/918023456789?text=%E0%A6%A8%E0%A6%AE%E0%A6%B8%E0%A7%8D%E0%A6%95%E0%A6%BE%E0%A6%B0%2C%20%E0%A6%86%E0%A6%AE%E0%A6%BF%20%E0%A6%A1%E0%A6%BE%E0%A7%9F%E0%A6%BE%E0%A6%97%E0%A6%A8%E0%A6%B8%E0%A7%8D%E0%A6%9F%E0%A6%BF%E0%A6%95%20%E0%A6%B8%E0%A7%87%E0%A6%AC%E0%A6%BE%E0%A6%B0%20%E0%A6%9C%E0%A6%A8%E0%A7%8D%E0%A6%AF%20%E0%A6%AF%E0%A7%8B%E0%A6%97%E0%A6%BE%E0%A6%AF%E0%A7%8B%E0%A6%97%20%E0%A6%95%E0%A6%B0%E0%A6%9B%E0%A6%BF%E0%A7%84" target="_blank">
+<span class="material-symbols-outlined text-[18px]">chat</span>
+<span>হোয়াটসঅ্যাপে যোগাযোগ করুন (ল্যাব ডেস্ক)</span>
+</a>
+</div>
+</div>
+</div>
+</section>
+</div></main>
+<footer class="w-full border-t border-rule bg-paper py-space-xl text-ink-soft text-[13px]"><div class="max-w-[1080px] mx-auto px-margin md:px-margin-desktop flex flex-col md:flex-row items-center justify-between gap-space-md"><p>[সেন্টারের নাম] ডায়াগনস্টিক সার্ভিসেস। নিখুঁত রোগ নির্ণয় ও শারীরিক নমুনা নির্ভরযোগ্যতা। কনসেপ্ট প্রিভিউ। অফিসিয়াল ওয়েবসাইট নয়।</p><div class="flex items-center gap-space-lg"><a class="hover:text-ink" href="#test-directory">টেস্ট তালিকা</a><a class="hover:text-ink" href="#doctors-section">ডাক্তারদের চেম্বার</a><a class="hover:text-ink" href="#schedule-section">সময়সূচী ও অবস্থান</a></div></div></footer></body></html>

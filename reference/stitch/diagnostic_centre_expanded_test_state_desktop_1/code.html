@@ -1,0 +1,659 @@
+<!DOCTYPE html><html lang="en"><head><meta charset="utf-8"><meta content="width=device-width, initial-scale=1.0" name="viewport"><meta content="web_standard" name="shell-type"><link href="https://fonts.googleapis.com" rel="preconnect"><link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"><link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700&amp;display=swap" rel="stylesheet"><link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"><style>@layer base{html,body{margin:0;padding:0;}body{overscroll-behavior:none;}main>:first-child{margin-top:0!important;}main>:last-child{margin-bottom:0!important;}}::-webkit-scrollbar{display:none;}</style><script src="https://cdn.tailwindcss.com"></script><script id="tailwind-config">tailwind.config = {
+    darkMode: "class",
+    theme: {
+      extend: {
+        "colors": {
+          "on-secondary-container": "#5b6765",
+          "surface-container-high": "#d6ebfc",
+          "primary-container": "#0e6b63",
+          "outline": "#6f7977",
+          "on-error-container": "#93000a",
+          "surface-container-low": "#eaf5ff",
+          "secondary-fixed": "#d8e5e2",
+          "on-surface": "#081e29",
+          "surface-variant": "#d0e5f6",
+          "secondary-container": "#d8e5e2",
+          "primary-ink": "#FFFFFF",
+          "rule": "#C9DAD7",
+          "surface-container-lowest": "#ffffff",
+          "on-secondary-fixed": "#121e1c",
+          "primary-fixed-dim": "#86d4ca",
+          "inverse-surface": "#1f333f",
+          "on-error": "#ffffff",
+          "tertiary-container": "#476371",
+          "inverse-on-surface": "#e4f3ff",
+          "on-secondary-fixed-variant": "#3d4947",
+          "ink-soft": "#44606E",
+          "inverse-primary": "#86d4ca",
+          "on-tertiary": "#ffffff",
+          "tertiary": "#2f4b59",
+          "surface": "#f5faff",
+          "primary-fixed": "#a2f1e6",
+          "paper": "#F6F9F9",
+          "on-background": "#081e29",
+          "wa": "#0F7B42",
+          "ink": "#0F2430",
+          "on-tertiary-fixed-variant": "#2e4a58",
+          "secondary-fixed-dim": "#bcc9c6",
+          "on-primary-fixed": "#00201d",
+          "tertiary-fixed": "#c9e7f8",
+          "on-primary-container": "#9ae8de",
+          "error": "#ba1a1a",
+          "primary": "#00514b",
+          "on-tertiary-fixed": "#001f2a",
+          "on-tertiary-container": "#c1deef",
+          "surface-container-highest": "#d0e5f6",
+          "surface-container": "#def0ff",
+          "sample-bg": "#FFF1CC",
+          "secondary": "#55615f",
+          "on-primary": "#ffffff",
+          "on-secondary": "#ffffff",
+          "background": "#f5faff",
+          "surface-dim": "#c8dded",
+          "sample-ink": "#6B4500",
+          "surface-bright": "#f5faff",
+          "error-container": "#ffdad6",
+          "on-surface-variant": "#3f4947",
+          "surface-tint": "#0b6a62",
+          "outline-variant": "#bec9c6",
+          "on-primary-fixed-variant": "#00504a",
+          "tertiary-fixed-dim": "#adcbdb"
+        },
+        "borderRadius": {
+          "DEFAULT": "0.125rem",
+          "lg": "0.25rem",
+          "xl": "0.5rem",
+          "full": "0.75rem"
+        },
+        "spacing": {
+          "space-xs": "0.25rem",
+          "gutter": "1.25rem",
+          "space-3xl": "3rem",
+          "space-2xl": "2rem",
+          "margin-desktop": "2.5rem",
+          "space-sm": "0.5rem",
+          "space-lg": "1rem",
+          "space-xl": "1.5rem",
+          "gutter-desktop": "2rem",
+          "space-md": "0.75rem",
+          "margin": "1.25rem",
+          "space-4xl": "4.5rem"
+        },
+        "fontFamily": {
+          "headline-xl": [
+            "Plus Jakarta Sans"
+          ],
+          "headline-lg": [
+            "Plus Jakarta Sans"
+          ],
+          "label-md": [
+            "Plus Jakarta Sans"
+          ],
+          "label-sm": [
+            "Plus Jakarta Sans"
+          ],
+          "headline-xl-mobile": [
+            "Plus Jakarta Sans"
+          ],
+          "headline-md": [
+            "Plus Jakarta Sans"
+          ],
+          "body-lg": [
+            "Plus Jakarta Sans"
+          ],
+          "body-md": [
+            "Plus Jakarta Sans"
+          ],
+          "headline-lg-mobile": [
+            "Plus Jakarta Sans"
+          ]
+        },
+        "fontSize": {
+          "headline-xl": [
+            "56px",
+            {
+              "lineHeight": "60px",
+              "letterSpacing": "-0.02em",
+              "fontWeight": "700"
+            }
+          ],
+          "headline-lg": [
+            "32px",
+            {
+              "lineHeight": "38px",
+              "letterSpacing": "-0.01em",
+              "fontWeight": "600"
+            }
+          ],
+          "label-md": [
+            "15px",
+            {
+              "lineHeight": "20px",
+              "fontWeight": "600"
+            }
+          ],
+          "label-sm": [
+            "13px",
+            {
+              "lineHeight": "16px",
+              "fontWeight": "500"
+            }
+          ],
+          "headline-xl-mobile": [
+            "36px",
+            {
+              "lineHeight": "40px",
+              "letterSpacing": "-0.015em",
+              "fontWeight": "700"
+            }
+          ],
+          "headline-md": [
+            "20px",
+            {
+              "lineHeight": "26px",
+              "fontWeight": "600"
+            }
+          ],
+          "body-lg": [
+            "17px",
+            {
+              "lineHeight": "27px",
+              "fontWeight": "400"
+            }
+          ],
+          "body-md": [
+            "15px",
+            {
+              "lineHeight": "22px",
+              "fontWeight": "400"
+            }
+          ],
+          "headline-lg-mobile": [
+            "24px",
+            {
+              "lineHeight": "30px",
+              "letterSpacing": "-0.01em",
+              "fontWeight": "600"
+            }
+          ]
+        }
+      },
+    },
+  }</script></head><body class="bg-paper text-ink font-body-md text-body-md"><header class="fixed top-0 left-0 w-full z-50 bg-paper/95 backdrop-blur-md shadow-[0_2px_8px_-2px_rgba(15,36,48,0.08)]"><div class="h-14 max-w-[1080px] mx-auto px-margin md:px-margin-desktop flex items-center justify-between"><a class="font-label-md text-label-md tracking-tight uppercase text-ink select-none" data-path="tests" href="#">[CENTRE NAME]</a><nav class="hidden md:flex items-center gap-space-xl" data-active-classes="text-primary font-semibold"><a class="font-label-md text-label-md text-ink-soft hover:text-ink transition-colors" data-path="tests" href="#">Tests</a><a class="font-label-md text-label-md text-ink-soft hover:text-ink transition-colors" data-path="packages" href="#">Packages</a><a class="font-label-md text-label-md text-ink-soft hover:text-ink transition-colors" data-path="why-us" href="#">Why Us</a><a class="font-label-md text-label-md text-ink-soft hover:text-ink transition-colors" data-path="location" href="#">Location</a><a class="font-label-md text-label-md text-ink-soft hover:text-ink transition-colors" data-path="contact" href="#">Contact</a></nav><div class="flex items-center gap-space-md"><div class="inline-flex items-center p-0.5 rounded-full border border-rule bg-paper text-ink font-label-sm text-label-sm" role="group" aria-label="Language switch"><button type="button" class="px-2.5 py-1 rounded-full bg-primary text-primary-ink font-semibold text-[13px] leading-tight transition-colors" aria-pressed="true">EN</button><button type="button" class="px-2.5 py-1 rounded-full text-ink-soft hover:text-ink font-medium text-[13px] leading-tight transition-colors" aria-pressed="false">বাংলা</button></div><a class="inline-flex items-center justify-center px-space-lg py-space-xs min-h-[40px] rounded-lg bg-primary text-primary-ink font-label-md text-label-md hover:bg-primary-container transition-colors" data-path="book-a-test" href="#">Book a test</a></div></div></header><main class="w-full pt-14 bg-paper min-h-[calc(100vh-140px)]"><div class="flex flex-col w-full">
+<!-- Desktop Hero Section (Requisition Ledger Layout) -->
+<section class="w-full max-w-[1080px] mx-auto px-margin md:px-margin-desktop pt-space-2xl md:pt-space-3xl pb-space-3xl">
+<div class="grid grid-cols-1 md:grid-cols-12 gap-gutter-desktop items-start">
+<div class="md:col-span-8 flex flex-col items-start">
+<div class="inline-flex items-center gap-space-xs px-2 py-0.5 rounded-full bg-sample-bg text-sample-ink font-label-sm text-label-sm mb-space-md">
+<span class="w-1.5 h-1.5 rounded-full bg-sample-ink"></span>
+          Sample preview. Content is placeholder.
+        </div>
+<p class="font-label-sm text-label-sm text-ink-soft uppercase tracking-wider mb-space-xs">
+          Direct Pathology &amp; Diagnostic Requisition
+        </p>
+<h1 class="font-headline-xl text-headline-xl text-ink tracking-tight mb-space-md">
+          Precision diagnostics.<br>Uncompromising clinical care.
+        </h1>
+<p class="font-body-lg text-body-lg text-ink-soft max-w-xl mb-space-xl">
+          Physical sample integrity, transparent turnaround schedules, and direct digital verification via WhatsApp. No synthetic urgency—just verified pathology.
+        </p>
+<div class="flex flex-wrap items-center gap-space-md w-full sm:w-auto">
+<a class="inline-flex items-center justify-center px-space-xl min-h-[52px] rounded-lg bg-primary text-primary-ink font-label-md text-label-md hover:bg-primary-container transition-colors focus:ring-4 focus:ring-primary/20" href="#test-directory">
+            Browse Test Directory
+          </a>
+<a class="inline-flex items-center justify-center gap-space-sm px-space-xl min-h-[52px] rounded-lg bg-wa text-white font-label-md text-label-md hover:opacity-95 transition-opacity" href="https://wa.me/#">
+<span class="material-symbols-outlined text-[20px]">chat</span>
+<span>WhatsApp us directly</span>
+</a>
+</div>
+</div>
+<!-- Quick Requisition Index Metadata Card -->
+<div class="md:col-span-4 bg-secondary-fixed/40 p-space-lg rounded-xl flex flex-col gap-space-md text-ink">
+<div class="flex items-center justify-between pb-space-xs border-b border-rule">
+<span class="font-label-sm text-label-sm text-ink-soft uppercase tracking-wider">LAB DISPATCH STATUS</span>
+<span class="font-label-sm text-label-sm text-wa font-semibold flex items-center gap-1">
+<span class="w-2 h-2 rounded-full bg-wa animate-pulse"></span> Open Routine
+          </span>
+</div>
+<div class="space-y-space-xs text-ink-soft font-body-md text-body-md">
+<div class="flex justify-between">
+<span>Morning Phlebotomy:</span>
+<strong class="text-ink font-semibold">06:30 – 12:30</strong>
+</div>
+<div class="flex justify-between">
+<span>Average Reporting:</span>
+<strong class="text-ink font-semibold">3 to 6 Hours</strong>
+</div>
+<div class="flex justify-between">
+<span>Verified Delivery:</span>
+<strong class="text-ink font-semibold">Desk + WhatsApp</strong>
+</div>
+</div>
+<div class="pt-space-xs border-t border-rule text-ink-soft font-label-sm text-label-sm">
+          Physical requisitions and doctor referrals accepted counter-side without pre-registration.
+        </div>
+</div>
+</div>
+</section>
+<!-- Hairline Divider -->
+<div class="max-w-[1080px] mx-auto w-full px-margin md:px-margin-desktop">
+<div class="h-[1px] w-full bg-rule"></div>
+</div>
+<!-- Main Focus Section: Tests & Health Packages (7/5 Split with Expanded First Test) -->
+<section class="w-full max-w-[1080px] mx-auto px-margin md:px-margin-desktop py-space-3xl" id="test-directory">
+<!-- Header of Section -->
+<div class="flex flex-col md:flex-row md:items-end justify-between gap-space-sm mb-space-xl">
+<div>
+<div class="inline-flex items-center gap-space-xs px-2 py-0.5 rounded-full bg-sample-bg text-sample-ink font-label-sm text-label-sm mb-space-xs">
+          Sample content
+        </div>
+<h2 class="font-headline-lg text-headline-lg text-ink">Popular Tests &amp; Health Packages</h2>
+</div>
+<div class="font-label-sm text-label-sm text-ink-soft tracking-wider">
+        DIRECTORY INDEX 01 • 64 REQUISITIONS LISTED
+      </div>
+</div>
+<!-- 7 / 5 Column Split -->
+<div class="grid grid-cols-1 lg:grid-cols-12 gap-gutter-desktop items-start">
+<!-- 7-Column Left: Ruled Test Directory with EXPANDED state on Row 1 -->
+<div class="lg:col-span-7 flex flex-col">
+<div class="text-ink font-label-md text-label-md mb-space-sm flex items-center justify-between pb-space-xs border-b border-rule">
+<span>Individual Diagnostic Requisitions</span>
+<span class="text-ink-soft font-label-sm text-label-sm">Tap row to view parameters</span>
+</div>
+<!-- Ruled Test List Container -->
+<div class="flex flex-col">
+<!-- TEST ROW 1: STATE = EXPANDED (As detailed in SCREEN_6 & SCREEN_8) -->
+<div class="group bg-secondary-fixed/50 rounded-lg p-space-md border border-rule transition-all duration-300">
+<!-- Header Trigger Row -->
+<button aria-expanded="true" class="w-full flex items-center justify-between text-left focus:outline-none cursor-pointer" onclick="toggleTestPanel(this)" type="button">
+<div class="pr-space-md">
+<span class="inline-block font-label-sm text-label-sm text-primary uppercase font-bold tracking-wider mb-0.5">Test 01 • Hematology Panel</span>
+<h3 class="font-headline-md text-headline-md text-ink leading-tight">Complete Blood Panel Routine Check (CBC + ESR)</h3>
+<p class="font-body-md text-body-md text-ink-soft mt-0.5">Automated 5-part differential cell counter &amp; sed rate</p>
+</div>
+<div class="flex-shrink-0 w-8 h-8 rounded-full bg-secondary-fixed flex items-center justify-center text-primary transition-transform duration-300 transform rotate-180">
+<span class="material-symbols-outlined text-[20px]">expand_more</span>
+</div>
+</button>
+<!-- Expanded Panel Content with Sub-sections -->
+<div class="mt-space-md pt-space-md border-t border-rule flex flex-col gap-space-md">
+<p class="font-body-md text-body-md text-ink">
+                Comprehensive primary hematological evaluation including complete cell count, cellular indices, automated ESR, and stained peripheral smear analysis.
+              </p>
+<!-- Inclusions Grid / Bullet list -->
+<div class="bg-paper p-space-md rounded-lg">
+<h4 class="font-label-sm text-label-sm text-ink-soft uppercase tracking-wider mb-space-sm flex items-center gap-space-xs">
+<span class="material-symbols-outlined text-primary text-[18px]">checklist</span>
+                  What's Included in this Panel (32 Parameters)
+                </h4>
+<ul class="space-y-space-xs font-body-md text-body-md text-ink">
+<li class="flex items-start gap-space-sm">
+<span class="material-symbols-outlined text-primary text-[18px] mt-0.5">check_circle</span>
+<span><strong>Hemoglobin &amp; RBC indices:</strong> Total RBC, MCV, MCH, MCHC, and RDW-CV / RDW-SD</span>
+</li>
+<li class="flex items-start gap-space-sm">
+<span class="material-symbols-outlined text-primary text-[18px] mt-0.5">check_circle</span>
+<span><strong>Total &amp; Differential WBC:</strong> Absolute and percentage Neutrophils, Lymphocytes, Monocytes, Eosinophils, Basophils</span>
+</li>
+<li class="flex items-start gap-space-sm">
+<span class="material-symbols-outlined text-primary text-[18px] mt-0.5">check_circle</span>
+<span><strong>Platelet Analysis:</strong> Total count, Mean Platelet Volume (MPV), PCT, and morphological distribution</span>
+</li>
+<li class="flex items-start gap-space-sm">
+<span class="material-symbols-outlined text-primary text-[18px] mt-0.5">check_circle</span>
+<span><strong>Erythrocyte Sedimentation Rate:</strong> Automated photometrical ESR (Westergren calibrated)</span>
+</li>
+<li class="flex items-start gap-space-sm">
+<span class="material-symbols-outlined text-primary text-[18px] mt-0.5">check_circle</span>
+<span><strong>Peripheral Smear Examination:</strong> Pathologist review for abnormal cellular morphology or parasites</span>
+</li>
+</ul>
+</div>
+<!-- Specimen & Preparation Box -->
+<div class="grid grid-cols-1 md:grid-cols-3 gap-space-sm bg-surface-container-lowest p-space-md rounded-lg text-ink font-body-md text-body-md">
+<div class="flex flex-col">
+<span class="font-label-sm text-label-sm text-ink-soft uppercase">Preparation</span>
+<span class="font-medium mt-0.5 text-[14px]">8–10 hours overnight fasting recommended. Water permitted.</span>
+</div>
+<div class="flex flex-col">
+<span class="font-label-sm text-label-sm text-ink-soft uppercase">Sample Required</span>
+<span class="font-medium mt-0.5 text-[14px]">3.0 ml EDTA Whole Blood (Lavender top tube)</span>
+</div>
+<div class="flex flex-col">
+<span class="font-label-sm text-label-sm text-ink-soft uppercase">Delivery Standard</span>
+<span class="font-medium mt-0.5 text-[14px]">Same day within 4 hours. Verified PDF &amp; physical print.</span>
+</div>
+</div>
+<!-- Action Bar inside Expanded Card -->
+<div class="flex flex-wrap items-center justify-between gap-space-md pt-space-xs">
+<div class="flex items-center gap-space-sm">
+<a class="inline-flex items-center gap-space-xs px-space-lg min-h-[48px] rounded-lg bg-wa text-white font-label-md text-label-md hover:opacity-95 transition-opacity" href="https://wa.me/#?text=Book%20Test%2001">
+<span class="material-symbols-outlined text-[18px]">chat</span>
+<span>Book this test on WhatsApp</span>
+</a>
+<button class="inline-flex items-center justify-center px-space-md min-h-[48px] rounded-lg border border-primary text-primary font-label-md text-label-md hover:bg-primary/5 transition-colors" type="button">
+                    Add to Requisition Slip
+                  </button>
+</div>
+<span class="font-label-sm text-label-sm text-ink-soft">Test Code: #HEM-0419</span>
+</div>
+</div>
+</div>
+<!-- TEST ROW 2: Collapsed -->
+<div class="border-b border-rule py-space-md hover:bg-secondary-fixed/20 transition-colors px-space-xs">
+<button aria-expanded="false" class="w-full flex items-center justify-between text-left focus:outline-none cursor-pointer" onclick="toggleTestPanel(this)" type="button">
+<div>
+<span class="font-label-sm text-label-sm text-ink-soft uppercase tracking-wider block mb-0.5">Test 02 • Metabolic Profile</span>
+<h3 class="font-headline-md text-headline-md text-ink">Fasting Blood Sugar &amp; HbA1c Glycated Hemoglobin</h3>
+<p class="font-body-md text-body-md text-ink-soft">Dual plasma glucose reading with 3-month glycemic average</p>
+</div>
+<div class="flex-shrink-0 w-8 h-8 rounded-full flex items-center justify-center text-ink-soft">
+<span class="material-symbols-outlined text-[20px]">expand_more</span>
+</div>
+</button>
+</div>
+<!-- TEST ROW 3: Collapsed -->
+<div class="border-b border-rule py-space-md hover:bg-secondary-fixed/20 transition-colors px-space-xs">
+<button aria-expanded="false" class="w-full flex items-center justify-between text-left focus:outline-none cursor-pointer" onclick="toggleTestPanel(this)" type="button">
+<div>
+<span class="font-label-sm text-label-sm text-ink-soft uppercase tracking-wider block mb-0.5">Test 03 • Cardiovascular</span>
+<h3 class="font-headline-md text-headline-md text-ink">Comprehensive Lipid Profile (Cholesterol Fractions)</h3>
+<p class="font-body-md text-body-md text-ink-soft">Total cholesterol, HDL, LDL, VLDL, and Triglycerides ratio</p>
+</div>
+<div class="flex-shrink-0 w-8 h-8 rounded-full flex items-center justify-center text-ink-soft">
+<span class="material-symbols-outlined text-[20px]">expand_more</span>
+</div>
+</button>
+</div>
+<!-- TEST ROW 4: Collapsed -->
+<div class="border-b border-rule py-space-md hover:bg-secondary-fixed/20 transition-colors px-space-xs">
+<button aria-expanded="false" class="w-full flex items-center justify-between text-left focus:outline-none cursor-pointer" onclick="toggleTestPanel(this)" type="button">
+<div>
+<span class="font-label-sm text-label-sm text-ink-soft uppercase tracking-wider block mb-0.5">Test 04 • Hepatic Function</span>
+<h3 class="font-headline-md text-headline-md text-ink">Liver Function &amp; Enzyme Evaluation (LFT)</h3>
+<p class="font-body-md text-body-md text-ink-soft">SGOT, SGPT, Bilirubin (Total/Direct), Alkaline Phosphatase, Total Proteins</p>
+</div>
+<div class="flex-shrink-0 w-8 h-8 rounded-full flex items-center justify-center text-ink-soft">
+<span class="material-symbols-outlined text-[20px]">expand_more</span>
+</div>
+</button>
+</div>
+<!-- TEST ROW 5: Collapsed -->
+<div class="border-b border-rule py-space-md hover:bg-secondary-fixed/20 transition-colors px-space-xs">
+<button aria-expanded="false" class="w-full flex items-center justify-between text-left focus:outline-none cursor-pointer" onclick="toggleTestPanel(this)" type="button">
+<div>
+<span class="font-label-sm text-label-sm text-ink-soft uppercase tracking-wider block mb-0.5">Test 05 • Endocrine System</span>
+<h3 class="font-headline-md text-headline-md text-ink">Thyroid Stimulating Hormone &amp; Free T3/T4 Profile</h3>
+<p class="font-body-md text-body-md text-ink-soft">Ultra-sensitive chemiluminescence assay for primary gland surveillance</p>
+</div>
+<div class="flex-shrink-0 w-8 h-8 rounded-full flex items-center justify-center text-ink-soft">
+<span class="material-symbols-outlined text-[20px]">expand_more</span>
+</div>
+</button>
+</div>
+<!-- TEST ROW 6: Collapsed -->
+<div class="border-b border-rule py-space-md hover:bg-secondary-fixed/20 transition-colors px-space-xs">
+<button aria-expanded="false" class="w-full flex items-center justify-between text-left focus:outline-none cursor-pointer" onclick="toggleTestPanel(this)" type="button">
+<div>
+<span class="font-label-sm text-label-sm text-ink-soft uppercase tracking-wider block mb-0.5">Test 06 • Renal &amp; Excretory</span>
+<h3 class="font-headline-md text-headline-md text-ink">Urine Routine &amp; Microscopic Analysis (Complete)</h3>
+<p class="font-body-md text-body-md text-ink-soft">Physical appearance, chemical strip dipstick, and centrifugal deposit microscopy</p>
+</div>
+<div class="flex-shrink-0 w-8 h-8 rounded-full flex items-center justify-center text-ink-soft">
+<span class="material-symbols-outlined text-[20px]">expand_more</span>
+</div>
+</button>
+</div>
+</div>
+<div class="mt-space-lg flex items-center justify-between text-ink-soft font-body-md text-body-md">
+<span>Looking for specialty genetic or hormone panels?</span>
+<a class="text-primary font-semibold hover:underline inline-flex items-center gap-1" href="https://wa.me/#">
+            Send prescription scan on WhatsApp <span class="material-symbols-outlined text-[16px]">arrow_forward</span>
+</a>
+</div>
+</div>
+<!-- 5-Column Right: Health Packages & Interactive Motion Spec Panel -->
+<div class="lg:col-span-5 flex flex-col gap-space-xl">
+<!-- Health Packages Container -->
+<div class="bg-surface-container-lowest p-space-xl rounded-xl border border-rule flex flex-col gap-space-lg">
+<div class="flex items-center justify-between border-b border-rule pb-space-sm">
+<div>
+<span class="font-label-sm text-label-sm text-primary uppercase font-bold tracking-wider">Multi-Parametric</span>
+<h3 class="font-headline-md text-headline-md text-ink">Comprehensive Packages</h3>
+</div>
+<span class="font-label-sm text-label-sm text-ink-soft">Bundled Requisitions</span>
+</div>
+<!-- Package A: Highlighted -->
+<div class="p-space-md rounded-lg bg-secondary-fixed/40 border border-primary/20 flex flex-col gap-space-xs">
+<div class="flex items-center justify-between">
+<span class="inline-flex items-center px-2 py-0.5 rounded bg-primary text-white font-label-sm text-label-sm">
+                Recommended Assessment
+              </span>
+<span class="font-label-sm text-label-sm text-ink font-semibold">64 Parameters</span>
+</div>
+<h4 class="font-headline-md text-headline-md text-ink mt-1">Core Health Package A</h4>
+<p class="font-body-md text-body-md text-ink-soft">
+              Complete hematology, lipid profile, fasting glucose, renal parameters (Creatinine, Urea), and complete liver enzyme panel.
+            </p>
+<div class="pt-space-xs flex items-center justify-between">
+<span class="font-label-sm text-label-sm text-ink-soft">Turnaround: 6 Hours</span>
+<a class="font-label-md text-label-md text-primary font-semibold hover:underline" href="https://wa.me/#?text=Book%20Package%20A">
+                Book Package A →
+              </a>
+</div>
+</div>
+<!-- Package B -->
+<div class="p-space-md rounded-lg bg-paper border border-rule flex flex-col gap-space-xs">
+<div class="flex items-center justify-between">
+<span class="font-label-sm text-label-sm text-ink-soft uppercase tracking-wider font-semibold">Metabolic Focus</span>
+<span class="font-label-sm text-label-sm text-ink">48 Parameters</span>
+</div>
+<h4 class="font-headline-md text-headline-md text-ink mt-0.5">Cardiac &amp; Diabetic Package B</h4>
+<p class="font-body-md text-body-md text-ink-soft">
+              Targeted monitoring including HbA1c, extended lipid fractions, microalbuminuria, and hs-CRP inflammatory marker.
+            </p>
+<div class="pt-space-xs flex items-center justify-between">
+<span class="font-label-sm text-label-sm text-ink-soft">Turnaround: Same Day</span>
+<a class="font-label-md text-label-md text-primary font-semibold hover:underline" href="https://wa.me/#?text=Book%20Package%20B">
+                Book Package B →
+              </a>
+</div>
+</div>
+<!-- Package C -->
+<div class="p-space-md rounded-lg bg-paper border border-rule flex flex-col gap-space-xs">
+<div class="flex items-center justify-between">
+<span class="font-label-sm text-label-sm text-ink-soft uppercase tracking-wider font-semibold">Senior &amp; Executive</span>
+<span class="font-label-sm text-label-sm text-ink">82 Parameters</span>
+</div>
+<h4 class="font-headline-md text-headline-md text-ink mt-0.5">Advanced Diagnostic Package C</h4>
+<p class="font-body-md text-body-md text-ink-soft">
+              Extensive whole-body screening including full thyroid, Vitamin D &amp; B12, serum electrolytes, and iron deficiency profile.
+            </p>
+<div class="pt-space-xs flex items-center justify-between">
+<span class="font-label-sm text-label-sm text-ink-soft">Turnaround: 12 Hours</span>
+<a class="font-label-md text-label-md text-primary font-semibold hover:underline" href="https://wa.me/#?text=Book%20Package%20C">
+                Book Package C →
+              </a>
+</div>
+</div>
+</div>
+<!-- Motion & Interaction Specification Panel (Desktop equivalent of SCREEN_8 spec) -->
+<div class="bg-secondary-fixed/30 border border-rule rounded-xl p-space-lg flex flex-col gap-space-sm text-ink">
+<div class="flex items-center gap-space-xs text-primary font-label-md text-label-md">
+<span class="material-symbols-outlined text-[20px]">animation</span>
+<span>UX Interaction Specification (DESIGN.md Reference)</span>
+</div>
+<div class="space-y-space-sm text-body-md font-body-md text-ink-soft text-[14px] leading-relaxed">
+<div class="pb-space-xs border-b border-rule">
+<strong class="text-ink font-semibold block">AutoHeight + Blur-Fade Animation:</strong>
+              Panel expands dynamically with <code class="bg-paper px-1 rounded text-primary text-[12px]">max-height: 480px</code> and smooth <code class="bg-paper px-1 rounded text-primary text-[12px]">cubic-bezier(0.4, 0, 0.2, 1)</code> transition over 400ms.
+            </div>
+<div class="pb-space-xs border-b border-rule">
+<strong class="text-ink font-semibold block">Synchronized Chevron Indicator:</strong>
+              180° rotation indicator informs screen readers via <code class="bg-paper px-1 rounded text-primary text-[12px]">aria-expanded="true"</code>.
+            </div>
+<div>
+<strong class="text-ink font-semibold block">Reduced Motion Conformance:</strong>
+              Instant state toggle with zero transition duration when <code class="bg-paper px-1 rounded text-primary text-[12px]">prefers-reduced-motion: reduce</code> is flagged by the operating system.
+            </div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Hairline Divider -->
+<div class="max-w-[1080px] mx-auto w-full px-margin md:px-margin-desktop">
+<div class="h-[1px] w-full bg-rule"></div>
+</div>
+<!-- Modular Home Sample Collection Banner -->
+<section class="w-full max-w-[1080px] mx-auto px-margin md:px-margin-desktop py-space-3xl">
+<div class="bg-secondary-fixed/50 rounded-xl p-space-xl md:p-space-2xl border border-rule flex flex-col md:flex-row items-center justify-between gap-space-xl">
+<div class="max-w-xl">
+<span class="font-label-sm text-label-sm text-primary uppercase font-bold tracking-wider">Phlebotomy At Your Residence</span>
+<h3 class="font-headline-lg text-headline-lg text-ink mt-1">Book Home Sample Collection</h3>
+<p class="font-body-md text-body-md text-ink-soft mt-space-xs">
+          Certified phlebotomists arrive with cold-chain sample transport containers. Temperature monitored, vacuum-sealed vacutainers, zero contamination risk.
+        </p>
+<div class="flex items-center gap-space-lg mt-space-md font-label-sm text-label-sm text-ink">
+<span class="flex items-center gap-1">
+<span class="material-symbols-outlined text-primary text-[18px]">ac_unit</span>
+            Cold-Chain Verified
+          </span>
+<span class="flex items-center gap-1">
+<span class="material-symbols-outlined text-primary text-[18px]">verified_user</span>
+            Hospital Certified Staff
+          </span>
+<span class="flex items-center gap-1">
+<span class="material-symbols-outlined text-primary text-[18px]">schedule</span>
+            Slots from 06:30 AM
+          </span>
+</div>
+</div>
+<div class="flex-shrink-0 w-full md:w-auto">
+<a class="w-full md:w-auto inline-flex items-center justify-center gap-space-sm px-space-xl min-h-[52px] rounded-lg bg-wa text-white font-label-md text-label-md hover:opacity-95 transition-opacity" href="https://wa.me/#?text=Request%20Home%20Collection">
+<span class="material-symbols-outlined text-[20px]">chat</span>
+<span>Schedule on WhatsApp</span>
+</a>
+</div>
+</div>
+</section>
+<!-- Why Choose Us: 2x2 Grid -->
+<section class="w-full max-w-[1080px] mx-auto px-margin md:px-margin-desktop pb-space-3xl">
+<div class="mb-space-xl">
+<span class="font-label-sm text-label-sm text-ink-soft uppercase tracking-wider">Laboratory Rigor</span>
+<h2 class="font-headline-lg text-headline-lg text-ink mt-0.5">Clinical Standards &amp; Chain of Custody</h2>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-2 gap-gutter-desktop">
+<div class="p-space-lg rounded-xl bg-paper border border-rule flex flex-col gap-space-xs">
+<div class="w-10 h-10 rounded-lg bg-secondary-fixed flex items-center justify-center text-primary mb-space-xs">
+<span class="material-symbols-outlined">biotech</span>
+</div>
+<h4 class="font-headline-md text-headline-md text-ink">Automated Analyzer Calibration</h4>
+<p class="font-body-md text-body-md text-ink-soft">
+          Three-tier daily quality control (QC) against standard international reference serums before commencing any patient specimen batch.
+        </p>
+</div>
+<div class="p-space-lg rounded-xl bg-paper border border-rule flex flex-col gap-space-xs">
+<div class="w-10 h-10 rounded-lg bg-secondary-fixed flex items-center justify-center text-primary mb-space-xs">
+<span class="material-symbols-outlined">qr_code_2</span>
+</div>
+<h4 class="font-headline-md text-headline-md text-ink">Barcoded Specimen Tracking</h4>
+<p class="font-body-md text-body-md text-ink-soft">
+          Zero manual sample relabeling. Unique 2D barcodes are printed and adhered at the moment of draw to eliminate mix-up errors.
+        </p>
+</div>
+<div class="p-space-lg rounded-xl bg-paper border border-rule flex flex-col gap-space-xs">
+<div class="w-10 h-10 rounded-lg bg-secondary-fixed flex items-center justify-center text-primary mb-space-xs">
+<span class="material-symbols-outlined">medical_information</span>
+</div>
+<h4 class="font-headline-md text-headline-md text-ink">Double MD Pathologist Sign-Off</h4>
+<p class="font-body-md text-body-md text-ink-soft">
+          Critical alerts and abnormal values are cross-reviewed by a second senior pathologist and telephoned directly to the ordering clinician.
+        </p>
+</div>
+<div class="p-space-lg rounded-xl bg-paper border border-rule flex flex-col gap-space-xs">
+<div class="w-10 h-10 rounded-lg bg-secondary-fixed flex items-center justify-center text-primary mb-space-xs">
+<span class="material-symbols-outlined">send_to_mobile</span>
+</div>
+<h4 class="font-headline-md text-headline-md text-ink">Direct WhatsApp &amp; Print Verification</h4>
+<p class="font-body-md text-body-md text-ink-soft">
+          Digital reports carry tamper-evident cryptographic QR codes allowing doctors to verify authenticity on any smartphone instant-reader.
+        </p>
+</div>
+</div>
+</section>
+<!-- Location & Timings (2-Column Ruled Ledger Format) -->
+<section class="w-full max-w-[1080px] mx-auto px-margin md:px-margin-desktop pb-space-4xl">
+<div class="grid grid-cols-1 md:grid-cols-12 gap-gutter-desktop items-start">
+<!-- Left: Operating Hours Ruled Table -->
+<div class="md:col-span-6 flex flex-col">
+<span class="font-label-sm text-label-sm text-ink-soft uppercase tracking-wider mb-space-xs">Operating Hours</span>
+<h3 class="font-headline-lg text-headline-lg text-ink mb-space-lg">Hours &amp; Phlebotomy Schedule</h3>
+<div class="border-t border-rule">
+<div class="flex items-center justify-between py-space-sm border-b border-rule font-body-md text-body-md">
+<span class="text-ink font-semibold">Monday – Friday</span>
+<span class="text-ink-soft">06:30 AM – 08:30 PM</span>
+</div>
+<div class="flex items-center justify-between py-space-sm border-b border-rule font-body-md text-body-md">
+<span class="text-ink font-semibold">Saturday</span>
+<span class="text-ink-soft">06:30 AM – 06:00 PM</span>
+</div>
+<div class="flex items-center justify-between py-space-sm border-b border-rule font-body-md text-body-md">
+<span class="text-ink font-semibold">Sunday &amp; Public Holidays</span>
+<span class="text-ink-soft">07:00 AM – 01:00 PM (Emergency only)</span>
+</div>
+<div class="flex items-center justify-between py-space-sm border-b border-rule font-body-md text-body-md">
+<span class="text-ink font-semibold">Home Collection Hours</span>
+<span class="text-ink-soft">06:30 AM – 11:30 AM (Daily)</span>
+</div>
+</div>
+</div>
+<!-- Right: Location & Frictionless Contact Card -->
+<div class="md:col-span-6 bg-secondary-fixed/40 p-space-xl rounded-xl border border-rule flex flex-col gap-space-md">
+<div>
+<span class="font-label-sm text-label-sm text-primary uppercase font-bold tracking-wider">Centre Address</span>
+<h4 class="font-headline-md text-headline-md text-ink mt-0.5">Central Diagnostics Building</h4>
+<p class="font-body-md text-body-md text-ink-soft mt-1">
+            Ground Floor, Requisition Wing, Opposite General Hospital Gate 2.<br>Dedicated patient parking and wheelchair-accessible entrance.
+          </p>
+</div>
+<div class="h-[1px] w-full bg-rule"></div>
+<div>
+<span class="font-label-sm text-label-sm text-ink-soft uppercase tracking-wider block mb-space-xs">Immediate Assistance</span>
+<p class="font-body-md text-body-md text-ink mb-space-md">
+            No registration queues. Tap below to send your doctor's prescription directly to our on-duty phlebotomy desk.
+          </p>
+<a class="w-full inline-flex items-center justify-center gap-space-sm px-space-xl min-h-[52px] rounded-lg bg-wa text-white font-label-md text-label-md hover:opacity-95 transition-opacity" href="https://wa.me/#">
+<span class="material-symbols-outlined text-[20px]">chat</span>
+<span>Request on WhatsApp (Direct Lab Desk)</span>
+</a>
+</div>
+</div>
+</div>
+</section>
+</div>
+<script>
+  function toggleTestPanel(button) {
+    const isExpanded = button.getAttribute('aria-expanded') === 'true';
+    const container = button.closest('.group');
+    if (!container) return;
+    
+    // Toggle state attribute
+    button.setAttribute('aria-expanded', !isExpanded);
+    
+    // Toggle chevron rotation
+    const iconContainer = button.querySelector('div.flex-shrink-0');
+    if (iconContainer) {
+      if (isExpanded) {
+        iconContainer.classList.remove('rotate-180');
+      } else {
+        iconContainer.classList.add('rotate-180');
+      }
+    }
+  }
+</script></main><footer class="w-full bg-paper"><div class="max-w-[1080px] mx-auto px-margin md:px-margin-desktop py-space-2xl"><div class="h-[1px] w-full bg-rule mb-space-xl"></div><div class="flex flex-col sm:flex-row items-baseline justify-between gap-space-md text-ink-soft font-body-md text-body-md"><p class="font-label-sm text-label-sm text-ink-soft">[CENTRE NAME] Diagnostic Services. Physical requisition accuracy and pathology.</p><div class="flex items-center gap-space-lg font-label-sm text-label-sm"><a class="hover:text-ink transition-colors" data-path="tests" href="#">Test Directory</a><a class="hover:text-ink transition-colors" data-path="location" href="#">Hours &amp; Location</a><a class="hover:text-ink transition-colors" data-path="contact" href="#">Contact</a></div></div></div></footer>
+
+</body></html>
